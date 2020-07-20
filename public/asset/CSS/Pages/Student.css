@@ -1,0 +1,11 @@
+﻿body {
+    margin: 0;
+
+}
+.menu{
+    border: 1px solid #000000;
+    float: left;
+    width: 250px;
+    height: 100vh;
+
+}

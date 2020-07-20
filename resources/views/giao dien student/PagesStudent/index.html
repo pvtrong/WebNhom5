@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Demo</title>
+    <link href="../CSS/Common/Common.css" rel="stylesheet" />
+    <link href="../CSS/Lib/jquery-ui.min.css" rel="stylesheet" />
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!--Menu area-->
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+
+            <div class="menu">
+                <!--Logo-->
+                <div class="logo-area">
+                    <a id="logo" href="./index.html">
+                        <div class="logo-pages">
+
+                        </div>
+                        <h2>UET</h2>
+                    </a>
+                </div>
+
+                <!--Menu item-->
+                <div id="menu-content">
+                    <a class="menu-item" href="./index.html">
+                        <span class="menu-item-icon icon-board"></span>
+                        <span class="menu-item-text">Tổng quan</span>
+                    </a>
+                    <a class="menu-item" href="./PagesStudent/Profile.html">
+                        <div class="menu-item-icon icon-profile"></div>
+                        <div class="menu-item-text">Hồ Sơ</div>
+                    </a>
+                    <a class="menu-item" href="./PagesStudent/Blog.html">
+                        <div class="icon-more icon-blog"></div>
+                        <div class="menu-item-text">Blog cá nhân</div>
+                    </a>
+                    <a class="menu-item" href="./PagesStudent/Company.html">
+                        <div class="icon-more icon-company"></div>
+                        <div class="menu-item-text">Công Ty</div>
+                    </a>
+                    <a class="menu-item" href="./PagesStudent/Teacher.html">
+                        <div class="menu-item-icon icon-teacher"></div>
+                        <div class="menu-item-text">Nhà Trường</div>
+                    </a>
+                    <a class="menu-item" href="./PagesStudent/Setting.html">
+                        <div class="menu-item-icon icon-setting"></div>
+                        <div class="menu-item-text">Thiết Lập</div>
+                    </a>
+                    <a class="menu-item" href="./PagesStudent/Help.html">
+                        <div class="menu-item-icon icon-help"></div>
+                        <div class="menu-item-text">Trợ giúp</div>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <!--Content area-->
+                    <div class="content">
+                        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                            <!-- Sidebar Toggle (Topbar) -->
+                            
+
+                            <!-- Topbar Search -->
+                            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                <h3 class="font-weight-bold ml-4">Tổng quan</h3>
+                            </form>
+
+                            <!-- Topbar Navbar -->
+                            <ul class="navbar-nav ml-auto">
+
+                                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                                
+
+                                <!-- Nav Item - Alerts -->
+                                <li class="nav-item dropdown no-arrow mx-1">
+                                    <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-bell fa-fw"></i>
+                                        <!-- Counter - Alerts -->
+                                        <span class="badge badge-danger badge-counter">3+</span>
+                                    </a>
+                                    <!-- Dropdown - Alerts -->
+                                    
+                                </li>
+
+                                <!-- Nav Item - Messages -->
+                                <li class="nav-item dropdown no-arrow mx-1">
+                                    <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-envelope fa-fw"></i>
+                                        <!-- Counter - Messages -->
+                                        <span class="badge badge-danger badge-counter">7</span>
+                                    </a>
+                                    <!-- Dropdown - Messages -->
+                                    
+                                </li>
+
+
+                                <!-- Nav Item - User Information -->
+                                <li class="nav-item dropdown no-arrow">
+                                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Phạm Văn A</span>
+                                        <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                    </a>
+                                    <!-- Dropdown - User Information -->
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Profile
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Settings
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Activity Log
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Logout
+                                        </a>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </nav>
+                        <div class="content-body">
+
+                            <div class="board">
+                                <div class="title-body">Hoạt động Hợp tác Phát triển</div>
+                                <h3>&nbsp; &nbsp; &nbsp; &nbsp;Kể từ khi thành lập Trường đến nay, hoạt động hợp tác trong nước và quốc tế của Trường Đại học Công nghệ – Đại học Quốc gia Hà Nội (ĐHQGHN)&nbsp; đã góp phần khẳng định uy tín và vị thế là một trường đại học hàng đầu về lĩnh vực công nghệ trong cả nước.</h3>
+                                <h3>&nbsp; &nbsp; &nbsp; &nbsp;Là một trường thành viên của ĐHQGHN, với sứ mệnh đào tạo nguồn nhân lực chất lượng cao, trình độ cao, bồi dưỡng nhân tài; nghiên cứu phát triển và ứng dụng các lĩnh vực khoa học – công nghệ tiên tiến; tiên phong tiếp cận chuẩn mực giáo dục đại học khu vực và thế giới, đóng góp tích cực vào sự phát triển nền kinh tế và xã hội tri thức của đất nước. Lãnh đạo Nhà trường luôn khẳng định hợp tác trong nước và quốc tế là yếu tố chính tạo nên sự bứt phá trong việc phát triển các nguồn lực, đẩy nhanh quá trình chuyển giao các nghiên cứu và công nghệ mới đến xã hội, nâng cao chất lượng đào tạo và đáp ứng nhu cầu doanh nghiệp.</h3>
+
+                                <h3>&nbsp; &nbsp; &nbsp; &nbsp;Trong &nbsp;nhiều năm qua, để góp phần nâng cao vị thế, uy tín, năng lực giảng dạy, chất lượng đào tạo và nghiên cứu &nbsp;khoa học, Trường đã tích cực mở rộng quan hệ hợp tác với các viện, trường, doanh nghiệp uy tín trong và ngoài nước.</h3>
+                                <h3>&nbsp; &nbsp; &nbsp; &nbsp;Việc hợp tác với các trường, viện nghiên cứu lớn trên thế giới mở ra các chương trình đào tạo, hỗ trợ phát triển nguồn nhân lực quản lý chất lượng cao: Đại học Bang Arizona, Mỹ với dự án BUIL-IT; Đại học Công nghệ Sydney, Úc với &nbsp;Trung tâm Hợp tác nghiên cứu giữa VNU-UTS, chương trình học bổng toàn phần cho nghiên cứu sinh đạt trình độ quốc tế; Chương trình đào tạo IT định hướng thị trường Nhật Bản; Viện nghiên cứu Viettel với chương trình Cử nhân Hàng không Vũ trụ…</h3>
+
+
+                                <h3>&nbsp; &nbsp; &nbsp; Các hợp tác doanh nghiệp như Tập đoàn Samsung Việt Nam, Tập đoàn Viettel, Tập đoàn FPT, Toshiba, VNPT Technology…. đã đem lại những nguồn lực hiệu quả như: Các phòng thực hành đạt tiêu chuẩn, phòng nghiên cứu hợp tác về IoT, thiết kế vi mạch, hệ thống nhúng…</h3>
+                                <h3>&nbsp; &nbsp; &nbsp; &nbsp;Sự phát triển không ngừng về đội ngũ và trình độ của Nhà trường, cùng với hợp tác từ doanh nghiệp, trường, viện nghiên cứu trong và ngoài nước, đồng thời với sự tin tưởng giao nhiệm vụ của ĐHQGHN đã tạo điều kiện tốt cho sinh viên được tiếp cận học tập, thực hành với các trang thiết bị tiên tiến phù hợp với thực tiễn làm việc tại doanh nghiệp.</h3>
+
+                                <h3>&nbsp; &nbsp; &nbsp; Với những nỗ lực đó, Nhà trường đã ký kết hợp tác với 40 đối tác trong nước, khoảng 60 đối tác ngoài nước. Trong đó, hầu hết các đối tác là các viện, trường, doanh nghiệp uy tín toàn cầu.</h3>
+                                <h3>&nbsp; &nbsp; &nbsp; &nbsp;Mỗi năm Nhà trường có hàng chục lượt giáo sư từ các trường danh tiếng đến trao đổi học thuật và giảng dạy. Cử nhiều cán bộ đi học tập, trau dồi kiến thức và kỹ năng tại các đơn vị đối tác chiến lược uy tín trong lĩnh vực ICT. Nhà trường cũng tổ chức nhiều đợt trao đổi sinh viên với các trường đối tác trong và ngoài nước giúp nâng cao kỹ năng và trình độ chuyên môn.</h3>
+                            </div>
+
+                        </div>
+                    </div>
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
+                </div>
+
+            </nav>
+
+        </div>
+        <!-- Dark Overlay element -->
+        <div class="overlay"></div>
+    </div>
+
+
+
+    <script src="../JS/Lib/jquery-3.5.0.min.js"></script>
+    <script src="../JS/pages/Common.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="../JS/pages/Sidebar.js"></script>
+</body>
+</html>
