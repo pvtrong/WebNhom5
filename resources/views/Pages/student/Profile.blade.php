@@ -1,4 +1,4 @@
-@extends('Pages.layout.index')
+@extends('Pages.Student.MenuSelect')
 @section('content')
 
 <div class="container">

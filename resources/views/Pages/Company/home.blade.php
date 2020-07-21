@@ -1,4 +1,4 @@
-@extends('Pages.layout.index')
+@extends('Pages.Company.MenuSelect')
 @section('content')
 <div class="board">
     <div class="title-body">Hoạt động Hợp tác Phát triển</div>
