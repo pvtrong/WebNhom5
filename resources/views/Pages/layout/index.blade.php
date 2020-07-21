@@ -19,7 +19,7 @@
     <!--Menu area-->
     <div class="wrapper">
         <!-- Sidebar -->
-        @include('Pages.layout.menu');
+        @include('Pages.layout.menu')
 
         <!-- Page Content -->
         <div id="content">
@@ -31,7 +31,7 @@
                         @include('Pages.layout.header')
                         <div class="content-body">
 
-                            @yield('content');
+                            @yield('content')
 
                         </div>
                     </div>

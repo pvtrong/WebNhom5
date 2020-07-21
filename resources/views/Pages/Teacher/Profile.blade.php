@@ -72,6 +72,10 @@
                         <textarea class="form-control" rows="5" id="txtTopic"></textarea>
                         <label for="numbers">Số lượng</label>
                         <input type="number" class="form-control" name="numbers" value="" id="txtNumbers" />
+                        <label for="studentBirth">Ngày bắt đầu đợt tuyển</label>
+                        <input type="date" class="form-control"  id="txtStartDayOffer">
+                        <label for="studentBirth">Ngày kết thúc đợt tuyển</label>
+                        <input type="date" class="form-control" placeholder="" id="txtEndDayOffer">
                     </form>
                 </div>
             </div>
