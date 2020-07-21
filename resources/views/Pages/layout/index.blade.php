@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Demo</title>
+    <base href="{{asset('')}}">
     <link href="asset/CSS/Common/Common.css" rel="stylesheet" />
     <link href="asset/CSS/Lib/jquery-ui.min.css" rel="stylesheet" />
     <!-- Bootstrap CSS CDN -->

@@ -1,9 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\routes"
+    "\\public",
+    "\\public\\asset",
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\Pages",
+    "\\resources\\views\\Pages\\Company",
+    "\\resources\\views\\Pages\\layout",
+    "\\resources\\views\\Pages\\student",
+    "\\resources\\views\\Pages\\Teacher"
   ],
-  "SelectedNode": "\\.env.example",
   "PreviewInSolutionExplorer": false
 }
