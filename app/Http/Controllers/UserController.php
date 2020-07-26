@@ -34,10 +34,9 @@ class UserController extends Controller
     }
 
     public function post_registration(Request $request){
-        // dd($request->all());
         $request->merge(['password'=>bcrypt($request->password)]);
         if(User::create($request->all())){
-			return 'true';
+			return redirect()->route('login');
 		}else{
 			return 'false';
 		}

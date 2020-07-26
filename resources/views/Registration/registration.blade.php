@@ -34,9 +34,9 @@
                         <div class="form-group">
                             <label for="Category">Loại tài khoản</label>
                             <select class="form-control" name="category" id="txtCategory">Loại tài khoản
-								<option name="category"  value="1">Sinh viên</option>
+								<option name="category"  value="3">Sinh viên</option>
 								<option name="category"  value="2">Nhà trường</option>
-								<option name="category"  value="3">Công ty</option>
+								<option name="category"  value="1">Công ty</option>
 							</select>
                         </div>
                         <div>
