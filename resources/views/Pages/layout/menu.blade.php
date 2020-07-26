@@ -1,3 +1,10 @@
+
+@extends('Pages.layout.index')
+@section('menu')
+
+
+
+
 <nav id="sidebar">
 
     <div class="menu">
@@ -35,7 +42,7 @@
                 <div class="menu-item-text">Nhà Trường</div>
             </a>
             <?php } elseif(Auth::user()->category == '1'){ ?>
-            <a class="menu-item" href="./Pages/Student/DS2">
+            <a class="menu-item" href="./Pages/Company/DS2">
                 <div class="menu-item-icon icon-teacher"></div>
                 <div class="menu-item-text">Nhà Trường</div>
             </a>
@@ -45,11 +52,11 @@
             </a>
             <?php } elseif(Auth::user()->category == '2'){ ?>
 
-            <a class="menu-item" href="./Pages/Student/DS1">
+            <a class="menu-item" href="./Pages/Teacher/DS1">
             <div class="icon-more icon-company"></div>
             <div class="menu-item-text">Công Ty</div>
             </a>
-            <a class="menu-item" href="./Pages/Company/DS1">
+            <a class="menu-item" href="./Pages/Teacher/DS1">
             <div class="menu-item-icon icon-profile"></div>
             <div class="menu-item-text">Sinh viên</div>
             </a>
@@ -65,3 +72,4 @@
         </div>
     </div>
 </nav>
+@endsection

@@ -19,7 +19,7 @@
     <!--Menu area-->
     <div class="wrapper">
         <!-- Sidebar -->
-        @include('Pages.layout.menu')
+        @yield('menu')
 
         <!-- Page Content -->
         <div id="content">

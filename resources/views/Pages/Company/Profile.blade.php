@@ -1,5 +1,10 @@
-@extends('Pages.Company.MenuSelect')
+
+@extends('Pages.layout.menu')
 @section('content')
+
+
+
+
 <div class="container">
     <button type="submit" class="btn btn-primary">Ghi nhận</button>
     <div class="row">

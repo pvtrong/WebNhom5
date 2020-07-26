@@ -1,5 +1,8 @@
-@extends('Pages.Teacher.MenuSelect')
+
+@extends('Pages.layout.menu')
 @section('content')
+
+
 <div class="board">
     <div class="title-body">Hoạt động Hợp tác Phát triển</div>
     <h3>&nbsp; &nbsp; &nbsp; &nbsp;Kể từ khi thành lập Trường đến nay, hoạt động hợp tác trong nước và quốc tế của Trường Đại học Công nghệ – Đại học Quốc gia Hà Nội (ĐHQGHN)&nbsp; đã góp phần khẳng định uy tín và vị thế là một trường đại học hàng đầu về lĩnh vực công nghệ trong cả nước.</h3>

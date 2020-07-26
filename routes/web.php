@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('test',function(){
-    return view('Pages.layout.index');
-});
 
 Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
     Route::group(['prefix'=>'Student'], function(){
