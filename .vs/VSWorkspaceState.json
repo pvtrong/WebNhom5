@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+    "\\database",
     "\\public",
     "\\public\\asset",
     "\\resources",
@@ -8,7 +9,9 @@
     "\\resources\\views\\Pages",
     "\\resources\\views\\Pages\\Company",
     "\\resources\\views\\Pages\\layout",
+    "\\resources\\views\\Pages\\Student",
     "\\resources\\views\\Pages\\Teacher"
   ],
+  "SelectedNode": "\\public\\web.config",
   "PreviewInSolutionExplorer": false
 }
