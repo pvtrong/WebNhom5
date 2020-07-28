@@ -3,12 +3,16 @@
     "",
     "\\public",
     "\\public\\asset",
+    "\\public\\asset\\CSS",
+    "\\public\\asset\\CSS\\Common",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\Pages",
-    "\\resources\\views\\Pages\\Company",
     "\\resources\\views\\Pages\\layout",
-    "\\resources\\views\\Pages\\Teacher"
+    "\\resources\\views\\Pages\\Teacher",
+    "\\resources\\views\\Registration",
+    "\\routes"
   ],
+  "SelectedNode": "\\resources\\views\\Pages\\layout\\menu.blade.php",
   "PreviewInSolutionExplorer": false
 }
