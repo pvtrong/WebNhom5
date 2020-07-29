@@ -19,9 +19,6 @@ class AdminController extends Controller
     }
 
     public function post_Login_admin(Request $request){
-        // dd($request->all());
-        Auth::logout();
-        dd(Auth::guard('adm'));
  		if(Auth::guard('adm')->attempt($request->only('email','password'))){
                 return redirect()->route('admin-home')->with('success','chào mừng quay trở lại');
 		} else {
