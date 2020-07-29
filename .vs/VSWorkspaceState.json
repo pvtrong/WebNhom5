@@ -1,18 +1,18 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
-    "\\public\\asset",
-    "\\public\\asset\\CSS",
-    "\\public\\asset\\CSS\\Common",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\resources",
     "\\resources\\views",
+    "\\resources\\views\\Login",
     "\\resources\\views\\Pages",
+    "\\resources\\views\\Pages\\Company",
     "\\resources\\views\\Pages\\layout",
-    "\\resources\\views\\Pages\\Teacher",
-    "\\resources\\views\\Registration",
-    "\\routes"
+    "\\resources\\views\\Pages\\Student",
+    "\\resources\\views\\Registration"
   ],
-  "SelectedNode": "\\resources\\views\\Pages\\layout\\menu.blade.php",
+  "SelectedNode": "\\resources\\views\\Pages\\Company\\DS1.blade.php",
   "PreviewInSolutionExplorer": false
 }
