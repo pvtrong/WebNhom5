@@ -129,10 +129,9 @@ body {
     .content .content-body {
         background-color: #808080;
         width: 100%;
-        height: calc(100% - 10px);
+        height: calc(100% - 94px);
         background-color: #e5e6eb;
         box-sizing: content-box;
-        margin-top: 20px;
         overflow: auto;
     }
 
@@ -286,12 +285,4 @@ body {
     display: flex;
     align-items: center;
     padding: 0 .75rem;
-}
-
-.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow {
-    margin-bottom: 0px !important;
-    height: 76px;
-}
-.card-body{
-    padding: 10px !important;
 }
