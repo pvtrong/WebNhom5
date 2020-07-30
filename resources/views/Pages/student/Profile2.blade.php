@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-<form class="" method="POST" action="./Pages/Student/updateProfile">
+<form class="" method="POST" action="./Pages/Student/updateProfile/{{Auth::user()->id}}">
     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
     <button type="submit" class="btn btn-primary" >Ghi nhận</button>
     
@@ -32,9 +32,9 @@
 
                             <label for="studentGender"> Giới tính:</label>
                             <p></p>
-                            <input  name="gender" id="txtStudentGender" checked value="Male" type="radio" class="form-check-inline" name="gender">Nam
-                            <input  name="gender" id="txtStudentGender" value="Female" type="radio" class="form-check-inline" name="gender">Nữ
-                            <input name="gender" id="txtStudentGender" value="Other" type="radio" class="form-check-inline" name="gender">Other
+                            <input  name="gender" id="txtStudentGender" checked value="Nam" type="radio" class="form-check-inline" name="gender">Nam
+                            <input  name="gender" id="txtStudentGender" value="Nữ" type="radio" class="form-check-inline" name="gender">Nữ
+                            <input name="gender" id="txtStudentGender" value="Khác" type="radio" class="form-check-inline" name="gender">Other
 
 
 

@@ -38,12 +38,72 @@ class StudentController extends Controller
     public function getSetting(){
         return view('Pages.Student.Setting');
     }
-    public function postUpdate(Request $request){
-        $student = new student;
-        $student -> studentCode = $request->studentCode;
-        $student ->id =$request ->id;
-        $student->save();
+    public function postUpdate(Request $request, $id){
+        $student = student::find($id);
+        
+        if($student == null){
+            $student2 = new student;
+            $student2 ->id =$request ->id;
+            $student2 -> studentCode = $request->studentCode;
+            $student2 -> birth = $request->birth;
+            $student2 -> gender = $request->gender;
+            $student2 -> studentCode = $request->studentCode;
+            $student2 -> mobile = $request->mobile;
+            $student2 -> department = $request->department;
+            $student2 -> major = $request->major;
+            $student2 -> level = $request->level;
+            $student2 -> trainingSystem= $request->trainingSystem;
+            $student2 -> trainingProgram = $request->trainingProgram;
+            $student2 -> gpa = $request->gpa;
+            $student2 -> forte = $request->forte;
+            $student2 -> skill = $request->skill;
+            $student2 -> favourite = $request->favourite;
+            $student2 -> nation = $request->nation;
+            $student2 -> district = $request->district;
+            $student2 -> commune = $request->commune;
+            $student2 -> street = $request->street;
+            $student2 -> homeNumber = $request->homeNumber;
+            $student2 -> prize = $request->prize;
+            $student2 -> numberCMT = $request->numberCMT;
+            $student2 -> created_at = $request->created_at;
+            $student2 -> updated_at = $request->updated_at;
+            $student2 -> yearOfCourse = $request->yearOfCourse;
+            
+            $student->save();
+            return view('Pages.Student.Profile',['student'=>$student2]);
+        }
+        
+        
+        else {
+            $student -> studentCode = $request->studentCode;
+            $student -> birth = $request->birth;
+            $student -> gender = $request->gender;
+            $student -> studentCode = $request->studentCode;
+            $student -> mobile = $request->mobile;
+            $student -> department = $request->department;
+            $student -> major = $request->major;
+            $student -> level = $request->level;
+            $student -> trainingSystem= $request->trainingSystem;
+            $student -> trainingProgram = $request->trainingProgram;
+            $student -> gpa = $request->gpa;
+            $student -> forte = $request->forte;
+            $student -> skill = $request->skill;
+            $student -> favourite = $request->favourite;
+            $student -> nation = $request->nation;
+            $student -> district = $request->district;
+            $student -> commune = $request->commune;
+            $student -> street = $request->street;
+            $student -> homeNumber = $request->homeNumber;
+            $student -> prize = $request->prize;
+            $student -> numberCMT = $request->numberCMT;
+            $student -> created_at = $request->created_at;
+            $student -> updated_at = $request->updated_at;
+            $student -> yearOfCourse = $request->yearOfCourse;
+            $student->save();
+            return view('Pages.Student.Profile',['student'=>$student]);
+        }
+        
 
     }
-
+    
 }
