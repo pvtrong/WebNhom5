@@ -21,18 +21,19 @@
                         <input type="file" class="form-control-file border">
                     </div>
                     <div class="col-md-6 mb-3 info-individual">
+                            <input  type="hidden" name="id" value="{{Auth::user()->id}}" class="form-control" >
                             <label for="teachertName">Tên công ty/doanh nghiệp</label>
-                            <input name="name" value="{{Auth::user()->name}}"  readonly  type="text" class="form-control" placeholder="" id="txtCompanyName">
+                            <input name="name" value="{{Auth::user()->name}}" readonly  type="text" class="form-control" placeholder="" id="txtCompanyName">
                             <label for="address">Địa chỉ</label>
-                            <textarea name="address"  id="txtAddress"  class="form-control" rows="5"> <?php echo $company->address?></textarea>
+                            <textarea name="address"  id="txtAddress" placeholder="Địa chỉ..." class="form-control" rows="5"></textarea>
                             <label for="emailOther">Địa chỉ email</label>
                             <input  name="email" value="{{Auth::user()->email}}" readonly type="email" class="form-control" placeholder="" id="txtEmailOther">
                             <label for="mobile">Số điện thoại</label>
-                            <input  name="mobile" value="{{$company->mobile}}" type="tel" class="form-control" placeholder="" id="txtMobile">
+                            <input  name="mobile"  type="tel" class="form-control" placeholder="" id="txtMobile">
                             <label for="fax">Số Fax</label>
-                            <input  name="fax" value="{{$company->fax}}" type="tel" class="form-control" placeholder="" id="txtFax">
+                            <input  name="fax" type="tel" class="form-control" placeholder="" id="txtFax">
                             <label for="yearEstablish">Số năm thành lập</label>
-                            <input  name="yearEstablish" value="{{$company->yearEstablish}}" type="number" class="form-control" placeholder="" id="txtYearEstablish">
+                            <input  name="yearEstablish" value="" type="number" class="form-control" placeholder="" id="txtYearEstablish">
                         </form>
                     </div>
                 </div>
@@ -45,17 +46,17 @@
                 </div>
                 <div class="card-body">
                         <label for="offer">Yêu cầu/Tiêu chí</label>
-                        <textarea  name="offer" value="{{$company->offer}}"class="form-control" rows="5" id="txtOffer"></textarea>
+                        <textarea  name="offer"  class="form-control" rows="5" id="txtOffer"></textarea>
                         <label for="numbers">Số lượng</label>
-                        <input  name="numbers" value="{{$company->numbers}}"type="number" class="form-control" name="numbers" value="" id="txtNumbers" />
+                        <input  name="numbers"  type="number" class="form-control" name="numbers" value="" id="txtNumbers" />
                         <label for="salary">Lương</label>
-                        <input  name="salary" value="{{$company->salary}}"type="text" class="form-control" placeholder="" id="txtSalary">
+                        <input  name="salary" type="text" class="form-control" placeholder="" id="txtSalary">
                         <label for="bonus">Đãi ngộ</label>
-                        <textarea  name="bonus" value="{{$company->bonus}}"class="form-control" rows="5" id="txtBonus"></textarea>
+                        <textarea  name="bonus"  class="form-control" rows="5" id="txtBonus"></textarea>
                         <label for="startDayOffer">Ngày bắt đầu đợt tuyển</label>
-                        <input  name="startDayOffer" value="{{$company->startDayOffer}}"type="date" class="form-control"  id="txtStartDayOffer">
+                        <input  name="startDayOffer" type="date" class="form-control"  id="txtStartDayOffer">
                         <label for="endDayOffer">Ngày kết thúc đợt tuyển</label>
-                        <input  name="endDayOffer" value="{{$company->endDayOffer}}"type="date" class="form-control" placeholder="" id="txtEndDayOffer">
+                        <input  name="endDayOffer"  type="date" class="form-control" placeholder="" id="txtEndDayOffer">
                     </form>
                 </div>
             </div>

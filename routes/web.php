@@ -42,8 +42,9 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('DS1', 'CompanyController@getDS1');
         Route::get('DS2', 'CompanyController@getDS2');
         Route::get('Help', 'CompanyController@getHelp');
-        Route::get('Profile', 'CompanyController@getProfile');
+        Route::get('Profile/{id}', 'CompanyController@getProfile');
         Route::get('Setting', 'CompanyController@getSetting');
+        Route::post('updateProfile/{id}', 'CompanyController@postUpdate');
     });
 });
 Route::get('login', 'UserController@Login')->name('login');

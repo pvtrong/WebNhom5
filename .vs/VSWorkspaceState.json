@@ -6,8 +6,9 @@
     "\\app\\Http\\Controllers",
     "\\resources",
     "\\resources\\views",
+    "\\resources\\views\\Admin",
+    "\\resources\\views\\layout",
     "\\resources\\views\\Pages",
-    "\\resources\\views\\Pages\\layout",
     "\\resources\\views\\Pages\\Student",
     "\\routes"
   ],
