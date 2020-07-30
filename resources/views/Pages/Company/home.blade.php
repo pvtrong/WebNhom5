@@ -1,5 +1,11 @@
-@extends('Pages.Company.MenuSelect')
+
+
+@extends('Pages.layout.menu')
 @section('content')
+
+
+
+
 <div class="board">
     <div class="title-body">Hoạt động Hợp tác Phát triển</div>
     <h3>&nbsp; &nbsp; &nbsp; &nbsp;Kể từ khi thành lập Trường đến nay, hoạt động hợp tác trong nước và quốc tế của Trường Đại học Công nghệ – Đại học Quốc gia Hà Nội (ĐHQGHN)&nbsp; đã góp phần khẳng định uy tín và vị thế là một trường đại học hàng đầu về lĩnh vực công nghệ trong cả nước.</h3>
@@ -15,5 +21,6 @@
     <h3>&nbsp; &nbsp; &nbsp; Với những nỗ lực đó, Nhà trường đã ký kết hợp tác với 40 đối tác trong nước, khoảng 60 đối tác ngoài nước. Trong đó, hầu hết các đối tác là các viện, trường, doanh nghiệp uy tín toàn cầu.</h3>
     <h3>&nbsp; &nbsp; &nbsp; &nbsp;Mỗi năm Nhà trường có hàng chục lượt giáo sư từ các trường danh tiếng đến trao đổi học thuật và giảng dạy. Cử nhiều cán bộ đi học tập, trau dồi kiến thức và kỹ năng tại các đơn vị đối tác chiến lược uy tín trong lĩnh vực ICT. Nhà trường cũng tổ chức nhiều đợt trao đổi sinh viên với các trường đối tác trong và ngoài nước giúp nâng cao kỹ năng và trình độ chuyên môn.</h3>
 </div>
+
 
 @endsection

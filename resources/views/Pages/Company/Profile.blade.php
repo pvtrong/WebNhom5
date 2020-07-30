@@ -1,7 +1,14 @@
-@extends('Pages.Company.MenuSelect')
+
+@extends('Pages.layout.menu')
 @section('content')
+
+
+
+
 <div class="container">
-    <button type="submit" class="btn btn-primary">Ghi nhận</button>
+    <form class="" method="POST" action="./Pages/Company/updateProfile/{{Auth::user()->id}}">
+    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+    <button type="submit" class="btn btn-primary" >Ghi nhận</button>
     <div class="row">
         <div class="col-md-6">
             <div class="card shadow mb-4">
@@ -14,19 +21,18 @@
                         <input type="file" class="form-control-file border">
                     </div>
                     <div class="col-md-6 mb-3 info-individual">
-                        <form class="" action="/action_page.php">
                             <label for="teachertName">Tên công ty/doanh nghiệp</label>
-                            <input type="text" class="form-control" placeholder="" id="txtTeacherName">
+                            <input name="name" value="{{Auth::user()->name}}"  readonly  type="text" class="form-control" placeholder="" id="txtCompanyName">
                             <label for="address">Địa chỉ</label>
-                            <textarea  id="txtAddress" placeholder="Địa chỉ..." class="form-control" rows="5"></textarea>
+                            <textarea name="address"  id="txtAddress"  class="form-control" rows="5"> <?php echo $company->address?></textarea>
                             <label for="emailOther">Địa chỉ email</label>
-                            <input type="email" class="form-control" placeholder="" id="txtEmailOther">
+                            <input  name="email" value="{{Auth::user()->email}}" readonly type="email" class="form-control" placeholder="" id="txtEmailOther">
                             <label for="mobile">Số điện thoại</label>
-                            <input type="tel" class="form-control" placeholder="" id="txtMobile">
+                            <input  name="mobile" value="{{$company->mobile}}" type="tel" class="form-control" placeholder="" id="txtMobile">
                             <label for="fax">Số Fax</label>
-                            <input type="tel" class="form-control" placeholder="" id="txtFax">
+                            <input  name="fax" value="{{$company->fax}}" type="tel" class="form-control" placeholder="" id="txtFax">
                             <label for="yearEstablish">Số năm thành lập</label>
-                            <input type="number" class="form-control" placeholder="" id="txtYearEstablish">
+                            <input  name="yearEstablish" value="{{$company->yearEstablish}}" type="number" class="form-control" placeholder="" id="txtYearEstablish">
                         </form>
                     </div>
                 </div>
@@ -38,19 +44,18 @@
                     <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Chi tiết thông tin tuyển</h6>
                 </div>
                 <div class="card-body">
-                    <form class="" action="/action_page.php">
                         <label for="offer">Yêu cầu/Tiêu chí</label>
-                        <textarea class="form-control" rows="5" id="txtOffer"></textarea>
+                        <textarea  name="offer" value="{{$company->offer}}"class="form-control" rows="5" id="txtOffer"></textarea>
                         <label for="numbers">Số lượng</label>
-                        <input type="number" class="form-control" name="numbers" value="" id="txtNumbers" />
+                        <input  name="numbers" value="{{$company->numbers}}"type="number" class="form-control" name="numbers" value="" id="txtNumbers" />
                         <label for="salary">Lương</label>
-                        <input type="text" class="form-control" placeholder="" id="txtSalary">
+                        <input  name="salary" value="{{$company->salary}}"type="text" class="form-control" placeholder="" id="txtSalary">
                         <label for="bonus">Đãi ngộ</label>
-                        <textarea class="form-control" rows="5" id="txtBonus"></textarea>
-                        <label for="studentBirth">Ngày bắt đầu đợt tuyển</label>
-                        <input type="date" class="form-control"  id="txtStartDayOffer">
-                        <label for="studentBirth">Ngày kết thúc đợt tuyển</label>
-                        <input type="date" class="form-control" placeholder="" id="txtEndDayOffer">
+                        <textarea  name="bonus" value="{{$company->bonus}}"class="form-control" rows="5" id="txtBonus"></textarea>
+                        <label for="startDayOffer">Ngày bắt đầu đợt tuyển</label>
+                        <input  name="startDayOffer" value="{{$company->startDayOffer}}"type="date" class="form-control"  id="txtStartDayOffer">
+                        <label for="endDayOffer">Ngày kết thúc đợt tuyển</label>
+                        <input  name="endDayOffer" value="{{$company->endDayOffer}}"type="date" class="form-control" placeholder="" id="txtEndDayOffer">
                     </form>
                 </div>
             </div>

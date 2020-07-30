@@ -1,4 +1,4 @@
-@extends('Pages.Teacher.MenuSelect')
+@extends('@extends('Pages.layout.menu')
 @section('content')
 
 
