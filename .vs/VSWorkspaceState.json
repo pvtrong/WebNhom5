@@ -6,12 +6,10 @@
     "\\app\\Http\\Controllers",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\Login",
     "\\resources\\views\\Pages",
     "\\resources\\views\\Pages\\Company",
-    "\\resources\\views\\Pages\\layout",
-    "\\resources\\views\\Pages\\Student",
-    "\\resources\\views\\Registration"
+    "\\routes",
+    "\\storage"
   ],
   "SelectedNode": "\\resources\\views\\Pages\\Company\\DS1.blade.php",
   "PreviewInSolutionExplorer": false

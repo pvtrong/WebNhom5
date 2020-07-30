@@ -8,5 +8,5 @@ class student extends Model
 {
     //
 
-    protected $table = "student";
+    protected $table = "students";
 }

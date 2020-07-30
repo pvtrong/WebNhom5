@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\student;
 
+use App\teacher;
 class CompanyController extends Controller
 {
     //
@@ -14,7 +16,8 @@ class CompanyController extends Controller
         return view('Pages.Company.Blog');
     }
     public function getDS1(){
-        return view('Pages.Company.DS1');
+        $student = student::all();
+        return view('Pages.Company.DS1', ['student'=>$student]);
     }
     public function getDS2(){
         return view('Pages.Company.DS2');

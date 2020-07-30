@@ -9,7 +9,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Danh sách công ty/doanh nghiệp tuyển dụng</h1>
+    <h1 class="h3 mb-2 text-gray-800">Danh sách sinh viên tìm việc làm</h1>
 
 
     <!-- DataTales Example -->
@@ -48,71 +48,38 @@
                             <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                                 <thead>
                                     <tr role="row">
-                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 58px;">Tên công ty</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important">Yêu cầu/Tiêu chí</th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 58px;">Mã số sinh viên</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important">Tên sinh viên</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 3em !important;">Địa chỉ</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 2em !important;">Liên hệ</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important;">Mức lương</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important;">Số lượng</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important;">Đãi ngộ</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 2em !important;">Số điện thoại</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important;">Email</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important;">Sở trường</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important;">Ngành</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th rowspan="1" colspan="1">Tên công ty</th>
-                                        <th rowspan="1" colspan="1">Yêu cầu/Tiêu chí</th>
+                                        <th rowspan="1" colspan="1">Mã số sinh viên</th>
+                                        <th rowspan="1" colspan="1">Tên sinh viên</th>
                                         <th rowspan="1" colspan="1">Địa chỉ</th>
-                                        <th rowspan="1" colspan="1">Liên hệ</th>
-                                        <th rowspan="1" colspan="1">Mức lương</th>
-                                        <th rowspan="1" colspan="1">Số lượng</th>
-                                        <th rowspan="1" colspan="1">Đãi ngộ</th>
+                                        <th rowspan="1" colspan="1">Điện thoại</th>
+                                        <th rowspan="1" colspan="1">Email</th>
+                                        <th rowspan="1" colspan="1">Sở trường</th>
+                                        <th rowspan="1" colspan="1">Ngành</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr role="row" class="even">
-                                        <td class="sorting_1">FPT SOFT</td>
-                                        <td>Fullstack</td>
-                                        <td>1 Đường Cầu Diễn</td>
-                                        <td>0843423234</td>
-                                        <td>upto 20 triệu đồng/tháng</td>
-                                        <td>5</td>
-                                        <td>oke</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">FPT SOFT</td>
-                                        <td>Fullstack</td>
-                                        <td>1 Đường Cầu Diễn</td>
-                                        <td>0843423234</td>
-                                        <td>upto 20 triệu đồng/tháng</td>
-                                        <td>5</td>
-                                        <td>oke</td>
-                                    </tr>
-                                    <tr role="row" class="even">
-                                        <td class="sorting_1">FPT SOFT</td>
-                                        <td>Fullstack</td>
-                                        <td>1 Đường Cầu Diễn</td>
-                                        <td>0843423234</td>
-                                        <td>upto 20 triệu đồng/tháng</td>
-                                        <td>5</td>
-                                        <td>oke</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">FPT SOFT</td>
-                                        <td>Fullstack</td>
-                                        <td>1 Đường Cầu Diễn</td>
-                                        <td>0843423234</td>
-                                        <td>upto 20 triệu đồng/tháng</td>
-                                        <td>5</td>
-                                        <td>oke</td>
-                                    </tr>
-                                    <tr role="row" class="even">
-                                        <td class="sorting_1">FPT SOFT</td>
-                                        <td>Fullstack</td>
-                                        <td>1 Đường Cầu Diễn</td>
-                                        <td>0843423234</td>
-                                        <td>upto 20 triệu đồng/tháng</td>
-                                        <td>5</td>
-                                        <td>oke</td>
+                                    @foreach($student as $stu)
+                                        <tr role="row" class="even">
+                                            <td class="sorting_1">{{$stu->studentCode}}</td>
+                                            <td>{{$stu->mobile}}</td>
+                                            <td>1 Đường Cầu Diễn</td>
+                                            <td>0843423234</td>
+                                            <td>upto 20 triệu đồng/tháng</td>
+                                            <td>5</td>
+                                            <td>oke</td>
+                                        </tr>
+                                    @endforeach
                                     </tr>
                                 </tbody>
                             </table>
