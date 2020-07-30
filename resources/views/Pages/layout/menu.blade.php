@@ -24,7 +24,7 @@
                 <span class="menu-item-icon icon-board"></span>
                 <span class="menu-item-text">Tổng quan</span>
             </a>
-            <a class="menu-item" href="./Pages/Student/Profile">
+            <a class="menu-item" href="./Pages/Student/Profile/{{Auth::user()->id}}">
                 <div class="menu-item-icon icon-profile"></div>
                 <div class="menu-item-text">Hồ Sơ</div>
             </a>

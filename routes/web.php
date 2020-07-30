@@ -23,8 +23,9 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('DS1', 'StudentController@getDS1');
         Route::get('DS2', 'StudentController@getDS2');
         Route::get('Help', 'StudentController@getHelp');
-        Route::get('Profile', 'StudentController@getProfile');
+        Route::get('Profile/{id}', 'StudentController@getProfile');
         Route::get('Setting', 'StudentController@getSetting');
+        Route::post('updateProfile', 'StudentController@postUpdate');
     });
     Route::group(['prefix'=>'Teacher'], function(){
         Route::get('Home', 'TeacherController@getHome')->name('teacher-home');

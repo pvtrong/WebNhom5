@@ -21,7 +21,7 @@
                         
                             <input name="id" value="{{Auth::user()->id}}"/>
                             <label for="studentCode">Mã sinh viên</label>
-                            <input name="studentCode" type="text" value="{{$student->studentCode}}" class="form-control" placeholder="" id="txtStudentCode">
+                            <input name="studentCode" type="text" value="" class="form-control" placeholder="" id="txtStudentCode">
                             <label for="studentName">Tên sinh viên</label>
                             <input name="name"  type="text" readonly value="{{Auth::user()->name}}" class="form-control" placeholder="" id="txtStudentName">
 

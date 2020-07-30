@@ -40,7 +40,8 @@
                     <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Thông tin cơ bản</h6>
                 </div>
                 <div class="card-body">
-                    <form class="" action="/action_page.php">
+                    <form class="" method="post" action="/Pages/Student/updateProfile/{{}}">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                         <div class="form-group">
                             <label for="department">Khoa</label>
                             <select class="form-control" id="sel1">
