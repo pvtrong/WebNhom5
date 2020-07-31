@@ -6,7 +6,7 @@
 
 
 <div class="container">
-    <form class="" method="POST" action="./Pages/Company/updateProfile/{{Auth::user()->id}}">
+    <form class="" method="POST" action="./Pages/Company/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
     <button type="submit" class="btn btn-primary" >Ghi nhận</button>
     <div class="row">
@@ -17,6 +17,7 @@
                 </div>
                 <div class="card-body row">
                     <div class="col-md-6 mb-3 avatar-info">
+                    <br><p></p>
                         <div class="avatar-info-area" style="background-image: url('upload/company/{{$company->Hinh}}');" ></div>
                         <input type="file" name="Hinh" class="form-control-file border">
                     </div>
