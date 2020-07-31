@@ -83,7 +83,7 @@ class StudentController extends Controller
                 $file->move('upload/student', $Hinh);
                 $student2->Hinh = $Hinh;
             }else {
-                $student2-> Hinh = ''; 
+                
             }
             $student2->save();
             return view('Pages.Student.Profile',['student'=>$student2]);
@@ -129,7 +129,7 @@ class StudentController extends Controller
                 $file->move('upload/student', $Hinh);
                 $student->Hinh = $Hinh;
             }else {
-                $student-> Hinh = ''; 
+                
             }
             $student->save();
             return view('Pages.Student.Profile',['student'=>$student]);
