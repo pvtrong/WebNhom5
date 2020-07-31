@@ -17,8 +17,8 @@
                 </div>
                 <div class="card-body row">
                     <div class="col-md-6 mb-3 avatar-info">
-                        <div class="avatar-info-area"></div>
-                        <input type="file" class="form-control-file border">
+                        <div class="avatar-info-area" style="background-image: url('upload/company/{{$company->Hinh}}');" ></div>
+                        <input type="file" name="Hinh" class="form-control-file border">
                     </div>
                     <div class="col-md-6 mb-3 info-individual">
                             <label for="teachertName">Tên công ty/doanh nghiệp</label>

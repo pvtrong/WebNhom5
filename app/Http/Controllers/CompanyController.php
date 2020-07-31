@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\student;
 use App\teacher;
 use App\company;
@@ -53,8 +54,23 @@ class CompanyController extends Controller
             $company2 ->bonus =$request ->bonus;
             $company2 ->startDayOffer =$request ->startDayOffer;
             $company2 ->endDayOffer =$request ->endDayOffer;
-            
-            $company->save();
+            if($request->hasFile('Hinh')){
+                $file = $request ->file('Hinh');
+                $duoi = $file->getClientOriginalExtension();
+                if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+                
+                }
+                $name = $file-> getClientOriginalName();
+                $Hinh = Str::random(4).'_'. $name;
+                while(file_exists('upload/company'.$Hinh)){
+                    $Hinh = Str::random(4)."_". $name;
+                }
+                $file->move('upload/company', $Hinh);
+                $company2->Hinh = $Hinh;
+            }else {
+                $company2-> Hinh = ''; 
+            }
+            $company2->save();
             return view('Pages.Company.Profile',['company'=>$company2]);
         }
         
@@ -70,6 +86,22 @@ class CompanyController extends Controller
             $company ->bonus =$request ->bonus;
             $company ->startDayOffer =$request ->startDayOffer;
             $company ->endDayOffer =$request ->endDayOffer;
+            if($request->hasFile('Hinh')){
+                $file = $request ->file('Hinh');
+                $duoi = $file->getClientOriginalExtension();
+                if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+                
+                }
+                $name = $file-> getClientOriginalName();
+                $Hinh = Str::random(4).'_'. $name;
+                while(file_exists('upload/company'.$Hinh)){
+                    $Hinh = Str::random(4)."_". $name;
+                }
+                $file->move('upload/company', $Hinh);
+                $company->Hinh = $Hinh;
+            }else {
+                $company-> Hinh = ''; 
+            }
             $company->save();
             return view('Pages.Company.Profile',['company'=>$company]);
         }

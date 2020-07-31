@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\student;
 use App\teacher;
 use App\company;
@@ -68,8 +69,23 @@ class StudentController extends Controller
             $student2 -> created_at = $request->created_at;
             $student2 -> updated_at = $request->updated_at;
             $student2 -> yearOfCourse = $request->yearOfCourse;
-            
-            $student->save();
+            if($request->hasFile('Hinh')){
+                $file = $request ->file('Hinh');
+                $duoi = $file->getClientOriginalExtension();
+                if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+                
+                }
+                $name = $file-> getClientOriginalName();
+                $Hinh = Str::random(4).'_'. $name;
+                while(file_exists('upload/student'.$Hinh)){
+                    $Hinh = Str::random(4)."_". $name;
+                }
+                $file->move('upload/student', $Hinh);
+                $student2->Hinh = $Hinh;
+            }else {
+                $student2-> Hinh = ''; 
+            }
+            $student2->save();
             return view('Pages.Student.Profile',['student'=>$student2]);
         }
         
@@ -99,6 +115,22 @@ class StudentController extends Controller
             $student -> created_at = $request->created_at;
             $student -> updated_at = $request->updated_at;
             $student -> yearOfCourse = $request->yearOfCourse;
+            if($request->hasFile('Hinh')){
+                $file = $request ->file('Hinh');
+                $duoi = $file->getClientOriginalExtension();
+                if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+                
+                }
+                $name = $file-> getClientOriginalName();
+                $Hinh = Str::random(4).'_'. $name;
+                while(file_exists('upload/student'.$Hinh)){
+                    $Hinh = Str::random(4)."_". $name;
+                }
+                $file->move('upload/student', $Hinh);
+                $student->Hinh = $Hinh;
+            }else {
+                $student-> Hinh = ''; 
+            }
             $student->save();
             return view('Pages.Student.Profile',['student'=>$student]);
         }

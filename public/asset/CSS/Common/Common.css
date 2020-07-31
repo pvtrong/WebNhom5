@@ -1,4 +1,4 @@
-﻿
+
 body {
     margin: 0;
     font-family: sans-serif !important;
@@ -266,11 +266,12 @@ body {
     width: 100%;
 }
 .content-body .card-body .avatar-info-area {
-    width: 14em;
-    height: 20em;
+    width: 15em;
+    height: 18em;
     border: 1px solid #808080;
+    background-size: contain !important;
+    background-repeat: no-repeat;
 }
-
 .btn-primary {
     color: #fff;
     background-color: #026b97 !important;

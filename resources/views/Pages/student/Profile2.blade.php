@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-<form class="" method="POST" action="./Pages/Student/updateProfile/{{Auth::user()->id}}">
+<form class="" method="POST" action="./Pages/Student/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
     <button type="submit" class="btn btn-primary" >Ghi nhận</button>
     
@@ -14,12 +14,13 @@
                 </div>
                 <div class="card-body row">
                     <div class="col-md-6 mb-3 avatar-info">
-                        <div class="avatar-info-area"></div>
-                        <input type="file" class="form-control-file border">
+                        <div class="avatar-info-area" style="background-image: url('upload/student/{{$student->Hinh}}');"></div>
+                        <input type="file" name="Hinh" class="form-control-file border">
                     </div>
                     <div class="col-md-6 mb-3 info-individual">
-                        
-                            <input name="id" value="{{Auth::user()->id}}"/>
+                             <br>
+                             <p></p>
+                            <input name="id" type="hidden" value="{{Auth::user()->id}}">
                             <label for="studentCode">Mã sinh viên</label>
                             <input name="studentCode" type="text" value="" class="form-control" placeholder="" id="txtStudentCode">
                             <label for="studentName">Tên sinh viên</label>
