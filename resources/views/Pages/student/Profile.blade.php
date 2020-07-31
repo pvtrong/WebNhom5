@@ -145,13 +145,13 @@
                         <label for="GPA">GPA tích luỹ</label>
                         <input value="{{$student->gpa}}" name="gpa" type="text" class="form-control" placeholder="" id="txtGPA">
                         <label for="Prize">Khen thưởng/giải thưởng</label>
-                        <textarea name=""prize"  value="{{$student->prize}}" rows="5" type="text" class="form-control" placeholder="" id="txtPrize"></textarea>
+                        <textarea name=""prize"  value="{{$student->prize}}" rows="5" type="text" class="form-control" placeholder="" id="txtPrize"><?php echo $student->prize?></textarea>
                         <label for="forte">Sở trường</label>
-                        <textarea  name="forte" value="{{$student->forte}}" class="form-control" rows="5" id="txtForte"></textarea>
+                        <textarea  name="forte" value="{{$student->forte}}" class="form-control" rows="5" id="txtForte"><?php echo $student->forte?></textarea>
                         <label for="skill">Năng khiếu</label>
-                        <textarea name="skill"  value="{{$student->skill}}" class="form-control" rows="5" id="txtSkill"></textarea>
+                        <textarea name="skill"  value="{{$student->skill}}" class="form-control" rows="5" id="txtSkill"><?php echo $student->skill?></textarea>
                         <label for="favorite">Sở thích</label>
-                        <textarea name="favorite" class="form-control" value="{{$student->favorite}}" rows="5" id="txtFavorite"></textarea>                                         
+                        <textarea name="favorite" class="form-control" value="{{$student->favorite}}" rows="5" id="txtFavorite"><?php echo $student->favorite?></textarea>                                         
                     
                     </div>
                 </div>

@@ -45,7 +45,7 @@
                 </div>
                 <div class="card-body">
                         <label for="offer">Yêu cầu/Tiêu chí</label>
-                        <textarea  name="offer" value="{{$company->offer}}"class="form-control" rows="5" id="txtOffer"></textarea>
+                        <textarea  name="offer" value="{{$company->offer}}"class="form-control" rows="5" id="txtOffer"> <?php echo $company->offer?></textarea>
                         <label for="numbers">Số lượng</label>
                         <input  name="numbers" value="{{$company->numbers}}"type="number" class="form-control" name="numbers" value="" id="txtNumbers" />
                         <label for="salary">Lương</label>

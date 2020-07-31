@@ -1,32 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-<<<<<<< HEAD
-    "\\database",
-    "\\public",
-    "\\public\\asset",
-=======
-    "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
->>>>>>> fill_data_student
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\Admin",
     "\\resources\\views\\layout",
     "\\resources\\views\\Pages",
-<<<<<<< HEAD
     "\\resources\\views\\Pages\\Company",
     "\\resources\\views\\Pages\\layout",
     "\\resources\\views\\Pages\\Student",
-    "\\resources\\views\\Pages\\Teacher"
-  ],
-  "SelectedNode": "\\public\\web.config",
-=======
-    "\\resources\\views\\Pages\\Student",
+    "\\resources\\views\\Pages\\Teacher",
     "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\Pages\\Student\\Profile.blade.php",
->>>>>>> fill_data_student
+  "SelectedNode": "\\resources\\views\\Pages\\Teacher\\Profile2.blade.php",
   "PreviewInSolutionExplorer": false
 }
