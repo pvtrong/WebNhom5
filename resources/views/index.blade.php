@@ -43,9 +43,9 @@
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="#dangky">Đăng ký</a></li>
-              <li><a href="#dangnhap">Đăng nhập</a></li>
+              <li class="active"><a href="./">Home</a></li>
+              <li><a href="./registration">Đăng ký</a></li>
+              <li><a href="./login">Đăng nhập</a></li>
             </ul>
           </nav>
 
@@ -74,8 +74,8 @@
                 ứng dụng công nghệ thông tin trong quản trị đại học đóng góp tích cực vào sự phát triển nền kinh tế và xã hội tri thức
                 của đất nước. Sứ mạng này hoàn toàn phù hợp và thống nhất với chủ trương, giải pháp và các mục tiêu của Chương trình đổi
                 mới toàn diện giáo dục đại học mà Đảng và Nhà nước đang triển khai thực hiện.</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng ký</a>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng nhập</a>
+                <a href="./registration" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng ký</a>
+                <a href="./login" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng nhập</a>
               </div>
             </div>
           </div>
@@ -86,13 +86,13 @@
                 <h2 class="animate__animated animate__fadeInDown">Tuyển dụng MISA - Software</h2>
                 <p class="animate__animated animate__fadeInUp">Mô hình đào tạo 3 chiều: ngoài đội ngũ giảng viên (Trainer) FPT Software Acadmey còn có các trợ giảng (Mentor) và quản
                 lý lớp (Admin) giúp tăng tương tác, hỗ trợ học viên tốt nhất.</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng ký</a>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng nhập</a>
+                <a href="./registration" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng ký</a>
+                <a href="./login" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng nhập</a>
               </div>
             </div>
           </div>
 
-          <div class="carousel-item" style="background-image: url(assets/img/intro-carousel/3.jpg)">
+          <div class="carousel-item" style="background-image: url(assetHome/img/intro-carousel/3.jpg)">
             <div class="carousel-container">
               <div class="container">
                 <h2 class="animate__animated animate__fadeInDown">VTI - Technology</h2>
@@ -105,8 +105,8 @@
                 Đến với VTI, bạn sẽ được tham gia khóa học tiếng Nhật, các buổi Seminar công nghệ miễn phí và cơ hội Onsite làm việc tại
                 Nhật Bản.
                 VTi hỗ trợ nhân viên tham gia các kì thi chứng chỉ công nghệ (CMMi, Scrum, Agile, AWS, v.v...).</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng ký</a>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng nhập</a>
+                <a href="./registration" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng ký</a>
+                <a href="./login" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng nhập</a>
               </div>
             </div>
           </div>
@@ -117,8 +117,8 @@
                 <h2 class="animate__animated animate__fadeInDown">Funtap</h2>
                 <p class="animate__animated animate__fadeInUp">Chúng tôi tôn trọng sự khác biệt và sự bình đẳng của từng cá nhân. Đó là nền tảng cơ bản giúp chúng tôi luôn mang đến
                 cho khách hàng sự trải nghiệm dịch vụ hoàn hảo.</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng ký</a>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng nhập</a>
+                <a href="./registration" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng ký</a>
+                <a href="./login" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng nhập</a>
               </div>
             </div>
           </div>
@@ -129,8 +129,8 @@
                 <h2 class="animate__animated animate__fadeInDown">FPT - Software</h2>
                 <p class="animate__animated animate__fadeInUp">Đào tạo để làm việc: chương trình đào tạo thực tế với yêu cầu của công việc được xây dựng bởi đội ngũ chuyên gia hàng
                 đầu làm việc tại FPT Software - công ty phần mềm số 1 Việt Nam.</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng ký</a>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng nhập</a>
+                <a href="./registration" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng ký</a>
+                <a href="./login" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng nhập</a>
               </div>
             </div>
           </div>
@@ -144,8 +144,8 @@
                 Trách nhiệm và kỉ luật cao
                 Tinh thần tự học và chia sẻ kiến thức
                 Tin tưởng - Chia sẻ - Trung thực.</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng ký</a>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng nhập</a>
+                <a href="./registration" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng ký</a>
+                <a href="./login" class="btn-get-started scrollto animate__animated animate__fadeInUp">Đăng nhập</a>
               </div>
             </div>
           </div>
