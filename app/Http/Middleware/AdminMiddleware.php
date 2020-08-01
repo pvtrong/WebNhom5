@@ -16,8 +16,7 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        dd(Auth::check());
-        if(Auth::check()){
+        if(Auth::guard('adm')->check()){
             return $next($request);
         }
         else{

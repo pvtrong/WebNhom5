@@ -41,4 +41,9 @@ class UserController extends Controller
 			return 'false';
 		}
     }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }
