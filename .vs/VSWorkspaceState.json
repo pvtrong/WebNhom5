@@ -2,15 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\public",
-    "\\public\\upload",
-    "\\public\\upload\\company",
+    "\\public\\asset",
+    "\\public\\asset\\CSS",
+    "\\public\\asset\\CSS\\Lib",
+    "\\public\\asset\\JS",
+    "\\public\\asset\\JS\\Lib",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\Pages",
-    "\\resources\\views\\Pages\\Company",
-    "\\resources\\views\\Pages\\layout",
     "\\resources\\views\\Pages\\Teacher"
   ],
-  "SelectedNode": "\\public\\upload\\company",
+  "SelectedNode": "\\public\\asset\\JS\\Lib",
   "PreviewInSolutionExplorer": false
 }
