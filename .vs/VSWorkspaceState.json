@@ -2,16 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\public",
-    "\\public\\asset",
-    "\\public\\asset\\CSS",
-    "\\public\\asset\\CSS\\Lib",
-    "\\public\\asset\\JS",
-    "\\public\\asset\\JS\\Lib",
+    "\\public\\upload",
+    "\\public\\upload\\teacher",
     "\\resources",
     "\\resources\\views",
+    "\\resources\\views\\layout",
     "\\resources\\views\\Pages",
-    "\\resources\\views\\Pages\\Teacher"
+    "\\resources\\views\\Pages\\layout",
+    "\\routes",
+    "\\storage"
   ],
-  "SelectedNode": "\\public\\asset\\JS\\Lib",
+  "SelectedNode": "\\resources\\views\\Pages\\layout\\header.blade.php",
   "PreviewInSolutionExplorer": false
 }

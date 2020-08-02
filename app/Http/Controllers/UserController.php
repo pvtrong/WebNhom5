@@ -44,16 +44,8 @@ class UserController extends Controller
 			return 'false';
 		}
     }
-    public function shareViews($view){
-        $id = Auth::user()->id;
-        $category = Auth::user()->category;
-        if($category == 1){
-            $user = company::find($id);
-        } elseif($category == 2){
-            $user = teacher::find($id);
-        }
-        else $user = student::find($id);
-        $hinh = $user -> Hinh;
-        $view->with ('user', $hinh);
-    }
+    
+
+
+
 }
