@@ -52,6 +52,7 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
 });
 Route::get('login', 'UserController@Login')->name('login');
 Route::post('login', 'UserController@post_Login');
+Route::get('logout', 'UserController@Logout')->name('logout');
 
 Route::get('registration', 'UserController@registration')->name('registration');
 Route::post('registration', 'UserController@post_registration');
@@ -63,11 +64,16 @@ Route::post('registration', 'UserController@post_registration');
 
 //  admin
 Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
-        Route::get('home', 'BackendController@adminHome')->name('admin-home');
+        Route::get('home', 'AdminController@adminHome')->name('admin-home');
+        Route::get('category', 'AdminController@category')->name('category');
+        Route::post('ajax_add_category', 'AdminController@post_category');
+        Route::get('edit_category/{id}', 'AdminController@edit_category')->name('edit_category');
+        Route::post('ajax_edit_category/{id}', 'AdminController@post_edit_category');
+        Route::get('delete_category/{id}', 'AdminController@delete_category')->name('delete_category');
 });
 Route::get('admin-login', 'AdminController@Login_admin')->name('login-admin');
 Route::post('admin-login', 'AdminController@post_Login_admin');
-
+Route::get('admin-logout', 'AdminController@Logout_admin')->name('logout-admin');
 Route::get('registration-admin', 'AdminController@registration_admin')->name('registration-admin');
 Route::post('registration-admin', 'AdminController@post_registration_admin');
 

@@ -16,12 +16,14 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        dd(Auth::check());
-        if(Auth::check()){
+        if(Auth::guard('adm')->check()){
             return $next($request);
         }
         else{
             return redirect('admin-login');
         }
+    }
+    public function category(){
+        return view('Admin.category');
     }
 }

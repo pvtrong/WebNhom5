@@ -45,7 +45,7 @@
                             <span class="block m-t-xs font-bold"><b class="caret"></b></span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a class="dropdown-item" href="">logout</a></li>
+                            <li><a class="dropdown-item" href="{{route('logout-admin')}}">logout</a></li>
                             <li><a class="dropdown-item" href="">change_password</a></li>
                             <!-- <li><a class="dropdown-item" href="">change_password</a></li> -->
                         </ul>
@@ -58,9 +58,9 @@
                     <a href=""> <i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">admin</span></a>
                 </li>
                 <li class="">
-                    <a href=""><i class="fa fa-bars" aria-hidden="true"></i> <span class="nav-label">Danh mục sản phẩm</span></span></a>
+                    <a href="{{route('category')}}"><i class="fa fa-bars" aria-hidden="true"></i> <span class="nav-label">Danh mục sản phẩm</span></span></a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href=""><i class="fa fa-book" aria-hidden="true"></i><span class="nav-label">Sản phẩm</span></a>
                 </li>
                 <li>
@@ -71,17 +71,7 @@
                 </li>
                 <li>
                     <a href=""><i class="fa fa-user" aria-hidden="true"></i> <span class="nav-label">Quản tin tức</span></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Đơn hàng <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="">Đơn hàng nhập</a></li>
-                        <li><a href="">Đơn hàng bán</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href=""><i class="fa fa-user" aria-hidden="true"></i> <span class="nav-label">Nhà sản xuất</span></a>
-                </li>
+                </li> -->
             </ul>
 
         </div>
@@ -311,6 +301,7 @@
     <script src="{{url('/backend')}}/js/plugins/pace/pace.min.js"></script>
    <script src="{{url('/backend')}}/js/plugins/dataTables/datatables.min.js"></script>
     <script src="{{url('/backend')}}/js/plugins/dataTables/dataTables.bootstrap4.min.js"></script>
+    <script src="{{url('/backend')}}/js/ajax.js"></script>
 
 
     <script>

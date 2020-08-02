@@ -56,4 +56,8 @@ class UserController extends Controller
         $hinh = $user -> Hinh;
         $view->with ('user', $hinh);
     }
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }
