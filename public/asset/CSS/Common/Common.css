@@ -287,3 +287,7 @@ body {
     align-items: center;
     padding: 0 .75rem;
 }
+.rounded-circle{
+    width: 60px;
+    height: 60px;
+}

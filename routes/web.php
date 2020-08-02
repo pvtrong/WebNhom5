@@ -1,5 +1,7 @@
 <?php
-
+use App\student;
+use App\teacher;
+use App\company;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -68,3 +70,17 @@ Route::post('admin-login', 'AdminController@post_Login_admin');
 
 Route::get('registration-admin', 'AdminController@registration_admin')->name('registration-admin');
 Route::post('registration-admin', 'AdminController@post_registration_admin');
+
+//View share hader
+View::composer(['*'], function($view){
+        $id = Auth::user()->id;
+        $category = Auth::user()->category;
+        if($category == 1){
+            $user = company::find($id);
+        } elseif($category == 2){
+            $user = teacher::find($id);
+        }
+        else $user = student::find($id);
+        $hinh = $user -> Hinh;
+        $view->with ('hinh', $hinh);
+    });

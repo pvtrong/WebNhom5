@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\User;
+use App\student;
+use App\teacher;
+use App\company;
 use Auth;
 
 class UserController extends Controller
@@ -40,5 +43,17 @@ class UserController extends Controller
 		}else{
 			return 'false';
 		}
+    }
+    public function shareViews($view){
+        $id = Auth::user()->id;
+        $category = Auth::user()->category;
+        if($category == 1){
+            $user = company::find($id);
+        } elseif($category == 2){
+            $user = teacher::find($id);
+        }
+        else $user = student::find($id);
+        $hinh = $user -> Hinh;
+        $view->with ('user', $hinh);
     }
 }

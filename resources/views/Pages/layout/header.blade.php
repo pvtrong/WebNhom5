@@ -41,7 +41,8 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->name}}</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <img class="img-profile rounded-circle" src='upload/<?php if($hinh == null) echo "avatar.jpg"; else {if (Auth::user()->category == 1) echo "company/".$hinh; elseif(Auth::user()->category == 2) echo "teacher/".$hinh; else echo "student/".$hinh;} ?>'>
+
             </a>
             
             <!-- Dropdown - User Information -->
