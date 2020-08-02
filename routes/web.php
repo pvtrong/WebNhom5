@@ -84,7 +84,7 @@ View::composer(['*'], function($view){
     else $user = student::find($id);
     if($user != null){
         $hinh = $user -> Hinh;
-        $view->with ('hinh', $hinh);
-    }
+        $view->with ('Hhnh', $hinh);
+    }$view->with ('hinh', null);
         
 });
