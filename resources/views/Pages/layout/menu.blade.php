@@ -8,9 +8,10 @@
 <nav id="sidebar">
 
     <div class="menu">
-        <!--Logo-->
+        <?php if(Auth::user()->category == '3') { ?>
+            <!--Logo-->
         <div class="logo-area">
-            <a id="logo" href="./index.html">
+            <a id="logo" href="./Pages/Student/Home">
                 <div class="logo-pages">
 
                 </div>
@@ -20,8 +21,6 @@
         <!--Menu item-->
         <div id="menu-content">
             <!-- @yield('menu_select') -->
-            
-            <?php if(Auth::user()->category == '3') { ?>
             <a class="menu-item" href="./Pages/Student/Home">
                 <span class="menu-item-icon icon-board"></span>
                 <span class="menu-item-text">Tổng quan</span>
@@ -50,7 +49,18 @@
                 <div class="menu-item-icon icon-help"></div>
                 <div class="menu-item-text">Trợ giúp</div>
             </a>
-            <?php } elseif(Auth::user()->category == '1'){ ?>
+        <?php } elseif(Auth::user()->category == '1'){ ?>
+        <div class="logo-area">
+            <a id="logo" href="./Pages/Company/Home">
+                <div class="logo-pages">
+
+                </div>
+                <h2>UET</h2>
+            </a>
+        </div>
+        <!--Menu item-->
+        <div id="menu-content">
+            <!-- @yield('menu_select') -->
             <a class="menu-item" href="./Pages/Company/Home">
                 <span class="menu-item-icon icon-board"></span>
                 <span class="menu-item-text">Tổng quan</span>
@@ -79,7 +89,18 @@
                 <div class="menu-item-icon icon-help"></div>
                 <div class="menu-item-text">Trợ giúp</div>
             </a>
-            <?php } elseif(Auth::user()->category == '2'){ ?>
+        <?php } elseif(Auth::user()->category == '2'){ ?>
+        <div class="logo-area">
+            <a id="logo" href="./Pages/Teacher/Home">
+                <div class="logo-pages">
+
+                </div>
+                <h2>UET</h2>
+            </a>
+        </div>
+        <!--Menu item-->
+        <div id="menu-content">
+            <!-- @yield('menu_select') -->
             <a class="menu-item" href="./Pages/Teacher/Home">
                 <span class="menu-item-icon icon-board"></span>
                 <span class="menu-item-text">Tổng quan</span>

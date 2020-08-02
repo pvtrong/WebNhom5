@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\student;
 use App\teacher;
 use App\company;
@@ -56,7 +57,20 @@ class TeacherController extends Controller
             $teacher2 ->numbers =$request ->numbers;
             $teacher2 ->startDayOffer =$request ->startDayOffer;
             $teacher2 ->endDayOffer =$request ->endDayOffer;
-            
+            if($request->hasFile('Hinh')){
+                $file = $request ->file('Hinh');
+                $duoi = $file->getClientOriginalExtension();
+                if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+                
+                }
+                $name = $file-> getClientOriginalName();
+                $Hinh = Str::random(4).'_'. $name;
+                while(file_exists('upload/teacher'.$Hinh)){
+                    $Hinh = Str::random(4)."_". $name;
+                }
+                $file->move('upload/teacher', $Hinh);
+                $teacher2->Hinh = $Hinh;
+            }
             $teacher2->save();
             return view('Pages.Teacher.Profile',['teacher'=>$teacher2]);
         }
@@ -76,6 +90,20 @@ class TeacherController extends Controller
             $teacher ->numbers =$request ->numbers;
             $teacher ->startDayOffer =$request ->startDayOffer;
             $teacher ->endDayOffer =$request ->endDayOffer;
+            if($request->hasFile('Hinh')){
+                $file = $request ->file('Hinh');
+                $duoi = $file->getClientOriginalExtension();
+                if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+                
+                }
+                $name = $file-> getClientOriginalName();
+                $Hinh = Str::random(4).'_'. $name;
+                while(file_exists('upload/teacher'.$Hinh)){
+                    $Hinh = Str::random(4)."_". $name;
+                }
+                $file->move('upload/teacher', $Hinh);
+                $teacher->Hinh = $Hinh;
+            }
             $teacher->save();
             return view('Pages.Teacher.Profile',['teacher'=>$teacher]);
         }
