@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Registration Page</title>
+    <title>Login Page</title>
     <link href="asset/CSS/Lib/bootstrap.min.css" rel="stylesheet" />
 </head>
 

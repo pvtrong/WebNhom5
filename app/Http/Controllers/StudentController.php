@@ -14,7 +14,8 @@ class StudentController extends Controller
         return view('Pages.Student.home');
     }
     public function getBlog(){
-        return view('Pages.Student.Blog');
+        $BL_paging = DB::table('blog')->paginate(4);
+        return view('Pages.Student.Blog', ['BL_paging' => $BL_paging]);
     }
     public function getDS1(){
         $company = company::all();

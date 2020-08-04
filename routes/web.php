@@ -80,17 +80,22 @@ Route::post('registration-admin', 'AdminController@post_registration_admin');
 
 //View share hader
 View::composer(['*'], function($view){
-    $id = Auth::user()->id;
-    $category = Auth::user()->category;
-    if($category == 1){
-        $user = company::find($id);
-    } elseif($category == 2){
-        $user = teacher::find($id);
+    if(Auth::user() != null){
+        $id = Auth::user()->id;
+        $category = Auth::user()->category;
+        if($category == 1){
+            $user = company::find($id);
+        } elseif($category == 2){
+            $user = teacher::find($id);
+        }
+        else $user = student::find($id);
+        if($user != null){
+            $hinh = $user -> Hinh;
+            $view->with ('hinh', $hinh);
+        } else $view->with ('hinh', null);
     }
-    else $user = student::find($id);
-    if($user != null){
-        $hinh = $user -> Hinh;
-        $view->with ('Hhnh', $hinh);
-    }$view->with ('hinh', null);
+    
+    
+    
         
 });
