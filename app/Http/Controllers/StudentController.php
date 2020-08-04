@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 use App\student;
 use App\teacher;
 use App\company;
+use Illuminate\Support\Facades\DB;
+
 class StudentController extends Controller
 {
     //
@@ -14,11 +16,13 @@ class StudentController extends Controller
         return view('Pages.Student.home');
     }
     public function getBlog(){
-        return view('Pages.Student.Blog');
+        $BL_paging = DB::table('blog')->paginate(4);
+        return view('Pages.Student.Blog', ['BL_paging' => $BL_paging]);
     }
     public function getDS1(){
         $company = company::all();
-        return view('Pages.Student.DS1', ['company'=>$company]);
+        $DS_paging = DB::table('company')->paginate(2);
+        return view('Pages.Student.DS1', ['DS_paging'=> $DS_paging]);
     }
     public function getDS2(){
         return view('Pages.Student.DS2');
@@ -28,12 +32,12 @@ class StudentController extends Controller
     }
     public function getProfile($id){
         $student = student::find($id);
-        
+
         if($student != null)
-        
+
         return view('Pages.Student.Profile',['student'=>$student]);
         else return view('Pages.Student.Profile2');
-        
+
 
     }
     public function getSetting(){
@@ -41,7 +45,7 @@ class StudentController extends Controller
     }
     public function postUpdate(Request $request, $id){
         $student = student::find($id);
-        
+
         if($student == null){
             $student2 = new student;
             $student2 ->id =$request ->id;
@@ -73,7 +77,7 @@ class StudentController extends Controller
                 $file = $request ->file('Hinh');
                 $duoi = $file->getClientOriginalExtension();
                 if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
-                
+
                 }
                 $name = $file-> getClientOriginalName();
                 $Hinh = Str::random(4).'_'. $name;
@@ -83,13 +87,13 @@ class StudentController extends Controller
                 $file->move('upload/student', $Hinh);
                 $student2->Hinh = $Hinh;
             }else {
-                
+
             }
             $student2->save();
             return view('Pages.Student.Profile',['student'=>$student2]);
         }
-        
-        
+
+
         else {
             $student -> studentCode = $request->studentCode;
             $student -> birth = $request->birth;
@@ -119,7 +123,7 @@ class StudentController extends Controller
                 $file = $request ->file('Hinh');
                 $duoi = $file->getClientOriginalExtension();
                 if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
-                
+
                 }
                 $name = $file-> getClientOriginalName();
                 $Hinh = Str::random(4).'_'. $name;
@@ -129,13 +133,13 @@ class StudentController extends Controller
                 $file->move('upload/student', $Hinh);
                 $student->Hinh = $Hinh;
             }else {
-                
+
             }
             $student->save();
             return view('Pages.Student.Profile',['student'=>$student]);
         }
-        
+
 
     }
-    
+
 }

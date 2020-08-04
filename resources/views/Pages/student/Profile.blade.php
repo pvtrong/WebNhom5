@@ -5,7 +5,7 @@
     <form class="" method="POST" action="./Pages/Student/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
         <button type="submit" class="btn btn-primary" >Ghi nhận</button>
-    
+
         <div class="row">
             <div class="col-md-6">
                 <div class="card shadow mb-4">
@@ -20,7 +20,7 @@
                             <input name="Hinh" type="file" class="form-control-file border">
                         </div>
                         <div class="col-md-6 mb-3 info-individual">
-                        
+
                             <input type="hidden" name="id" value="{{Auth::user()->id}}">
                             <label for="studentCode">Mã sinh viên</label>
                             <input name="studentCode" type="text" value="{{$student->studentCode}}" class="form-control" placeholder="" id="txtStudentCode">
@@ -34,18 +34,18 @@
 
                             <label for="studentGender"> Giới tính:</label>
                             <p></p>
-                                
+
                             <input  id="txtStudentGender" <?php if($student->gender=="Nam"){echo "checked";}?>  value="Nam" type="radio" class="form-check-inline" name="gender">Nam
                             <input  id="txtStudentGender" <?php if($student->gender=="Nữ"){echo "checked";}?> value="Nữ" type="radio" class="form-check-inline" name="gender">Nữ
                             <input  id="txtStudentGender" <?php if($student->gender=="Khác"){echo "checked";}?> value="Khác" type="radio" class="form-check-inline" name="gender">Other
-                                
+
 
 
                             <label for="emailOther">Địa chỉ email</label>
                             <input  name="email" type="email" readonly  class="form-control" value="{{Auth::user()->email}}" placeholder="" id="txtEmailOther">
                             <label  for="mobile">Số điện thoại</label>
                             <input  value="{{$student->mobile}}" name="mobile" type="tel" class="form-control" placeholder="" id="txtMobile">
-                       
+
                         </div>
 
                     </div>
@@ -55,7 +55,7 @@
                         <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Thông tin cơ bản</h6>
 
                     <div class="card-body">
-                    
+
                         <div class="form-group">
                             <label for="department">Khoa</label>
                             <select value="{{$student->department}}" name="department" class="form-control" id="sel1">
@@ -109,11 +109,11 @@
                         <label for="numberCMT">Số chứng minh thư</label>
                         <input value="{{$student->numberCMT}}"  name="numberCMT" type="text" class="form-control" placeholder="" id="txtNumberCMT">
 
-                       
+
                     </div>
                 </div>
             </div>
-        
+
         </div>
         <div class="col-md-6">
             <div class="card shadow mb-4">
@@ -121,7 +121,7 @@
                     <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Địa chỉ</h6>
                 </div>
                 <div class="card-body">
-                    
+
                         <label for="nation">Quốc gia</label>
                         <input value="{{$student->nation}}" name="nation" type="text" class="form-control" placeholder="" id="txtNation">
 
@@ -135,7 +135,7 @@
                         <input value="{{$student->street}}" name="street" type="text" class="form-control" placeholder="" id="txtStreet">
                         <label for="homeNumber">Số nhà</label>
                         <input value="{{$student->homeNumber}}" name="homeNumber" type="number" class="form-control" placeholder="" id="txtHomeNumber">
-                   
+
                 </div>
             </div>
             <div class="card shadow mb-4">
@@ -143,7 +143,7 @@
                     <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Quá trình học tập</h6>
                 </div>
                 <div class="card-body">
-                   
+
                     <label for="GPA">GPA tích luỹ</label>
                     <input value="{{$student->gpa}}" name="gpa" type="text" class="form-control" placeholder="" id="txtGPA">
                     <label for="Prize">Khen thưởng/giải thưởng</label>
@@ -153,8 +153,8 @@
                     <label for="skill">Năng khiếu</label>
                     <textarea name="skill"  value="{{$student->skill}}" class="form-control" rows="5" id="txtSkill"><?php echo $student->skill?></textarea>
                     <label for="favorite">Sở thích</label>
-                    <textarea name="favorite" class="form-control" value="{{$student->favorite}}" rows="5" id="txtFavorite"><?php echo $student->favorite?></textarea>                                         
-                    
+                    <textarea name="favorite" class="form-control" value="{{$student->favorite}}" rows="5" id="txtFavorite"><?php echo $student->favorite?></textarea>
+
                 </div>
             </div>
         </div>
