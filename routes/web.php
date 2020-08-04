@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\student;
+use App\teacher;
+use App\company;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
