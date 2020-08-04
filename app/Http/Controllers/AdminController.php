@@ -39,4 +39,9 @@ class AdminController extends Controller
 			return 'false';
 		}
     }
+
+    public function admin_logout(){
+        Auth::guard('adm')->logout();
+		return redirect()->back()->with('success','thoát thành công');
+    }
 }

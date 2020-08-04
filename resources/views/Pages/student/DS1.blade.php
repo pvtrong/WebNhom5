@@ -23,10 +23,10 @@
                                 <label>
                                     Hiển thị:
                                     <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
+                                        <option value="2">2</option>
+                                        <option value="4">4</option>
+                                        <option value="6">6</option>
+                                        <option value="8">8</option>
                                     </select> kết quả
                                 </label>
                             </div>
@@ -66,15 +66,15 @@
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    @foreach($company as $cpn)
+                                    @foreach($DS_paging as $cpn)
                                         <tr role="row" class="even">
-                                            <td class="sorting_1" colspan="2"></td>
-                                            <td colspan="2">{{$cpn->offer}}</td>
-                                            <td colspan="4">{{$cpn->address}}</td>
-                                            <td colspan="2">{{$cpn->mobile}}</td>
-                                            <td colspan="2">{{$cpn->salary}}</td>
-                                            <td colspan="2">{{$cpn->numbers}}</td>
-                                            <td colspan="4">{{$cpn->bonus}}</td>
+                                        <td class="sorting_1" colspan="2"></td>
+                                        <td colspan="2">{{$cpn->offer}}</td>
+                                        <td colspan="4">{{$cpn->address}}</td>
+                                        <td colspan="2">{{$cpn->mobile}}</td>
+                                        <td colspan="2">{{$cpn->salary}}</td>
+                                        <td colspan="2">{{$cpn->numbers}}</td>
+                                        <td colspan="4">{{$cpn->bonus}}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -83,9 +83,12 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-5">
-                            <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Hiển thị 5 trên 10 kết quả</div>
+                            <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Hiển thị 2 trên 6 kết quả</div>
                         </div>
-                        <div class="col-sm-12 col-md-7">
+                        <div>
+                            {{ $DS_paging->links() }}
+                        </div>
+                        {{-- <div class="col-sm-12 col-md-7">
                             <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
                                 <ul class="pagination">
                                     <li class="paginate_button page-item previous disabled" id="dataTable_previous">
@@ -114,7 +117,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
