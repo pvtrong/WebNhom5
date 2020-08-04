@@ -41,7 +41,7 @@
                         </div>
                         <div>
                             <button class="btn btn-info">Gửi</button>
-                            <button class="btn btn-danger">Canle</button>
+                            <button class="btn btn-danger">Huỷ bỏ</button>
                         </div>
                         @csrf
                     </form>

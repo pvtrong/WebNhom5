@@ -1,6 +1,11 @@
 <?php
 
+
 use Illuminate\Support\Facades\DB;
+use App\student;
+use App\teacher;
+use App\company;
+use App\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
@@ -71,3 +76,20 @@ Route::get('admin-logout', 'AdminController@admin_logout')->name('admin-login');
 
 Route::get('registration-admin', 'AdminController@registration_admin')->name('registration-admin');
 Route::post('registration-admin', 'AdminController@post_registration_admin');
+
+//View share hader
+View::composer(['*'], function($view){
+    $id = Auth::user()->id;
+    $category = Auth::user()->category;
+    if($category == 1){
+        $user = company::find($id);
+    } elseif($category == 2){
+        $user = teacher::find($id);
+    }
+    else $user = student::find($id);
+    if($user != null){
+        $hinh = $user -> Hinh;
+        $view->with ('Hhnh', $hinh);
+    }$view->with ('hinh', null);
+        
+});
