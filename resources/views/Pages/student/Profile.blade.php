@@ -14,7 +14,7 @@
                     </div>
                     <div class="card-body row">
                         <div class="col-md-6 mb-3 avatar-info">
-                        <br>
+                            <br>
                              <p></p>
                             <div class="avatar-info-area" style="background-image: url('upload/student/{{$student->Hinh}}');" ></div>
                             <input name="Hinh" type="file" class="form-control-file border">
@@ -89,7 +89,7 @@
                             <select value="{{$student->trainingProgram}}" name="trainingProgram" class="form-control" id="sel1">
                                 <option <?php if($student->trainingProgram=="Chuẩn"){echo "selected";}?> value="Chuẩn">Chuẩn</option>
                                 <option <?php if($student->trainingProgram=="CLC"){echo "selected";}?> value="CLC">CLC</option>
-                                <option <?php if($student->trainingProgram=="CLC (Thông tư 23)"){echo "selected";}?> value=""CLC (Thông tư 23)">CLC (Thông tư 23)</option>
+                                <option <?php if($student->trainingProgram=="CLC (Thông tư 23)"){echo "selected";}?> value="CLC (Thông tư 23)">CLC (Thông tư 23)</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -121,21 +121,21 @@
                     <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Địa chỉ</h6>
                 </div>
                 <div class="card-body">
+                    
+                    <label for="nation">Quốc gia</label>
+                    <input value="{{$student->nation}}" name="nation" type="text" class="form-control" placeholder="" id="txtNation">
 
-                        <label for="nation">Quốc gia</label>
-                        <input value="{{$student->nation}}" name="nation" type="text" class="form-control" placeholder="" id="txtNation">
-
-                        <label for="city">Tỉnh/Thành phố</label>
-                        <input value="{{$student->city}}" name="city" type="text" class="form-control" placeholder="" id="txtCity">
-                        <label for="district">Quận/Huyện</label>
-                        <input value="{{$student->district}}" name="district" type="text" class="form-control" placeholder="" id="txtDistrict">
-                        <label for="commune">Xã</label>
-                        <input value="{{$student->commune}}" name="commune" type="text" class="form-control" placeholder="" id="txtCommune">
-                        <label for="street">Đường</label>
-                        <input value="{{$student->street}}" name="street" type="text" class="form-control" placeholder="" id="txtStreet">
-                        <label for="homeNumber">Số nhà</label>
-                        <input value="{{$student->homeNumber}}" name="homeNumber" type="number" class="form-control" placeholder="" id="txtHomeNumber">
-
+                    <label for="city">Tỉnh/Thành phố</label>
+                    <input value="{{$student->city}}" name="city" type="text" class="form-control" placeholder="" id="txtCity">
+                    <label for="district">Quận/Huyện</label>
+                    <input value="{{$student->district}}" name="district" type="text" class="form-control" placeholder="" id="txtDistrict">
+                    <label for="commune">Xã</label>
+                    <input value="{{$student->commune}}" name="commune" type="text" class="form-control" placeholder="" id="txtCommune">
+                    <label for="street">Đường</label>
+                    <input value="{{$student->street}}" name="street" type="text" class="form-control" placeholder="" id="txtStreet">
+                    <label for="homeNumber">Số nhà</label>
+                    <input value="{{$student->homeNumber}}" name="homeNumber" type="number" class="form-control" placeholder="" id="txtHomeNumber">
+              
                 </div>
             </div>
             <div class="card shadow mb-4">

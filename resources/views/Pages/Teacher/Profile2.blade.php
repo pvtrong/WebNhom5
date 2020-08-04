@@ -6,21 +6,21 @@
 
 
 <div class="container">
-    <form class="" method="POST" action="./Pages/Teacher/updateProfile/{{Auth::user()->id}}">
-    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-    <button type="submit" class="btn btn-primary" >Ghi nhận</button>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Thông tin thầy/cô</h6>
-                </div>
-                <div class="card-body row">
-                    <div class="col-md-6 mb-3 avatar-info">
-                        <div class="avatar-info-area"></div>
-                        <input type="file" class="form-control-file border">
+    <form class="" method="POST" action="./Pages/Teacher/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+        <button type="submit" class="btn btn-primary" >Ghi nhận</button>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Thông tin thầy/cô</h6>
                     </div>
-                    <div class="col-md-6 mb-3 info-individual">
+                    <div class="card-body row">
+                        <div class="col-md-6 mb-3 avatar-info">
+                            <div class="avatar-info-area"></div>
+                            <input type="file" name="Hinh" class="form-control-file border">
+                        </div>
+                        <div class="col-md-6 mb-3 info-individual">
                             <label for="teachertName">Tên thầy/cô</label>
                             <input name="name" value="{{Auth::user()->name}}" readonly type="text" class="form-control" placeholder="" id="txtTeacherName">
                             <label for="yearOlds">Tuổi</label>
@@ -35,14 +35,14 @@
                             <label for="mobile">Số điện thoại</label>
                             <input name="mobile"  type="tel" class="form-control" placeholder="" id="txtMobile">
                       
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Thông tin cơ bản</h6>
-                </div>
-                <div class="card-body">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Thông tin cơ bản</h6>
+                    </div>
+                    <div class="card-body">
                         
                         <div class="form-group">
                             <label for="department">Khoa</label>
@@ -62,15 +62,15 @@
                         <label for="office">Văn phòng</label>
                         <input name="office"  type="text" class="form-control" placeholder="" id="txtOffice">
                     
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Chi tiết thông tin tuyển</h6>
-                </div>
-                <div class="card-body">
+            <div class="col-md-6">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Chi tiết thông tin tuyển</h6>
+                    </div>
+                    <div class="card-body">
                         <label for="offer">Yêu cầu/Tiêu chí</label>
                         <textarea name="offer" class="form-control" rows="5" id="txtOffer"></textarea>
                         <label for="topicResearch">Đề tài nghiên cứu</label>

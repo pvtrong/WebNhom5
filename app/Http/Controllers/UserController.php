@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\User;
+use App\student;
+use App\teacher;
+use App\company;
 use Auth;
 
 class UserController extends Controller
@@ -46,4 +49,5 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route('login');
     }
+    
 }
