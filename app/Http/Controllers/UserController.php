@@ -44,7 +44,6 @@ class UserController extends Controller
 			return 'false';
 		}
     }
-<<<<<<< HEAD
     public function shareViews($view){
         $id = Auth::user()->id;
         $category = Auth::user()->category;
@@ -57,15 +56,9 @@ class UserController extends Controller
         $hinh = $user -> Hinh;
         $view->with ('user', $hinh);
     }
-=======
-
->>>>>>> 1fda3a19f7cd8bea6adff4f5cb4a43da66933bfe
     public function logout(){
         Auth::logout();
         return redirect()->route('login');
     }
-<<<<<<< HEAD
-=======
-    
->>>>>>> 1fda3a19f7cd8bea6adff4f5cb4a43da66933bfe
+
 }
