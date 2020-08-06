@@ -51,7 +51,7 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('Help', 'CompanyController@getHelp');
         Route::get('Profile/{id}', 'CompanyController@getProfile');
         Route::get('Setting', 'CompanyController@getSetting');
-        
+
         Route::get('CV/{id}', 'CompanyController@getCV');
         Route::get('Share/{id}', 'CompanyController@getShare');
         Route::post('updateProfile/{id}', 'CompanyController@postUpdate');
@@ -102,7 +102,7 @@ View::composer(['*'], function($view){
         } else $view->with ('hinh', null);
     }
     
-    
-    
-        
+
+
+
 });
