@@ -35,6 +35,8 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('CV/{id}', 'StudentController@getCV');
         Route::get('Share/{id}', 'StudentController@getShare');
         Route::post('updateProfile/{id}', 'StudentController@postUpdate');
+        Route::get('Messenger/{id}', 'StudentController@Messenger')->name('messenger');
+        Route::post('Post-Messenger/{id}', 'StudentController@Post_Messenger');
     });
     Route::group(['prefix'=>'Teacher'], function(){
         Route::get('Home', 'TeacherController@getHome')->name('teacher-home');
@@ -92,7 +94,6 @@ Route::get('admin-logout', 'AdminController@Logout_admin')->name('logout-admin')
 
 Route::get('registration-admin', 'AdminController@registration_admin')->name('registration-admin');
 Route::post('registration-admin', 'AdminController@post_registration_admin');
-
 //View share hader
 View::composer(['*'], function($view){
     if(Auth::user() != null){

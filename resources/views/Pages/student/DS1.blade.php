@@ -80,7 +80,7 @@
                                             <td class="text-center" colspan="1">{{$cpn->numbers}}</td>
                                             <td  colspan="1">{{$cpn->bonus}}</td>
                                             <td class="center text-center"><i class="fas fa-info-circle"></i><a href="./Pages/Company/CV/{{$cpn->id}}">   Thông tin thêm</a></td>
-                                            <td class="center text-center"><i class="fas fa-comments"></i><a href="./Pages/Company/CV/{{$cpn->id}}">   Liên hệ</a></td>
+                                            <td class="center text-center"><i class="fas fa-comments"></i><a href="{{route('messenger',['id'=>$cpn->id])}}">   Liên hệ</a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>

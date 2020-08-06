@@ -8,6 +8,7 @@ use App\student;
 use App\teacher;
 use App\company;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
@@ -157,6 +158,15 @@ class StudentController extends Controller
             return view('Pages.Student.CV',['company'=>$company, 'user'=>$user]);
         }
 
+    }
+
+    public function Messenger($id){
+        // dd($id);
+        return view('Pages.Student.Messenger',['id'=>$id]);
+    }
+    public function Post_Messenger(Request $request){
+        dd(Auth::user());
+        // dd($request->all());
     }
 
 }
