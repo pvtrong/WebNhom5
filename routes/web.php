@@ -109,8 +109,4 @@ View::composer(['*'], function($view){
             $view->with ('hinh', $hinh);
         } else $view->with ('hinh', null);
     }
-    
-    
-    
-        
 });
