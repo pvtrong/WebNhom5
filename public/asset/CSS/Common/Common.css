@@ -298,3 +298,7 @@ body {
 .container{
     padding: 0px !important;
 }
+.row {
+    margin-right: 0px !important;
+    margin-left: -0px !important;
+}
