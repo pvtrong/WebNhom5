@@ -165,8 +165,9 @@ class StudentController extends Controller
         return view('Pages.Student.Messenger',['id'=>$id]);
     }
     public function Post_Messenger(Request $request){
-        dd(Auth::user());
+        // dd(Auth::user());
         // dd($request->all());
+        echo "ok";
     }
 
 }
