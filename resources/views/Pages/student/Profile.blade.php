@@ -121,7 +121,7 @@
                     <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Địa chỉ</h6>
                 </div>
                 <div class="card-body">
-                    
+
                     <label for="nation">Quốc gia</label>
                     <input value="{{$student->nation}}" name="nation" type="text" class="form-control" placeholder="" id="txtNation">
 
@@ -135,7 +135,7 @@
                     <input value="{{$student->street}}" name="street" type="text" class="form-control" placeholder="" id="txtStreet">
                     <label for="homeNumber">Số nhà</label>
                     <input value="{{$student->homeNumber}}" name="homeNumber" type="number" class="form-control" placeholder="" id="txtHomeNumber">
-              
+
                 </div>
             </div>
             <div class="card shadow mb-4">
@@ -147,7 +147,7 @@
                     <label for="GPA">GPA tích luỹ</label>
                     <input value="{{$student->gpa}}" name="gpa" type="text" class="form-control" placeholder="" id="txtGPA">
                     <label for="Prize">Khen thưởng/giải thưởng</label>
-                    <textarea name=""prize"  value="{{$student->prize}}" rows="5" type="text" class="form-control" placeholder="" id="txtPrize"><?php echo $student->prize?></textarea>
+                    <textarea name="prize" value="{{$student->prize}}" id="txtPrize" rows="5" class="ckeditor form-control"><?php echo $student->prize?></textarea>
                     <label for="forte">Sở trường</label>
                     <textarea  name="forte" value="{{$student->forte}}" class="form-control" rows="5" id="txtForte"><?php echo $student->forte?></textarea>
                     <label for="skill">Năng khiếu</label>
