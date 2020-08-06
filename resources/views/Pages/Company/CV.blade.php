@@ -17,17 +17,17 @@
                     <div class="col-md-6 mb-3 avatar-info">
                         <br>
                         <div class="avatar-info-area" style="background-image: url('upload/company/{{$company->Hinh}}');" ></div>
-                        
+
                     </div>
                     <div class="col-md-6 mb-3 info-individual">
                         <br>
                         <i class="fa fa-user-circle" aria-hidden="true"></i>    Tên: {{$user ->name}}<br><br>
                         <i class="fa fa-address-book" aria-hidden="true"></i>    Địa chỉ: {{$company->address}}<br><br>
-                            
+
                         <i class="fa fa-envelope" aria-hidden="true"></i>     Email: {{$user->email}}<br><br>
-                            
+
                         <i class="fa fa-phone-square" aria-hidden="true"></i>   Số điện thoại: {{$company->mobile}} <br><br>
-                           
+
                         <i class="fa fa-heartbeat" aria-hidden="true"></i>   Thành lập năm: {{$company->yearEstablish}} <br><br>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                     <i class="fa fa-plus-square" aria-hidden="true"></i>    Đãi ngộ: <?php echo $company->bonus ?>. <br><br>
                     <i class="fa fa-bullhorn" aria-hidden="true"></i>    Ngày bắt đầu đợt tuyển: <?php echo $company->startDayOffer?> <br><br>
                     <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>     Ngày kết thúc đợt tuyển: <?php echo $company->endDayOffer?><br><br>
-                   
+
                 </div>
             </div>
         </div>

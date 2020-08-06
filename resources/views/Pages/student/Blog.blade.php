@@ -58,7 +58,7 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    @foreach($BL_paging as $blg)
+                    @foreach($BL_St as $blg)
                         <tr role="row" class="even">
                         <td colspan="2">{{$blg->id_blog}}</td>
                         <td colspan="4">{{$blg->id}}</td>
@@ -78,7 +78,7 @@
             <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Hiển thị 4 kết quả 1 trang</div>
         </div>
         <div>
-            {{ $BL_paging->links() }}
+            {{ $BL_St->links() }}
         </div>
     </div>
 </div>

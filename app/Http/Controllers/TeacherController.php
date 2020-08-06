@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 use App\student;
 use App\teacher;
 use App\company;
+use Illuminate\Support\Facades\DB;
+
 class TeacherController extends Controller
 {
     //
@@ -14,10 +16,12 @@ class TeacherController extends Controller
         return view('Pages.Teacher.home');
     }
     public function getBlog(){
-        return view('Pages.Teacher.Blog');
+        $BL_Tr = DB::table('blog')->paginate(4);
+        return view('Pages.Teacher.Blog', ['BL_Tr' => $BL_Tr]);
     }
     public function getDS1(){
-        return view('Pages.Teacher.DS1');
+        $DS_paging = DB::table('company')->paginate(2);
+        return view('Pages.Teacher.DS1', ['DS_paging' => $DS_paging]);
     }
     public function getDS2(){
         return view('Pages.Teacher.DS2');
@@ -27,12 +31,12 @@ class TeacherController extends Controller
     }
     public function getProfile($id){
         $teacher = teacher::find($id);
-        
+
         if($teacher != null)
-        
+
         return view('Pages.Teacher.Profile',['teacher'=>$teacher]);
         else return view('Pages.Teacher.Profile2');
-        
+
 
     }
     public function getSetting(){
@@ -40,7 +44,7 @@ class TeacherController extends Controller
     }
     public function postUpdate(Request $request, $id){
         $teacher = teacher::find($id);
-        
+
         if($teacher == null){
             $teacher2 = new teacher;
             $teacher2 ->id =$request ->id;
@@ -61,7 +65,7 @@ class TeacherController extends Controller
                 $file = $request ->file('Hinh');
                 $duoi = $file->getClientOriginalExtension();
                 if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
-                
+
                 }
                 $name = $file-> getClientOriginalName();
                 $Hinh = Str::random(4).'_'. $name;
@@ -74,8 +78,8 @@ class TeacherController extends Controller
             $teacher2->save();
             return view('Pages.Teacher.Profile',['teacher'=>$teacher2]);
         }
-        
-        
+
+
         else {
             $teacher ->age =$request ->age;
             $teacher ->gender =$request ->gender;
@@ -94,7 +98,7 @@ class TeacherController extends Controller
                 $file = $request ->file('Hinh');
                 $duoi = $file->getClientOriginalExtension();
                 if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
-                
+
                 }
                 $name = $file-> getClientOriginalName();
                 $Hinh = Str::random(4).'_'. $name;

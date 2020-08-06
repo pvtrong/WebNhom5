@@ -16,8 +16,8 @@ class StudentController extends Controller
         return view('Pages.Student.home');
     }
     public function getBlog(){
-        $BL_paging = DB::table('blog')->paginate(4);
-        return view('Pages.Student.Blog', ['BL_paging' => $BL_paging]);
+        $BL_St = DB::table('blog')->paginate(4);
+        return view('Pages.Student.Blog', ['BL_St' => $BL_St]);
     }
     public function getDS1(){
         $company = company::all();
@@ -25,7 +25,8 @@ class StudentController extends Controller
         return view('Pages.Student.DS1', ['DS_paging'=> $DS_paging]);
     }
     public function getDS2(){
-        return view('Pages.Student.DS2');
+        $DS_teacher = DB::table('teacher')->paginate(4);
+        return view('Pages.Student.DS2', ['DS_teacher' => $DS_teacher]);
     }
     public function getHelp(){
         return view('Pages.Student.Help');
