@@ -268,7 +268,6 @@ body {
 .content-body .card-body .avatar-info-area {
     width: 15em;
     height: 18em;
-    border: 1px solid #808080;
     background-size: contain !important;
     background-repeat: no-repeat;
 }
@@ -291,3 +290,8 @@ body {
     width: 60px;
     height: 60px;
 }
+.row2 {
+    margin-right: 0px !important;
+    margin-left: -0px !important;
+}
+

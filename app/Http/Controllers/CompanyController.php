@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use App\student;
 use App\teacher;
 use App\company;
+use App\User;
 class CompanyController extends Controller
 {
     //
@@ -105,5 +106,25 @@ class CompanyController extends Controller
             $company->save();
             return view('Pages.Company.Profile',['company'=>$company]);
         }
+    }
+    public function getCV($id){
+        $company = company::find($id);
+        $user = User::find($id);
+        
+        if($company != null){
+          
+            return view('Pages.Company.CV',['company'=>$company, 'user'=>$user]);
+        }
+
+    }
+    public function getShare($id){
+        $company = company::find($id);
+        $user = User::find($id);
+        
+        if($company != null){
+          
+            return view('Pages.Company.CV',['company'=>$company, 'user'=>$user]);
+        }
+
     }
 }

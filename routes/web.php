@@ -51,6 +51,9 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('Help', 'CompanyController@getHelp');
         Route::get('Profile/{id}', 'CompanyController@getProfile');
         Route::get('Setting', 'CompanyController@getSetting');
+        
+        Route::get('CV/{id}', 'CompanyController@getCV');
+        Route::get('Share/{id}', 'CompanyController@getShare');
         Route::post('updateProfile/{id}', 'CompanyController@postUpdate');
     });
 });
@@ -76,10 +79,8 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
         Route::post('ajax_edit_category/{id}', 'AdminController@post_edit_category');
         Route::get('delete_category/{id}', 'AdminController@delete_category')->name('delete_category');
 });
-Route::get('admin-login', 'AdminController@Login_admin')->name('login-admin');
 Route::post('admin-login', 'AdminController@post_Login_admin');
 Route::get('admin-logout', 'AdminController@Logout_admin')->name('logout-admin');
-Route::get('admin-logout', 'AdminController@admin_logout')->name('admin-login');
 
 Route::get('registration-admin', 'AdminController@registration_admin')->name('registration-admin');
 Route::post('registration-admin', 'AdminController@post_registration_admin');

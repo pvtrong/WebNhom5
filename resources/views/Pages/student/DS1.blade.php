@@ -45,36 +45,39 @@
                             <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                                 <thead>
                                     <tr role="row">
-                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="2" aria-sort="ascending" style="width: 58px;">Tên công ty</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="2" style="width: 4em !important">Yêu cầu/Tiêu chí</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="4" style="width: 5em !important;">Địa chỉ</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="2" style="width: 2em !important;">Liên hệ</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="2" style="width: 4em !important;">Mức lương</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="2" style="width: 4em !important;">Số lượng</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="4" style="width: 4em !important;">Đãi ngộ</th>
+	                                    <th class="sorting_asc  text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 8em;">Tên công ty</th>
+                                        <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important">Yêu cầu</th>
+                                        <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Địa chỉ</th>
+                                        <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Liên hệ</th>
+                                        <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Mức lương</th>
+                                        <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Số lượng</th>
+                                        <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Đãi ngộ</th>
+                                        <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Thông tin thêm</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th rowspan="1" colspan="2">Tên công ty</th>
-                                        <th rowspan="1" colspan="2">Yêu cầu/Tiêu chí</th>
-                                        <th rowspan="1" colspan="4">Địa chỉ</th>
-                                        <th rowspan="1" colspan="2">Liên hệ</th>
-                                        <th rowspan="1" colspan="2">Mức lương</th>
-                                        <th rowspan="1" colspan="2">Số lượng</th>
-                                        <th rowspan="1" colspan="4">Đãi ngộ</th>
+                                        <th class="text-center" rowspan="1" colspan="1">Tên công ty</th>
+                                        <th class="text-center" rowspan="1" colspan="1">Yêu cầu</th>
+                                        <th class="text-center" rowspan="1" colspan="1">Địa chỉ</th>
+                                        <th class="text-center" rowspan="1" colspan="1">Liên hệ</th>
+                                        <th class="text-center" rowspan="1" colspan="1">Mức lương</th>
+                                        <th class="text-center" rowspan="1" colspan="1">Số lượng</th>
+                                        <th class="text-center" rowspan="1" colspan="1">Đãi ngộ</th>
+                                        <th class="text-center">Thêm thông tin</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
                                     @foreach($DS_paging as $cpn)
                                         <tr role="row" class="even">
-                                        <td class="sorting_1" colspan="2"></td>
-                                        <td colspan="2">{{$cpn->offer}}</td>
-                                        <td colspan="4">{{$cpn->address}}</td>
-                                        <td colspan="2">{{$cpn->mobile}}</td>
-                                        <td colspan="2">{{$cpn->salary}}</td>
-                                        <td colspan="2">{{$cpn->numbers}}</td>
-                                        <td colspan="4">{{$cpn->bonus}}</td>
+                                            <td class="sorting_1 " colspan="1"></td>
+                                            <td  colspan="1">{{$cpn->offer}}</td>
+                                            <td  colspan="1">{{$cpn->address}}</td>
+                                            <td  colspan="1">{{$cpn->mobile}}</td>
+                                            <td  colspan="1">{{$cpn->salary}}</td>
+                                            <td class="text-center" colspan="1">{{$cpn->numbers}}</td>
+                                            <td  colspan="1">{{$cpn->bonus}}</td>
+                                            <td class="center text-center"><i class="fas fa-info-circle"></i><a href="./Pages/Company/CV/{{$cpn->id}}">Thông tin thêm</a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>
