@@ -1,7 +1,7 @@
 @extends('Pages.layout.menu')
 @section('content')
 <div class="container p-3 my-3">
-    <h1 class="">Các blog của công ty: tên  công ty</h1>
+    <h1 class="">tên công ty BLOG</h1>
     <div class="row">
         <div class="col-sm-12">
             <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
