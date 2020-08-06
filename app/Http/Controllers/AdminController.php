@@ -82,3 +82,5 @@ class AdminController extends Controller
         $category = Category::find($id)->delete();
         return response()->json(['success'=>'xóa thành cong']);
 
+    }
+}
