@@ -8,43 +8,51 @@ use App\student;
 use App\teacher;
 use App\company;
 use App\User;
+use App\Model\Category;
 use Illuminate\Support\Facades\DB;
 
 class CompanyController extends Controller
 {
     //
     public function getHome(){
-        return view('Pages.Company.home');
+        $category = category::all()[0];
+        return view('Pages.Company.home', ['category'=>$category]);
+
     }
     public function getBlog(){
+        $category = category::all()[2];
         $BL_cpn = DB::table('blog')->paginate(4);
-        return view('Pages.Company.Blog', ['BL_cpn' => $BL_cpn]);
+        return view('Pages.Company.Blog', ['BL_cpn' => $BL_cpn, 'category'=>$category]);
     }
     public function getDS1(){
-        return view('Pages.Company.DS1');
+        $category = category::all()[4];
+        return view('Pages.Company.DS1', ['category'=>$category]);
     }
     public function getDS2(){
-        return view('Pages.Company.DS2');
+        $category = category::all()[3];
+        return view('Pages.Company.DS2', ['category'=>$category]);
     }
     public function getHelp(){
-        return view('Pages.Company.Help');
+        $category = category::all()[7];
+        return view('Pages.Company.Help', ['category'=>$category]);
     }
     public function getProfile($id){
         $company = company::find($id);
-
+        $category = category::all()[1];
         if($company != null)
 
-        return view('Pages.Company.Profile',['company'=>$company]);
+        return view('Pages.Company.Profile',['company'=>$company, 'category'=>$category]);
         else return view('Pages.Company.Profile2');
 
 
     }
     public function getSetting(){
-        return view('Pages.Company.Setting');
+        $category = category::all()[6];
+        return view('Pages.Company.Setting', ['category'=>$category]);
     }
     public function postUpdate(Request $request, $id){
         $company = company::find($id);
-
+        $category = category::all()[1];
         if($company == null){
             $company2 = new company;
             $company2 ->id =$request ->id;
@@ -73,7 +81,7 @@ class CompanyController extends Controller
                 $company2->Hinh = $Hinh;
             }
             $company2->save();
-            return view('Pages.Company.Profile',['company'=>$company2]);
+            return view('Pages.Company.Profile',['company'=>$company2, 'category'=>$category]);
         }
 
 
@@ -103,7 +111,7 @@ class CompanyController extends Controller
                 $company->Hinh = $Hinh;
             }
             $company->save();
-            return view('Pages.Company.Profile',['company'=>$company]);
+            return view('Pages.Company.Profile',['company'=>$company, 'category'=>$category]);
         }
     }
     public function getCV($id){

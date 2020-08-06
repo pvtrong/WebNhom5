@@ -43,8 +43,6 @@
                     <?php if($company ->bonus != "")echo "<h5><i class='fa fa-plus-square'></i>    Đãi ngộ: "."    ".$company ->bonus."<br></h5>"?>
                     <?php if($company ->startDayOffer != "")echo "<h5><i class='fa fa-bullhorn'></i>    Ngày bắt đầu đợt tuyển: "."    ".$company ->startDayOffer."<br></h5>"?>
                     <?php if($company ->endDayOffer != "")echo "<h5><i class='fa fa-exclamation-triangle'></i>     Ngày kết thúc đợt tuyển: "."    ".$company ->endDayOffer."<br></h5>"?>
-                    
-
                 </div>
             </div>
         </div>
