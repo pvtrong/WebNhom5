@@ -117,20 +117,20 @@ class CompanyController extends Controller
     public function getCV($id){
         $company = company::find($id);
         $user = User::find($id);
-
+        $category = category::all()[8];
         if($company != null){
 
-            return view('Pages.Company.CV',['company'=>$company, 'user'=>$user]);
+            return view('Pages.Company.CV',['company'=>$company, 'user'=>$user, 'category'=>$category]);
         }
 
     }
     public function getShare($id){
         $company = company::find($id);
         $user = User::find($id);
-
+        $category = category::all()[9];
         if($company != null){
             $BL_temp = DB::table('blog')->paginate(6); // viết truy vấn cho từng công ty tại đây
-            return view('Pages.Company.Share',['company'=>$company, 'user'=>$user, 'BL_temp' => $BL_temp]);
+            return view('Pages.Company.Share',['company'=>$company, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
         }
 
     }

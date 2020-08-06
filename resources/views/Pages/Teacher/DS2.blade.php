@@ -1,4 +1,4 @@
-@extends('@extends('Pages.layout.menu')
+@extends('Pages.layout.menu')
 @section('content')
 
 

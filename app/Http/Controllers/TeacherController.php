@@ -8,44 +8,52 @@ use App\student;
 use App\teacher;
 use App\company;
 use App\User;
+use App\Model\Category;
 use Illuminate\Support\Facades\DB;
 
 class TeacherController extends Controller
 {
     //
     public function getHome(){
-        return view('Pages.Teacher.home');
+        $category = category::all()[0];
+        return view('Pages.Teacher.home', ['category'=>$category]);
+
     }
     public function getBlog(){
+            $category = category::all()[2];
         $BL_Tr = DB::table('blog')->paginate(4);
-        return view('Pages.Teacher.Blog', ['BL_Tr' => $BL_Tr]);
+        return view('Pages.Teacher.Blog', ['BL_Tr' => $BL_Tr, 'category'=>$category]);
     }
     public function getDS1(){
+        $category = category::all()[5];
         $DS_paging = DB::table('company')->paginate(2);
-        return view('Pages.Teacher.DS1', ['DS_paging' => $DS_paging]);
+        return view('Pages.Teacher.DS1', ['DS_paging' => $DS_paging, 'category'=>$category]);
     }
     public function getDS2(){
-        return view('Pages.Teacher.DS2');
+        $category = category::all()[4];
+        return view('Pages.Teacher.DS2', ['category'=>$category]);
     }
     public function getHelp(){
-        return view('Pages.Teacher.Help');
+        $category = category::all()[7];
+        return view('Pages.Teacher.Help', ['category'=>$category]);
     }
     public function getProfile($id){
         $teacher = teacher::find($id);
-
+        $category = category::all()[1];
         if($teacher != null)
 
-        return view('Pages.Teacher.Profile',['teacher'=>$teacher]);
+        return view('Pages.Teacher.Profile',['teacher'=>$teacher, 'category'=>$category]);
         else return view('Pages.Teacher.Profile2');
 
 
     }
     public function getSetting(){
-        return view('Pages.Teacher.Setting');
+        $category = category::all()[6];
+        return view('Pages.Teacher.Setting', ['category'=>$category]);
     }
     public function postUpdate(Request $request, $id){
         $teacher = teacher::find($id);
-
+        $category = category::all()[1];
         if($teacher == null){
             $teacher2 = new teacher;
             $teacher2 ->id =$request ->id;
@@ -78,7 +86,7 @@ class TeacherController extends Controller
                 $teacher2->Hinh = $Hinh;
             }
             $teacher2->save();
-            return view('Pages.Teacher.Profile',['teacher'=>$teacher2]);
+            return view('Pages.Teacher.Profile',['teacher'=>$teacher2, 'category'=>$category]);
         }
 
 
@@ -112,26 +120,26 @@ class TeacherController extends Controller
                 $teacher->Hinh = $Hinh;
             }
             $teacher->save();
-            return view('Pages.Teacher.Profile',['teacher'=>$teacher]);
+            return view('Pages.Teacher.Profile',['teacher'=>$teacher, 'category'=>$category]);
         }
     }
     public function getCV($id){
         $teacher = teacher::find($id);
         $user = User::find($id);
-        
+        $category = category::all()[8];
         if($teacher != null){
           
-            return view('Pages.Teacher.CV',['teacher'=>$teacher, 'user'=>$user]);
+            return view('Pages.Teacher.CV',['teacher'=>$teacher, 'user'=>$user, 'category'=>$category]);
         }
 
     }
     public function getShare($id){
         $student = student::find($id);
         $user = User::find($id);
-        
+        $category = category::all()[9];
         if($company != null){
           
-            return view('Pages.Teacher.CV',['company'=>$company, 'user'=>$user]);
+            return view('Pages.Teacher.CV',['company'=>$company, 'user'=>$user, 'category'=>$category]);
         }
 
     }
