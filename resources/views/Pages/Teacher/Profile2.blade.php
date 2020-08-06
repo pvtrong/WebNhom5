@@ -77,6 +77,8 @@
                         <textarea name="topicResearch"  class="form-control" rows="5" id="txtTopic"></textarea>
                         <label for="numbers">Số lượng</label>
                         <input  name="numbers"   type="number" class="form-control" name="numbers" value="" id="txtNumbers" />
+                        <label for="bonus">Đãi ngộ</label>
+                        <textarea  name="bonus"  class="form-control" rows="5" id="txtBonus"></textarea>
                         <label for="startDayOffer">Ngày bắt đầu đợt tuyển</label>
                         <input name="startDayOffer"   type="date" class="form-control"  id="txtStartDayOffer">
                         <label for="endDayOffer">Ngày kết thúc đợt tuyển</label>

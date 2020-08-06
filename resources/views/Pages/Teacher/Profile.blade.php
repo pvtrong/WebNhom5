@@ -78,6 +78,8 @@
                         <textarea name="topicResearch" class="form-control" rows="5" id="txtTopic"><?php echo $teacher->topicResearch?></textarea>
                         <label for="numbers">Số lượng</label>
                         <input name="numbers" value="{{$teacher->numbers}}"  type="number" class="form-control" name="numbers" value="" id="txtNumbers" />
+                        <textarea  name="bonus" value="{{$teacher->bonus}}"class="form-control" rows="5" id="txtBonus"></textarea>
+                        <label for="startDayOffer">Ngày bắt đầu đợt tuyển</label>
                         <label for="startDayOffer">Ngày bắt đầu đợt tuyển</label>
                         <input name="startDayOffer" value="{{$teacher->startDayOffer}}"  type="date" class="form-control"  id="txtStartDayOffer">
                         <label for="endDayOffer">Ngày kết thúc đợt tuyển</label>
