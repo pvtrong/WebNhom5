@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
-    "\\public\\asset",
-    "\\public\\upload",
-    "\\public\\upload\\blog",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\resources",
     "\\resources\\views",
+    "\\resources\\views\\Admin",
+    "\\resources\\views\\layout",
     "\\resources\\views\\Pages",
-    "\\resources\\views\\Pages\\Company",
-    "\\routes"
+    "\\resources\\views\\Pages\\Teacher"
   ],
-  "SelectedNode": "\\resources\\views\\Pages\\Company\\DS1.blade.php",
+  "SelectedNode": "\\resources\\views\\Pages\\Student\\Blog.blade.php",
   "PreviewInSolutionExplorer": false
 }

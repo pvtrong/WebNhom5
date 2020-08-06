@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use App\student;
 use App\teacher;
 use App\company;
+use App\User;
 class TeacherController extends Controller
 {
     //
