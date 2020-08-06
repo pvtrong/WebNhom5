@@ -125,7 +125,7 @@ class CompanyController extends Controller
         $user = User::find($id);
 
         if($company != null){
-            $BL_temp = DB::table('blog')->paginate(4); // viết truy vấn cho từng công ty tại đây
+            $BL_temp = DB::table('blog')->paginate(6); // viết truy vấn cho từng công ty tại đây
             return view('Pages.Company.Share',['company'=>$company, 'user'=>$user, 'BL_temp' => $BL_temp]);
         }
 
