@@ -39,8 +39,6 @@ class AdminController extends Controller
 			return 'false';
 		}
     }
-
-<<<<<<< HEAD
     public function Logout_admin(){
         Auth::guard('adm')->logout();
         return redirect()->route('login-admin');
@@ -83,10 +81,9 @@ class AdminController extends Controller
     public function delete_category($id){
         $category = Category::find($id)->delete();
         return response()->json(['success'=>'xóa thành cong']);
-=======
-    public function admin_logout(){
-        Auth::guard('adm')->logout();
-		return redirect()->back()->with('success','thoát thành công');
->>>>>>> 1fda3a19f7cd8bea6adff4f5cb4a43da66933bfe
     }
+  //   public function admin_logout(){
+  //       Auth::guard('adm')->logout();
+		// return redirect()->back()->with('success','thoát thành công');
+  //   }
 }
