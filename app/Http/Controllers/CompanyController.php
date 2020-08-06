@@ -71,8 +71,6 @@ class CompanyController extends Controller
                 }
                 $file->move('upload/company', $Hinh);
                 $company2->Hinh = $Hinh;
-            }else {
-                $company2-> Hinh = '';
             }
             $company2->save();
             return view('Pages.Company.Profile',['company'=>$company2]);
@@ -103,8 +101,6 @@ class CompanyController extends Controller
                 }
                 $file->move('upload/company', $Hinh);
                 $company->Hinh = $Hinh;
-            }else {
-                $company-> Hinh = '';
             }
             $company->save();
             return view('Pages.Company.Profile',['company'=>$company]);
