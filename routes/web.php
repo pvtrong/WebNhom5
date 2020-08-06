@@ -41,7 +41,6 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('Help', 'TeacherController@getHelp');
         Route::get('Profile/{id}', 'TeacherController@getProfile');
         Route::get('Setting', 'TeacherController@getSetting');
-        Route::post('updateProfile/{id}', 'TeacherController@postUpdate');
     });
     Route::group(['prefix'=>'Company'], function(){
         Route::get('Home', 'CompanyController@getHome')->name('company-home');
@@ -101,7 +100,7 @@ View::composer(['*'], function($view){
             $view->with ('hinh', $hinh);
         } else $view->with ('hinh', null);
     }
-    
+
 
 
 
