@@ -59,11 +59,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script src="asset/JS/pages/Sidebar.js"></script>
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
-    <script src="{{url('/asset')}}/Js/js/plugins/chartJs/Chart.min.js"></script>
-    <script src="{{url('/asset')}}/Js/js/plugins/summernote/summernote-bs4.js"></script>
-    <script src="{{url('/asset')}}/Js/js/plugins/pace/pace.min.js"></script>
-    <script src="{{url('/asset')}}/Js/js/plugins/dataTables/datatables.min.js"></script>
-    <script src="{{url('/asset')}}/Js/js/plugins/dataTables/dataTables.bootstrap4.min.js"></script>
-    <script src="{{url('/asset')}}/Js/js/ajax.js"></script>
 </body>
 </html>
