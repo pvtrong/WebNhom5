@@ -108,4 +108,24 @@ class TeacherController extends Controller
             return view('Pages.Teacher.Profile',['teacher'=>$teacher]);
         }
     }
+    public function getCV($id){
+        $teacher = teacher::find($id);
+        $user = User::find($id);
+        
+        if($teacher != null){
+          
+            return view('Pages.Teacher.CV',['teacher'=>$teacher, 'user'=>$user]);
+        }
+
+    }
+    public function getShare($id){
+        $student = student::find($id);
+        $user = User::find($id);
+        
+        if($company != null){
+          
+            return view('Pages.Teacher.CV',['company'=>$company, 'user'=>$user]);
+        }
+
+    }
 }

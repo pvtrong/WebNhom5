@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use App\student;
 use App\teacher;
 use App\company;
+use App\User;
 use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
@@ -135,6 +136,26 @@ class StudentController extends Controller
             return view('Pages.Student.Profile',['student'=>$student]);
         }
 
+
+    }
+    public function getCV($id){
+        $student = student::find($id);
+        $user = User::find($id);
+        
+        if($student != null){
+          
+            return view('Pages.Student.CV',['student'=>$student, 'user'=>$user]);
+        }
+
+    }
+    public function getShare($id){
+        $student = student::find($id);
+        $user = User::find($id);
+        
+        if($company != null){
+          
+            return view('Pages.Student.CV',['company'=>$company, 'user'=>$user]);
+        }
 
     }
 
