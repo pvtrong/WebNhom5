@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 use App\student;
 use App\teacher;
 use App\company;
+use Illuminate\Support\Facades\DB;
+
 class CompanyController extends Controller
 {
     //
@@ -14,7 +16,8 @@ class CompanyController extends Controller
         return view('Pages.Company.home');
     }
     public function getBlog(){
-        return view('Pages.Company.Blog');
+        $BL_cpn = DB::table('blog')->paginate(4);
+        return view('Pages.Company.Blog', ['BL_cpn' => $BL_cpn]);
     }
     public function getDS1(){
         return view('Pages.Company.DS1');
@@ -27,12 +30,12 @@ class CompanyController extends Controller
     }
     public function getProfile($id){
         $company = company::find($id);
-        
+
         if($company != null)
-        
+
         return view('Pages.Company.Profile',['company'=>$company]);
         else return view('Pages.Company.Profile2');
-        
+
 
     }
     public function getSetting(){
@@ -40,7 +43,7 @@ class CompanyController extends Controller
     }
     public function postUpdate(Request $request, $id){
         $company = company::find($id);
-        
+
         if($company == null){
             $company2 = new company;
             $company2 ->id =$request ->id;
@@ -58,7 +61,7 @@ class CompanyController extends Controller
                 $file = $request ->file('Hinh');
                 $duoi = $file->getClientOriginalExtension();
                 if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
-                
+
                 }
                 $name = $file-> getClientOriginalName();
                 $Hinh = Str::random(4).'_'. $name;
@@ -68,13 +71,13 @@ class CompanyController extends Controller
                 $file->move('upload/company', $Hinh);
                 $company2->Hinh = $Hinh;
             }else {
-                $company2-> Hinh = ''; 
+                $company2-> Hinh = '';
             }
             $company2->save();
             return view('Pages.Company.Profile',['company'=>$company2]);
         }
-        
-        
+
+
         else {
             $company ->address =$request ->address;
             $company ->mobile =$request ->mobile;
@@ -90,7 +93,7 @@ class CompanyController extends Controller
                 $file = $request ->file('Hinh');
                 $duoi = $file->getClientOriginalExtension();
                 if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
-                
+
                 }
                 $name = $file-> getClientOriginalName();
                 $Hinh = Str::random(4).'_'. $name;
@@ -100,7 +103,7 @@ class CompanyController extends Controller
                 $file->move('upload/company', $Hinh);
                 $company->Hinh = $Hinh;
             }else {
-                $company-> Hinh = ''; 
+                $company-> Hinh = '';
             }
             $company->save();
             return view('Pages.Company.Profile',['company'=>$company]);
