@@ -70,20 +70,12 @@
                                             <form action="Pages/Company/DS2" method = "get">
                                                 <select name="name"  class="form-control" id="name" onchange="this.form.submit()">
                                                 <option name ="name" value="">Họ và tên</option>
-<<<<<<< HEAD
-                                                @foreach( $user as $u)
-                                                    <option name ="name"value="{{ $u -> id}}">{{ $u->name}}</option>
-                                                @endforeach
-                                                </select>   
-                                            </form>                             
-=======
                                                     @foreach( $user1 as $u)
                                                         <option name ="name"value="{{ $u -> id}}">{{ $u->name}}</option>
                                                     @endforeach
                                                 </select> 
                                             </form>
                                                              
->>>>>>> origin/filter_ver2
                                         </th>
 
                                         <th class="sorting_asc text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 58px;">
