@@ -118,7 +118,7 @@
             <div class="icon-more icon-company"></div>
             <div class="menu-item-text">Công Ty</div>
             </a>
-            <a class="menu-item" href="./Pages/Teacher/DS1">
+            <a class="menu-item" href="./Pages/Teacher/DS2">
             <div class="menu-item-icon icon-profile"></div>
             <div class="menu-item-text">Sinh viên</div>
             </a>

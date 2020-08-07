@@ -69,9 +69,18 @@
                                         <form action="Pages/Teacher/DS1" method = "get">
                                                 <select name="name"  class="form-control" id="name" onchange="this.form.submit()">
                                                 <option name ="name" value="">Tên công ty</option>
-                                                    @foreach( $user as $u)
-                                                        <option name ="name"value="{{ $u -> id}}">{{ $u->name}}</option>
-                                                    @endforeach
+                                                <?php
+                                                $users = []; 
+                                                foreach( $user as $u){
+                                                    $u->name = ucwords($u->name);
+                                                    array_push($users, $u->name);
+                                                }
+                                                
+                                                $users = array_unique($users);
+                                                sort($users);
+                                                foreach($users as $name)
+                                                echo "<option name ='name' value='" .$name ."'>" .$name ."</option>";
+                                            ?>
                                                 </select> 
                                         </form>
                                     </th>
@@ -79,9 +88,18 @@
                                         <form action="Pages/Teacher/DS1" method = "get">
                                                 <select name="offer"  class="form-control" id="offer" onchange="this.form.submit()">
                                                 <option name ="offer" value="">Yêu cầu</option>
-                                                    @foreach( $company as $cp)
-                                                        <option name ="offer"value="{{ $cp -> offer}}">{{ $cp->offer}}</option>
-                                                    @endforeach
+                                                <?php
+                                                $companys = []; 
+                                                foreach( $company as $cpn){
+                                                    $cpn->offer = ucwords($cpn->offer);
+                                                    array_push($companys, $cpn->offer);
+                                                }
+                                                
+                                                $companys = array_unique($companys);
+                                                sort($companys);
+                                                foreach($companys as $offer)
+                                                echo "<option name ='offer' value='" .$offer ."'>" .$offer ."</option>";
+                                            ?>
                                                 </select> 
                                         </form>
                                     </th>
@@ -89,9 +107,18 @@
                                         <form action="Pages/Teacher/DS1" method = "get">
                                                 <select name="address"  class="form-control" id="address" onchange="this.form.submit()">
                                                 <option name ="address" value="">Địa chỉ</option>
-                                                    @foreach( $company as $cp)
-                                                        <option name ="address"value="{{ $cp -> address}}">{{ $cp->address}}</option>
-                                                    @endforeach
+                                                <?php
+                                                $companys = []; 
+                                                foreach( $company as $cpn){
+                                                    $cpn->address = ucwords($cpn->address);
+                                                    array_push($companys, $cpn->address);
+                                                }
+                                                
+                                                $companys = array_unique($companys);
+                                                sort($companys);
+                                                foreach($companys as $address)
+                                                echo "<option name ='address' value='" .$address ."'>" .$address ."</option>";
+                                            ?>
                                                 </select> 
                                         </form>
                                     </th>
@@ -99,9 +126,18 @@
                                         <form action="Pages/Teacher/DS1" method = "get">
                                                 <select name="mobile"  class="form-control" id="mobile" onchange="this.form.submit()">
                                                 <option name ="mobile" value="">Liên hệ</option>
-                                                    @foreach( $company as $cp)
-                                                        <option name ="mobile"value="{{ $cp -> mobile}}">{{ $cp->mobile}}</option>
-                                                    @endforeach
+                                                <?php
+                                                $companys = []; 
+                                                foreach( $company as $cpn){
+                                                    $cpn->mobile = ucwords($cpn->mobile);
+                                                    array_push($companys, $cpn->mobile);
+                                                }
+                                                
+                                                $companys = array_unique($companys);
+                                                sort($companys);
+                                                foreach($companys as $mobile)
+                                                echo "<option name ='mobile' value='" .$mobile ."'>" .$mobile ."</option>";
+                                            ?>
                                                 </select> 
                                         </form>
                                     </th>
@@ -109,9 +145,18 @@
                                         <form action="Pages/Teacher/DS1" method = "get">
                                                 <select name="salary"  class="form-control" id="mobile" onchange="this.form.submit()">
                                                 <option name ="salary" value="">Mức lương</option>
-                                                    @foreach( $company as $cp)
-                                                        <option name ="salary"value="{{ $cp->salary}}">{{ $cp->salary}}</option>
-                                                    @endforeach
+                                                <?php
+                                                $companys = []; 
+                                                    foreach( $company as $cpn){
+                                                        $cpn->salary = ucwords($cpn->salary);
+                                                        array_push($companys, $cpn->salary);
+                                                    }
+                                                    
+                                                    $companys = array_unique($companys);
+                                                    sort($companys);
+                                                    foreach($companys as $salary)
+                                                    echo "<option name ='salary' value='" .$salary ."'>" .$salary ."</option>";
+                                                ?>
                                                 </select> 
                                         </form>
                                     </th>
@@ -119,9 +164,18 @@
                                         <form action="Pages/Teacher/DS1" method = "get">
                                                 <select name="number"  class="form-control" id="number" onchange="this.form.submit()">
                                                 <option name ="number" value="">Số lượng</option>
-                                                    @foreach( $company as $cp)
-                                                        <option name ="number"value="{{ $cp -> numbers}}">{{ $cp->numbers}}</option>
-                                                    @endforeach
+                                                <?php
+                                                $companys = []; 
+                                                    foreach( $company as $cpn){
+                                                        $cpn->numbers = ucwords($cpn->numbers);
+                                                        array_push($companys, $cpn->numbers);
+                                                    }
+                                                    
+                                                    $companys = array_unique($companys);
+                                                    sort($companys);
+                                                    foreach($companys as $numbers)
+                                                    echo "<option name ='numbers' value='" .$numbers ."'>" .$numbers ."</option>";
+                                                ?>
                                                 </select> 
                                         </form>
                                     </th>
@@ -129,9 +183,18 @@
                                         <form action="Pages/Teacher/DS1" method = "get">
                                                 <select name="bonus"  class="form-control" id="bonus" onchange="this.form.submit()">
                                                 <option name ="bonus" value="">Đãi ngộ</option>
-                                                    @foreach( $company as $cp)
-                                                        <option name ="bonus"value="{{ $cp -> bonus}}">{{ $cp->bonus}}</option>
-                                                    @endforeach
+                                                <?php
+                                                $companys = []; 
+                                                    foreach( $company as $cpn){
+                                                        $cpn->bonus = ucwords($cpn->bonus);
+                                                        array_push($companys, $cpn->bonus);
+                                                    }
+                                                    
+                                                    $companys = array_unique($companys);
+                                                    sort($companys);
+                                                    foreach($companys as $bonus)
+                                                    echo "<option name ='bonus' value='" .$bonus ."'>" .$bonus ."</option>";
+                                                ?>
                                                 </select> 
                                         </form>
                                     </th>
