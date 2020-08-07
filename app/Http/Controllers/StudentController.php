@@ -250,6 +250,7 @@ class StudentController extends Controller
             $student2 -> skill = $request->skill;
             $student2 -> favourite = $request->favourite;
             $student2 -> nation = $request->nation;
+            $student2 -> city = $request->city;
             $student2 -> district = $request->district;
             $student2 -> commune = $request->commune;
             $student2 -> street = $request->street;
@@ -294,6 +295,7 @@ class StudentController extends Controller
             $student -> skill = $request->skill;
             $student -> favourite = $request->favourite;
             $student -> nation = $request->nation;
+            $student -> city = $request->city;
             $student -> district = $request->district;
             $student -> commune = $request->commune;
             $student -> street = $request->street;
@@ -318,7 +320,7 @@ class StudentController extends Controller
                 $student->Hinh = $Hinh;
             }
             $student->save();
-            return view('Pages.Student.Profile',['student'=>$student, 'category'=>$categor]);
+            return view('Pages.Student.Profile',['student'=>$student, 'category'=>$category]);
         }
 
 
