@@ -327,3 +327,9 @@ body {
 }
 
 .row {}
+
+.eye {
+    position: absolute;
+    top: 55%;
+    right: 10px;
+}

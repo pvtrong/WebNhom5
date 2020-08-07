@@ -41,7 +41,7 @@
                 <div class="menu-item-icon icon-teacher"></div>
                 <div class="menu-item-text">Nhà Trường</div>
             </a>
-            <a class="menu-item" href="./Pages/Student/Setting">
+            <a class="menu-item" href="./Pages/Setting">
                 <div class="menu-item-icon icon-setting"></div>
                 <div class="menu-item-text">Thiết Lập</div>
             </a>
@@ -81,7 +81,7 @@
                 <div class="menu-item-icon icon-profile"></div>
                 <div class="menu-item-text">Sinh viên</div>
             </a>
-            <a class="menu-item" href="./Pages/Company/Setting">
+            <a class="menu-item" href="./Pages/Setting">
                 <div class="menu-item-icon icon-setting"></div>
                 <div class="menu-item-text">Thiết Lập</div>
             </a>
@@ -122,7 +122,7 @@
             <div class="menu-item-icon icon-profile"></div>
             <div class="menu-item-text">Sinh Viên</div>
             </a>
-            <a class="menu-item" href="./Pages/Teacher/Setting">
+            <a class="menu-item" href="./Pages/Setting">
                 <div class="menu-item-icon icon-setting"></div>
                 <div class="menu-item-text">Thiết Lập</div>
             </a>

@@ -7,7 +7,10 @@ use App\User;
 use App\student;
 use App\teacher;
 use App\company;
+use App\Model\Category;
 use Auth;
+use App\Http\Requests\RequestPassword;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -59,6 +62,21 @@ class UserController extends Controller
     public function logout(){
         Auth::logout();
         return redirect()->route('login');
+    }
+    public function updatePassword(){
+        $category = category::all()[6];
+        return view('Password/updatePassword', ['category'=>$category]);
+    }
+    public function saveUpdatePassword(RequestPassword $requestPassword){
+        
+        $user = user::find($requestPassword-> id);
+
+        if(Hash::check($requestPassword->password_old, $user ->password)){
+            $user ->password = bcrypt($requestPassword -> password);
+            $user ->save();
+            return redirect() ->back() -> with('succes', 'Cập nhật thành công');
+        }
+        return redirect() ->back() ->with('danger', "Mật khẩu cũ không đúng");
     }
 
 }

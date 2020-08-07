@@ -23,6 +23,8 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
+    Route::get('Setting', 'UserController@updatePassword')->name('user.update.password');
+    Route::post('Setting', 'UserController@saveUpdatePassword');
     Route::group(['prefix'=>'Student'], function(){
         Route::get('Home', 'StudentController@getHome')->name('student-home');
         Route::get('Blog', 'StudentController@getBlog');
@@ -68,6 +70,8 @@ Route::get('login', 'UserController@Login')->name('login');
 Route::post('login', 'UserController@post_Login');
 Route::get('logout', 'UserController@Logout')->name('logout');
 // Route::get('logout', 'UserController@logout')->name('logout');
+
+// Auth::routes(['verify'=>true]);
 
 Route::get('registration', 'UserController@registration')->name('registration');
 Route::post('registration', 'UserController@post_registration');

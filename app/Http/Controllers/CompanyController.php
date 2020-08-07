@@ -26,6 +26,8 @@ class CompanyController extends Controller
     }
     public function getDS1(Request $request){
         $category = category::all()[4];
+        $company = company::all();
+        
         if($request->search)
         {
         $search = $request->search;
@@ -282,7 +284,7 @@ class CompanyController extends Controller
                 $company2->Hinh = $Hinh;
             }
             $company2->save();
-            return view('Pages.Company.Profile',['company'=>$company2, 'category'=>$category]);
+            return view('Pages.Company.Profile',['company'=>$company2, 'category'=>$category])->with('success', "Cập nhật thông tin thành công!");
         }
 
 
@@ -312,7 +314,7 @@ class CompanyController extends Controller
                 $company->Hinh = $Hinh;
             }
             $company->save();
-            return view('Pages.Company.Profile',['company'=>$company, 'category'=>$category]);
+            return view('Pages.Company.Profile',['company'=>$company, 'category'=>$category])->with('success', "Cập nhật thông tin thành công!");
         }
     }
     public function getCV($id){
