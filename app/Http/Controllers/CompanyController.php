@@ -27,107 +27,107 @@ class CompanyController extends Controller
     public function getDS1(Request $request){
         $category = category::all()[4];
         if($request->search)
-            {
-            $search = $request->search;
+        {
+        $search = $request->search;
+        $data = DB::table('students')
+        ->join('user','user.id','=','students.id')
+        ->select('user.id as id1','user.name as name1','user.email as email1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1')
+        ->where('name', 'like', "%$search%")
+        ->where('email', 'like', "%$search%")
+        ->orwhere('mobile', 'like', "%$search%")
+        ->orwhere('department', 'like', "%$search%")
+        ->orwhere('gpa', 'like', "%$search%")
+        ->orwhere('skill', 'like', "%$search%")
+        ->paginate(2);
+        }
+        
+        elseif($request->name)
+        {
+            $filter = $request->name;
+            $data =DB::table('students')
+            ->join('user','user.id','=','students.id')
+            ->select('user.id as id1','user.name as name1','user.email as email1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1')
+            ->where('user.id', $filter)
+            ->paginate(2);
+            
+        }
+        elseif($request->email)
+        {
+            $filter = $request->email;
+            $data =DB::table('students')
+            ->join('user','user.id','=','students.id')
+            ->select('user.id as id1','user.name as name1','user.email as email1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1')
+            ->where('user.id', $filter)
+            ->paginate(2);
+            
+        }
+        elseif($request->mobile)
+        {
+            $filter = $request->mobile;
+            $data =DB::table('students')
+            ->join('user','user.id','=','students.id')
+            ->select('user.id as id1','user.name as name1','user.email as email1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1')
+            ->where('mobile', $filter)
+            ->paginate(2);
+            
+        }
+        elseif($request->department)
+        {
+            $filter = $request->department;
+            $data =DB::table('students')
+            ->join('user','user.id','=','students.id')
+            ->select('user.id as id1','user.name as name1','user.email as email1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1')
+            ->where('department', $filter)
+            ->paginate(2);
+            
+        }
+        elseif($request->gpa)
+        {
+            $filter = $request->gpa;
+            $data =DB::table('students')
+            ->join('user','user.id','=','students.id')
+            ->select('user.id as id1','user.name as name1','user.email as email1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1')
+            ->where('gpa', $filter)
+            ->paginate(2);
+            
+        }
+        elseif($request->skill)
+        {
+            $filter = $request->skill;
+            $data =DB::table('students')
+            ->join('user','user.id','=','students.id')
+            ->select('user.id as id1','user.name as name1','user.email as email1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1')
+            ->where('skill', $filter)
+            ->paginate(2);
+            
+        }
+        
+        else {
             $data = DB::table('students')
             ->join('user','user.id','=','students.id')
-            ->select('user.name as name1','students.studentCode as studentCode1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1','students.prize as prize1')
-            ->where('name', 'like', "%$search%")
-            ->orwhere('studentCode', 'like', "%$search%")
-            ->orwhere('mobile', 'like', "%$search%")
-            ->orwhere('department', 'like', "%$search%")
-            ->orwhere('gpa', 'like', "%$search%")
-            ->orwhere('skill', 'like', "%$search%")
-            ->orwhere('prize', 'like', "%$search%")
+            ->select('user.id as id1','user.name as name1','user.email as email1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1')
             ->paginate(2);
-            }
-            
-            elseif($request->name)
-            {
-                $filter = $request->name;
-                $data =DB::table('students')
-                ->join('user','user.id','=','students.id')
-                ->select('user.name as name1','students.studentCode as studentCode1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1','students.prize as prize1')
-                ->where('user.id', $filter)
-                ->paginate(2);
-                
-            }
-            elseif($request->studentCode)
-            {
-                $filter = $request->studentCode;
-                $data =DB::table('students')
-                ->join('user','user.id','=','students.id')
-                ->select('user.name as name1','students.studentCode as studentCode1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1','students.prize as prize1')
-                ->where('studentCode', $filter)
-                ->paginate(2);
-            }
-            elseif($request->mobile)
-            {
-                $filter = $request->mobile;
-                $data =DB::table('students')
-                ->join('user','user.id','=','students.id')
-                ->select('user.name as name1','students.studentCode as studentCode1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1','students.prize as prize1')
-                ->where('mobile', $filter)
-                ->paginate(2);
-                
-            }
-            elseif($request->department)
-            {
-                $filter = $request->department;
-                $data =DB::table('students')
-                ->join('user','user.id','=','students.id')
-                ->select('user.name as name1','students.studentCode as studentCode1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1','students.prize as prize1')
-                ->where('department', $filter)
-                ->paginate(2);
-                
-            }
-            elseif($request->gpa)
-            {
-                $filter = $request->gpa;
-                $data =DB::table('students')
-                ->join('user','user.id','=','students.id')
-                ->select('user.name as name1','students.studentCode as studentCode1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1','students.prize as prize1')
-                ->where('gpa', $filter)
-                ->paginate(2);
-                
-            }
-            elseif($request->skill)
-            {
-                $filter = $request->skill;
-                $data =DB::table('students')
-                ->join('user','user.id','=','students.id')
-                ->select('user.name as name1','students.studentCode as studentCode1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1','students.prize as prize1')
-                ->where('skill', $filter)
-                ->paginate(2);
-                
-            }
-            elseif($request->prize)
-            {
-                $filter = $request->prize;
-                $data =DB::table('students')
-                ->join('user','user.id','=','students.id')
-                ->select('user.name as name1','students.studentCode as studentCode1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1','students.prize as prize1')
-                ->where('prize', $filter)
-                ->paginate(2);
-                
-            }
-            else {
-                $data = DB::table('students')
-                ->join('user','user.id','=','students.id')
-                ->select('user.name as name1','students.studentCode as studentCode1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1','students.skill as skill1','students.prize as prize1')
-                ->paginate(2);
-            }
+        }
 
         $user = DB::table('user')
-            ->join('students','user.id','=','students.id')
-            ->select("user.*")
-            ->get();
+        ->join('students','user.id','=','students.id')
+        ->select("user.*")
+        ->get();
+        $user1 = DB::table('user')
+        ->join('students','user.id','=','students.id')
+        ->orderBy('name', 'asc')
+        ->get();
+
+        $user2 = DB::table('user')
+        ->join('students','user.id','=','students.id')
+        ->orderBy('email', 'asc')
+        ->get();
         
         $students = DB::table('students')
-            ->select("*")
-            ->get();
+        ->select("*")
+        ->get();
             
-        return view('Pages.Company.DS1',['user' => $user, 'students' => $students, 'data' => $data, 'category'=>$category]);
+        return view('Pages.Company.DS1',['user' => $user,'user1'=> $user1,'user2'=>$user2 ,'students' => $students, 'data' => $data, 'category'=>$category]);
     }
     public function getDS2(Request $request){
         $category = category::all()[3];
@@ -136,11 +136,10 @@ class CompanyController extends Controller
             $search = $request->search;
             $data = DB::table('teacher')
             ->join('user','user.id','=','teacher.id')
-            ->select('user.name as name1','teacher.department as department1','teacher.office as office1','teacher.age as age1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
+            ->select('user.id as id1','user.name as name1','user.email as email1', 'teacher.department as department1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
             ->where('name', 'like', "%$search%")
             ->orwhere('department', 'like', "%$search%")
-            ->orwhere('office', 'like', "%$search%")
-            ->orwhere('age', 'like', "%$search%")
+            ->orwhere('email', 'like', "%$search%")
             ->orwhere('topicResearch', 'like', "%$search%")
             ->orwhere('offer', 'like', "%$search%")
             ->orwhere('numbers', 'like', "%$search%")
@@ -151,7 +150,17 @@ class CompanyController extends Controller
                 $filter = $request->name;
                 $data =DB::table('teacher')
                 ->join('user','user.id','=','teacher.id')
-                ->select('user.name as name1','teacher.department as department1','teacher.office as office1','teacher.age as age1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
+                ->select('user.id as id1','user.name as name1','user.email as email1', 'teacher.department as department1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
+                ->where('user.id', $filter)
+                ->paginate(2);
+                
+            }
+            elseif($request->email)
+            {
+                $filter = $request->email;
+                $data =DB::table('teacher')
+                ->join('user','user.id','=','teacher.id')
+                ->select('user.id as id1','user.name as name1','user.email as email1', 'teacher.department as department1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
                 ->where('user.id', $filter)
                 ->paginate(2);
                 
@@ -161,37 +170,28 @@ class CompanyController extends Controller
                 $filter = $request->department;
                 $data =DB::table('teacher')
                 ->join('user','user.id','=','teacher.id')
-                ->select('user.name as name1','teacher.department as department1','teacher.office as office1','teacher.age as age1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
+                ->select('user.id as id1','user.name as name1','user.email as email1', 'teacher.department as department1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
                 ->where('department', $filter)
                 ->paginate(2);
             }
-            elseif($request->office)
-            {
-                $filter = $request->office;
-                $data =DB::table('teacher')
-                ->join('user','user.id','=','teacher.id')
-                ->select('user.name as name1','teacher.department as department1','teacher.office as office1','teacher.age as age1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
-                ->where('office', $filter)
-                ->paginate(2);
-                
-            }
-            elseif($request->age)
-            {
-                $filter = $request->age;
-                $data =DB::table('teacher')
-                ->join('user','user.id','=','teacher.id')
-                ->select('user.name as name1','teacher.department as department1','teacher.office as office1','teacher.age as age1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
-                ->where('age', $filter)
-                ->paginate(2);
-                
-            }
+            
             elseif($request->topic)
             {
                 $filter = $request->topic;
                 $data =DB::table('teacher')
                 ->join('user','user.id','=','teacher.id')
-                ->select('user.name as name1','teacher.department as department1','teacher.office as office1','teacher.age as age1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
+                ->select('user.id as id1','user.name as name1','user.email as email1', 'teacher.department as department1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
                 ->where('topicResearch', $filter)
+                ->paginate(2);
+                
+            }
+            elseif($request->offer)
+            {
+                $filter = $request->offer;
+                $data =DB::table('teacher')
+                ->join('user','user.id','=','teacher.id')
+                ->select('user.id as id1','user.name as name1','user.email as email1', 'teacher.department as department1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
+                ->where('offer', $filter)
                 ->paginate(2);
                 
             }
@@ -200,7 +200,7 @@ class CompanyController extends Controller
                 $filter = $request->number;
                 $data =DB::table('teacher')
                 ->join('user','user.id','=','teacher.id')
-                ->select('user.name as name1','teacher.department as department1','teacher.office as office1','teacher.age as age1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
+                ->select('user.id as id1','user.name as name1','user.email as email1', 'teacher.department as department1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
                 ->where('numbers', $filter)
                 ->paginate(2);
                 
@@ -208,20 +208,30 @@ class CompanyController extends Controller
             else {
                 $data = DB::table('teacher')
                 ->join('user','user.id','=','teacher.id')
-                ->select('user.name as name1','teacher.department as department1','teacher.office as office1','teacher.age as age1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
+                ->select('user.id as id1','user.name as name1','user.email as email1', 'teacher.department as department1', 'teacher.topicResearch as topicResearch1','teacher.offer as offer1','teacher.numbers as numbers1')
                 ->paginate(2);
             }
 
         $user = DB::table('user')
-            ->join('teacher','user.id','=','teacher.id')
-            ->select("user.*")
-            ->get();
+        ->join('teacher','user.id','=','teacher.id')
+        ->select("user.*")
+        ->get();
+
+        $user1 = DB::table('user')
+        ->join('teacher','user.id','=','teacher.id')
+        ->orderBy('name','asc')
+        ->get();
+
+        $user2 = DB::table('user')
+        ->join('teacher','user.id','=','teacher.id')
+        ->orderBy('email', 'asc')
+        ->get();
         
         $teacher = DB::table('teacher')
-            ->select("*")
-            ->get();
+        ->select("*")
+        ->get();
             
-        return view('Pages.Company.DS2',['user' => $user, 'teacher' => $teacher, 'data' => $data, 'category'=>$category]);
+        return view('Pages.Company.DS2',['user' => $user, 'user1'=>$user1,'user2'=>$user2, 'teacher' => $teacher, 'data' => $data, 'category'=>$category]);
     }
     public function getHelp(){
         $category = category::all()[7];

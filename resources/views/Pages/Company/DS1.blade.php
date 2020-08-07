@@ -53,59 +53,45 @@
                             <thead>
                                 <tr role="row">
                                 <th class="sorting_asc  text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 100px;">Họ và tên</th>
-                                <th class="sorting text-center text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important">MSV</th>
-                                <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Liên hệ</th>
+                                <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Email</th>
+                                <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Điện thoại</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Khoa</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">GPA</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Kĩ năng</th>
-                                <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Giải thưởng</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Xem thêm</th>
+                                <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;"></th>
                                 </tr>
                             </thead>
                             
                             <tfoot>
                                 <tr role="row">
                                     <th class="sorting_asc  text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 58px;">
-                                        <form action="Pages/Company/DS1" method = "get">
+                                    <form action="Pages/Company/DS1" method = "get">
                                                 <select name="name"  class="form-control" id="name" onchange="this.form.submit()">
-                                                <?php
-                                                    $users = []; 
-                                                    foreach( $user as $u){
-                                                        $u->name = ucwords($u->name);
-                                                        array_push($users, $u->name);
-                                                    }
-                                                    
-                                                    $users = array_unique($users);
-                                                    sort($users);
-                                                    foreach($users as $name)
-                                                    echo "<option name ='name' value='" .$name ."'>" .$name ."</option>";
-                                                ?>
-                                        </form>
+                                                <option name ="name" value="">Họ và tên</option>
+                                                @foreach( $user1 as $u)
+                                                    <option name ="name" value="{{ $u->id}}">{{ $u->name}} </option>
+                                                @endforeach
+                                                </select>   
+                                            </form>     
                                     </th>
-                                    <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important">
+                                
+                                    <th class="sorting_asc  text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 58px;">
                                         <form action="Pages/Company/DS1" method = "get">
-                                            <select name="studentCode"  class="form-control" id="studentCode" onchange="this.form.submit()">
-                                                <option name ="studentCode" value="">MSV</option>
-                                                <?php
-                                                    $student = []; 
-                                                    foreach( $students as $st){
-                                                        $st->studentCode = ucwords($st->studentCode);
-                                                        array_push($student, $st->studentCode);
-                                                    }
-                                                    
-                                                    $student = array_unique($student);
-                                                    sort($student);
-                                                    foreach($student as $studentCode)
-                                                    echo "<option name ='studentCode' value='" .$studentCode ."'>" .$studentCode ."</option>";
-                                                ?>
-                                            </select> 
-                                        </form>
+                                            <select name="email"  class="form-control" id="name" onchange="this.form.submit()">
+                                                <option name ="email" value="">Email</option>
+                                                @foreach( $user2 as $u)
+                                                    <option name ="email" value="{{ $u->id}}">{{ $u->email}} </option>
+                                                @endforeach
+                                                </select>   
+                                        </form>     
+                                    
                                     </th>
                                 
                                     <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 2em !important;">
                                         <form action="Pages/Company/DS1" method = "get">
                                             <select name="mobile"  class="form-control" id="mobile" onchange="this.form.submit()">
-                                                <option name ="mobile" value="">Liên hệ</option>
+                                                <option name ="mobile" value="">Điện thoại</option>
                                                 <?php
                                                     $student = []; 
                                                     foreach( $students as $st){
@@ -175,32 +161,14 @@
                                                         sort($student);
                                                         foreach($student as $skill)
                                                         echo "<option name ='skill' value='" .$skill ."'>" .$skill ."</option>";
-                                                    ?>
-                                                    
+                                                    ?>  
                                                     
                                                 </select> 
                                         </form>
                                     </th>
-                                    <th class="sorting text-center tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 3em !important;">
-                                        <form action="Pages/Company/DS1" method = "get">
-                                                <select name="prize"  class="form-control" id="prize" onchange="this.form.submit()">
-                                                <option name ="prize" value="">Thành tích</option>
-                                                    <?php
-                                                    $student = []; 
-                                                    foreach( $students as $st){
-                                                        $st->prize = ucwords($st->prize);
-                                                        array_push($student, $st->prize);
-                                                    }
-                                                    
-                                                    $student = array_unique($student);
-                                                    sort($student);
-                                                    foreach($student as $prize)
-                                                    echo "<option name ='prize' value='" .$prize ."'>" .$prize ."</option>";
-                                                    ?>
-                                                </select> 
-                                        </form>
-                                    </th>
+                                    
                                     <th class="text-center">Xem thêm</th>
+                                    <th class="text-center"></th>
                                     
                             </tfoot>
                     
@@ -208,13 +176,13 @@
                                 @foreach($data as $d)
                                     <tr role="row" class="even">
                                         <td class="text-center">{{$d->name1}}</td>
-                                        <td>{{$d->studentCode1}}</td>
+                                        <td class="text-center">{{$d->email1}}</td>
                                         <td>{{$d->mobile1}}</td>
                                         <td class="text-center">{{$d->department1}}</td>
                                         <td class="text-center">{{$d->gpa1}}</td>
                                         <td>{{$d->skill1}}</td>
-                                        <td class="text-center">{{$d->prize1}}</td>
-                                        <td class="text-center"><i class="fas fa-info-circle"></i><a href="#">Xem thêm</a></td>
+                                        <td class="text-center"><i class="fas fa-info-circle"></i><a href=".Pages/Company/CV/{{$d->id1}}">Xem thêm</a></td>
+                                        <th class="text-center"></th>
                                     </tr>
                                     
                                 @endforeach
