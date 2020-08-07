@@ -25,6 +25,8 @@ class StudentController extends Controller
         return view('Pages.Student.Blog', ['BL_St' => $BL_St, 'category'=>$category]);
     }
     public function getDS1(Request $request){
+        $category = category::all()[5];
+        $company = company::all();
         if($request->search){
             $search = $request->search;
             $data = DB::table('company')
@@ -111,9 +113,10 @@ class StudentController extends Controller
             ->select("*")
             ->get();
 
-        return view('Pages.Student.DS1', ['user' => $user,'company' => $company,  'data' => $data]);
+        return view('Pages.Student.DS1', ['user' => $user,'company' => $company,  'data' => $data, 'category'=>$category]);
     }
     public function getDS2(Request $request){
+        $category = category::all()[3];
         if($request->search)
             {
             $search = $request->search;
@@ -204,7 +207,7 @@ class StudentController extends Controller
             ->select("*")
             ->get();
             
-        return view('Pages.Student.DS2',['user' => $user, 'teacher' => $teacher, 'data' => $data]);
+        return view('Pages.Student.DS2',['user' => $user, 'teacher' => $teacher, 'data' => $data, 'category'=>$category]);
     }
     
     public function getHelp(){

@@ -25,6 +25,7 @@ class CompanyController extends Controller
         return view('Pages.Company.Blog', ['BL_cpn' => $BL_cpn, 'category'=>$category]);
     }
     public function getDS1(Request $request){
+        $category = category::all()[4];
         if($request->search)
             {
             $search = $request->search;
@@ -126,9 +127,10 @@ class CompanyController extends Controller
             ->select("*")
             ->get();
             
-        return view('Pages.Company.DS1',['user' => $user, 'students' => $students, 'data' => $data]);
+        return view('Pages.Company.DS1',['user' => $user, 'students' => $students, 'data' => $data, 'category'=>$category]);
     }
     public function getDS2(Request $request){
+        $category = category::all()[3];
         if($request->search)
             {
             $search = $request->search;
@@ -219,7 +221,7 @@ class CompanyController extends Controller
             ->select("*")
             ->get();
             
-        return view('Pages.Company.DS2',['user' => $user, 'teacher' => $teacher, 'data' => $data]);
+        return view('Pages.Company.DS2',['user' => $user, 'teacher' => $teacher, 'data' => $data, 'category'=>$category]);
     }
     public function getHelp(){
         $category = category::all()[7];
