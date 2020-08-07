@@ -52,13 +52,15 @@
                                 <thead>
                                     <tr>
                                     <th class="sorting_asc  text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 100px;">Họ và tên</th>
-                                    <th class="sorting text-center text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important">Vị trí</th>
-                                    <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Văn phòng</th>
-                                    <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Tuổi</th>
+                                    <th class="sorting text-center text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important">Email</th>
+                                    <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Khoa</th>
                                     <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Đề tài</th>
                                     <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Yêu cầu</th>
                                     <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Số lượng</th>
                                     <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Xem thêm</th>
+                                    <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;"></th>
+                                    
+                                    
                                     </tr>
                                 </thead>
                                 
@@ -68,105 +70,81 @@
                                             <form action="Pages/Student/DS2" method = "get">
                                                 <select name="name"  class="form-control" id="name" onchange="this.form.submit()">
                                                 <option name ="name" value="">Họ và tên</option>
-                                                @foreach( $user as $u)
-                                                    <option name ="name"value="{{ $u -> id}}">{{ $u->name}}</option>
-                                                @endforeach
-                                                </select>   
-                                            </form>                             
+                                                    @foreach( $user1 as $u)
+                                                        <option name ="name"value="{{ $u -> id}}">{{ $u->name}}</option>
+                                                    @endforeach
+                                                </select> 
+                                            </form>
+                                                             
                                         </th>
+
+                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 58px;">
+                                            <form action="Pages/Student/DS2" method = "get">
+                                                <select name="email"  class="form-control" id="email" onchange="this.form.submit()">
+                                                <option name ="email" value="">Email</option>
+                                                    @foreach( $user2 as $u)
+                                                        <option name ="email"value="{{ $u -> id}}">{{ $u->email}}</option>
+                                                    @endforeach
+                                                </select> 
+                                            </form>
+                                                             
+                                        </th>
+
                                         <th class="sorting_asc  text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 58px;">
                                             <form action="Pages/Student/DS2" method = "get">
                                                 <select name="department"  class="form-control" id="department" onchange="this.form.submit()">
-                                                <option name ="name" value="">Vị trí</option>
-                                                <?php
-                                                $teachers = []; 
-                                                foreach( $teacher as $tc){
-                                                    $tc->department = ucwords($tc->department);
-                                                    array_push($teachers, $tc->department);
-                                                }
-                                                
-                                                $teachers = array_unique($teachers);
-                                                sort($teachers);
-                                                foreach($teachers as $department)
-                                                echo "<option name ='department' value='" .$department ."'>" .$department ."</option>";
-                                            ?>
-                                                </select> 
-                                            </form>
-                                        </th>
-                                        <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important">
-                                            <form action="Pages/Student/DS2" method = "get">
-                                                <select name="office"  class="form-control" id="office" onchange="this.form.submit()">
-                                                <option name ="office" value="">Văn phòng</option>
-                                                <?php
+                                                    <option name ="name" value="">Khoa</option>
+                                                    <?php
                                                         $teachers = []; 
                                                         foreach( $teacher as $tc){
-                                                            $tc->office = ucwords($tc->office);
-                                                            array_push($teachers, $tc->office);
+                                                            $tc->department = ucwords($tc->department);
+                                                            array_push($teachers, $tc->department);
                                                         }
                                                         
                                                         $teachers = array_unique($teachers);
                                                         sort($teachers);
-                                                        foreach($teachers as $office)
-                                                        echo "<option name ='office' value='" .$office ."'>" .$office ."</option>";
+                                                        foreach($teachers as $department)
+                                                        echo "<option name ='department' value='" .$department ."'>" .$department ."</option>";
                                                     ?>
-                                           
-                                                </select>
+                                                </select> 
                                             </form>
                                         </th>
-                                        <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important">
-                                            <form action="Pages/Student/DS2" method = "get">
-                                                <select name="age"  class="form-control" id="age" onchange="this.form.submit()">
-                                                <option name ="age" value="">Tuổi</option>
-                                                <?php
-                                                $teachers = []; 
-                                                foreach( $teacher as $tc){
-                                                    $tc->age = ucwords($tc->age);
-                                                    array_push($teachers, $tc->age);
-                                                }
-                                                
-                                                $teachers = array_unique($teachers);
-                                                sort($teachers);
-                                                foreach($teachers as $age)
-                                                echo "<option name ='age' value='" .$age ."'>" .$age ."</option>";
-                                            ?>
-                                                </select>
-                                            </form>  
-                                        </th>
+                                        
                                         <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important">
                                             <form action="Pages/Student/DS2" method = "get">
                                             <select name="topic"  class="form-control" id="topic" onchange="this.form.submit()">
                                             <option name ="topic" value="">Đề tài</option>
-                                            <?php
-                                            $teachers = []; 
-                                            foreach( $teacher as $tc){
-                                                $tc->topicResearch = ucwords($tc->topicResearch);
-                                                array_push($teachers, $tc->topicResearch);
-                                            }
-                                            
-                                            $teachers = array_unique($teachers);
-                                            sort($teachers);
-                                            foreach($teachers as $topicResearch)
-                                            echo "<option name ='topicResearch' value='" .$topicResearch ."'>" .$topicResearch ."</option>";
-                                        ?>
+                                                <?php
+                                                    $teachers = []; 
+                                                    foreach( $teacher as $tc){
+                                                        $tc->topicResearch = ucwords($tc->topicResearch);
+                                                        array_push($teachers, $tc->topicResearch);
+                                                    }
+                                                    
+                                                    $teachers = array_unique($teachers);
+                                                    sort($teachers);
+                                                    foreach($teachers as $topicResearch)
+                                                    echo "<option name ='topicResearch' value='" .$topicResearch ."'>" .$topicResearch ."</option>";
+                                                ?>
                                             </select> 
                                             </form>
                                         </th>
                                         <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important">
                                             <form action="Pages/Student/DS2" method = "get">
                                                 <select name="offer"  class="form-control" id="offer" onchange="this.form.submit()">
-                                                <option name ="offer" value="">Yêu cầu</option>
-                                                <?php
-                                                $teachers = []; 
-                                                foreach( $teacher as $tc){
-                                                    $tc->offer = ucwords($tc->offer);
-                                                    array_push($teachers, $tc->offer);
-                                                }
-                                                
-                                                $teachers = array_unique($teachers);
-                                                sort($teachers);
-                                                foreach($teachers as $offer)
-                                                echo "<option name ='offer' value='" .$offer ."'>" .$offer ."</option>";
-                                            ?>
+                                                    <option name ="offer" value="">Yêu cầu</option>
+                                                    <?php
+                                                        $teachers = []; 
+                                                        foreach( $teacher as $tc){
+                                                            $tc->offer = ucwords($tc->offer);
+                                                            array_push($teachers, $tc->offer);
+                                                        }
+                                                        
+                                                        $teachers = array_unique($teachers);
+                                                        sort($teachers);
+                                                        foreach($teachers as $offer)
+                                                        echo "<option name ='offer' value='" .$offer ."'>" .$offer ."</option>";
+                                                    ?>
                                                 </select>
                                             </form>
 
@@ -175,51 +153,50 @@
                                             <form action="Pages/Student/DS2" method = "get">
                                                 <select name="number"  class="form-control" id="number" onchange="this.form.submit()">
                                                 <option name ="namber" value="">Số lượng</option>
-                                                <?php
-                                                $teachers = []; 
-                                                foreach( $teacher as $tc){
-                                                    $tc->numbers = ucwords($tc->numbers);
-                                                    array_push($teachers, $tc->numbers);
-                                                }
-                                                
-                                                $teachers = array_unique($teachers);
-                                                sort($teachers);
-                                                foreach($teachers as $numbers)
-                                                echo "<option name ='numbers' value='" .$numbers ."'>" .$numbers ."</option>";
-                                            ?>
+                                                    <?php
+                                                        $teachers = []; 
+                                                        foreach( $teacher as $tc){
+                                                            $tc->numbers = ucwords($tc->numbers);
+                                                            array_push($teachers, $tc->numbers);
+                                                        }
+                                                        
+                                                        $teachers = array_unique($teachers);
+                                                        sort($teachers);
+                                                        foreach($teachers as $numbers)
+                                                        echo "<option name ='numbers' value='" .$numbers ."'>" .$numbers ."</option>";
+                                                    ?>
                                                 </select>
                                             </form> 
                                         </th>
-                                        <th class="text-center"> Xem thêm</th>
+                                        <th class="text-center">Xem thêm</th>
+                                        <th class="text-center"></th>
                                     </tr>
+                                    
                                 </tfoot>
 
                             
                                 <tbody>
                         
-                                    @foreach($data as $tc)
+                                    @foreach($data as $d)
                                         
                                         <tr role="row" class="even">
-                                            <td class="text-center" >{{$tc->name1}}</td>
-                                            <td>{{$tc->department1}}</td>
-                                            <td >{{$tc->office1}}</td>
-                                            <td class="text-center">{{$tc->age1}}</td>
-                                            <td >{{$tc->topicResearch1}}</td>
-                                            <td>{{$tc->offer1}}</td>
-                                            <td class="text-center">{{$tc->numbers1}}</td>
-                                            <td class="text-center"><i class="fas fa-info-circle"></i><a href="#">Xem thêm</a></td>
+                                            <td class="text-center" >{{$d->name1}}</td>
+                                            <td>{{$d->email1}}</td>
+                                            <td >{{$d->department1}}</td>
+                                            <td >{{$d->topicResearch1}}</td>
+                                            <td>{{$d->offer1}}</td>
+                                            <td class="text-center">{{$d->numbers1}}</td>
+                                            <td class="text-center"><i class="fas fa-info-circle"></i><a href=".Pages/Student/CV/{{$d->id1}}">Xem thêm</a></td>
+                                            <th class="text-center"></th>
                                         </tr>
                                     @endforeach
                                     
                                 </tbody>
                                 {!! $data->appends(request()->input())->links() !!}
                                
-                            </table>
-                            
-                            
+                            </table>    
                         </div>
-                    </div>
-                                        
+                    </div>                       
                 </div>
             </div>
         </div>
