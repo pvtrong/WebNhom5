@@ -6,7 +6,7 @@
 
 
 <div class="container">
-    <a href="./Pages/Company/CV/{{Auth::user()->id}}"><button type="reset" class="btn btn-primary" >CV Cá Nhân</button></a>
+    <a class="position-absolute" id="btnCV" href="./Pages/Company/CV/{{Auth::user()->id}}"><button type="reset2" class="btn btn-primary" >CV Cá Nhân</button></a>
     <form class="" method="POST" action="./Pages/Company/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
     
     <input type="hidden" name="_token" value="{{csrf_token()}}"/>

@@ -6,10 +6,11 @@
 
 
 <div class="container">
+
     <form class="" method="POST" action="./Pages/Company/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
     <button type="submit" class="btn btn-primary" >Ghi nhận</button>
-    <a href="./Pages/Company/CV/{{Auth::user()->id}}"><button type="reset" class="btn btn-primary" >CV Cá Nhân</button></a>
+    
     <div class="row">
         <div class="col-md-6">
             <div class="card shadow mb-4">

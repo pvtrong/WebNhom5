@@ -3,14 +3,16 @@
     "",
     "\\app",
     "\\app\\Http",
-    "\\app\\Http\\Controllers",
+    "\\app\\Model",
+    "\\public",
+    "\\public\\asset",
+    "\\public\\asset\\CSS",
+    "\\public\\asset\\CSS\\Lib",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\Admin",
-    "\\resources\\views\\layout",
     "\\resources\\views\\Pages",
-    "\\resources\\views\\Pages\\Teacher"
+    "\\resources\\views\\Pages\\layout"
   ],
-  "SelectedNode": "\\resources\\views\\Pages\\Student\\Blog.blade.php",
+  "SelectedNode": "\\routes\\web.php",
   "PreviewInSolutionExplorer": false
 }

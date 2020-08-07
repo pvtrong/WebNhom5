@@ -47,7 +47,7 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
 
         Route::get('CV/{id}', 'TeacherController@getCV');
         Route::get('Share/{id}', 'TeacherController@getShare');
-        Route::post('updateProfile/{id}', 'TeacherController@postUpdate');
+        Route::get('updateProfile', 'CompanyController@postUpdate');
     });
     Route::group(['prefix'=>'Company'], function(){
         Route::get('Home', 'CompanyController@getHome')->name('company-home');
@@ -61,6 +61,7 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('CV/{id}', 'CompanyController@getCV');
         Route::get('Share/{id}', 'CompanyController@getShare');
         Route::post('updateProfile/{id}', 'CompanyController@postUpdate');
+        Route::get('updateProfile', 'CompanyController@postUpdate');
     });
 });
 Route::get('login', 'UserController@Login')->name('login');
