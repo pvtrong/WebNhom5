@@ -69,18 +69,9 @@
                                         <form action="Pages/Student/DS1" method = "get">
                                                 <select name="name"  class="form-control" id="name" onchange="this.form.submit()">
                                                     <option name ="name" value="">Tên công ty</option>
-                                                    <?php
-                                                        $users = []; 
-                                                        foreach( $user as $u){
-                                                            $u->name = ucwords($u->name);
-                                                            array_push($users, $u->name);
-                                                        }
-                                                        
-                                                        $users = array_unique($users);
-                                                        sort($users);
-                                                        foreach($users as $name)
-                                                        echo "<option name ='name' value='" .$name ."'>" .$name ."</option>";
-                                                    ?>
+                                                    @foreach( $user as $u)
+                                                    <option name ="name"value="{{ $u -> id}}">{{ $u->name}}</option>
+                                                @endforeach
                                                 </select> 
                                         </form>
                                     </th>

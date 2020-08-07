@@ -68,18 +68,9 @@
                                     <th class="sorting_asc  text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 58px;">
                                         <form action="Pages/Company/DS1" method = "get">
                                                 <select name="name"  class="form-control" id="name" onchange="this.form.submit()">
-                                                <?php
-                                                    $users = []; 
-                                                    foreach( $user as $u){
-                                                        $u->name = ucwords($u->name);
-                                                        array_push($users, $u->name);
-                                                    }
-                                                    
-                                                    $users = array_unique($users);
-                                                    sort($users);
-                                                    foreach($users as $name)
-                                                    echo "<option name ='name' value='" .$name ."'>" .$name ."</option>";
-                                                ?>
+                                                    @foreach( $user as $u)
+                                                    <option name ="name"value="{{ $u -> id}}">{{ $u->name}}</option>
+                                                @endforeach
                                         </form>
                                     </th>
                                     <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 4em !important">
