@@ -32,7 +32,6 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('DS2', 'StudentController@getDS2');
         Route::get('Help', 'StudentController@getHelp');
         Route::get('Profile/{id}', 'StudentController@getProfile');
-        Route::get('Setting', 'StudentController@getSetting');
 
         Route::get('CV/{id}', 'StudentController@getCV');
         Route::get('Share/{id}', 'StudentController@getShare');
@@ -45,7 +44,6 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('DS2', 'TeacherController@getDS2');
         Route::get('Help', 'TeacherController@getHelp');
         Route::get('Profile/{id}', 'TeacherController@getProfile');
-        Route::get('Setting', 'TeacherController@getSetting');
 
         Route::get('CV/{id}', 'TeacherController@getCV');
         Route::get('Share/{id}', 'TeacherController@getShare');
@@ -58,7 +56,6 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('DS2', 'CompanyController@getDS2');
         Route::get('Help', 'CompanyController@getHelp');
         Route::get('Profile/{id}', 'CompanyController@getProfile');
-        Route::get('Setting', 'CompanyController@getSetting');
         
         Route::get('CV/{id}', 'CompanyController@getCV');
         Route::get('Share/{id}', 'CompanyController@getShare');

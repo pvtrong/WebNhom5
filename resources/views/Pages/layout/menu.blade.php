@@ -73,13 +73,14 @@
                 <div class="icon-more icon-blog"></div>
                 <div class="menu-item-text">Blog Cá Nhân</div>
             </a>
+            
+            <a class="menu-item" href="./Pages/Company/DS1">
+                <div class="icon-more icon-company"></div>
+                <div class="menu-item-text">Sinh viên</div>
+            </a>
             <a class="menu-item" href="./Pages/Company/DS2">
                 <div class="menu-item-icon icon-teacher"></div>
                 <div class="menu-item-text">Nhà Trường</div>
-            </a>
-            <a class="menu-item" href="./Pages/Company/DS1">
-                <div class="menu-item-icon icon-profile"></div>
-                <div class="menu-item-text">Sinh viên</div>
             </a>
             <a class="menu-item" href="./Pages/Setting">
                 <div class="menu-item-icon icon-setting"></div>
@@ -115,11 +116,11 @@
             </a>
 
             <a class="menu-item" href="./Pages/Teacher/DS1">
-            <div class="icon-more icon-company"></div>
+            <div class="menu-item-icon icon-teacher"></div>
             <div class="menu-item-text">Công Ty</div>
             </a>
             <a class="menu-item" href="./Pages/Teacher/DS2">
-            <div class="menu-item-icon icon-profile"></div>
+            <div class="icon-more icon-company"></div>
             <div class="menu-item-text">Sinh Viên</div>
             </a>
             <a class="menu-item" href="./Pages/Setting">
