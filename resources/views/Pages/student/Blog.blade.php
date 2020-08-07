@@ -36,7 +36,7 @@
         <div class="col-sm-12">
             <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                 <thead>
-                    <tr role="row">
+                    <tr role="row2">
                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="2" style="width: 6em !important">ID blog</th>
                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="2" style="width: 6em !important">ID tus</th>
                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="4" style="width: 5em !important;">Ngày tạo</th>
@@ -73,7 +73,7 @@
             </table>
         </div>
     </div>
-    <div class="row">
+    <div class="row2">
         <div class="col-sm-12 col-md-5">
             <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Hiển thị 4 kết quả 1 trang</div>
         </div>
