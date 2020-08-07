@@ -59,7 +59,7 @@
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Mức lương</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Số lượng</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Đãi ngộ</th>
-                                <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Thêm</th>
+                                <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Xem thêm</th>
                                 </tr>
                             </thead>
                             
@@ -198,7 +198,7 @@
                                                 </select> 
                                         </form>
                                     </th>
-                                    <th></th>
+                                    <th class="text-center">Xem thêm</th>
                                     
                             </tfoot>
                     
@@ -212,7 +212,7 @@
                                         <td class="text-center">{{$d->salary1}}</td>
                                         <td class="text-center">{{$d->numbers1}}</td>
                                         <td>{{$d->bonus1}}</td>
-                                        <td class="center"><i class="fas fa-info-circle"></i><a href="#">Thông tin thêm</a></td>
+                                        <td class="text-center"><i class="fas fa-info-circle"></i><a href="#">Xem thêm</a></td>
                                     </tr>
                                     
                                 @endforeach

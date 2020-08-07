@@ -58,7 +58,7 @@
                                     <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Đề tài</th>
                                     <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Yêu cầu</th>
                                     <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Số lượng</th>
-                                    <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Thêm</th>
+                                    <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Xem thêm</th>
                                     </tr>
                                 </thead>
                                 
@@ -199,6 +199,7 @@
                                                 </select>
                                             </form> 
                                         </th>
+                                        <th class="text-center"> Xem thêm</th>
                                     </tr>
                                 </tfoot>
 
@@ -215,7 +216,7 @@
                                             <td >{{$tc->topicResearch1}}</td>
                                             <td>{{$tc->offer1}}</td>
                                             <td class="text-center">{{$tc->numbers1}}</td>
-                                            <td class="center"><i class="fas fa-info-circle"></i><a href="#">Thông tin thêm</a></td>
+                                            <td class="text-center"><i class="fas fa-info-circle"></i><a href="#">Xem thêm</a></td>
                                         </tr>
                                     @endforeach
                                     

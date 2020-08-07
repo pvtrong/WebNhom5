@@ -59,7 +59,7 @@
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">GPA</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Kĩ năng</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Giải thưởng</th>
-                                <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Thêm</th>
+                                <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Xem thêm</th>
                                 </tr>
                             </thead>
                             
@@ -199,7 +199,7 @@
                                                 </select> 
                                         </form>
                                     </th>
-                                    <th></th>
+                                    <th class="text-center">Xem thêm</th>
                                     
                             </tfoot>
                     
@@ -213,7 +213,7 @@
                                         <td class="text-center">{{$d->gpa1}}</td>
                                         <td>{{$d->skill1}}</td>
                                         <td class="text-center">{{$d->prize1}}</td>
-                                        <td class="center"><i class="fas fa-info-circle"></i><a href="#">Thông tin thêm</a></td>
+                                        <td class="text-center"><i class="fas fa-info-circle"></i><a href="#">Xem thêm</a></td>
                                     </tr>
                                     
                                 @endforeach
