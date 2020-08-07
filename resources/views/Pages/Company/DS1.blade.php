@@ -68,7 +68,7 @@
                                     <th class="sorting_asc  text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 58px;">
                                         <form action="Pages/Company/DS1" method = "get">
                                                 <select name="name"  class="form-control" id="name" onchange="this.form.submit()">
-                                                    @foreach( $user as $u)
+                                                @foreach( $user as $u)
                                                     <option name ="name"value="{{ $u -> id}}">{{ $u->name}}</option>
                                                 @endforeach
                                         </form>
@@ -87,7 +87,7 @@
                                                     $student = array_unique($student);
                                                     sort($student);
                                                     foreach($student as $studentCode)
-                                                    echo "<option name ='studentCode' value='" .$studentCode ."'>" .$studentCode ."</option>";
+                                                    echo "<option name ='studentCode' value='" . $studentCode ."'>" .$studentCode ."</option>";
                                                 ?>
                                             </select> 
                                         </form>
@@ -205,7 +205,8 @@
                                         <td class="text-center">{{$d->gpa1}}</td>
                                         <td>{{$d->skill1}}</td>
                                         <td class="text-center">{{$d->prize1}}</td>
-                                        <td class="text-center"><i class="fas fa-info-circle"></i><a href="#">Xem thêm</a></td>
+                                        <td class="text-center"><i class="fas fa-info-circle"></i><a href="./#">Xem thêm</a></td>
+                                        
                                     </tr>
                                     
                                 @endforeach
