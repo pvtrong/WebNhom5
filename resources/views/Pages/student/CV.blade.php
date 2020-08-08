@@ -24,8 +24,8 @@
                             <?php if($student ->mobile != "")echo "<h5><i class='fa fa-phone-square' ></i>"."    ".$student ->mobile."<br></h5>"?>
                             <?php if($student ->birth != "")echo "<h5><i class='fas fa-birthday-cake'></i>"."    ".$student ->birth."<br></h5>"?>
                             <?php if($student ->gender != "")echo "<h5><i class='fas fa-venus-mars'></i>"."    ".$student ->gender."<br></h5>"?>
-                            
-                            
+
+
 
                         </div>
 
@@ -45,8 +45,8 @@
                             <?php if($student ->trainingSystem != "")echo "<h5><i class='fa fa-address-card'></i>    Hệ đào tạo: "."    ".$student ->trainingSystem."<br></h5>"?>
                             <?php if($student ->trainingProgram != "")echo "<h5><i class='fas fa-balance-scale'></i>    Chương trình đào tạo: "."    ".$student ->trainingProgram."<br></h5>"?>
                             <?php if($student ->yearOfCourse != "")echo " <h5><i class='fas fa-graduation-cap'></i>   Khoá: "."    ".$student ->yearOfCourse."<br></h5>"?>
-                            
-                            
+
+
                         </div>
                     </div>
                 </div>
@@ -65,8 +65,8 @@
                     <?php if($student ->forte != "")echo "<h5><i class='fas fa-battery-full'></i>   Kỹ năng: "."    ".$student ->forte."<br></h5>"?>
                     <?php if($student ->skill != "")echo "<h5><i class='fas fa-basketball-ball'></i>    Sở trường: "."    ".$student ->skill."<br></h5>"?>
                     <?php if($student ->favorite != "")echo "<h5><i class='fas fa-heart'></i>    Sở thích: "."    ".$student ->favorite."<br></h5>"?>
-                    
-                   
+
+
                 </div>
             </div>
         </div>

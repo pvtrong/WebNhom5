@@ -29,6 +29,7 @@
             <div>
                 {{ $BL_temp->links() }}
             </div>
+            
         </div>
     </div>
 @endsection

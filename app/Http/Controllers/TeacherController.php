@@ -128,19 +128,21 @@ class TeacherController extends Controller
         $user = User::find($id);
         $category = category::all()[8];
         if($teacher != null){
-          
+
             return view('Pages.Teacher.CV',['teacher'=>$teacher, 'user'=>$user, 'category'=>$category]);
         }
 
     }
-    public function getShare($id){
-        $student = student::find($id);
-        $user = User::find($id);
+    public function getShare($id){ // blog share of teacher
         $category = category::all()[9];
-        if($company != null){
-          
-            return view('Pages.Teacher.CV',['company'=>$company, 'user'=>$user, 'category'=>$category]);
+        $teacher = teacher::find($id);
+        $user = User::find($id);
+
+        if ($teacher != null) {
+            $BL_temp = DB::table('blog')->paginate(6);
+            return view('Pages.Teacher.Share', ['teacher' => $teacher, 'user' => $user, 'category' => $category, 'BL_temp' => $BL_temp]);
         }
+
 
     }
 }

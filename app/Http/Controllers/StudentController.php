@@ -99,7 +99,7 @@ class StudentController extends Controller
                 $student2->Hinh = $Hinh;
             }
             $student2->save();
-            return view('Pages.Student.Profile',['student'=>$student2, 'category'=>$category]);
+            return view('Pages.Student.Profile',['student'=>$student2, 'category'=>$category]); //
         }
 
 
@@ -143,7 +143,7 @@ class StudentController extends Controller
                 $student->Hinh = $Hinh;
             }
             $student->save();
-            return view('Pages.Student.Profile',['student'=>$student, 'category'=>$categor]);
+            return view('Pages.Student.Profile',['student'=>$student, 'category'=>$category]);
         }
 
 
@@ -159,14 +159,14 @@ class StudentController extends Controller
         }
 
     }
-    public function getShare($id){
+    public function getShare($id){ // blog share of student
         $category = category::all()[9];
         $student = student::find($id);
         $user = User::find($id);
 
         if($student != null){
             $BL_temp = DB::table('blog')->paginate(6);
-            return view('Pages.Student.CV',['student'=>$student, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
+            return view('Pages.Student.Share',['student'=>$student, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
         }
 
     }

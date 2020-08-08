@@ -5,7 +5,7 @@
 <form class="" method="POST" action="./Pages/Student/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
     <button type="submit" class="btn btn-primary" >Ghi nhận</button>
-    
+
     <div class="row">
         <div class="col-md-6">
             <div class="card shadow mb-4">
@@ -52,7 +52,7 @@
                     <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Thông tin cơ bản</h6>
 
                 <div class="card-body">
-                    
+
                     <div class="form-group">
                         <label for="department">Khoa</label>
                         <select name="department" class="form-control" id="sel1">
@@ -108,7 +108,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
     <div class="col-md-6">
             <div class="card shadow mb-4">
@@ -116,7 +116,7 @@
                     <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Địa chỉ</h6>
                 </div>
                 <div class="card-body">
-                    
+
                     <label for="nation">Quốc gia</label>
                     <input name="nation" type="text" class="form-control" placeholder="" id="txtNation">
 
@@ -137,7 +137,7 @@
                     <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Quá trình học tập</h6>
                 </div>
                 <div class="card-body">
-                   
+
                     <label for="GPA">GPA tích luỹ</label>
                     <input type="text" class="form-control" placeholder="" id="txtGPA">
                     <label for="Prize">Khen thưởng/giải thưởng</label>
@@ -147,7 +147,7 @@
                     <label for="skill">Năng khiếu</label>
                     <textarea name="skill" class="form-control" rows="5" id="txtSkill"></textarea>
                     <label for="favorite">Sở thích</label>
-                    <textarea name="favorite" class="form-control" rows="5" id="txtFavorite"></textarea>          
+                    <textarea name="favorite" class="form-control" rows="5" id="txtFavorite"></textarea>
                 </div>
             </div>
         </div>

@@ -24,7 +24,7 @@
                             <?php if($teacher ->gender != "")echo "<h5><i class='fas fa-venus-mars'></i>    Giới tính: "."    ".$teacher ->gender."<br></h5>"?>
                             <h5><i class="fa fa-envelope"></i>    Email: {{$user-> email}}<br></h5>
                             <?php if($teacher ->mobile != "")echo "<h5><i class='fa fa-phone-square' ></i>"."    ".$teacher ->mobile."<br></h5>"?>
-                     
+
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         <?php if($teacher ->major != "")echo "<h5><i class='fas fa-book-open'></i>   Ngành: "."    ".$teacher ->major."<br></h5>"?>
                         <?php if($teacher ->position != "")echo "<h5><i class='fas fa-address-card'></i>"."    Chức vụ: ".$teacher ->position."<br></h5>"?>
                         <?php if($teacher ->office != "")echo "<h5><i class='fa fa-building'></i>"."    Văn phòng: ".$teacher ->office."<br></h5>"?>
-                    
+
                     </div>
                 </div>
             </div>
@@ -54,8 +54,8 @@
                         <?php if($teacher ->bonus != "")echo "<h5><i class='fa fa-plus-square'></i>    Đãi ngộ: "."    ".$teacher ->bonus."<br></h5>"?>
                         <?php if($teacher ->startDayOffer != "")echo "<h5><i class='fa fa-bullhorn'></i>    Ngày bắt đầu đợt tuyển: "."    ".$teacher ->startDayOffer."<br></h5>"?>
                         <?php if($teacher ->endDayOffer != "")echo "<h5><i class='fa fa-exclamation-triangle'></i>     Ngày kết thúc đợt tuyển: "."    ".$teacher ->endDayOffer."<br></h5>"?>
-                        
-                        
+
+
                     </div>
                 </div>
             </div>

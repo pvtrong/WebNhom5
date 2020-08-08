@@ -124,7 +124,7 @@ class CompanyController extends Controller
         }
 
     }
-    public function getShare($id){
+    public function getShare($id){ //blog share of company
         $company = company::find($id);
         $user = User::find($id);
         $category = category::all()[9];

@@ -32,6 +32,10 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('Profile/{id}', 'StudentController@getProfile');
         Route::get('Setting', 'StudentController@getSetting');
         Route::post('updateProfile/{id}', 'StudentController@postUpdate');
+
+        Route::get('CV/{id}', 'StudentController@getCV');
+        Route::get('Share/{id}', 'StudentController@getShare');
+        Route::post('updateProfile/{id}', 'StudentController@postUpdate');
     });
     Route::group(['prefix'=>'Teacher'], function(){
         Route::get('Home', 'TeacherController@getHome')->name('teacher-home');
@@ -42,6 +46,10 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('Profile/{id}', 'TeacherController@getProfile');
         Route::get('Setting', 'TeacherController@getSetting');
         Route::post('updateProfile/{id}', 'TeacherController@postUpdate');
+        // add in teacher
+        Route::get('CV/{id}', 'TeacherController@getCV');
+        Route::get('Share/{id}', 'TeacherController@getShare');
+        Route::post('updateProfile/{id}', 'TeacherController@postUpdate');
     });
     Route::group(['prefix'=>'Company'], function(){
         Route::get('Home', 'CompanyController@getHome')->name('company-home');
@@ -51,7 +59,7 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('Help', 'CompanyController@getHelp');
         Route::get('Profile/{id}', 'CompanyController@getProfile');
         Route::get('Setting', 'CompanyController@getSetting');
-
+        // add cv, share, update profile of company
         Route::get('CV/{id}', 'CompanyController@getCV');
         Route::get('Share/{id}', 'CompanyController@getShare');
         Route::post('updateProfile/{id}', 'CompanyController@postUpdate');
