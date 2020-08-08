@@ -35,7 +35,7 @@
                             <input value="{{Auth::user()->email}}" name="email" type="email" class="form-control" readonly placeholder="" id="txtEmailOther">
                             <label for="mobile">Số điện thoại</label>
                             <input name="mobile" type="tel"  value="{{$teacher->mobile}}" class="form-control" placeholder="" id="txtMobile">
-                     
+
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                         <input name="position" type="text" value="{{$teacher->position}}"  class="form-control" placeholder="" id="txtPosition">
                         <label for="office">Văn phòng</label>
                         <input name="office" type="text"  value="{{$teacher->office}}" class="form-control" placeholder="" id="txtOffice">
-                    
+
                     </div>
                 </div>
             </div>
@@ -73,18 +73,19 @@
                     </div>
                     <div class="card-body">
                         <label for="offer">Yêu cầu/Tiêu chí</label>
-                        <textarea name="offer" class="form-control" rows="5" id="txtOffer"><?php echo $teacher->offer?></textarea>
+                        <textarea name="offer" class="form-control ckeditor" rows="5" id="txtOffer"><?php echo $teacher->offer?></textarea>
                         <label for="topic">Đề tài nghiên cứu</label>
-                        <textarea name="topicResearch" class="form-control" rows="5" id="txtTopic"><?php echo $teacher->topicResearch?></textarea>
+                        <textarea name="topicResearch" class="form-control ckeditor" rows="5" id="txtTopic"><?php echo $teacher->topicResearch?></textarea>
                         <label for="numbers">Số lượng</label>
                         <input name="numbers" value="{{$teacher->numbers}}"  type="number" class="form-control" name="numbers" value="" id="txtNumbers" />
-                        <textarea  name="bonus" value="{{$teacher->bonus}}"class="form-control" rows="5" id="txtBonus"></textarea>
+                        <label for="bonus">Bonus</label>
+                        <textarea  name="bonus" value="{{$teacher->bonus}}"class="form-control ckeditor" rows="5" id="txtBonus"></textarea>
                         <label for="startDayOffer">Ngày bắt đầu đợt tuyển</label>
                         <label for="startDayOffer">Ngày bắt đầu đợt tuyển</label>
                         <input name="startDayOffer" value="{{$teacher->startDayOffer}}"  type="date" class="form-control"  id="txtStartDayOffer">
                         <label for="endDayOffer">Ngày kết thúc đợt tuyển</label>
                         <input name="endDayOffer" value="{{$teacher->endDayOffer}}"  type="date" class="form-control" placeholder="" id="txtEndDayOffer">
-                        
+
                     </div>
                 </div>
             </div>
