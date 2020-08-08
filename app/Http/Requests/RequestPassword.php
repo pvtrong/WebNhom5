@@ -33,7 +33,7 @@ class RequestPassword extends FormRequest
     public function messages(){
         return [
             'password_old.required' => 'Trường này không được để trống',
-            'password=.required' => 'Trường này không được để trống',
+            'password.required' => 'Trường này không được để trống',
             'pw_confirm.required' => 'Trường này không được để trống',
             'pw_confirm.same' => 'Mật khẩu xác nhận không đúng',
         ];

@@ -41,13 +41,13 @@ class UserController extends Controller
     }
 
     public function post_registration( RequestRegistration $requestRegistration){
-        dd($requestRegistration ->all());
-        // $request->merge(['password'=>bcrypt($requestRegistration->password)]);
-        // if(User::create($requestRegistration->all())){
-		// 	return redirect()->route('login');
-		// }else{
-		// 	return 'false';
-		// }
+        
+        $request->merge(['password'=>bcrypt($requestRegistration->password)]);
+        if(User::create($requestRegistration->all())){
+			return redirect()->route('login');
+		}else{
+			return 'false';
+		}
     }
     public function shareViews($view){
         $id = Auth::user()->id;
@@ -76,7 +76,7 @@ class UserController extends Controller
         if(Hash::check($requestPassword->password_old, $user ->password)){
             $user ->password = bcrypt($requestPassword -> password);
             $user ->save();
-            return redirect() ->back() -> with('succes', 'Cập nhật thành công');
+            return redirect() ->back() -> with('success', 'Cập nhật thành công');
         }
         return redirect() ->back() ->with('danger', "Mật khẩu cũ không đúng");
     }
