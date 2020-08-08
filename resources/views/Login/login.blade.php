@@ -8,6 +8,18 @@
 
 <body>
     <div class="container-fluid">
+        @if(\Session::has('success'))
+        <div class="alert alert-success alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Thành công! </strong> {{\Session::get('success')}}
+        </div>
+        @endif
+        @if(\Session::has('danger'))
+        <div class="alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Thất bại! </strong> {{\Session::get('danger')}}
+        </div>
+        @endif
         <div class="row col-md-6 col-md-offset-3 d-flex align-self-center">
             <div class="panel panel-primary">
                 <div class="panel-heading text-center">
