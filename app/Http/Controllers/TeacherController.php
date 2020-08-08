@@ -333,11 +333,11 @@ class TeacherController extends Controller
         $category = category::all()[9];
         $user = User::find($id);
         $user_blog = blog::where('id', $id);
-        if($user_blog != null){
+        if(empty($user_blog->get())){
             $blog = $user_blog->first();
             $BL_temp = $user_blog->simplePaginate(2);
             return view('Pages.Teacher.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
-        } else return redirect()->back()->with('danger', "Tài khoản này chưa có bài đăng nào");
+        }else return redirect()->back()->with('danger', "Tài khoản này chưa có bài đăng nào");
         
 
     }
