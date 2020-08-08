@@ -152,9 +152,9 @@ class StudentController extends Controller
         $category = category::all()[8];
         $student = student::find($id);
         $user = User::find($id);
-        
+
         if($student != null){
-          
+
             return view('Pages.Student.CV',['student'=>$student, 'user'=>$user, 'category'=>$category]);
         }
 
@@ -163,10 +163,10 @@ class StudentController extends Controller
         $category = category::all()[9];
         $student = student::find($id);
         $user = User::find($id);
-        
-        if($company != null){
-          
-            return view('Pages.Student.CV',['company'=>$company, 'user'=>$user, 'category'=>$category]);
+
+        if($student != null){
+            $BL_temp = DB::table('blog')->paginate(6);
+            return view('Pages.Student.CV',['student'=>$student, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
         }
 
     }
