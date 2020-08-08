@@ -128,7 +128,7 @@ class TeacherController extends Controller
         $user = User::find($id);
         $category = category::all()[8];
         if($teacher != null){
-          
+
             return view('Pages.Teacher.CV',['teacher'=>$teacher, 'user'=>$user, 'category'=>$category]);
         }
 
@@ -138,7 +138,7 @@ class TeacherController extends Controller
         $user = User::find($id);
         $category = category::all()[9];
         if($company != null){
-          
+
             return view('Pages.Teacher.CV',['company'=>$company, 'user'=>$user, 'category'=>$category]);
         }
 
