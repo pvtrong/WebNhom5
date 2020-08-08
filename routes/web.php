@@ -45,15 +45,7 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('DS2', 'TeacherController@getDS2');
         Route::get('Help', 'TeacherController@getHelp');
         Route::get('Profile/{id}', 'TeacherController@getProfile');
-<<<<<<< HEAD
         Route::get('Setting', 'TeacherController@getSetting');
-=======
-
-        Route::get('CV/{id}', 'TeacherController@getCV');
-        Route::get('Share/{id}', 'TeacherController@getShare');
-        Route::get('Share2/{id_blog}', 'TeacherController@getShare2');
-        Route::get('updateProfile', 'CompanyController@postUpdate');
->>>>>>> origin/master
     });
     Route::group(['prefix'=>'Company'], function(){
         Route::get('Home', 'CompanyController@getHome')->name('company-home');
@@ -62,12 +54,8 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('DS2', 'CompanyController@getDS2');
         Route::get('Help', 'CompanyController@getHelp');
         Route::get('Profile/{id}', 'CompanyController@getProfile');
-<<<<<<< HEAD
         Route::get('Setting', 'CompanyController@getSetting');
 
-=======
-        
->>>>>>> origin/master
         Route::get('CV/{id}', 'CompanyController@getCV');
         Route::get('Share/{id}', 'CompanyController@getShare');
         Route::get('Share2/{id_blog}', 'CompanyController@getShare2');
@@ -123,11 +111,8 @@ View::composer(['*'], function($view){
             $view->with ('hinh', $hinh);
         } else $view->with ('hinh', null);
     }
-<<<<<<< HEAD
 
 
 
 
-=======
->>>>>>> origin/master
 });
