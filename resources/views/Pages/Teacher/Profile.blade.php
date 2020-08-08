@@ -4,6 +4,7 @@
 
 
 <div class="container">
+    <a class="position-absolute" id="btnCV" href="./Pages/Teacher/CV/{{Auth::user()->id}}"><button type="reset2" class="btn btn-primary" >CV Cá Nhân</button></a>
     <form class="" method="POST" action="./Pages/Teacher/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
         <button type="submit" class="btn btn-primary" >Ghi nhận</button>
@@ -78,6 +79,8 @@
                         <textarea name="topicResearch" class="form-control" rows="5" id="txtTopic"><?php echo $teacher->topicResearch?></textarea>
                         <label for="numbers">Số lượng</label>
                         <input name="numbers" value="{{$teacher->numbers}}"  type="number" class="form-control" name="numbers" value="" id="txtNumbers" />
+                        <textarea  name="bonus" value="{{$teacher->bonus}}"class="form-control" rows="5" id="txtBonus"></textarea>
+                        <label for="startDayOffer">Ngày bắt đầu đợt tuyển</label>
                         <label for="startDayOffer">Ngày bắt đầu đợt tuyển</label>
                         <input name="startDayOffer" value="{{$teacher->startDayOffer}}"  type="date" class="form-control"  id="txtStartDayOffer">
                         <label for="endDayOffer">Ngày kết thúc đợt tuyển</label>

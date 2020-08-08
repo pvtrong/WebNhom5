@@ -12,19 +12,19 @@
                 @foreach($BL_temp as $temp)
                 <div class="row">
                     <div class="col-sm-6">
-                    <a href="./Pages/Company/Share2/{{$temp->id_blog}}">
+                    <a href="./Pages/Student/Share2/{{$temp->id_blog}}">
                             <img class="bl_avatar" src="upload/blog/{{$temp->Hinh}}" alt="">
                         </a>
                     </div>
                     <div class="col-sm-6">
-                        <a href="./Pages/Company/Share2/{{$temp->id_blog}}"><h6>{!!$temp->title!!}</h6></a>
+                        <a href="./Pages/Student/Share2/{{$temp->id_blog}}"><h6>{!!$temp->title!!}</h6></a>
                         <p>{!!$temp->description!!}</p>
                         <p>{!!$temp->created_at!!}</p>
                     </div>
                 </div>
                 @endforeach
                 <div>
-                    {!! $BL_temp->links() !!}
+                    {!!$BL_temp->links() !!}
                 </div>
             </div>
         </div>

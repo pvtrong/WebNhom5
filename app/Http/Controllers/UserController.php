@@ -7,7 +7,11 @@ use App\User;
 use App\student;
 use App\teacher;
 use App\company;
+use App\Model\Category;
 use Auth;
+use App\Http\Requests\RequestPassword;
+use App\Http\Requests\RequestRegistration;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -21,11 +25,11 @@ class UserController extends Controller
         Auth::logout();
  		if(Auth::attempt($request->only('email','password'),'category'==='1')){
  			if (Auth::user()->category=='1') {
- 				return redirect()->route('company-home')->with('success','chào mừng quay trở lại');
+ 				return redirect()->route('company-home')->with('success','Chào mừng quay trở lại');
  			} elseif (Auth::user()->category=='2') {
- 				return redirect()->route('teacher-home')->with('success','chào mừng quay trở lại');
+ 				return redirect()->route('teacher-home')->with('success','Chào mừng quay trở lại');
  			} elseif (Auth::user()->category=='3') {
-                return redirect()->route('student-home')->with('success','chào mừng quay trở lại');
+                return redirect()->route('student-home')->with('success','Chào mừng quay trở lại');
             }
 		} else {
 			return 'false';
@@ -36,10 +40,11 @@ class UserController extends Controller
         return view('Registration.registration');
     }
 
-    public function post_registration(Request $request){
-        $request->merge(['password'=>bcrypt($request->password)]);
-        if(User::create($request->all())){
-			return redirect()->route('login');
+    public function post_registration( RequestRegistration $requestRegistration){
+        
+        $request->merge(['password'=>bcrypt($requestRegistration->password)]);
+        if(User::create($requestRegistration->all())){
+			return redirect()->route('login')-> with('success', 'Đăng kí thành công');;
 		}else{
 			return 'false';
 		}
@@ -58,7 +63,22 @@ class UserController extends Controller
     }
     public function logout(){
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('login')-> with('success', 'Đăng xuất thành công');
+    }
+    public function updatePassword(){
+        $category = category::all()[6];
+        return view('Password/updatePassword', ['category'=>$category]);
+    }
+    public function saveUpdatePassword(RequestPassword $requestPassword){
+        
+        $user = user::find($requestPassword-> id);
+
+        if(Hash::check($requestPassword->password_old, $user ->password)){
+            $user ->password = bcrypt($requestPassword -> password);
+            $user ->save();
+            return redirect() ->back() -> with('success', 'Cập nhật thành công');
+        }
+        return redirect() ->back() ->with('danger', "Mật khẩu cũ không đúng");
     }
 
 }

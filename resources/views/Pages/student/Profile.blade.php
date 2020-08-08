@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="container">
+    <a class="position-absolute" id="btnCV" href="./Pages/Student/CV/{{Auth::user()->id}}"><button type="reset2" class="btn btn-primary" >CV Cá Nhân</button></a>
     <form class="" method="POST" action="./Pages/Student/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
         <button type="submit" class="btn btn-primary" >Ghi nhận</button>
