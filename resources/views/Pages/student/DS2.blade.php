@@ -192,9 +192,10 @@
                                     @endforeach
                                     
                                 </tbody>
-                                {!! $data->appends(request()->input())->links() !!}
+                                
                                
                             </table>    
+                            {!! $data->appends(request()->input())->links() !!}
                         </div>
                     </div>                       
                 </div>

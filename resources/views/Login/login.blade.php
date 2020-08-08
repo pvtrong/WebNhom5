@@ -29,7 +29,7 @@
                     <form method="POST">
                         <div class="form-group">
                             <label for="Email">Email</label>
-                            <input type="text" class="form-control" name="email" placeholder="Tên đăng ký">
+                            <input type="text" class="form-control" name="email" placeholder="Email đăng ký">
                         </div>
                         <div class="form-group">
                             <label for="password">Mật khẩu</label>

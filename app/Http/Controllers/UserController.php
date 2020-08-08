@@ -32,7 +32,7 @@ class UserController extends Controller
                 return redirect()->route('student-home')->with('success','Chào mừng quay trở lại');
             }
 		} else {
-			return 'false';
+			return redirect()->back()->with('danger', "Đăng nhập thất bại");
 		}
     }
 
