@@ -239,7 +239,7 @@ class TeacherController extends Controller
         if($teacher != null)
 
         return view('Pages.Teacher.Profile',['teacher'=>$teacher, 'category'=>$category]);
-        else return view('Pages.Teacher.Profile2');
+        return view('Pages.Teacher.Profile2',[ 'category'=>$category]);
 
 
     }
