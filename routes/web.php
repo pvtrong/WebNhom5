@@ -35,6 +35,7 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
 
         Route::get('CV/{id}', 'StudentController@getCV');
         Route::get('Share/{id}', 'StudentController@getShare');
+        Route::get('Share2/{id_blog}', 'StudentController@getShare2');
         Route::post('updateProfile/{id}', 'StudentController@postUpdate');
     });
     Route::group(['prefix'=>'Teacher'], function(){
@@ -47,6 +48,7 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
 
         Route::get('CV/{id}', 'TeacherController@getCV');
         Route::get('Share/{id}', 'TeacherController@getShare');
+        Route::get('Share2/{id_blog}', 'TeacherController@getShare2');
         Route::get('updateProfile', 'CompanyController@postUpdate');
     });
     Route::group(['prefix'=>'Company'], function(){
@@ -59,6 +61,7 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         
         Route::get('CV/{id}', 'CompanyController@getCV');
         Route::get('Share/{id}', 'CompanyController@getShare');
+        Route::get('Share2/{id_blog}', 'CompanyController@getShare2');
         Route::post('updateProfile/{id}', 'CompanyController@postUpdate');
         Route::get('updateProfile', 'CompanyController@postUpdate');
     });
@@ -95,7 +98,7 @@ Route::get('admin-logout', 'AdminController@Logout_admin')->name('logout-admin')
 Route::get('registration-admin', 'AdminController@registration_admin')->name('registration-admin');
 Route::post('registration-admin', 'AdminController@post_registration_admin');
 
-//View share hader
+//View share header
 View::composer(['*'], function($view){
     if(Auth::user() != null){
         $id = Auth::user()->id;

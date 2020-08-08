@@ -333,3 +333,15 @@ body {
     top: 55%;
     right: 10px;
 }
+
+.content-body .alert {
+    position: fixed;
+    right: 2em;
+    top: 6em;
+}
+
+.bl_avatar {
+    width: 10em;
+    height: 10em;
+    background-size: cover;
+}

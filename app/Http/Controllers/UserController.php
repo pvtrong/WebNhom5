@@ -10,6 +10,7 @@ use App\company;
 use App\Model\Category;
 use Auth;
 use App\Http\Requests\RequestPassword;
+use App\Http\Requests\RequestRegistration;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -39,13 +40,14 @@ class UserController extends Controller
         return view('Registration.registration');
     }
 
-    public function post_registration(Request $request){
-        $request->merge(['password'=>bcrypt($request->password)]);
-        if(User::create($request->all())){
-			return redirect()->route('login');
-		}else{
-			return 'false';
-		}
+    public function post_registration( RequestRegistration $requestRegistration){
+        dd($requestRegistration ->all());
+        // $request->merge(['password'=>bcrypt($requestRegistration->password)]);
+        // if(User::create($requestRegistration->all())){
+		// 	return redirect()->route('login');
+		// }else{
+		// 	return 'false';
+		// }
     }
     public function shareViews($view){
         $id = Auth::user()->id;

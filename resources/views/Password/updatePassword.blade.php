@@ -2,8 +2,9 @@
 @section('content')
 <form method="POST" action="./Pages/Setting">
     @csrf
-    <div class="form-group updatePw position-relative">
     <input name="id" type="hidden" value="{{Auth::user()->id}}">
+    <div class="form-group updatePw position-relative">
+    
         <label for="password_old">Mật khẩu cũ:</label>
         <input name="password_old" type="password" class="form-control" placeholder="******">
         <a class="eye" href="javascript:;void(0);"><i class="fa fa-eye"></i></a>

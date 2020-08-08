@@ -17,6 +17,7 @@
 
 </head>
 <body>
+    
     <!--Menu area-->
     <div class="wrapper">
         <!-- Sidebar -->
@@ -31,7 +32,18 @@
                     <div class="content">
                         @include('Pages.layout.header')
                         <div class="content-body">
-
+                            @if(\Session::has('success'))
+                            <div class="alert alert-success alert-dismissable">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Thành công! </strong> {{\Session::get('success')}}
+                            </div>
+                            @endif
+                            @if(\Session::has('danger'))
+                            <div class="alert alert-danger">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Thất bại! </strong> {{\Session::get('danger')}}
+                            </div>
+                            @endif
                             @yield('content')
 
                         </div>

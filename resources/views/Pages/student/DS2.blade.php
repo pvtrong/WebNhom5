@@ -186,7 +186,7 @@
                                             <td >{{$d->topicResearch1}}</td>
                                             <td>{{$d->offer1}}</td>
                                             <td class="text-center">{{$d->numbers1}}</td>
-                                            <td class="text-center"><i class="fas fa-info-circle"></i><a href=".Pages/Student/CV/{{$d->id1}}">Xem thêm</a></td>
+                                            <td class="text-center"><i class="fas fa-info-circle"></i><a href="Pages/Teacher/CV/{{$d->id1}}">Xem thêm</a></td>
                                             <th class="text-center"></th>
                                         </tr>
                                     @endforeach

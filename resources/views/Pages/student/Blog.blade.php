@@ -75,7 +75,7 @@
     </div>
     <div class="row2">
         <div class="col-sm-12 col-md-5">
-            <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Hiển thị 4 kết quả 1 trang</div>
+            <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite"></div>
         </div>
         <div>
             {{ $BL_St->links() }}

@@ -8,6 +8,7 @@ use App\student;
 use App\teacher;
 use App\company;
 use App\User;
+use App\blog;
 use App\Model\Category;
 use Illuminate\Support\Facades\DB;
 
@@ -242,10 +243,7 @@ class StudentController extends Controller
 
 
     }
-    public function getSetting(){
-        $category = category::all()[6];
-        return view('Pages.Student.Setting', ['category'=>$category]);
-    }
+    
     public function postUpdate(Request $request, $id){
         $category = category::all()[1];
         $student = student::find($id);
@@ -293,7 +291,7 @@ class StudentController extends Controller
                 $student2->Hinh = $Hinh;
             }
             $student2->save();
-            return view('Pages.Student.Profile',['student'=>$student2, 'category'=>$category]);
+            return view('Pages.Student.Profile',['student'=>$student2, 'category'=>$category])->with('success','Bạn cập nhật thành công!');
         }
 
 
@@ -338,7 +336,7 @@ class StudentController extends Controller
                 $student->Hinh = $Hinh;
             }
             $student->save();
-            return view('Pages.Student.Profile',['student'=>$student, 'category'=>$category]);
+            return view('Pages.Student.Profile',['student'=>$student, 'category'=>$category])->with('success','Bạn cập nhật thành công!');
         }
 
 
@@ -356,13 +354,29 @@ class StudentController extends Controller
     }
     public function getShare($id){
         $category = category::all()[9];
-        $student = student::find($id);
         $user = User::find($id);
+        $user_blog = blog::where('id', $id);
         
-        if($company != null){
-          
-            return view('Pages.Student.CV',['company'=>$company, 'user'=>$user, 'category'=>$category]);
+        if($user_blog != null){
+            $blog = $user_blog->first();
+            $BL_temp = $user_blog->simplePaginate(2);
+            return view('Pages.Student.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
         }
+        
+
+    }
+    public function getShare2( $id_blog){
+        $category = category::all()[9];
+        
+        $blog = blog::find($id_blog);
+        
+        if($blog != null){
+            $user = User::find($blog -> id);
+            $user_blog = blog::where('id', $blog ->id);
+            $BL_temp = $user_blog->simplePaginate(1);
+            return view('Pages.Student.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
+        }
+        
 
     }
 

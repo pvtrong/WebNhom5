@@ -8,6 +8,7 @@ use App\student;
 use App\teacher;
 use App\company;
 use App\User;
+use App\blog;
 use App\Model\Category;
 use Illuminate\Support\Facades\DB;
 
@@ -329,13 +330,30 @@ class TeacherController extends Controller
 
     }
     public function getShare($id){
-        $student = student::find($id);
-        $user = User::find($id);
         $category = category::all()[9];
-        if($company != null){
-          
-            return view('Pages.Teacher.CV',['company'=>$company, 'user'=>$user, 'category'=>$category]);
+        $user = User::find($id);
+        $user_blog = blog::where('id', $id);
+        
+        if($user_blog != null){
+            $blog = $user_blog->first();
+            $BL_temp = $user_blog->simplePaginate(2);
+            return view('Pages.Teacher.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
         }
+        
+
+    }
+    public function getShare2( $id_blog){
+        $category = category::all()[9];
+        
+        $blog = blog::find($id_blog);
+        
+        if($blog != null){
+            $user = User::find($blog -> id);
+            $user_blog = blog::where('id', $blog ->id);
+            $BL_temp = $user_blog;
+            return view('Pages.Teacher.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
+        }
+        
 
     }
 }
