@@ -6,33 +6,38 @@
     <div class="form-group updatePw position-relative">
     
         <label for="password_old">Mật khẩu cũ:</label>
-        <input name="password_old" type="password" class="form-control" placeholder="******">
-        <a class="eye" href="javascript:;void(0);"><i class="fa fa-eye"></i></a>
         @if($errors->has('password_old'))
             <span class="error-text">
                 {{$errors->first('password_old')}}
             </span>
         @endif
+        <input name="password_old" type="password" class="form-control" placeholder="******">
+        <a class="eye" href="javascript:;void(0);"><i class="fa fa-eye"></i></a>
+        
     </div>
+    
     <div class="form-group updatePw position-relative">
         <label for="password">Mật khẩu mới:</label>
-        <input name="password" type="password" class="form-control" placeholder="******">
-        <a class="eye" href="javascript:;void(0);"><i class="fa fa-eye"></i></a>
         @if($errors->has('password'))
             <span class="error-text">
                 {{$errors->first('password')}}
             </span>
         @endif
+        <input name="password" type="password" class="form-control" placeholder="******">
+        <a class="eye" href="javascript:;void(0);"><i class="fa fa-eye"></i></a>
+        
     </div>
+    
     <div class="form-group updatePw position-relative">
         <label for="pw_confirm">Nhập lại mật khẩu mới:</label>
+        @if($errors->has('pw_confirm'))
+        <span class="error-text">
+            {{$errors->first('pw_confirm')}}
+        </span>
+        @endif
         <input name="pw_confirm" type="password" class="form-control" placeholder="******">
         <a class="eye" href="javascript:;void(0);"><i class="fa fa-eye"></i></a>
-        @if($errors->has('pw_confirm'))
-            <span class="error-text">
-                {{$errors->first('pw_confirm')}}
-            </span>
-        @endif
+        
     </div>
     <button type="submit" class="btn btn-primary"><i class="white fa fa-save"></i>  Submit</button>
   </form>

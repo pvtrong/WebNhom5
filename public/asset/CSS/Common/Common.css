@@ -345,3 +345,9 @@ body {
     height: 10em;
     background-size: cover;
 }
+
+.error-text {
+    color: red;
+    font-style: italic;
+    font-size: 0.9em;
+}

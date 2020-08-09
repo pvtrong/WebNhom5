@@ -8,10 +8,10 @@
 
 <body>
     <div class="container-fluid">
-        @if(\Session::has('success'))
+        @if(Session::has('success'))
         <div class="alert alert-success alert-dismissable">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Thành công! </strong> {{\Session::get('success')}}
+            <strong>Thành công! </strong> {{Session::get('success')}}
         </div>
         @endif
         @if(\Session::has('danger'))
