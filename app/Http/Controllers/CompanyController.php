@@ -355,4 +355,102 @@ class CompanyController extends Controller
         
 
     }
+
+    public function postBlog(Request $request) { 
+        $category = category::all()[2]; 
+        $BL_St = DB::table('blog')->paginate(4);
+        $this->validate($request, [
+            'Tieude'=>'required',
+            'Noidung'=>'required',
+            'Tomtat'=>'required'
+        ],[
+            'Tieude.required'=>'Bạn chưa nhập tóm tắt',
+            'Noidung.required'=>'Bạn chưa nhập nội dung',
+            'Tomtat.required'=>'Bạn chưa nhập tóm tắt'
+        ]);
+
+        $blog = new bLog;
+        $blog->id = Auth::user()->id;
+        $blog->title = $request->Tieude;
+        $blog->content = $request->Noidung;
+        $blog->description = $request->Tomtat;
+
+        if($request->hasFile('Hinh')){
+            $file = $request ->file('Hinh');
+            $duoi = $file->getClientOriginalExtension();
+            if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+
+            }
+            $name = $file-> getClientOriginalName();
+            $Hinh = Str::random(4).'_'. $name;
+            while(file_exists('upload/blog/'.$Hinh)){
+                $Hinh = Str::random(4)."_". $name;
+            }
+            $file->move('upload/blog', $Hinh);
+            $blog->Hinh = $Hinh;
+        }
+        
+        $blog->save();
+        return view('Pages.Company.Blog',['category'=>$category,'BL_St' => $BL_St]) -> with('thongbao','thành công');
+    }
+
+    public function updateBlog(Request $request, $id_blog){
+        $category = category::all()[2]; 
+        $BL_St = DB::table('blog')->paginate(4);
+        $blog= blog::find($id_blog);
+
+        $this->validate($request, [
+            'Tieude'=>'required',
+            'Noidung'=>'required',
+            'Tomtat'=>'required'
+        ],[
+            'Tieude.required'=>'Bạn chưa nhập tieude',
+            'Noidung.required'=>'Bạn chưa nhập nội dung',
+            'Tomtat.required'=>'Bạn chưa nhập tóm tắt'
+        ]);
+
+        $blog->title = $request->Tieude;
+        $blog->content = $request->Noidung;
+        $blog->description = $request->Tomtat;
+
+        if($request->hasFile('Hinh')){
+            $file = $request ->file('Hinh');
+            $duoi = $file->getClientOriginalExtension();
+            if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+
+            }
+            $name = $file-> getClientOriginalName();
+            $Hinh = Str::random(4).'_'. $name;
+            while(file_exists('upload/blog/'.$Hinh)){
+                $Hinh = Str::random(4)."_". $name;
+            }
+            $file->move('upload/blog', $Hinh);
+            if($blog->Hinh != NULL)
+            unlink('upload/blog/'.$blog->Hinh);
+            else
+            $blog->Hinh = $Hinh;
+        }
+        
+        $blog->save();
+
+        return view('Pages/Company/updateBlog',['blog'=>$blog,'category'=>$category,'BL_St' => $BL_St]);
+    
+    }
+    public function getUpdateBlog($id_blog){
+        $category = category::all()[2]; 
+        $BL_St = DB::table('blog')->paginate(4);
+
+        $blog= blog::find($id_blog);
+
+        return view('Pages/Company/updateBlog',['blog'=>$blog,'category'=>$category,'BL_St' => $BL_St]);
+    }
+
+    public function delBlog($id_blog) {
+        $category = category::all()[2]; 
+        $blog = blog::find($id_blog);
+        $blog->delete();
+        return view('Pages/Company/delBlog',['category'=>$category]);
+    
+    }
+
 }

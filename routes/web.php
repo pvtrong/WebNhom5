@@ -26,44 +26,61 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
     Route::get('Setting', 'UserController@updatePassword')->name('user.update.password');
     Route::post('Setting', 'UserController@saveUpdatePassword');
     Route::group(['prefix'=>'Student'], function(){
-        Route::get('Home', 'StudentController@getHome')->name('student-home');
-        Route::get('Blog', 'StudentController@getBlog');
+        Route::get('Home', 'StudentController@getHome')->name('student-home');        
         Route::get('DS1', 'StudentController@getDS1');
         Route::get('DS2', 'StudentController@getDS2');
         Route::get('Help', 'StudentController@getHelp');
         Route::get('Profile/{id}', 'StudentController@getProfile');
-
         Route::get('CV/{id}', 'StudentController@getCV');
         Route::get('Share/{id}', 'StudentController@getShare');
         Route::get('Share2/{id_blog}', 'StudentController@getShare2');
         Route::post('updateProfile/{id}', 'StudentController@postUpdate');
+         //them, sua xoa
+         Route::get('Blog', 'StudentController@getBlog');
+         Route::post('Blog', 'StudentController@postBlog');
+         Route::post('updateBlog/{id_blog}', 'StudentController@updateBlog');
+         Route::get('getUpdateBlog/{id_blog}', 'StudentController@getupdateBlog');
+         Route::get('delBlog/{id_blog}', 'StudentController@delBlog');
+         //
     });
     Route::group(['prefix'=>'Teacher'], function(){
         Route::get('Home', 'TeacherController@getHome')->name('teacher-home');
-        Route::get('Blog', 'TeacherController@getBlog');
         Route::get('DS1', 'TeacherController@getDS1');
         Route::get('DS2', 'TeacherController@getDS2');
         Route::get('Help', 'TeacherController@getHelp');
         Route::get('Profile/{id}', 'TeacherController@getProfile');
-
         Route::get('CV/{id}', 'TeacherController@getCV');
         Route::get('Share/{id}', 'TeacherController@getShare');
         Route::get('Share2/{id_blog}', 'TeacherController@getShare2');
         Route::get('updateProfile', 'CompanyController@postUpdate');
+
+        //them, sua xoa
+        Route::get('Blog', 'TeacherController@getBlog');
+        Route::get('Blog', 'TeacherController@getBlog');
+        Route::post('Blog', 'TeacherController@postBlog');
+        Route::post('updateBlog/{id_blog}', 'TeacherController@updateBlog');
+        Route::get('getUpdateBlog/{id_blog}', 'TeacherController@getupdateBlog');
+        Route::get('delBlog/{id_blog}', 'TeacherController@delBlog');
+        
     });
     Route::group(['prefix'=>'Company'], function(){
         Route::get('Home', 'CompanyController@getHome')->name('company-home');
-        Route::get('Blog', 'CompanyController@getBlog');
         Route::get('DS1', 'CompanyController@getDS1');
         Route::get('DS2', 'CompanyController@getDS2');
         Route::get('Help', 'CompanyController@getHelp');
         Route::get('Profile/{id}', 'CompanyController@getProfile');
-        
         Route::get('CV/{id}', 'CompanyController@getCV');
         Route::get('Share/{id}', 'CompanyController@getShare');
         Route::get('Share2/{id_blog}', 'CompanyController@getShare2');
         Route::post('updateProfile/{id}', 'CompanyController@postUpdate');
         Route::get('updateProfile', 'CompanyController@postUpdate');
+
+        //them, sua xoa
+        Route::get('Blog', 'CompanyController@getBlog');
+        Route::post('Blog', 'CompanyController@postBlog');
+        Route::post('updateBlog/{id_blog}', 'CompanyController@updateBlog');
+        Route::get('getUpdateBlog/{id_blog}', 'CompanyController@getupdateBlog');
+        Route::get('delBlog/{id_blog}', 'CompanyController@delBlog');
     });
 });
 Route::get('login', 'UserController@Login')->name('login');

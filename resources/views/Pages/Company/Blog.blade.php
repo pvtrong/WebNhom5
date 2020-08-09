@@ -15,11 +15,11 @@
 
         <div class="form-group">
             <label for="">Tóm tắt</label>
-            <textarea name="" id="demo" cols="30" rows="2" class="ckeditor form-control"></textarea>
+            <textarea name="Tomtat" id="Tomtat" cols="30" rows="2" class="ckeditor form-control"></textarea>
         </div>
         <div class="form-group">
             <label for="">Nội dung</label>
-            <textarea name="" id="demo" cols="30" rows="4" class="ckeditor form-control"></textarea>
+            <textarea name="Noidung" id="Noidung" cols="30" rows="4" class="ckeditor form-control"></textarea>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Đăng bài</button>
@@ -65,8 +65,18 @@
                         <td colspan="2">{{$blg->created_at}}</td>
                         <td colspan="2">{{$blg->updated_at}}</td>
                         <td colspan="2">{{$blg->title}}</td>
-                        <td colspan="2"><button type="submit" class="btn btn-primary">Sửa</button></td>
-                        <td colspan="2"><button type="submit" class="btn btn-danger">Xóa</button></td>
+
+                        <form action="Pages/Company/getUpdateBlog/{{$blg->id_blog}} " method="get" enctype="multipart/form-data">
+                        <input type="hidden" name ="_token" value="{{csrf_token()}}"/>
+                            <td colspan="2"><button type="submit" class="btn btn-primary">Sửa</button></td>
+                        </form>
+
+                        <form action="Pages/Company/delBlog/{{$blg->id_blog}}" method="get" enctype="multipart/form-data">
+                        <input type="hidden" name ="_token" value="{{csrf_token()}}"/>
+                            <td colspan="2"><button type="submit" class="btn btn-danger">Xóa</button></td>
+                        </form>
+                        <!-- <td colspan="2"><button type="submit" class="btn btn-primary">Sửa</button></td>
+                        <td colspan="2"><button type="submit" class="btn btn-danger">Xóa</button></td> -->
                         </tr>
                     @endforeach
                 </tbody>
