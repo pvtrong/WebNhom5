@@ -27,11 +27,20 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
     Route::post('Setting', 'UserController@saveUpdatePassword');
     Route::group(['prefix'=>'Student'], function(){
         Route::get('Home', 'StudentController@getHome')->name('student-home');
+
         Route::get('Blog', 'StudentController@getBlog');
+        Route::post('Blog', 'StudentController@postBlog');
+        Route::post('updateBlog/{id_blog}', 'StudentController@updateBlog');
+        Route::get('getUpdateBlog/{id_blog}', 'StudentController@getupdateBlog');
+        Route::get('delBlog/{id_blog}', 'StudentController@delBlog');
+
+        
         Route::get('DS1', 'StudentController@getDS1');
         Route::get('DS2', 'StudentController@getDS2');
         Route::get('Help', 'StudentController@getHelp');
         Route::get('Profile/{id}', 'StudentController@getProfile');
+        //
+
 
         Route::get('CV/{id}', 'StudentController@getCV');
         Route::get('Share/{id}', 'StudentController@getShare');
@@ -41,6 +50,11 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
     Route::group(['prefix'=>'Teacher'], function(){
         Route::get('Home', 'TeacherController@getHome')->name('teacher-home');
         Route::get('Blog', 'TeacherController@getBlog');
+        Route::post('Blog', 'TeacherController@postBlog');
+        Route::post('updateBlog/{id_blog}', 'TeacherController@updateBlog');
+        Route::get('getUpdateBlog/{id_blog}', 'TeacherController@getupdateBlog');
+        Route::get('delBlog/{id_blog}', 'TeacherController@delBlog');
+
         Route::get('DS1', 'TeacherController@getDS1');
         Route::get('DS2', 'TeacherController@getDS2');
         Route::get('Help', 'TeacherController@getHelp');
@@ -54,6 +68,11 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
     Route::group(['prefix'=>'Company'], function(){
         Route::get('Home', 'CompanyController@getHome')->name('company-home');
         Route::get('Blog', 'CompanyController@getBlog');
+        Route::post('Blog', 'CompanyController@postBlog');
+        Route::post('updateBlog/{id_blog}', 'CompanyController@updateBlog');
+        Route::get('getUpdateBlog/{id_blog}', 'CompanyController@getupdateBlog');
+        Route::get('delBlog/{id_blog}', 'CompanyController@delBlog');
+
         Route::get('DS1', 'CompanyController@getDS1');
         Route::get('DS2', 'CompanyController@getDS2');
         Route::get('Help', 'CompanyController@getHelp');

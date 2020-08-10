@@ -42,7 +42,7 @@ class UserController extends Controller
 
     public function post_registration( RequestRegistration $requestRegistration){
         
-        $request->merge(['password'=>bcrypt($requestRegistration->password)]);
+        $requestRegistration->merge(['password'=>bcrypt($requestRegistration->password)]);
         if(User::create($requestRegistration->all())){
 			return redirect()->route('login')-> with('success', 'Đăng kí thành công');;
 		}else{
