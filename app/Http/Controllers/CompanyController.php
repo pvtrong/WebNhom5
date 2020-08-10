@@ -358,13 +358,13 @@ class CompanyController extends Controller
 
     public function postBlog(Request $request) { 
         $category = category::all()[2]; 
-        $BL_St = DB::table('blog')->paginate(4);
+        $BL_cpn = DB::table('blog')->paginate(4);
         $this->validate($request, [
             'Tieude'=>'required',
             'Noidung'=>'required',
             'Tomtat'=>'required'
         ],[
-            'Tieude.required'=>'Bạn chưa nhập tóm tắt',
+            'Tieude.required'=>'Bạn chưa nhập tiêu đề',
             'Noidung.required'=>'Bạn chưa nhập nội dung',
             'Tomtat.required'=>'Bạn chưa nhập tóm tắt'
         ]);
@@ -391,12 +391,12 @@ class CompanyController extends Controller
         }
         
         $blog->save();
-        return view('Pages.Company.Blog',['category'=>$category,'BL_St' => $BL_St]) -> with('thongbao','thành công');
+        return view('Pages.Company.Blog',['category'=>$category,'BL_cpn' => $BL_cpn]) -> with('thongbao','thành công');
     }
 
     public function updateBlog(Request $request, $id_blog){
         $category = category::all()[2]; 
-        $BL_St = DB::table('blog')->paginate(4);
+        $BL_cpn = DB::table('blog')->paginate(4);
         $blog= blog::find($id_blog);
 
         $this->validate($request, [
@@ -433,16 +433,16 @@ class CompanyController extends Controller
         
         $blog->save();
 
-        return view('Pages/Company/updateBlog',['blog'=>$blog,'category'=>$category,'BL_St' => $BL_St]);
+        return view('Pages/Company/updateBlog',['blog'=>$blog,'category'=>$category,'BL_cpn' => $BL_cpn]);
     
     }
     public function getUpdateBlog($id_blog){
         $category = category::all()[2]; 
-        $BL_St = DB::table('blog')->paginate(4);
+        $BL_cpn = DB::table('blog')->paginate(4);
 
         $blog= blog::find($id_blog);
 
-        return view('Pages/Company/updateBlog',['blog'=>$blog,'category'=>$category,'BL_St' => $BL_St]);
+        return view('Pages/Company/updateBlog',['blog'=>$blog,'category'=>$category,'BL_cpn' => $BL_cpn]);
     }
 
     public function delBlog($id_blog) {

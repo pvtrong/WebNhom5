@@ -1,8 +1,22 @@
 @extends('Pages.layout.menu')
 @section('content')
-<div class="container bg-dark text-white">
 
-    <form action="" method="POST" enctype="multipart/form-data">
+<div class="container bg-dark text-white">
+    @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $err)
+                {{$err}}<br>
+            @endforeach
+        </div>
+    @endif
+
+    @if(session('thongbao'))
+        <div class="alert alert-success">
+            {{session('thongbao')}}
+        </div>
+    @endif
+
+    <form action="Pages/Teacher/Blog" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="Tieude">Tiêu đề</label>
             <input class="form-control" name="Tieude" id="Tieude" placeholder="Nhập tiêu đề">

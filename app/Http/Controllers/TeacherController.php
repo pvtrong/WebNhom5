@@ -357,7 +357,7 @@ class TeacherController extends Controller
 
     public function postBlog(Request $request) { 
         $category = category::all()[2]; 
-        $BL_St = DB::table('blog')->paginate(4);
+        $BL_Tr = DB::table('blog')->paginate(4);
         $this->validate($request, [
             'Tieude'=>'required',
             'Noidung'=>'required',
@@ -390,12 +390,12 @@ class TeacherController extends Controller
         }
         
         $blog->save();
-        return view('Pages.Teacher.Blog',['category'=>$category,'BL_St' => $BL_St]) -> with('thongbao','thành công');
+        return view('Pages.Teacher.Blog',['category'=>$category,'BL_Tr' => $BL_Tr]) -> with('thongbao','thành công');
     }
 
     public function updateBlog(Request $request, $id_blog){
         $category = category::all()[2]; 
-        $BL_St = DB::table('blog')->paginate(4);
+        $BL_Tr = DB::table('blog')->paginate(4);
         $blog= blog::find($id_blog);
 
         $this->validate($request, [
@@ -403,7 +403,7 @@ class TeacherController extends Controller
             'Noidung'=>'required',
             'Tomtat'=>'required'
         ],[
-            'Tieude.required'=>'Bạn chưa nhập tieude',
+            'Tieude.required'=>'Bạn chưa nhập tiêu đề',
             'Noidung.required'=>'Bạn chưa nhập nội dung',
             'Tomtat.required'=>'Bạn chưa nhập tóm tắt'
         ]);
@@ -432,7 +432,7 @@ class TeacherController extends Controller
         
         $blog->save();
 
-        return view('Pages/Teacher/updateBlog',['blog'=>$blog,'category'=>$category,'BL_St' => $BL_St]);
+        return view('Pages/Teacher/updateBlog',['blog'=>$blog,'category'=>$category,'BL_Tr' => $BL_Tr]);
     
     }
     public function getUpdateBlog($id_blog){
@@ -441,7 +441,7 @@ class TeacherController extends Controller
 
         $blog= blog::find($id_blog);
 
-        return view('Pages/Teacher/updateBlog',['blog'=>$blog,'category'=>$category,'BL_St' => $BL_St]);
+        return view('Pages/Teacher/updateBlog',['blog'=>$blog,'category'=>$category,'BL_Tr' => $BL_Tr]);
     }
 
     public function delBlog($id_blog) {
