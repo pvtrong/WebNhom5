@@ -9,7 +9,10 @@ use App\teacher;
 use App\company;
 use App\User;
 use App\Model\Category;
+use App\Model\Messenger;
+use App\Model\ThreadMessenger;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class TeacherController extends Controller
 {
@@ -337,5 +340,100 @@ class TeacherController extends Controller
             return view('Pages.Teacher.CV',['company'=>$company, 'user'=>$user, 'category'=>$category]);
         }
 
+    }
+    public function messenger($id){
+        $teacher_id = Auth::user()->id;
+        $category = category::all()[1];
+        $category_user = User::select(['user.category'])->where('id',$id)->first();
+        if($category_user->category == '1'){
+            $thread_id = ThreadMessenger::where(['user_teacher'=>$teacher_id,'user_company'=>$id])->first();
+            if($thread_id){
+                $messenger = Messenger::select('messenger.id','messenger.fk_thread_id','messenger.fk_user_id','messenger.message','user.name','user.category','messenger_threads.user_student','messenger_threads.user_teacher','messenger_threads.user_company')
+                ->join('user','user.id','=','messenger.fk_user_id')
+                ->join('messenger_threads','messenger_threads.id','=','messenger.fk_thread_id')
+                ->where(['messenger_threads.id'=>$thread_id->id])->limit(10)
+                ->orderBy('messenger.created_at', 'desc')
+                ->get()->toArray();
+            }else{
+                $messenger = null;
+            }
+        }elseif($category_user->category == '3'){
+            $thread_id = ThreadMessenger::where(['user_teacher'=>$teacher_id,'user_student'=>$id])->first();
+            if($thread_id){
+                $messenger = Messenger::select('messenger.id','messenger.fk_thread_id','messenger.fk_user_id','messenger.message','user.name','user.category','messenger_threads.user_student','messenger_threads.user_teacher','messenger_threads.user_company')
+                ->join('user','user.id','=','messenger.fk_user_id')
+                ->join('messenger_threads','messenger_threads.id','=','messenger.fk_thread_id')
+                ->where(['messenger_threads.id'=>$thread_id->id])->limit(10)
+                ->orderBy('messenger.created_at', 'desc')
+                ->get()->toArray();
+            }else{
+                $messenger = null;
+            }
+        }
+            return view('Pages.Teacher.Messenger',['category'=>$category,'id'=>$id,'messenger'=>$messenger,'user_id'=>$teacher_id]);
+    }
+    public function send_messenger(Request $request){
+        $mes = $request->mes;
+        $name = Auth::user()->name;
+        $teacher_id = Auth::user()->id;
+        $id = $request->id;
+        $category_user = User::select(['user.category'])->where('id',$id)->first();
+        if($category_user->category == '1'){
+            $thread_mes = ThreadMessenger::where(['user_teacher'=>$teacher_id,'user_company'=>$id])->first();
+            if($thread_mes == null){
+                if($ThreadMessenger = ThreadMessenger::create(['user_teacher'=>$teacher_id,'user_company'=>$id])){
+                    $Messenger = Messenger::create(['fk_thread_id'=>$ThreadMessenger->id,'fk_user_id'=>$teacher_id,'message'=>$mes]);
+                }
+            }else{
+                    $Messenger = Messenger::create(['fk_thread_id'=>$thread_mes->id,'fk_user_id'=>$teacher_id,'message'=>$mes]);
+            }
+        } elseif($category_user->category == '3'){
+             $thread_mes = ThreadMessenger::where(['user_teacher'=>$teacher_id,'user_teacher'=>$id])->first();
+            if($thread_mes == null){
+                if($ThreadMessenger = ThreadMessenger::create(['user_teacher'=>$teacher_id,'user_teacher'=>$id])){
+                    $Messenger = Messenger::create(['fk_thread_id'=>$ThreadMessenger->id,'fk_user_id'=>$teacher_id,'message'=>$mes]);
+                }
+            }else{
+                    $Messenger = Messenger::create(['fk_thread_id'=>$thread_mes->id,'fk_user_id'=>$teacher_id,'message'=>$mes]);
+            }
+        }
+        return json_encode([
+            'mes'=>$Messenger,
+            'name'=>$name 
+        ]);
+    }
+    public function load_mes(Request $request){
+        $nguoinhan = $request->nguoinhan;
+        $itemlast = $request->itemlast;
+        $teacher_id = Auth::user()->id;
+        $category = category::all()[1];
+        $category_user = User::select(['user.category'])->where('id',$nguoinhan)->first();
+        if($category_user->category == '1'){
+            $thread_id = ThreadMessenger::where(['user_teacher'=>$teacher_id,'user_company'=>$nguoinhan])->first();
+            if($thread_id){
+                $messenger = Messenger::select('messenger.id','messenger.fk_thread_id','messenger.fk_user_id','messenger.message','user.name','user.category','messenger_threads.user_student','messenger_threads.user_teacher','messenger_threads.user_company','messenger.created_at')
+                ->join('user','user.id','=','messenger.fk_user_id')
+                ->join('messenger_threads','messenger_threads.id','=','messenger.fk_thread_id')
+                ->where(['messenger_threads.id'=>$thread_id->id])->where('messenger.id','<', $itemlast)->orderBy('messenger.created_at', 'DESC')->limit(10)
+                ->get();
+            }else{
+                $messenger = null;
+            }
+        }elseif($category_user->category == '3'){
+            $thread_id = ThreadMessenger::where(['user_teacher'=>$teacher_id,'user_student'=>$nguoinhan])->first();
+            if($thread_id){
+                $messenger = Messenger::select('messenger.id','messenger.fk_thread_id','messenger.fk_user_id','messenger.message','user.name','user.category','messenger_threads.user_student','messenger_threads.user_teacher','messenger_threads.user_company','messenger.created_at')
+                ->join('user','user.id','=','messenger.fk_user_id')
+                ->join('messenger_threads','messenger_threads.id','=','messenger.fk_thread_id')
+                ->where(['messenger_threads.id'=>$thread_id->id])->where('messenger.id','<', $itemlast)->orderBy('messenger.created_at', 'DESC')->limit(10)
+                ->get();
+            }else{
+                $messenger = null;
+            }
+        }
+        return json_encode([
+            'load_mes'=>$messenger,
+            'user_id'=>$teacher_id
+        ]);
     }
 }

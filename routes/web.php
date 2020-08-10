@@ -37,6 +37,9 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('CV/{id}', 'StudentController@getCV');
         Route::get('Share/{id}', 'StudentController@getShare');
         Route::post('updateProfile/{id}', 'StudentController@postUpdate');
+        Route::get('messenger-student/{id}','StudentController@messenger')->name('messenger-student');
+        Route::post('send-mes','StudentController@send_messenger');
+        Route::post('load-mes','StudentController@load_mes');
     });
     Route::group(['prefix'=>'Teacher'], function(){
         Route::get('Home', 'TeacherController@getHome')->name('teacher-home');
@@ -50,6 +53,9 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('CV/{id}', 'TeacherController@getCV');
         Route::get('Share/{id}', 'TeacherController@getShare');
         Route::get('updateProfile', 'CompanyController@postUpdate');
+        Route::get('messenger-teacher/{id}','TeacherController@messenger')->name('messenger-teacher');
+        Route::post('send-mes','TeacherController@send_messenger');
+        Route::post('load-mes','TeacherController@load_mes');
     });
     Route::group(['prefix'=>'Company'], function(){
         Route::get('Home', 'CompanyController@getHome')->name('company-home');
@@ -64,6 +70,9 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('Share/{id}', 'CompanyController@getShare');
         Route::post('updateProfile/{id}', 'CompanyController@postUpdate');
         Route::get('updateProfile', 'CompanyController@postUpdate');
+        Route::get('messenger-company/{id}','CompanyController@messenger')->name('messenger-company');
+        Route::post('send-mes','CompanyController@send_messenger');
+        Route::post('load-mes','CompanyController@load_mes');
     });
 });
 Route::get('login', 'UserController@Login')->name('login');

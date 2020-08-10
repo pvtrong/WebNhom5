@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Web Demo</title>
     <base href="{{asset('')}}">
     <link href="asset/CSS/Common/Common.css" rel="stylesheet" />
@@ -61,5 +62,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script src="asset/JS/pages/Sidebar.js"></script>
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{url('/asset')}}/JS/Lib/jquery-3.5.1.min"> </script>
 </body>
 </html>

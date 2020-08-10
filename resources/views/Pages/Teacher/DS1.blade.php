@@ -182,7 +182,7 @@
                                         <td>{{$d->address1}}</td>
                                         <td class="text-center">{{$d->salary1}}</td>
                                         <td class="text-center"><i class="fas fa-info-circle"></i><a href=".Pages/Teacher/CV/{{$d->id1}}">Xem thêm</a></td>
-                                        <th class="text-center"></th>
+                                        <td class="text-center"><i class="fas fa-info-circle"></i><a href="{{route('messenger-teacher',['id'=>$d->id1])}}">liên hệ</a></td>
                                     </tr>
                                     
                                 @endforeach
