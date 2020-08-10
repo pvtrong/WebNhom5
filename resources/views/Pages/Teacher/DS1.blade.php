@@ -22,19 +22,6 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="dataTables_length" id="dataTable_length">
                             <label>
-                                Hiển thị:
-                                <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select> kết quả
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div id="dataTable_filter" class="dataTables_filter">
-                            <label>
                                 Tìm kiếm:
                             </label>
                             <form action="Pages/Teacher/DS1" method = "get">
@@ -46,6 +33,11 @@
                             </form>
                         </div>
                     </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div id="dataTable_filter" class="dataTables_filter">
+                            
+                        </div>
+                    </div>
                 </div>
                 <div class="row2">
                         <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
@@ -55,7 +47,7 @@
                                 <th class="sorting_asc  text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" style="width: 100px;">Tên công ty</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Email</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Điện thoại</th>
-                                <th class="sorting text-center text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important">Tiêu chí</th>
+                                <th class="sorting text-center text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 8em !important">Tiêu chí</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Địa chỉ</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Mức lương</th>
                                 <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 7em !important;">Xem thêm</th>
@@ -178,7 +170,7 @@
                                         <td class="sorting_1">{{$d->name1}}</td>
                                         <td>{{$d->email1}}</td>
                                         <td class="text-center">{{$d->mobile1}}</td>
-                                        <td>{{$d->offer1}}</td>
+                                        <td>{!!$d->offer1!!}</td>
                                         <td>{{$d->address1}}</td>
                                         <td class="text-center">{{$d->salary1}}</td>
                                         <td class="text-center"><i class="fas fa-info-circle"></i><a href="Pages/Company/CV/{{$d->id1}}">Xem thêm</a></td>

@@ -8,7 +8,7 @@
                 <div>{!!$blog->content!!}</div>
             </div>
             <div class="col-sm-4">
-                <h5 style="font-weight: bold; color: #666;">Bài viết khác</h5>
+                <h5 style="font-weight: bold; color: #666;">Bài viết:</h5>
                 @foreach($BL_temp as $temp)
                 <div class="row">
                     <div class="col-sm-6">

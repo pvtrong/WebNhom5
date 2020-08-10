@@ -19,28 +19,20 @@
                         <div class="col-sm-12 col-md-6">
                             <div class="dataTables_length" id="dataTable_length">
                                 <label>
-                                    Hiển thị:
-                                    <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                                    </select> kết quả
-                                </label>
+                                    Tìm kiếm:
+                               </label>
+                               <form action="Pages/Student/DS2" method = "get">
+                                   <input type="hidden" name ="_token" value="{{ csrf_token()}}";>
+                                   <div class = "d-flex">
+                                       <input type="search" name ="search" id="search" class="form-control " placeholder="search" aria-controls="dataTable">
+                                       <button type="submit" class="btn btn-primary mx-2">Search</button>
+                                   </div>
+                               </form>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div id="dataTable_filter" class="dataTables_filter">
-                                <label>
-                                     Tìm kiếm:
-                                </label>
-                                <form action="Pages/Student/DS2" method = "get">
-                                    <input type="hidden" name ="_token" value="{{ csrf_token()}}";>
-                                    <div class = "d-flex">
-                                        <input type="search" name ="search" id="search" class="form-control " placeholder="search" aria-controls="dataTable">
-                                        <button type="submit" class="btn btn-primary mx-2">Search</button>
-                                    </div>
-                                </form>
+                                
                                 
                             </div>
                         </div>
@@ -182,9 +174,9 @@
                                         <tr role="row" class="even">
                                             <td class="text-center" >{{$d->name1}}</td>
                                             <td>{{$d->email1}}</td>
-                                            <td >{{$d->department1}}</td>
-                                            <td >{{$d->topicResearch1}}</td>
-                                            <td>{{$d->offer1}}</td>
+                                            <td >{!!$d->department1!!}</td>
+                                            <td >{!!$d->topicResearch1!!}</td>
+                                            <td>{!!$d->offer1!!}</td>
                                             <td class="text-center">{{$d->numbers1}}</td>
                                             <td class="text-center"><i class="fas fa-info-circle"></i><a href="Pages/Teacher/CV/{{$d->id1}}">Xem thêm</a></td>
                                             <th class="text-center"></th>

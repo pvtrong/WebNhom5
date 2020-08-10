@@ -282,7 +282,7 @@ class TeacherController extends Controller
                 $teacher2->Hinh = $Hinh;
             }
             $teacher2->save();
-            return view('Pages.Teacher.Profile',['teacher'=>$teacher2, 'category'=>$category]);
+            return view('Pages.Teacher.Profile',['teacher'=>$teacher2, 'category'=>$category])->with('success', "Cập nhật thông tin thành công!");
         }
 
 
@@ -316,7 +316,7 @@ class TeacherController extends Controller
                 $teacher->Hinh = $Hinh;
             }
             $teacher->save();
-            return view('Pages.Teacher.Profile',['teacher'=>$teacher, 'category'=>$category]);
+            return view('Pages.Teacher.Profile',['teacher'=>$teacher, 'category'=>$category])->with('success', "Cập nhật thông tin thành công!");
         }
     }
     public function getCV($id){
