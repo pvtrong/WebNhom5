@@ -63,6 +63,6 @@
     <script src="asset/JS/pages/Sidebar.js"></script>
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{{url('/asset')}}/JS/Lib/jquery-3.5.1.min"> </script>
+    {{-- <script src="{{url('/asset')}}/JS/Lib/jquery-3.5.1.min"> </script> --}}
 </body>
 </html>

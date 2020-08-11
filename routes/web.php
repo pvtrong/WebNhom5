@@ -107,7 +107,7 @@ Route::get('admin-logout', 'AdminController@Logout_admin')->name('logout-admin')
 Route::get('registration-admin', 'AdminController@registration_admin')->name('registration-admin');
 Route::post('registration-admin', 'AdminController@post_registration_admin');
 
-//View share hader
+//View share header
 View::composer(['*'], function($view){
     if(Auth::user() != null){
         $id = Auth::user()->id;
