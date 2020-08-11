@@ -9,6 +9,12 @@
         </div>
     @endif
 
+    @if(session('thongbao'))
+        <div class="alert alert-success">
+            {{session('thongbao')}}
+        </div>
+    @endif
+
     <form action="Pages/Student/updateBlog/{{$blog->id_blog}}" method="post" enctype="multipart/form-data">
     <input type="hidden" name ="_token" value="{{ csrf_token()}}"/>
         <div class="form-group">
