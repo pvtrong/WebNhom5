@@ -1,0 +1,66 @@
+
+.image {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+.img {
+    width: 20%;
+}
+
+.contact-infor .container .row {
+    padding: 50px 0;
+}
+.contact-infor .container .row .contact-info__wapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.contact-infor .container .row .contact-info__wapper i{
+    color: #343a40;
+    font-size: 40px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.contact-infor .container .row .contact-info__wapper:hover i{
+    animation: vibrate 0.5s forwards;
+}
+
+@-webkit-keyframes vibrate{
+    0%{transform: translateX(-10px);}
+    16.7%{transform: translateX(10px);}
+    33.4%{transform: translateX(-10px);}
+    50.1%{transform: translateX(10px);}
+    66.8%{transform: translateX(-10px);}
+    83.5%{transform: translateX(10px);}
+    100%{transform: translateX(0px);}
+}
+
+.contact-text .container .row  .row{
+    padding: 15px 15px;
+}
+.contact-text .container .row .contact-text__wp{
+    padding: 5px 10px;
+    border: 1px solid gray;
+    color: #c0c0c1;
+    margin-bottom: 10px;
+}
+.contact-text .container .row .contact-text__wp input{
+    border: none;
+    outline: none;
+}
+
+.contact-text .container .row textarea{
+    width: 100%;
+    min-height: 140px;
+    outline: none;
+    padding: 10px;
+}
+
+.contact-text .container .row button:hover{
+    background-color:   #026b97;
+}
