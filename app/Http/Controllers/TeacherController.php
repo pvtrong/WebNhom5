@@ -407,9 +407,9 @@ class TeacherController extends Controller
                     $Messenger = Messenger::create(['fk_thread_id'=>$thread_mes->id,'fk_user_id'=>$teacher_id,'message'=>$mes]);
             }
         } elseif($category_user->category == '3'){
-             $thread_mes = ThreadMessenger::where(['user_teacher'=>$teacher_id,'user_teacher'=>$id])->first();
+             $thread_mes = ThreadMessenger::where(['user_teacher'=>$teacher_id,'user_student'=>$id])->first();
             if($thread_mes == null){
-                if($ThreadMessenger = ThreadMessenger::create(['user_teacher'=>$teacher_id,'user_teacher'=>$id])){
+                if($ThreadMessenger = ThreadMessenger::create(['user_teacher'=>$teacher_id,'user_student'=>$id])){
                     $Messenger = Messenger::create(['fk_thread_id'=>$ThreadMessenger->id,'fk_user_id'=>$teacher_id,'message'=>$mes]);
                 }
             }else{

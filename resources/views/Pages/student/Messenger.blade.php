@@ -42,8 +42,12 @@
     margin-bottom:0px;
     font-size: 10px;
 }
+/* #show{
+    position: fixed;
+    top:100px;
+} */
 </style>
-<div class="content-mes">
+
 @if($messenger)
 <div id="show">
 <?php $reversed = array_reverse($messenger); ?>
@@ -56,6 +60,7 @@
     }
     ?>
 </div>
+<div class="content-mes">
 @if($reversed != null)
     @foreach($reversed as $mes)
     @if($user_id == $mes['fk_user_id'])
@@ -71,8 +76,8 @@
     @endif
     @endforeach
 @endif
-@endif
 </div>
+@endif
 <div class="send-mes">
     <p class='nguoinhan' hidden>{{$id}}</p>
     <textarea class="text-mes" name=""></textarea>
