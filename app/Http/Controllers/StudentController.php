@@ -19,8 +19,12 @@ class StudentController extends Controller
 {
     //
     public function getHome(){
+        $companys = user::where('category', 1)->count();
+        $teachers = user::where('category', 1)->count();
+        $students = user::where('category', 1)->count();
+        $blogs= blog::all()->count();
         $category = category::all()[0];
-        return view('Pages.Student.home', ['category'=>$category]);
+        return view('Pages.Student.home', ['category'=>$category, 'companys'=>$companys, 'teachers'=>$teachers, 'students' => $students, 'blogs' => $blogs]);
 
     }
     public function getBlog(){
@@ -384,7 +388,7 @@ class StudentController extends Controller
     }
     public function messenger($id){
         $student_id = Auth::user()->id;
-        $category = category::all()[1];
+        $category = category::all()[10];
         $category_user = User::select(['user.category'])->where('id',$id)->first();
         if($category_user->category == '1'){
             $thread_id = ThreadMessenger::where(['user_student'=>$student_id,'user_company'=>$id])->first();

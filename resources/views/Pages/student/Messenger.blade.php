@@ -1,48 +1,6 @@
 @extends('Pages.layout.menu')
 @section('content')
-<style>
-.content-mes{
-    width:50%;
-    height: 78%;
-}
-.send-mes {
-    width: 50%;
-    display: flex;
-}
-.send-mes textarea {
-    width: 100%;
-}
-.content .content-body{
-    height:auto;
-}
-.show-more{
-    color:blue;
-    cursor: pointer;
-    margin-bottom: 0px;
-    opacity:0.5;
 
-}
-.text-mess{
-    background:#7c7ce8;
-    color: white;
-    border-radius: 17px;
-    padding: 5px;
-    width: fit-content;
-    margin-bottom:1px;
-}
-.text-mess-2{
-    background:#989293;
-    color: white;;
-    border-radius: 17px;
-    padding: 5px;
-    width: fit-content;
-    margin-bottom:1px;
-}
-.text-name{
-    margin-bottom:0px;
-    font-size: 10px;
-}
-</style>
 <div class="content-mes">
 @if($messenger)
 <div id="show">
@@ -78,6 +36,9 @@
     <textarea class="text-mes" name=""></textarea>
     <button type="button" class="btn btn-xs btn-info" onclick="sendMes(this)">send</button>
 </div>
+@stop
+@section('script')
+    
 <script>
     function sendMes(elemet){
         var id = $($(elemet).parent().children()[0]).text();
@@ -143,4 +104,49 @@
     });  
     }
 </script>
-@endsection
+@stop
+@section('style')
+<style>
+.content-mes{
+    width:50%;
+    height: 78%;
+}
+.send-mes {
+    width: 50%;
+    display: flex;
+}
+.send-mes textarea {
+    width: 100%;
+}
+.content .content-body{
+    height:auto;
+}
+.show-more{
+    color:blue;
+    cursor: pointer;
+    margin-bottom: 0px;
+    opacity:0.5;
+
+}
+.text-mess{
+    background:#7c7ce8;
+    color: white;
+    border-radius: 17px;
+    padding: 5px;
+    width: fit-content;
+    margin-bottom:1px;
+}
+.text-mess-2{
+    background:#989293;
+    color: white;;
+    border-radius: 17px;
+    padding: 5px;
+    width: fit-content;
+    margin-bottom:1px;
+}
+.text-name{
+    margin-bottom:0px;
+    font-size: 10px;
+}
+</style>
+@stop

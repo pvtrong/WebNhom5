@@ -1,83 +1,88 @@
 @extends('Pages.layout.menu')
 @section('content')
-<style>
-.content-mes{
-    width:50%;
-    height: 78%;
-}
-.send-mes {
-    width: 50%;
-    display: flex;
-}
-.send-mes textarea {
-    width: 100%;
-}
-.content .content-body{
-    height:auto;
-}
-.show-more{
-    color:blue;
-    cursor: pointer;
-    margin-bottom: 0px;
-    opacity:0.5;
-
-}
-.text-mess{
-    background:#7c7ce8;
-    color: white;
-    border-radius: 17px;
-    padding: 5px;
-    width: fit-content;
-    margin-bottom:1px;
-}
-.text-mess-2{
-    background:#989293;
-    color: white;;
-    border-radius: 17px;
-    padding: 5px;
-    width: fit-content;
-    margin-bottom:1px;
-}
-.text-name{
-    margin-bottom:0px;
-    font-size: 10px;
-}
-</style>
 <div class="content-mes">
-@if($messenger)
-<div id="show">
-<?php $reversed = array_reverse($messenger); ?>
-    <p hidden class="item-frist">{{$reversed['0']['id']}}</p>
-    <?php 
-    if (count($messenger) < 10 ) {
-        echo  '<p hidden class="show-more">show more</p>';
-    } else {
-        echo  '<p class="show-more" onclick="showMore(this)">show more</p>';
-    }
-    ?>
-</div>
-@if($reversed != null)
-    @foreach($reversed as $mes)
-    @if($user_id == $mes['fk_user_id'])
-    <div class="mes-right">
-    <p class="text-name">{{$mes['name']}}:</p>
-    <p class="text-mess">{{$mes['message']}}</p>
+    @if($messenger)
+    <div id="show">
+    <?php $reversed = array_reverse($messenger); ?>
+        <p hidden class="item-frist">{{$reversed['0']['id']}}</p>
+        <?php 
+        if (count($messenger) < 10 ) {
+            echo  '<p hidden class="show-more">show more</p>';
+        } else {
+            echo  '<p class="show-more" onclick="showMore(this)">show more</p>';
+        }
+        ?>
     </div>
-    @else
-    <div class="mes-right">
-    <p class="text-name">{{$mes['name']}}:</p>
-    <p class="text-mess-2">{{$mes['message']}}</p>
-    </div>
+    @if($reversed != null)
+        @foreach($reversed as $mes)
+        @if($user_id == $mes['fk_user_id'])
+        <div class="mes-right">
+        <p class="text-name">{{$mes['name']}}:</p>
+        <p class="text-mess">{{$mes['message']}}</p>
+        </div>
+        @else
+        <div class="mes-right">
+        <p class="text-name">{{$mes['name']}}:</p>
+        <p class="text-mess-2">{{$mes['message']}}</p>
+        </div>
+        @endif
+        @endforeach
     @endif
-    @endforeach
-@endif
-@endif
-</div>
-<div class="send-mes">
-    <p class='nguoinhan' hidden>{{$id}}</p>
-    <textarea class="text-mes" name=""></textarea>
-    <button type="button" class="btn btn-xs btn-info" onclick="sendMes(this)">send</button>
-</div>
+    @endif
+    </div>
+    <div class="send-mes">
+        <p class='nguoinhan' hidden>{{$id}}</p>
+        <textarea class="text-mes" name=""></textarea>
+        <button type="button" class="btn btn-xs btn-info" onclick="sendMes(this)">send</button>
+    </div>
+@stop
+@section('style')
+<style>
+    .content-mes{
+        width:50%;
+        height: 78%;
+    }
+    .send-mes {
+        width: 50%;
+        display: flex;
+    }
+    .send-mes textarea {
+        width: 100%;
+    }
+    .content .content-body{
+        height:auto;
+    }
+    .show-more{
+        color:blue;
+        cursor: pointer;
+        margin-bottom: 0px;
+        opacity:0.5;
+    
+    }
+    .text-mess{
+        background:#7c7ce8;
+        color: white;
+        border-radius: 17px;
+        padding: 5px;
+        width: fit-content;
+        margin-bottom:1px;
+    }
+    .text-mess-2{
+        background:#989293;
+        color: white;;
+        border-radius: 17px;
+        padding: 5px;
+        width: fit-content;
+        margin-bottom:1px;
+    }
+    .text-name{
+        margin-bottom:0px;
+        font-size: 10px;
+    }
+    </style>
+@stop
+
+@section('script')
 <script>
     function sendMes(elemet){
         var id = $($(elemet).parent().children()[0]).text();
@@ -149,4 +154,4 @@
     });  
     }
 </script>
-@endsection
+@stop

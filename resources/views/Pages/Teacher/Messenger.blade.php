@@ -1,5 +1,44 @@
 @extends('Pages.layout.menu')
 @section('content')
+
+<div class="content-mes">
+@if($messenger)
+<div id="show">
+<?php $reversed = array_reverse($messenger); ?>
+    <p hidden class="item-frist">{{$reversed['0']['id']}}</p>
+    <?php 
+    if (count($messenger) < 10 ) {
+        echo  '<p hidden class="show-more">show more</p>';
+    } else {
+        echo  '<p class="show-more" onclick="showMoreTeacher(this)">show more</p>';
+    }
+    ?>
+</div>
+
+@if($reversed != null)
+    @foreach($reversed as $mes)
+    @if($user_id == $mes['fk_user_id'])
+    <div class="mes-right">
+    <p class="text-name">{{$mes['name']}}:</p>
+    <p class="text-mess">{{$mes['message']}}</p>
+    </div>
+    @else
+    <div class="mes-right">
+    <p class="text-name">{{$mes['name']}}:</p>
+    <p class="text-mess-2">{{$mes['message']}}</p>
+    </div>
+    @endif
+    @endforeach
+@endif
+@endif
+</div>
+<div class="send-mes">
+    <p class='nguoinhan' hidden>{{$id}}</p>
+    <textarea class="text-mes" name=""></textarea>
+    <button type="button" class="btn btn-xs btn-info" onclick="sendMes(this)">send</button>
+</div>
+@stop
+@section('style')
 <style>
 .content-mes{
     width:50%;
@@ -43,42 +82,8 @@
     font-size: 10px;
 }
 </style>
-<div class="content-mes">
-@if($messenger)
-<div id="show">
-<?php $reversed = array_reverse($messenger); ?>
-    <p hidden class="item-frist">{{$reversed['0']['id']}}</p>
-    <?php 
-    if (count($messenger) < 10 ) {
-        echo  '<p hidden class="show-more">show more</p>';
-    } else {
-        echo  '<p class="show-more" onclick="showMoreTeacher(this)">show more</p>';
-    }
-    ?>
-</div>
-
-@if($reversed != null)
-    @foreach($reversed as $mes)
-    @if($user_id == $mes['fk_user_id'])
-    <div class="mes-right">
-    <p class="text-name">{{$mes['name']}}:</p>
-    <p class="text-mess">{{$mes['message']}}</p>
-    </div>
-    @else
-    <div class="mes-right">
-    <p class="text-name">{{$mes['name']}}:</p>
-    <p class="text-mess-2">{{$mes['message']}}</p>
-    </div>
-    @endif
-    @endforeach
-@endif
-@endif
-</div>
-<div class="send-mes">
-    <p class='nguoinhan' hidden>{{$id}}</p>
-    <textarea class="text-mes" name=""></textarea>
-    <button type="button" class="btn btn-xs btn-info" onclick="sendMes(this)">send</button>
-</div>
+@stop
+@section('script')
 <script>
     function sendMes(elemet){
         var id = $($(elemet).parent().children()[0]).text();
@@ -151,4 +156,4 @@
     });  
     }
 </script>
-@endsection
+@stop

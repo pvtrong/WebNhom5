@@ -19,8 +19,12 @@ class TeacherController extends Controller
 {
     //
     public function getHome(){
+        $companys = user::where('category', 1)->count();
+        $teachers = user::where('category', 1)->count();
+        $students = user::where('category', 1)->count();
+        $blogs= blog::all()->count();
         $category = category::all()[0];
-        return view('Pages.Teacher.home', ['category'=>$category]);
+        return view('Pages.Teacher.home', ['category'=>$category, 'companys'=>$companys, 'teachers'=>$teachers, 'students' => $students, 'blogs' => $blogs]);
 
     }
     public function getBlog(){
@@ -362,7 +366,7 @@ class TeacherController extends Controller
     }
     public function messenger($id){
         $teacher_id = Auth::user()->id;
-        $category = category::all()[1];
+        $category = category::all()[10];
         $category_user = User::select(['user.category'])->where('id',$id)->first();
         if($category_user->category == '1'){
             $thread_id = ThreadMessenger::where(['user_teacher'=>$teacher_id,'user_company'=>$id])->first();
