@@ -1,19 +1,111 @@
+
 @extends('Pages.layout.menu')
 @section('content')
-    <div class="board">
-        <div class="title-body">Hoạt động Hợp tác Phát triển</div>
-        <h3>&nbsp; &nbsp; &nbsp; &nbsp;Kể từ khi thành lập Trường đến nay, hoạt động hợp tác trong nước và quốc tế của Trường Đại học Công nghệ – Đại học Quốc gia Hà Nội (ĐHQGHN)&nbsp; đã góp phần khẳng định uy tín và vị thế là một trường đại học hàng đầu về lĩnh vực công nghệ trong cả nước.</h3>
-        <h3>&nbsp; &nbsp; &nbsp; &nbsp;Là một trường thành viên của ĐHQGHN, với sứ mệnh đào tạo nguồn nhân lực chất lượng cao, trình độ cao, bồi dưỡng nhân tài; nghiên cứu phát triển và ứng dụng các lĩnh vực khoa học – công nghệ tiên tiến; tiên phong tiếp cận chuẩn mực giáo dục đại học khu vực và thế giới, đóng góp tích cực vào sự phát triển nền kinh tế và xã hội tri thức của đất nước. Lãnh đạo Nhà trường luôn khẳng định hợp tác trong nước và quốc tế là yếu tố chính tạo nên sự bứt phá trong việc phát triển các nguồn lực, đẩy nhanh quá trình chuyển giao các nghiên cứu và công nghệ mới đến xã hội, nâng cao chất lượng đào tạo và đáp ứng nhu cầu doanh nghiệp.</h3>
+    
+    <div class="intro-section" id="home">
+      
+        <div class="site-section section-1">
+            <div class="container aos-init aos-animate" data-aos="fade-up">
 
-        <h3>&nbsp; &nbsp; &nbsp; &nbsp;Trong &nbsp;nhiều năm qua, để góp phần nâng cao vị thế, uy tín, năng lực giảng dạy, chất lượng đào tạo và nghiên cứu &nbsp;khoa học, Trường đã tích cực mở rộng quan hệ hợp tác với các viện, trường, doanh nghiệp uy tín trong và ngoài nước.</h3>
-        <h3>&nbsp; &nbsp; &nbsp; &nbsp;Việc hợp tác với các trường, viện nghiên cứu lớn trên thế giới mở ra các chương trình đào tạo, hỗ trợ phát triển nguồn nhân lực quản lý chất lượng cao: Đại học Bang Arizona, Mỹ với dự án BUIL-IT; Đại học Công nghệ Sydney, Úc với &nbsp;Trung tâm Hợp tác nghiên cứu giữa VNU-UTS, chương trình học bổng toàn phần cho nghiên cứu sinh đạt trình độ quốc tế; Chương trình đào tạo IT định hướng thị trường Nhật Bản; Viện nghiên cứu Viettel với chương trình Cử nhân Hàng không Vũ trụ…</h3>
-
-
-        <h3>&nbsp; &nbsp; &nbsp; Các hợp tác doanh nghiệp như Tập đoàn Samsung Việt Nam, Tập đoàn Viettel, Tập đoàn FPT, Toshiba, VNPT Technology…. đã đem lại những nguồn lực hiệu quả như: Các phòng thực hành đạt tiêu chuẩn, phòng nghiên cứu hợp tác về IoT, thiết kế vi mạch, hệ thống nhúng…</h3>
-        <h3>&nbsp; &nbsp; &nbsp; &nbsp;Sự phát triển không ngừng về đội ngũ và trình độ của Nhà trường, cùng với hợp tác từ doanh nghiệp, trường, viện nghiên cứu trong và ngoài nước, đồng thời với sự tin tưởng giao nhiệm vụ của ĐHQGHN đã tạo điều kiện tốt cho sinh viên được tiếp cận học tập, thực hành với các trang thiết bị tiên tiến phù hợp với thực tiễn làm việc tại doanh nghiệp.</h3>
-
-        <h3>&nbsp; &nbsp; &nbsp; Với những nỗ lực đó, Nhà trường đã ký kết hợp tác với 40 đối tác trong nước, khoảng 60 đối tác ngoài nước. Trong đó, hầu hết các đối tác là các viện, trường, doanh nghiệp uy tín toàn cầu.</h3>
-        <h3>&nbsp; &nbsp; &nbsp; &nbsp;Mỗi năm Nhà trường có hàng chục lượt giáo sư từ các trường danh tiếng đến trao đổi học thuật và giảng dạy. Cử nhiều cán bộ đi học tập, trau dồi kiến thức và kỹ năng tại các đơn vị đối tác chiến lược uy tín trong lĩnh vực ICT. Nhà trường cũng tổ chức nhiều đợt trao đổi sinh viên với các trường đối tác trong và ngoài nước giúp nâng cao kỹ năng và trình độ chuyên môn.</h3>
+                <header class="section-header">
+                  <h2><strong>1. Về website</strong></h2>
+                  <p>Luôn luôn là kim chỉ nam cho sinh viên khi muốn đăng ký thực tập, làm việc tại những công ty lớn. Cơ hội tuyển dụng cho công ty và là nơi quản lý tiềm năng sinh viên của nhà trường.</p>
+                </header>
+        
+                <div class="row about-cols">
+        
+                  <div class="col-md-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                    <div class="about-col">
+                      <div class="img">
+                        <img src="assetHome/img/sumenhnhatrung.png" alt="" class="img-fluid">
+                        <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                      </div>
+                      <h3 class="title">Sứ mệnh nhà trường</h3>
+                      <p>
+                        Tạo ra nơi để sinh viên có thể dễ dàng tiếp cận được công việc mong muốn ngay từ khi còn trên ghế nhà trường.
+                      </p>
+                    </div>
+                  </div>
+        
+                  <div class="col-md-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                    <div class="about-col">
+                      <div class="img">
+                        <img src="assetHome/img/sumenhcongty.webp" alt="" class="img-fluid">
+                        <div class="icon"><i class="ion-ios-list-outline"></i></div>
+                      </div>
+                      <h3 class="title">Sứ mệnh công ty</h3>
+                      <p>
+                        Nhiệm vụ của chúng tôi là lớn mạnh và phát triển đưa Việt Nam sánh ngang với các cường quốc năm châu, và đất nước có lớn mạnh được hay không là nhờ vào tài năng và nỗ lực của các bạn. Vì vậy, hãy đến với chúng tôi để có thế xây dựng tương lai tươi đẹp, xây dựng một Việt Nam sáng tươi lớn mạnh về công nghệ.
+                      </p>
+                    </div>
+                  </div>
+        
+                  <div class="col-md-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                    <div class="about-col">
+                      <div class="img">
+                        <img src="assetHome/img/sumenhsinhvien.png" alt="" class="img-fluid">
+                        <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+                      </div>
+                      <h3 class="title">Sứ mệnh sinh viên</h3>
+                      <p>
+                        Cảm ơn nhà trường và công ty đã hợp tác tạo ra nơi để sinh viên chúng em có thể được hỗ trợ về công việc dễ dàng hơn. Đây thực sự là một website giúp đỡ chúng em rất nhiều.
+                      </p>
+                    </div>
+                  </div>
+        
+                </div>
+        
+              </div>
+            
+            
+        </div>
     </div>
+    <div class="intro-section" id="statistical">
+        <div class="container">
+            <h2><strong>2. Thống kê</strong></h2>
+            <div class="row">
+                <div class="col-lg-6">
+            
+                    <div class="counter d-flex align-items-start mb-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+                        <div class="icon-wrap"><span class="flaticon-reload text-primary"></span></div>
+                        <div class="counter-text">
+                        <strong>{{$students}}</strong>
+                        <span>Tài khoản sinh viên tìm kiếm việc làm</span>
+                    </div>
+                </div>
 
-@endsection
+                <div class="counter d-flex align-items-start aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-wrap"><span class="flaticon-download text-primary"></span></div>
+                        <div class="counter-text">
+                        <strong>{{$companys}}</strong>
+                            <span>Tài khoản của nhà tuyển dụng</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+            
+                    <div class="counter d-flex align-items-start mb-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon-wrap"><span class="flaticon-monitor text-primary"></span></div>
+                        <div class="counter-text">
+                            <strong>{{$teachers}}</strong>
+                            <span>Tài khoản của thầy cô tuyển thực tập sinh, sinh viên nghiên cứu khoa học</span>
+                        </div>
+                    </div>
+
+                    <div class="counter d-flex align-items-start aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon-wrap"><span class="flaticon-chat text-primary"></span></div>
+                            <div class="counter-text">
+                            <strong>{{$blogs}}</strong>
+                                <span>Blog cá nhân chia sẻ kinh nghiệm,...</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+@stop

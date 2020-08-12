@@ -50,7 +50,7 @@
                                     <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Yêu cầu</th>
                                     <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Số lượng</th>
                                     <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Xem thêm</th>
-                                    <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;"></th>
+                                    <th class="sorting text-center" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 6em !important;">Liên hệ</th>
                                     
                                     
                                     </tr>
@@ -161,7 +161,7 @@
                                             </form> 
                                         </th>
                                         <th class="text-center">Xem thêm</th>
-                                        <th class="text-center"></th>
+                                        <th class="text-center">Liên hệ</th>
                                     </tr>
                                     
                                 </tfoot>
@@ -178,8 +178,8 @@
                                             <td >{!!$d->topicResearch1!!}</td>
                                             <td>{!!$d->offer1!!}</td>
                                             <td class="text-center">{{$d->numbers1}}</td>
-                                            <td class="text-center"><i class="fas fa-info-circle"></i><a href=".Pages/Student/CV/{{$d->id1}}">Xem thêm</a></td>
-                                            <td class="text-center"><i class="fas fa-info-circle"></i><a href="{{route('messenger-student',['id'=>$d->id1])}}">liên hệ</a></td>
+                                            <td class="text-center"><i class="fas fa-info-circle"></i><a href="./Pages/Student/CV/{{$d->id1}}">Xem thêm</a></td>
+                                            <td class="text-center"><i class="fas fa-comments"></i><a href="{{route('messenger-student',['id'=>$d->id1])}}">liên hệ</a></td>
                                         </tr>
                                     @endforeach
                                     
