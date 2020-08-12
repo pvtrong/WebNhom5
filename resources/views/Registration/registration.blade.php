@@ -75,12 +75,12 @@
                             @endif
                         </div>
                         <div>
-                            <button class="btn btn-info">Gửi</button>
-                            <button class="btn btn-danger">Huỷ bỏ</button>
+                            <button class="btn btn-primary center-block">Đăng ký</button>
                         </div>
                         @csrf
                     </form>
                 </div>
+                <h4> Nếu có tài khoản rồi. <a href="./login">Đăng nhập</a></h4>
                 <div class="panel-footer text-right">
                     <small>&copy; Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội.</small>
                 </div>

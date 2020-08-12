@@ -36,9 +36,10 @@
                             <input type="password" class="form-control" name="password" placeholder="Mật khẩu">
                             <small id="password" class="form-text text-muted">Không bao giờ được cung cấp mật khẩu cho bất kì ai.</small>
                         </div>
-                        <input type="submit" class="btn btn-primary center-block" />
+                        <button class="btn btn-primary center-block">Đăng nhập</button>
                         @csrf
                     </form>
+                    <h4>Nếu chưa có tài khoản?  <a href="./registration">Đăng ký</a></h4>
                 </div>
                 <div class="panel-footer text-right">
                     <small>&copy; Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội.</small>
