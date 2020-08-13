@@ -13,15 +13,7 @@
     }
 </style>
     <!-- <button class="btn btn-xs btn-info" onclick="addCategory(this)">thêm danh mục</button> -->
-    <form action="" method="POST" role="form">
-        <legend>Thêm danh mục</legend>
     
-        <div class="form-group">
-            <label for="">Name</label>
-            <input type="text" class="form-control" id="category_name" name="name">
-        </div>
-        <button type="button" class="btn btn-primary them" onclick="SaveCategory(this)">Thêm</button>
-    </form>
     
     <table class="table table-hover">
         <thead>
