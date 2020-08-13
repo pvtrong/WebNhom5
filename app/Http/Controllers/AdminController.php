@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Model\Admin;
+use App\User;
 use App\Model\Category;
 use Auth;
 // use Illuminate\Auth\SessionGuard;
@@ -82,5 +83,9 @@ class AdminController extends Controller
         $category = Category::find($id)->delete();
         return response()->json(['success'=>'xóa thành cong']);
 
+    }
+    public function user(){
+        $users = user::all();
+        return view('Admin.user',[ 'users'=>$users]);
     }
 }
