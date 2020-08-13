@@ -1,8 +1,22 @@
 @extends('Pages.layout.menu')
 @section('content')
 <div class="container bg-dark text-white">
+    @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $err)
+                {{$err}}<br>
+            @endforeach
+        </div>
+    @endif
 
-    <form action="" method="POST" enctype="multipart/form-data">
+    @if(session('thongbao'))
+        <div class="alert alert-success">
+            {{session('thongbao')}}
+        </div>
+    @endif
+
+    <form action="Pages/Teacher/Blog" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name ="_token" value="{{ csrf_token()}}"/>
         <div class="form-group">
             <label for="Tieude">Tiêu đề</label>
             <input class="form-control" name="Tieude" id="Tieude" placeholder="Nhập tiêu đề">
@@ -10,20 +24,19 @@
 
         <div class="form-group">
             <label for="Hinhanh">Hình ảnh</label>
-            <input type="file" name="Hinhanh" id="Hinhanh" class="form-control">
+            <input type="file" name="Hinh" id="Hinh" class="form-control">
         </div>
 
         <div class="form-group">
             <label for="">Tóm tắt</label>
-            <textarea name="" id="demo" cols="30" rows="2" class="ckeditor form-control"></textarea>
+            <textarea name="Tomtat" id="Tomtat" cols="30" rows="2" class="ckeditor form-control"></textarea>
         </div>
         <div class="form-group">
             <label for="">Nội dung</label>
-            <textarea name="" id="demo" cols="30" rows="4" class="ckeditor form-control"></textarea>
+            <textarea name="Noidung" id="Nodung" cols="30" rows="4" class="ckeditor form-control"></textarea>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Đăng bài</button>
-            <button type="submit" class="btn btn-danger">Làm lại</button>
         </div>
     </form>
 
@@ -65,8 +78,14 @@
                         <td colspan="2">{{$blg->created_at}}</td>
                         <td colspan="2">{{$blg->updated_at}}</td>
                         <td colspan="2">{{$blg->title}}</td>
-                        <td colspan="2"><button type="submit" class="btn btn-primary">Sửa</button></td>
-                        <td colspan="2"><button type="submit" class="btn btn-danger">Xóa</button></td>
+                        <form action="Pages/Teacher/getUpdateBlog/{{$blg->id_blog}} " method="get" enctype="multipart/form-data">
+                        <input type="hidden" name ="_token" value="{{csrf_token()}}"/>
+                            <td colspan="2"><button type="submit" class="btn btn-primary">Sửa</button></td>
+                        </form>
+                        <form action="Pages/Teacher/delBlog/{{$blg->id_blog}}" method="get" enctype="multipart/form-data">
+                        <input type="hidden" name ="_token" value="{{csrf_token()}}"/>
+                            <td colspan="2"><button type="submit" class="btn btn-danger">Xóa</button></td>
+                        </form>
                         </tr>
                     @endforeach
                 </tbody>
@@ -75,7 +94,7 @@
     </div>
     <div class="row2">
         <div class="col-sm-12 col-md-5">
-            <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Hiển thị 4 kết quả 1 trang</div>
+            <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite"></div>
         </div>
         <div>
             {{ $BL_Tr->links() }}

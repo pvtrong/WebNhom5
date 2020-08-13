@@ -13,7 +13,11 @@ use App\Model\Category;
 use App\Model\Messenger;
 use App\Model\ThreadMessenger;
 use Illuminate\Support\Facades\DB;
+<<<<<<< HEAD
 use Auth;
+=======
+use Illuminate\Support\Facades\Auth;
+>>>>>>> blog
 
 class TeacherController extends Controller
 {
@@ -28,9 +32,121 @@ class TeacherController extends Controller
 
     }
     public function getBlog(){
-            $category = category::all()[2];
-        $BL_Tr = DB::table('blog')->paginate(4);
+       
+        $category = category::all()[2];
+        $id = Auth::user()->id;
+        $BL_Tr = DB::table('blog')
+        ->where('id',$id)
+        ->paginate(4);
+       
         return view('Pages.Teacher.Blog', ['BL_Tr' => $BL_Tr, 'category'=>$category]);
+    }
+    public function postBlog(Request $request) { 
+        $category = category::all()[2]; 
+        $id = Auth::user()->id;
+        $this->validate($request, [
+            'Tieude'=>'required',
+            'Noidung'=>'required',
+            'Tomtat'=>'required'
+        ],[
+            'Tieude.required'=>'Bạn chưa nhập tiêu đề',
+            'Noidung.required'=>'Bạn chưa nhập nội dung',
+            'Tomtat.required'=>'Bạn chưa nhập tóm tắt'
+        ]);
+
+        $blog = new bLog;
+        $blog->id = $id;
+        $blog->title = $request->Tieude;
+        $blog->content = $request->Noidung;
+        $blog->description = $request->Tomtat;
+
+        if($request->hasFile('Hinh')){
+            $file = $request ->file('Hinh');
+            $duoi = $file->getClientOriginalExtension();
+            if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+
+            }
+            $name = $file-> getClientOriginalName();
+            $Hinh = Str::random(4).'_'. $name;
+            while(file_exists('upload/blog/'.$Hinh)){
+                $Hinh = Str::random(4)."_". $name;
+            }
+            $file->move('upload/blog', $Hinh);
+            $blog->Hinh = $Hinh;
+        }
+        
+        $blog->save();
+        $BL_Tr = DB::table('blog')
+        ->where('id',$id)
+        ->paginate(4);
+        return view('Pages.Teacher.Blog',['category'=>$category,'BL_Tr' => $BL_Tr]) -> with('thongbao','thành công');
+    }
+
+    public function updateBlog(Request $request, $id_blog){
+        $category = category::all()[2]; 
+        $blog= blog::find($id_blog);
+
+        $this->validate($request, [
+            'Tieude'=>'required',
+            'Noidung'=>'required',
+            'Tomtat'=>'required'
+        ],[
+            'Tieude.required'=>'Bạn chưa nhập tiêu đề',
+            'Noidung.required'=>'Bạn chưa nhập nội dung',
+            'Tomtat.required'=>'Bạn chưa nhập tóm tắt'
+        ]);
+
+        $blog->title = $request->Tieude;
+        $blog->content = $request->Noidung;
+        $blog->description = $request->Tomtat;
+
+        if($request->hasFile('Hinh')){
+            $file = $request ->file('Hinh');
+            $duoi = $file->getClientOriginalExtension();
+            if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+
+            }
+            $name = $file-> getClientOriginalName();
+            $Hinh = Str::random(4).'_'. $name;
+            while(file_exists('upload/blog/'.$Hinh)){
+                $Hinh = Str::random(4)."_". $name;
+            }
+            $file->move('upload/blog', $Hinh);
+            if($blog->Hinh != NULL)
+            unlink('upload/blog/'.$blog->Hinh);
+            
+            $blog->Hinh = $Hinh;
+        }
+        
+        $blog->save();
+        $id = Auth::user()->id;
+        $BL_Tr = DB::table('blog')
+        ->where('id',$id)
+        ->paginate(4);
+
+        return view('Pages.Teacher.Blog',['category'=>$category,'BL_Tr' => $BL_Tr])-> with('thongbao','thành công');
+    
+    }
+    public function getUpdateBlog($id_blog){
+        $category = category::all()[2]; 
+        $BL_Tr = DB::table('blog')->paginate(4);
+
+        $blog= blog::find($id_blog);
+
+        return view('Pages.Teacher.updateBlog',['blog'=>$blog,'category'=>$category,'BL_Tr' => $BL_Tr]);
+    }
+
+    public function delBlog($id_blog) {
+        $category = category::all()[2]; 
+        $blog = blog::find($id_blog);
+        if($blog->Hinh != NULL) unlink('upload/blog/'.$blog->Hinh);
+        $blog->delete();
+        $id = Auth::user()->id;
+        $BL_Tr = DB::table('blog')
+        ->where('id',$id)
+        ->paginate(4);
+        return view('Pages.Teacher.Blog',['category'=>$category,'BL_Tr' => $BL_Tr]);
+    
     }
     public function getDS1(Request $request){
         $category = category::all()[5];
