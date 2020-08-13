@@ -13,11 +13,7 @@ use App\Model\Category;
 use App\Model\Messenger;
 use App\Model\ThreadMessenger;
 use Illuminate\Support\Facades\DB;
-<<<<<<< HEAD
 use Auth;
-=======
-use Illuminate\Support\Facades\Auth;
->>>>>>> blog
 
 class TeacherController extends Controller
 {

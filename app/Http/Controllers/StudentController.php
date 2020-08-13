@@ -13,11 +13,7 @@ use App\Model\Messenger;
 use App\Model\ThreadMessenger;
 use App\Model\Category;
 use Illuminate\Support\Facades\DB;
-<<<<<<< HEAD
 use Auth;
-=======
-use Illuminate\Support\Facades\Auth;
->>>>>>> blog
 
 class StudentController extends Controller
 {
@@ -501,7 +497,6 @@ class StudentController extends Controller
             return view('Pages.Student.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
         }  
     }
-<<<<<<< HEAD
     public function messenger($id){
         $student_id = Auth::user()->id;
         $category = category::all()[10];
@@ -598,6 +593,4 @@ class StudentController extends Controller
             'user_id'=>$student_id
         ]);
     }
-=======
->>>>>>> blog
 }
