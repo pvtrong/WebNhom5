@@ -21,6 +21,7 @@
                 <th hidden></th>
                 <th>name</th>
                 <th>email</th>
+                <th>password</th>
             </tr>
         </thead>
         <tbody>
@@ -35,7 +36,11 @@
                 <td> {{$user->password}}
                 </td><td>
                     
-                    <button type="button" class="btn btn-xs btn-danger">xóa</button>
+                <form class="" method="GET" action="./deleteUser/{{$user->id}}" enctype="multipart/form-data">
+
+                    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                    <td colspan="2"><button type="submit" class="btn btn-danger">Xóa</button></td>
+                </form>
                 </td>
             </tr>
         @endforeach
