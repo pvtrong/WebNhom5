@@ -4,8 +4,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Model\Admin;
+use App\User;
 use App\Model\Category;
 use Auth;
+
+use App\Model\Messenger;
+use App\blog;
+use App\student;
+use App\teacher;
+use App\company;
 // use Illuminate\Auth\SessionGuard;
 
 class AdminController extends Controller
@@ -82,5 +89,35 @@ class AdminController extends Controller
         $category = Category::find($id)->delete();
         return response()->json(['success'=>'xóa thành cong']);
 
+    }
+    public function user(){
+        $users = user::all();
+        return view('Admin.user',[ 'users'=>$users]);
+    }
+    public function delete_user($id){
+        
+        messenger::where("fk_user_id", $id)->delete();
+        blog::where("id", $id)->delete();
+        if(user::find($id)->category == 3){
+            if( student::find($id)!= null)
+            student::find($id)->delete();
+            \App\Model\ThreadMessenger::where("user_student", $id)->delete();
+        }
+        else if(user::find($id)->category == 2){
+            \App\Model\ThreadMessenger::where("user_teacher", $id)->delete();
+            if( teacher::find($id)!= null)
+            teacher::find($id)->delete();
+            
+        }
+        else {
+            if( company::find($id)!= null)
+            company::find($id)->delete();
+        
+            \App\Model\ThreadMessenger::where("user_company", $id)->delete();
+        }
+        
+        
+        user::find($id)->delete();
+        return redirect() -> back()-> with("success", "Xoá thành công!");
     }
 }
