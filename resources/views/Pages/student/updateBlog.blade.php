@@ -1,6 +1,6 @@
 @extends('Pages.layout.menu')
 @section('content')
-<div class="container bg-dark text-white">
+<div class="container bg-dark text-white dark-mode">
     @if(count($errors) > 0)
         <div class="alert alert-danger">
             @foreach($errors->all() as $err)
@@ -19,7 +19,7 @@
     <input type="hidden" name ="_token" value="{{ csrf_token()}}"/>
         <div class="form-group">
             <label for="Tieude">Tiêu đề</label>
-            <input class="form-control" name="Tieude" id="Tieude" placeholder="Nhập tiêu đề" value ="{{$blog->title}}">
+            <input class="form-control dark-mode" name="Tieude" id="Tieude" placeholder="Nhập tiêu đề" value ="{{$blog->title}}">
         </div>
 
         <div class="form-group">
@@ -27,7 +27,7 @@
             <p>
                 <img width ="200px"src="upload/blog/{{$blog->Hinh}}" alt="">
             </p>
-            <input type="file" name="Hinh" id="Hinh" class="form-control">
+            <input type="file" name="Hinh" id="Hinh" class="form-control dark-mode">
         </div>
 
         <div class="form-group">
@@ -43,7 +43,7 @@
             </textarea>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Đăng bài</button>
+            <button type="submit" class="btn btn-primary dark-mode">Đăng bài</button>
         </div>
     </form>
 

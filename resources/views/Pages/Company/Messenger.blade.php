@@ -1,6 +1,6 @@
 @extends('Pages.layout.menu')
 @section('content')
-<div class="content-mes">
+<div class="content-mes dark-mode">
     @if($messenger)
     <div id="show">
     <?php $reversed = array_reverse($messenger); ?>
@@ -30,10 +30,10 @@
     @endif
     @endif
     </div>
-    <div class="send-mes">
+    <div class="send-mes dark-mode">
         <p class='nguoinhan' hidden>{{$id}}</p>
-        <textarea class="text-mes" name=""></textarea>
-        <button type="button" class="btn btn-xs btn-info" onclick="sendMes(this)">send</button>
+        <textarea class="text-mes dark-mode" name=""></textarea>
+        <button type="button" class="btn btn-xs btn-info dark-mode" onclick="sendMes(this)">send</button>
     </div>
 @stop
 @section('style')
@@ -102,7 +102,7 @@
         },
         success:function(res){
             console.log(res);
-            $('.content-mes').append('<div class="mes-right"><p class="text-name">'
+            $('.content-mes').append('<div class="mes-right"><p class="text-name dark-mode">'
                 + res.name
                 +'</p><p class="text-mess">'
                 + res.mes['message']+'</p></div>')
@@ -141,7 +141,7 @@
                             +'<p class="text-mess">'+value.message+'</p>'+'</div>'); 
                             // $('.content_messenger').prepend('<div class="mess_body">'+'<h3 class="text_name">'+value.s_name+' '+':'+'</h3>'+'<p class="massage_date">'+value.d_created_date+'</p>'+'</div>')
                         }else{
-                            $('.content-mes').prepend('<div class="mes-right">'
+                            $('.content-mes').prepend('<div class="mes-right dark-mode">'
                             +'<p class="text-name">'+value.name+':</p>'
                             +'<p class="text-mess-2">'+value.message+'</p>'+'</div>'); 
                            }

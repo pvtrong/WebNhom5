@@ -19,24 +19,24 @@
     <input type="hidden" name ="_token" value="{{ csrf_token()}}"/>
         <div class="form-group">
             <label for="Tieude">Tiêu đề</label>
-            <input class="form-control" name="Tieude" id="Tieude" placeholder="Nhập tiêu đề">
+            <input class="form-control dark-mode" name="Tieude" id="Tieude" placeholder="Nhập tiêu đề">
         </div>
 
         <div class="form-group">
             <label for="Hinhanh">Hình ảnh</label>
-            <input type="file" name="Hinh" id="Hinh" class="form-control">
+            <input type="file" name="Hinh" id="Hinh" class="form-control dark-mode">
         </div>
 
         <div class="form-group">
             <label for="">Tóm tắt</label>
-            <textarea name="Tomtat" id="Tomtat" cols="30" rows="2" class="ckeditor form-control"></textarea>
+            <textarea name="Tomtat" id="Tomtat" cols="30" rows="2" class="ckeditor form-control dark-mode"></textarea>
         </div>
         <div class="form-group">
             <label for="">Nội dung</label>
-            <textarea name="Noidung" id="Nodung" cols="30" rows="4" class="ckeditor form-control"></textarea>
+            <textarea name="Noidung" id="Nodung" cols="30" rows="4" class="ckeditor form-control dark-mode"></textarea>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Đăng bài</button>
+            <button type="submit" class="btn btn-primary dark-mode">Đăng bài</button>
         </div>
     </form>
 
@@ -47,7 +47,7 @@
     <h1>Các blog của tôi</h1>
     <div class="row2">
         <div class="col-sm-12">
-            <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+            <table class=" dark-mode bg-light table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                 <thead>
                     <tr role="row2">
                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="2" style="width: 6em !important">ID blog</th>
@@ -80,11 +80,11 @@
                         <td colspan="2">{{$blg->title}}</td>
                         <form action="Pages/Company/getUpdateBlog/{{$blg->id_blog}} " method="get" enctype="multipart/form-data">
                         <input type="hidden" name ="_token" value="{{csrf_token()}}"/>
-                            <td colspan="2"><button type="submit" class="btn btn-primary">Sửa</button></td>
+                            <td colspan="2"><button type="submit" class="btn btn-primary dark-mode">Sửa</button></td>
                         </form>
                         <form action="Pages/Company/delBlog/{{$blg->id_blog}}" method="get" enctype="multipart/form-data">
                         <input type="hidden" name ="_token" value="{{csrf_token()}}"/>
-                            <td colspan="2"><button type="submit" class="btn btn-danger">Xóa</button></td>
+                            <td colspan="2"><button type="submit" class="btn btn-danger dark-mode">Xóa</button></td>
                         </form>
                         </tr>
                     @endforeach

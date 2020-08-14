@@ -7,12 +7,12 @@
 
 <nav id="sidebar">
 
-    <div class="menu">
+    <div class="menu dark-mode ">
         <?php if(Auth::user()->category == '3') { ?>
             <!--Logo-->
-        <div class="logo-area">
+        <div class="dark-mode logo-area">
             <a id="logo" href="./Pages/Student/Home">
-                <div class="logo-pages">
+                <div class="logo-pages dark-mode ">
 
                 </div>
                 <h2>UET</h2>
@@ -42,9 +42,9 @@
                 <div class="menu-item-text">Nhà Trường</div>
             </a>
         <?php } elseif(Auth::user()->category == '1'){ ?>
-        <div class="logo-area">
+        <div class="dark-mode logo-area">
             <a id="logo" href="./Pages/Company/Home">
-                <div class="logo-pages">
+                <div class="dark-mode logo-pages">
 
                 </div>
                 <h2>UET</h2>
@@ -75,7 +75,7 @@
                 <div class="menu-item-text">Nhà Trường</div>
             </a>
         <?php } elseif(Auth::user()->category == '2'){ ?>
-        <div class="logo-area">
+        <div class="dark-mode logo-area">
             <a id="logo" href="./Pages/Teacher/Home">
                 <div class="logo-pages">
 

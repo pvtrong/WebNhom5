@@ -19,29 +19,29 @@
     <input type="hidden" name ="_token" value="{{ csrf_token()}}"/>
         <div class="form-group">
             <label for="Tieude">Tiêu đề</label>
-            <input class="form-control" name="Tieude" id="Tieude" placeholder="Nhập tiêu đề" value ="{{$blog->title}}">
+            <input class="form-control dark-mode" name="Tieude" id="Tieude" placeholder="Nhập tiêu đề" value ="{{$blog->title}}">
         </div>
 
         <div class="form-group">
             <label for="Hinhanh">Hình ảnh</label>
             <p><img width ="200px"src="upload/blog/{{$blog->Hinh}}" alt=""></p>
-            <input type="file" name="Hinh" id="Hinh" class="form-control">
+            <input type="file" name="Hinh" id="Hinh" class="form-control dark-mode">
         </div>
 
         <div class="form-group">
             <label for="">Tóm tắt</label>
-            <textarea name="Tomtat" id="Tomtat" cols="30" rows="2" class="ckeditor form-control">
+            <textarea name="Tomtat" id="Tomtat" cols="30" rows="2" class="ckeditor form-control dark-mode">
                 {{$blog->description}}
             </textarea>
         </div>
         <div class="form-group">
             <label for="">Nội dung</label>
-            <textarea name="Noidung" id="Noidung" cols="30" rows="4" class="ckeditor form-control">
+            <textarea name="Noidung" id="Noidung" cols="30" rows="4" class="ckeditor form-control dark-mode">
                 {{$blog->content}}
             </textarea>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Đăng bài</button>
+            <button type="submit" class="btn btn-primary dark-mode">Đăng bài</button>
         </div>
     </form>
 

@@ -12,7 +12,7 @@ use Auth;
 use App\Http\Requests\RequestPassword;
 use App\Http\Requests\RequestRegistration;
 use Illuminate\Support\Facades\Hash;
-use App\Feedback;
+use App\Feedback;   
 
 class UserController extends Controller
 {

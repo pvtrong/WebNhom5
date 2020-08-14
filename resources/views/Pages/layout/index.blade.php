@@ -27,12 +27,12 @@
         <!-- Page Content -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid dark-mode">
                     <!--Content area-->
-                    <div class="content">
+                    <div class="content dark-mode">
                         @include('Pages.layout.header')
-                        <div class="content-body">
+                        <div class="content-body dark-mode bg-light">
                             @if(!empty($success))
                             <div class="alert alert-success alert-dismissable">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -73,7 +73,8 @@
         <!-- Dark Overlay element -->
         <div class="overlay"></div>
     </div>
-  
+    <script src="asset/JS/Lib/dark-mode-switch.min.js"></script>
+
 
     <script src="asset/JS/Lib/jquery-3.5.0.min.js"></script>
     <script src="asset/JS/pages/Common.js"></script>

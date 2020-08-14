@@ -509,7 +509,7 @@ class CompanyController extends Controller
         if($category_user->category == '3'){
             $thread_mes = ThreadMessenger::where(['user_company'=>$company_id,'user_student'=>$id])->first();
             if($thread_mes == null){
-                if($ThreadMessenger = ThreadMessenger::create(['user_student'=>$company_id,'user_company'=>$id])){
+                if($ThreadMessenger = ThreadMessenger::create(['user_company'=>$company_id,'user_student'=>$id])){
                     $Messenger = Messenger::create(['fk_thread_id'=>$ThreadMessenger->id,'fk_user_id'=>$company_id,'message'=>$mes]);
                 }
             }else{
@@ -518,7 +518,7 @@ class CompanyController extends Controller
         } elseif($category_user->category == '2'){
              $thread_mes = ThreadMessenger::where(['user_company'=>$company_id,'user_teacher'=>$id])->first();
             if($thread_mes == null){
-                if($ThreadMessenger = ThreadMessenger::create(['user_student'=>$company_id,'user_teacher'=>$id])){
+                if($ThreadMessenger = ThreadMessenger::create(['user_company'=>$company_id,'user_teacher'=>$id])){
                     $Messenger = Messenger::create(['fk_thread_id'=>$ThreadMessenger->id,'fk_user_id'=>$company_id,'message'=>$mes]);
                 }
             }else{

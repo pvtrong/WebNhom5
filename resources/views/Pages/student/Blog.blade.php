@@ -19,12 +19,12 @@
     <input type="hidden" name ="_token" value="{{ csrf_token()}}"/>
         <div class="form-group">
             <label for="Tieude">Tiêu đề</label>
-            <input class="form-control" name="Tieude" id="Tieude" placeholder="Nhập tiêu đề">
+            <input class="form-control dark-mode" name="Tieude" id="Tieude" placeholder="Nhập tiêu đề">
         </div>
 
         <div class="form-group">
             <label for="Hinhanh">Hình ảnh</label>
-            <input type="file" name="Hinh" id="Hinh" class="form-control">
+            <input type="file" name="Hinh" id="Hinh" class="form-control dark-mode">
         </div>
 
         <div class="form-group">
@@ -36,7 +36,7 @@
             <textarea name="Noidung" id="Nodung" cols="30" rows="4" class="ckeditor form-control"></textarea>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Đăng bài</button>
+            <button type="submit" class="btn btn-primary dark-mode">Đăng bài</button>
         </div>
     </form>
 
@@ -80,11 +80,11 @@
                         <td colspan="2">{{$blg->title}}</td>
                         <form action="Pages/Student/getUpdateBlog/{{$blg->id_blog}} " method="get" enctype="multipart/form-data">
                         <input type="hidden" name ="_token" value="{{csrf_token()}}"/>
-                            <td colspan="2"><button type="submit" class="btn btn-primary">Sửa</button></td>
+                            <td colspan="2"><button type="submit" class="btn btn-primary dark-mode">Sửa</button></td>
                         </form>
                         <form action="Pages/Student/delBlog/{{$blg->id_blog}}" method="get" enctype="multipart/form-data">
                         <input type="hidden" name ="_token" value="{{csrf_token()}}"/>
-                            <td colspan="2"><button type="submit" class="btn btn-danger">Xóa</button></td>
+                            <td colspan="2"><button type="submit" class="btn btn-danger dark-mode">Xóa</button></td>
                         </form>
                         </tr>
                     @endforeach

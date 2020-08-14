@@ -4,15 +4,15 @@
 <div class="container-fluid">
 
                                 <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Danh sách thầy cô tuyển sinh viên nghiên cứu</h1>
+    <h1 class="h3 mb-2 text-gray-800 dark-mode">Danh sách thầy cô tuyển sinh viên nghiên cứu</h1>
 
 
                                 <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary">Danh sách</h6>
+    <div class="card shadow mb-4 dark-mode ">
+        <div class="card-header py-3 dark-mode ">
+            <h6 style="color: #026b97" class=" dark-mode  m-0 font-weight-bold text-primary">Danh sách</h6>
         </div>
-        <div class="card-body">
+        <div class="card-body dark-mode bg-light">
             <div class="table-responsive">
                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
                     <div class="row">
@@ -24,8 +24,8 @@
                                <form action="Pages/Student/DS2" method = "get">
                                    <input type="hidden" name ="_token" value="{{ csrf_token()}}";>
                                    <div class = "d-flex">
-                                       <input type="search" name ="search" id="search" class="form-control " placeholder="search" aria-controls="dataTable">
-                                       <button type="submit" class="btn btn-primary mx-2">Search</button>
+                                       <input type="search" name ="search" id="search" class="dark-mode form-control " placeholder="search" aria-controls="dataTable">
+                                       <button type="submit" class="btn btn-primary mx-2 dark-mode">Search</button>
                                    </div>
                                </form>
                             </div>
@@ -63,7 +63,7 @@
                                                 <select name="name"  class="form-control" id="name" onchange="this.form.submit()">
                                                 <option name ="name" value="">Họ và tên</option>
                                                     @foreach( $user1 as $u)
-                                                        <option name ="name"value="{{ $u -> id}}">{{ $u->name}}</option>
+                                                        <option class='dark-mode' name ="name"value="{{ $u -> id}}">{{ $u->name}}</option>
                                                     @endforeach
                                                 </select> 
                                             </form>
@@ -75,7 +75,7 @@
                                                 <select name="email"  class="form-control" id="email" onchange="this.form.submit()">
                                                 <option name ="email" value="">Email</option>
                                                     @foreach( $user2 as $u)
-                                                        <option name ="email"value="{{ $u -> id}}">{{ $u->email}}</option>
+                                                        <option class='dark-mode'  class='dark-mode' n name ="email"value="{{ $u -> id}}">{{ $u->email}}</option>
                                                     @endforeach
                                                 </select> 
                                             </form>
@@ -96,7 +96,7 @@
                                                         $teachers = array_unique($teachers);
                                                         sort($teachers);
                                                         foreach($teachers as $department)
-                                                        echo "<option name ='department' value='" .$department ."'>" .$department ."</option>";
+                                                        echo "<option class='dark-mode'  name ='department' value='" .$department ."'>" .$department ."</option>";
                                                     ?>
                                                 </select> 
                                             </form>
@@ -116,7 +116,7 @@
                                                     $teachers = array_unique($teachers);
                                                     sort($teachers);
                                                     foreach($teachers as $topicResearch)
-                                                    echo "<option name ='topicResearch' value='" .$topicResearch ."'>" .$topicResearch ."</option>";
+                                                    echo "<option class='dark-mode'  name ='topicResearch' value='" .$topicResearch ."'>" .$topicResearch ."</option>";
                                                 ?>
                                             </select> 
                                             </form>
@@ -135,7 +135,7 @@
                                                         $teachers = array_unique($teachers);
                                                         sort($teachers);
                                                         foreach($teachers as $offer)
-                                                        echo "<option name ='offer' value='" .$offer ."'>" .$offer ."</option>";
+                                                        echo "<option class='dark-mode'  name ='offer' value='" .$offer ."'>" .$offer ."</option>";
                                                     ?>
                                                 </select>
                                             </form>
@@ -155,7 +155,7 @@
                                                         $teachers = array_unique($teachers);
                                                         sort($teachers);
                                                         foreach($teachers as $numbers)
-                                                        echo "<option name ='numbers' value='" .$numbers ."'>" .$numbers ."</option>";
+                                                        echo "<option class='dark-mode'  name ='numbers' value='" .$numbers ."'>" .$numbers ."</option>";
                                                     ?>
                                                 </select>
                                             </form> 
@@ -178,8 +178,8 @@
                                             <td >{!!$d->topicResearch1!!}</td>
                                             <td>{!!$d->offer1!!}</td>
                                             <td class="text-center">{{$d->numbers1}}</td>
-                                            <td class="text-center"><i class="fas fa-info-circle"></i><a href="./Pages/Student/CV/{{$d->id1}}">Xem thêm</a></td>
-                                            <td class="text-center"><i class="fas fa-comments"></i><a href="{{route('messenger-student',['id'=>$d->id1])}}">liên hệ</a></td>
+                                            <td class="text-center"><i class="dark-mode fas fa-info-circle"></i><a class="dark-mode" href="./Pages/Student/CV/{{$d->id1}}">Xem thêm</a></td>
+                                            <td class="text-center"><i class="dark-mode fas fa-comments"></i><a class="dark-mode" href="{{route('messenger-student',['id'=>$d->id1])}}">liên hệ</a></td>
                                         </tr>
                                     @endforeach
                                     

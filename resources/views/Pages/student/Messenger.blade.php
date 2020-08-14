@@ -46,7 +46,7 @@
 @stop
 @section('content')
 
-<div class="content-mes">
+<div class="content-mes class='dark-mode' ">
 @if($messenger)
 <div id="show">
 <?php $reversed = array_reverse($messenger); ?>

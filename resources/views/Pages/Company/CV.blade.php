@@ -7,19 +7,19 @@
 
 <div class="container">
     <a href="./Pages/Company/Share/{{$user->id}}"><button type="submit" class="btn btn-primary" >Blog cá nhân</button></a>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card shadow mb-4">
+    <div class="row dark-mode">
+        <div class="col-md-6 dark-mode">
+            <div class="card shadow mb-4 dark-mode">
                 <div class="card-header py-3">
-                    <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Thông tin công ty/doanh nghiệp</h6>
+                    <h6 style="color: #026b97" class=" dark-mode m-0 font-weight-bold text-primary text-center">Thông tin công ty/doanh nghiệp</h6>
                 </div>
-                <div class="card-body row">
-                    <div class="col-md-6 mb-3 avatar-info">
+                <div class="card-body row dark-mode bg-light">
+                    <div class="col-md-6 mb-3 avatar-info dark-mode">
                         <br>
                         <div class="avatar-info-area" style="background-image: url('upload/company/{{$company->Hinh}}');" ></div>
 
                     </div>
-                    <div class="col-md-6 mb-3 info-individual">
+                    <div class="col-md-6 mb-3 info-individual dark-mode">
                         <br>
                         <h5><i class="fa fa-user-circle"></i>    Tên: {{$user ->name}}<br></h5>
                         <?php if($company ->address != "")echo "<h5><i class='fa fa-address-book'></i>    Địa chỉ: "."    ".$company ->address."<br></h5>"?>
@@ -31,12 +31,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 style="color: #026b97 !important" class="m-0 font-weight-bold text-primary text-center">Chi tiết thông tin tuyển</h6>
+        <div class="col-md-6 dark-mode">
+            <div class="card shadow mb-4 dark-mode">
+                <div class="card-header py-3 dark-mode">
+                    <h6 style="color: #026b97" class=" dark-mode m-0 font-weight-bold text-primary text-center">Chi tiết thông tin tuyển</h6>
                 </div>
-                <div class="card-body">
+                <div class="card-body dark-mode bg-light">
                     <?php if($company ->offer != "")echo "<h5><i class='fa fa-bolt'></i>     "."    ".$company ->offer."<br></h5>"?>
                     <?php if($company ->numbers != "")echo "<h5><i class='fa fa-graduation-cap'></i>   Tuyển: "."    ".$company ->numbers."<br></h5>"?>
                     <?php if($company ->salary != "")echo "<h5><i class='fa fa-university'></i>     Mức lương: "."    ".$company ->salary."<br></h5>"?>

@@ -67,7 +67,8 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         Route::get('CV/{id}', 'TeacherController@getCV');
         Route::get('Share/{id}', 'TeacherController@getShare');
         Route::get('Share2/{id_blog}', 'TeacherController@getShare2');
-        Route::get('updateProfile', 'CompanyController@postUpdate');
+        Route::get('updateProfile', 'TeacherController@postUpdate');
+        Route::post('updateProfile/{id}', 'TeacherController@postUpdate');
         Route::get('messenger-teacher/{id}','TeacherController@messenger')->name('messenger-teacher');
         Route::post('send-mes','TeacherController@send_messenger');
         Route::post('load-mes','TeacherController@load_mes');

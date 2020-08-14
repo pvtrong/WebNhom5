@@ -11,8 +11,8 @@
                 {{$errors->first('password_old')}}
             </span>
         @endif
-        <input name="password_old" type="password" class="form-control" placeholder="******">
-        <a class="eye" href="javascript:;void(0);"><i class="fa fa-eye"></i></a>
+        <input name="password_old" type="password" class="form-control dark-mode" placeholder="******">
+        <a class="eye" href="javascript:;void(0);"><i class="fa fa-eye dark-mode"></i></a>
         
     </div>
     
@@ -23,8 +23,8 @@
                 {{$errors->first('password')}}
             </span>
         @endif
-        <input name="password" type="password" class="form-control" placeholder="******">
-        <a class="eye" href="javascript:;void(0);"><i class="fa fa-eye"></i></a>
+        <input name="password" type="password" class="form-control dark-mode" placeholder="******">
+        <a class="eye" href="javascript:;void(0);"><i class="fa fa-eye dark-mode"></i></a>
         
     </div>
     
@@ -35,11 +35,11 @@
             {{$errors->first('pw_confirm')}}
         </span>
         @endif
-        <input name="pw_confirm" type="password" class="form-control" placeholder="******">
-        <a class="eye" href="javascript:;void(0);"><i class="fa fa-eye"></i></a>
+        <input name="pw_confirm" type="password" class="form-control dark-mode" placeholder="******">
+        <a class="eye" href="javascript:;void(0);"><i class="fa fa-eye dark-mode"></i></a>
         
     </div>
-    <button type="submit" class="btn btn-primary"><i class="white fa fa-save"></i>  Submit</button>
+    <button type="submit" class="btn btn-primary dark-mode"><i class="white fa fa-save dark-mode"></i>  Submit</button>
   </form>
 @stop
 @section('script')

@@ -167,6 +167,7 @@ body {
     background: #f5f5f5;
     position: absolute;
     top: 6px;
+    left: 15px;
     opacity: 0.8;
 }
 
@@ -352,4 +353,33 @@ body {
 
 .alert {
     z-index: 1000;
+}
+
+#darkmode {
+    background-color: #222222 !important;
+    color: #eee !important;
+}
+
+#darkmode .bg-light {
+    background-color: #333333 !important;
+}
+
+#darkmode .bg-white {
+    background-color: #444444 !important;
+}
+
+#darkmode .menu-item:hover {
+    background-color: #495057 !important;
+}
+
+.custom-switch:hover {
+    cursor: pointer;
+}
+
+.custom-control:hover {
+    cursor: pointer;
+}
+
+.custom-control-label {
+    cursor: pointer;
 }
