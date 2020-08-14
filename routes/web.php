@@ -112,6 +112,7 @@ Route::post('registration', 'UserController@post_registration');
 //  admin
 Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
         Route::get('users', 'AdminController@user')->name('users');
+        Route::get('numbers', 'AdminController@numbers')->name('numbers');
         Route::get('deleteUser/{id}', 'AdminController@delete_user');
         Route::get('home', 'AdminController@adminHome')->name('admin-home');
         Route::get('category', 'AdminController@category')->name('category');

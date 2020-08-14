@@ -1,4 +1,4 @@
 @extends('layout.main')
 @section('content')
-    <h1>day la admin</h1>
+    <h1>Đây là admin</h1>
 @stop()

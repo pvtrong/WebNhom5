@@ -55,18 +55,19 @@
                     </div>
                 </li>
                 <li class="active">
-                    <a href=""> <i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">admin</span></a>
+                <a href="{{route('admin-home')}}"> <i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">Home</span></a>
                 </li>
                 <li class="">
-                    <a href="{{route('category')}}"><i class="fa fa-bars" aria-hidden="true"></i> <span class="nav-label">Danh mục sản phẩm</span></span></a>
+                    <a href="{{route('category')}}"><i class="fa fa-address-book" aria-hidden="true"></i> <span class="nav-label">Danh mục sản phẩm</span></span></a>
                 </li>
                 <li class="">
-                    <a href="{{route('users')}}"><i class="fa fa-bars" aria-hidden="true"></i> <span class="nav-label">Quản lý tài khoản</span></span></a>
-                </li>
-                <!-- <li>
-                    <a href=""><i class="fa fa-book" aria-hidden="true"></i><span class="nav-label">Sản phẩm</span></a>
+                    <a href="{{route('users')}}"><i class="fa fa-user-o" aria-hidden="true"></i> <span class="nav-label">Quản lý tài khoản</span></span></a>
                 </li>
                 <li>
+                    <a href="{{route('numbers')}}"><i class="fa fa-book" aria-hidden="true"></i><span class="nav-label">Thống kê</span></a>
+                </li>
+
+                <!-- <li>
                     <a href=""><i class="fa fa-user" aria-hidden="true"></i> <span class="nav-label">Người dùng</span></a>
                 </li>
                 <li>
@@ -82,6 +83,7 @@
 
         <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
+            
         <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
@@ -101,6 +103,18 @@
 
 
         <div class="wrapper wrapper-content">
+            @if(\Session::has('success'))
+            <div class="alert alert-success alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Thành công! </strong> {{\Session::get('success')}}
+            </div>
+            @endif
+            @if(\Session::has('danger'))
+            <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Thất bại! </strong> {{\Session::get('danger')}}
+            </div>
+            @endif
             @yield('content')
        
         </div>

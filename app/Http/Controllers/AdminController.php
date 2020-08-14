@@ -94,6 +94,15 @@ class AdminController extends Controller
         $users = user::all();
         return view('Admin.user',[ 'users'=>$users]);
     }
+    public function numbers(){
+        $users = user::all()->count();
+        $companys = user::where('category', 1)->count();
+        $teachers = user::where('category', 2)->count();
+        $students = user::where('category', 3)->count();
+        $blogs= blog::all()->count();
+        $messages = messenger::all() ->count();
+        return view('Admin.numbers',['messages'=>$messages, 'companys'=>$companys, 'teachers'=>$teachers, 'students' => $students, 'blogs' => $blogs, 'users'=>$users]);
+    }
     public function delete_user($id){
         
         messenger::where("fk_user_id", $id)->delete();

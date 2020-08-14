@@ -20,8 +20,8 @@ class TeacherController extends Controller
     //
     public function getHome(){
         $companys = user::where('category', 1)->count();
-        $teachers = user::where('category', 1)->count();
-        $students = user::where('category', 1)->count();
+        $teachers = user::where('category', 2)->count();
+        $students = user::where('category', 3)->count();
         $blogs= blog::all()->count();
         $category = category::all()[0];
         return view('Pages.Teacher.home', ['category'=>$category, 'companys'=>$companys, 'teachers'=>$teachers, 'students' => $students, 'blogs' => $blogs]);
@@ -75,7 +75,7 @@ class TeacherController extends Controller
         $BL_Tr = DB::table('blog')
         ->where('id',$id)
         ->paginate(4);
-        return view('Pages.Teacher.Blog',['category'=>$category,'BL_Tr' => $BL_Tr]) -> with('thongbao','thành công');
+        return view('Pages.Teacher.Blog',['category'=>$category,'BL_Tr' => $BL_Tr]) -> with('success','Bạn thêm bài đăng thành công');
     }
 
     public function updateBlog(Request $request, $id_blog){
@@ -120,7 +120,7 @@ class TeacherController extends Controller
         ->where('id',$id)
         ->paginate(4);
 
-        return view('Pages.Teacher.Blog',['category'=>$category,'BL_Tr' => $BL_Tr])-> with('thongbao','thành công');
+        return view('Pages.Teacher.Blog',['category'=>$category,'BL_Tr' => $BL_Tr])-> with('success','Bạn cập nhật thành công');
     
     }
     public function getUpdateBlog($id_blog){
@@ -141,7 +141,7 @@ class TeacherController extends Controller
         $BL_Tr = DB::table('blog')
         ->where('id',$id)
         ->paginate(4);
-        return view('Pages.Teacher.Blog',['category'=>$category,'BL_Tr' => $BL_Tr]);
+        return view('Pages.Teacher.Blog',['category'=>$category,'BL_Tr' => $BL_Tr])-> with('success','Bạn xoá bài đăng thành công');
     
     }
     public function getDS1(Request $request){

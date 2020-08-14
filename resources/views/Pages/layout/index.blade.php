@@ -33,6 +33,18 @@
                     <div class="content">
                         @include('Pages.layout.header')
                         <div class="content-body">
+                            @if(!empty($success))
+                            <div class="alert alert-success alert-dismissable">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Thành công! </strong> {{$success}}
+                            </div>
+                            @endif
+                            @if(!empty($danger))
+                            <div class="alert alert-danger">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Thất bại! </strong> {{$danger}}
+                            </div>
+                            @endif
                             @if(\Session::has('success'))
                             <div class="alert alert-success alert-dismissable">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
