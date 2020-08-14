@@ -27,10 +27,10 @@
         <!-- Page Content -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid dark-mode">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid dark-mode bg-light">
                     <!--Content area-->
-                    <div class="content dark-mode">
+                    <div class="content">
                         @include('Pages.layout.header')
                         <div class="content-body dark-mode bg-light">
                             @if(!empty($success))
