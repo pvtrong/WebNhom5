@@ -41,14 +41,6 @@
                 <div class="menu-item-icon icon-teacher"></div>
                 <div class="menu-item-text">Nhà Trường</div>
             </a>
-            <a class="menu-item" href="./Pages/Setting">
-                <div class="menu-item-icon icon-setting"></div>
-                <div class="menu-item-text">Thiết Lập</div>
-            </a>
-            <a class="menu-item" href="./Pages/Student/Help">
-                <div class="menu-item-icon icon-help"></div>
-                <div class="menu-item-text">Trợ Giúp</div>
-            </a>
         <?php } elseif(Auth::user()->category == '1'){ ?>
         <div class="logo-area">
             <a id="logo" href="./Pages/Company/Home">
@@ -81,14 +73,6 @@
             <a class="menu-item" href="./Pages/Company/DS2">
                 <div class="menu-item-icon icon-teacher"></div>
                 <div class="menu-item-text">Nhà Trường</div>
-            </a>
-            <a class="menu-item" href="./Pages/Setting">
-                <div class="menu-item-icon icon-setting"></div>
-                <div class="menu-item-text">Thiết Lập</div>
-            </a>
-            <a class="menu-item" href="./Pages/Company/Help">
-                <div class="menu-item-icon icon-help"></div>
-                <div class="menu-item-text">Trợ Giúp</div>
             </a>
         <?php } elseif(Auth::user()->category == '2'){ ?>
         <div class="logo-area">
@@ -123,16 +107,16 @@
             <div class="icon-more icon-company"></div>
             <div class="menu-item-text">Sinh Viên</div>
             </a>
+            <?php }?>
+            
             <a class="menu-item" href="./Pages/Setting">
                 <div class="menu-item-icon icon-setting"></div>
                 <div class="menu-item-text">Thiết Lập</div>
             </a>
-            <a class="menu-item" href="./Pages/Teacher/Help">
+            <a class="menu-item" href="./Pages/Help">
                 <div class="menu-item-icon icon-help"></div>
                 <div class="menu-item-text">Trợ Giúp</div>
             </a>
-            <?php }?>
-
         </div>
     </div>
 </nav>

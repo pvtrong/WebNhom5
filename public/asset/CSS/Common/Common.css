@@ -349,3 +349,7 @@ body {
     font-style: italic;
     font-size: 0.9em;
 }
+
+.alert {
+    z-index: 1000;
+}

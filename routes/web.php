@@ -25,6 +25,8 @@ Route::get('/', function () {
 Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
     Route::get('Setting', 'UserController@updatePassword')->name('user.update.password');
     Route::post('Setting', 'UserController@saveUpdatePassword');
+    Route::get('Help', 'UserController@getHelp')->name('get-help');
+    Route::post('Help', 'UserController@postHelp');
     Route::group(['prefix'=>'Student'], function(){
         Route::get('Home', 'StudentController@getHome')->name('student-home');
 
@@ -37,7 +39,7 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
         
         Route::get('DS1', 'StudentController@getDS1');
         Route::get('DS2', 'StudentController@getDS2');
-        Route::get('Help', 'StudentController@getHelp');
+        
         Route::get('Profile/{id}', 'StudentController@getProfile');
         //
 
@@ -60,7 +62,6 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
 
         Route::get('DS1', 'TeacherController@getDS1');
         Route::get('DS2', 'TeacherController@getDS2');
-        Route::get('Help', 'TeacherController@getHelp');
         Route::get('Profile/{id}', 'TeacherController@getProfile');
 
         Route::get('CV/{id}', 'TeacherController@getCV');
@@ -81,7 +82,7 @@ Route::group(['prefix' => 'Pages','middleware'=>'auth'], function(){
 
         Route::get('DS1', 'CompanyController@getDS1');
         Route::get('DS2', 'CompanyController@getDS2');
-        Route::get('Help', 'CompanyController@getHelp');
+        
         Route::get('Profile/{id}', 'CompanyController@getProfile');
         
         Route::get('CV/{id}', 'CompanyController@getCV');
@@ -112,8 +113,11 @@ Route::post('registration', 'UserController@post_registration');
 //  admin
 Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
         Route::get('users', 'AdminController@user')->name('users');
+        Route::get('feedback', 'AdminController@feedback')->name('feedback');
         Route::get('numbers', 'AdminController@numbers')->name('numbers');
-        Route::get('deleteUser/{id}', 'AdminController@delete_user');
+        Route::get('deleteUser', 'AdminController@delete_user');
+        Route::get('deleteBlog', 'AdminController@get_blog')->name('delete_blog');
+        Route::post('deleteBlog', 'AdminController@delete_blog');
         Route::get('home', 'AdminController@adminHome')->name('admin-home');
         Route::get('category', 'AdminController@category')->name('category');
         Route::post('ajax_add_category', 'AdminController@post_category');

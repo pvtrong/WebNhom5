@@ -12,6 +12,7 @@ use Auth;
 use App\Http\Requests\RequestPassword;
 use App\Http\Requests\RequestRegistration;
 use Illuminate\Support\Facades\Hash;
+use App\Feedback;
 
 class UserController extends Controller
 {
@@ -79,6 +80,22 @@ class UserController extends Controller
             return redirect() ->back() -> with('success', 'Cập nhật thành công');
         }
         return redirect() ->back() ->with('danger', "Mật khẩu cũ không đúng");
+    }
+    
+    public function postHelp(Request $request){
+        $category = category::all()[7];
+        $feedback = new feedback;
+        $feedback -> id_user = $request-> id_user;
+        $feedback -> name = $request-> name;
+        $feedback -> email = $request-> email;
+        $feedback -> content = $request-> content;
+        $feedback -> title = $request-> title;
+        $feedback->save();
+        return redirect()->back()->with('success', "Cảm ơn bạn đã viết phản hồi!");
+    }
+    public function getHelp(){
+        $category = category::all()[7];
+        return view('Pages.Help', ['category'=>$category]);
     }
 
 }

@@ -45,8 +45,7 @@
                             <span class="block m-t-xs font-bold"><b class="caret"></b></span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a class="dropdown-item" href="{{route('logout-admin')}}">logout</a></li>
-                            <li><a class="dropdown-item" href="">change_password</a></li>
+                            <li><a class="dropdown-item" href="{{route('logout-admin')}}">Đăng Xuất</a></li>
                             <!-- <li><a class="dropdown-item" href="">change_password</a></li> -->
                         </ul>
                     </div>
@@ -57,23 +56,24 @@
                 <li class="active">
                 <a href="{{route('admin-home')}}"> <i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">Home</span></a>
                 </li>
+                <li>
+                    <a href="{{route('numbers')}}"><i class="fa fa-book" aria-hidden="true"></i><span class="nav-label">Tổng quan</span></a>
+                </li>
                 <li class="">
-                    <a href="{{route('category')}}"><i class="fa fa-address-book" aria-hidden="true"></i> <span class="nav-label">Danh mục sản phẩm</span></span></a>
+                    <a href="{{route('category')}}"><i class="fa fa-address-book" aria-hidden="true"></i> <span class="nav-label">Quản lý danh mục</span></span></a>
                 </li>
                 <li class="">
                     <a href="{{route('users')}}"><i class="fa fa-user-o" aria-hidden="true"></i> <span class="nav-label">Quản lý tài khoản</span></span></a>
                 </li>
-                <li>
-                    <a href="{{route('numbers')}}"><i class="fa fa-book" aria-hidden="true"></i><span class="nav-label">Thống kê</span></a>
-                </li>
+                
 
-                <!-- <li>
-                    <a href=""><i class="fa fa-user" aria-hidden="true"></i> <span class="nav-label">Người dùng</span></a>
-                </li>
                 <li>
-                    <a href=""><i class="fa fa-user" aria-hidden="true"></i> <span class="nav-label">Quản lý ảnh</span></a>
+                <a href="{{route('delete_blog')}}"><i class="fa fa-user" aria-hidden="true"></i> <span class="nav-label">Quản lý blog</span></a>
                 </li>
-                <li>
+                 <li>
+                 <a href="{{route('feedback')}}"><i class="fa fa-user" aria-hidden="true"></i> <span class="nav-label">Quản lý phản hồi</span></a>
+                </li>
+                <!--<li>
                     <a href=""><i class="fa fa-user" aria-hidden="true"></i> <span class="nav-label">Quản tin tức</span></a>
                 </li> -->
             </ul>

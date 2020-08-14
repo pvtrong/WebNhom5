@@ -53,7 +53,7 @@
                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                     Thiết Lập
                 </a>
-                <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="{{route('get-help')}}">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Trợ Giúp
                 </a>

@@ -7,12 +7,13 @@ use App\Model\Admin;
 use App\User;
 use App\Model\Category;
 use Auth;
-
+use Illuminate\Support\Facades\DB;
 use App\Model\Messenger;
 use App\blog;
 use App\student;
 use App\teacher;
 use App\company;
+use App\Feedback;
 // use Illuminate\Auth\SessionGuard;
 
 class AdminController extends Controller
@@ -103,6 +104,22 @@ class AdminController extends Controller
         $messages = messenger::all() ->count();
         return view('Admin.numbers',['messages'=>$messages, 'companys'=>$companys, 'teachers'=>$teachers, 'students' => $students, 'blogs' => $blogs, 'users'=>$users]);
     }
+
+    public function delete_blog(Request $request){
+        // dd($request);
+        
+        if(blog::find($request->id) != null){
+            blog::find($request->id)->delete();
+        return redirect()->back()->with('success', 'Bạn xoá thành công bài đăng');
+        } return redirect()->back()->with('danger', 'Không có bài đăng nào có id này');
+    }
+    public function get_blog(){
+        $BL_St = DB::table('blog')->get();
+        // dd ($BL_St);
+        
+        return view('Admin.blog', ['BL_St' => $BL_St]);
+    }
+
     public function delete_user($id){
         
         messenger::where("fk_user_id", $id)->delete();
@@ -128,5 +145,9 @@ class AdminController extends Controller
         
         user::find($id)->delete();
         return redirect() -> back()-> with("success", "Xoá thành công!");
+    }
+    function feedback(){
+        $feedbacks = feedback::all();
+        return view('Admin.feedback',[ 'feedbacks'=>$feedbacks]);
     }
 }

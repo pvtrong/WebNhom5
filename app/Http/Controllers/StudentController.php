@@ -141,7 +141,7 @@ class StudentController extends Controller
         $BL_St = DB::table('blog')
         ->where('id',$id)
         ->paginate(4);
-        return view('Pages.Student.Blog',['category'=>$category,'BL_St' => $BL_St])->with ('success','Bạn xoá bài đăng thành công');;
+        return view('Pages.Student.Blog',['category'=>$category,'BL_St' => $BL_St])->with ('success','Bạn xoá bài đăng thành công');
     
     }
 
@@ -348,10 +348,6 @@ class StudentController extends Controller
         
        
         return view('Pages.Student.DS2',['user' => $user,'user1' => $user1,'user2' => $user2, 'teacher' => $teacher,'data' => $data, 'category'=>$category]);
-    }
-    public function getHelp(){
-        $category = category::all()[7];
-        return view('Pages.Student.Help', ['category'=>$category]);
     }
     public function getProfile($id){
         $student = student::find($id);

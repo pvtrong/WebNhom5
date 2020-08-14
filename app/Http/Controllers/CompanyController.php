@@ -354,10 +354,6 @@ class CompanyController extends Controller
             
         return view('Pages.Company.DS2',['user' => $user, 'user1'=>$user1,'user2'=>$user2, 'teacher' => $teacher, 'data' => $data, 'category'=>$category]);
     }
-    public function getHelp(){
-        $category = category::all()[7];
-        return view('Pages.Company.Help', ['category'=>$category]);
-    }
     public function getProfile($id){
         $company = company::find($id);
         $category = category::all()[1];
