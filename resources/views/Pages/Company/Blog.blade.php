@@ -1,6 +1,6 @@
 @extends('Pages.layout.menu')
 @section('content')
-<div class="container bg-dark text-white">
+<div class="container bg-black">
     @if(count($errors) > 0)
         <div class="alert alert-danger">
             @foreach($errors->all() as $err)
@@ -47,7 +47,7 @@
     <h1>Các blog của tôi</h1>
     <div class="row2">
         <div class="col-sm-12">
-            <table class=" dark-mode bg-light table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+            <table class=" dark-mode bg-black table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                 <thead>
                     <tr role="row2">
                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="2" style="width: 6em !important">ID blog</th>

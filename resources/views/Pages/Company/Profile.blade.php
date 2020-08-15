@@ -19,12 +19,12 @@
                     <h6 style="color: #026b97" class="dark-mode m-0 font-weight-bold text-primary text-center">Thông tin công ty/doanh nghiệp</h6>
                 </div>
                 <div class="card-body row dark-mode bg-black">
-                    <div class="col-md-6 mb-3 avatar-info">
+                    <div class="col-xl-6 mb-3 avatar-info">
                     <br><p></p>
                         <div class="avatar-info-area" style="background-image: url('upload/company/{{$company->Hinh}}');" ></div>
                         <input type="file" name="Hinh" class="form-control-file border dark-mode">
                     </div>
-                    <div class="col-md-6 mb-3 info-individual dark-mode bg-black">
+                    <div class="col-xl-6 mb-3 info-individual dark-mode bg-black">
                             <label for="teachertName">Tên công ty/doanh nghiệp</label>
                             <input name="name" value="{{Auth::user()->name}}"  readonly  type="text" class="form-control dark-mode" placeholder="" id="txtCompanyName">
                             <label for="address">Địa chỉ</label>

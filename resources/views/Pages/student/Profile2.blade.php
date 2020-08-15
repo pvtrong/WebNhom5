@@ -12,12 +12,12 @@
                 <div class="card-header py-3 dark-mode">
                     <h6 style="color: #026b97" class="dark-mode m-0 font-weight-bold text-primary text-center">Thông tin cá nhân</h6>
                 </div>
-                <div class="card-body row dark-mode bg-light">
-                    <div class="col-md-6 mb-3 avatar-info">
+                <div class="card-body row dark-mode bg-black">
+                    <div class="col-xl-6 mb-3 avatar-info">
                         <div class="avatar-info-area" ></div>
                         <input type="file" name="Hinh" class="form-control-file border">
                     </div>
-                    <div class="col-md-6 mb-3 info-individual dark-mode bg-light">
+                    <div class="col-xl-6 mb-3 info-individual dark-mode bg-black">
                             <br>
                             <p></p>
                         <input name="id" type="hidden" value="{{Auth::user()->id}}">
@@ -51,7 +51,7 @@
                 <div class="card-header py-3 dark-mode">
                     <h6 style="color: #026b97" class=" dark-mode m-0 font-weight-bold text-primary text-center">Thông tin cơ bản</h6>
 
-                <div class="card-body dark-mode bg-light">
+                <div class="card-body dark-mode bg-black">
                     
                     <div class="form-group">
                         <label for="department">Khoa</label>
@@ -115,7 +115,7 @@
                 <div class="card-header py-3 dark-mode">
                     <h6 style="color: #026b97" class="  dark-modem-0 font-weight-bold text-primary text-center">Địa chỉ</h6>
                 </div>
-                <div class="card-body dark-mode bg-light">
+                <div class="card-body dark-mode bg-black">
                     
                     <label for="nation">Quốc gia</label>
                     <input name="nation" type="text" class="form-control dark-mode" placeholder="" id="txtNation">
@@ -136,7 +136,7 @@
                 <div class="card-header py-3 dark-mode">
                     <h6 style="color: #026b97" class="  dark-modem-0 font-weight-bold text-primary text-center">Quá trình học tập</h6>
                 </div>
-                <div class="card-body dark-mode bg-light">
+                <div class="card-body dark-mode  bg-black">
                    
                     <label for="GPA">GPA tích luỹ</label>
                     <input type="text" class="form-control dark-mode" placeholder="" id="txtGPA">

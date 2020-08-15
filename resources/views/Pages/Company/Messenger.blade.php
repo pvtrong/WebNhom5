@@ -32,8 +32,8 @@
     </div>
     <div class="send-mes dark-mode">
         <p class='nguoinhan' hidden>{{$id}}</p>
-        <textarea class="text-mes dark-mode" name=""></textarea>
-        <button type="button" class="btn btn-xs btn-info dark-mode" onclick="sendMes(this)">send</button>
+        <textarea class="text-mes" name=""></textarea>
+        <button type="button" class="btn btn-xs btn-info" onclick="sendMes(this)">send</button>
     </div>
 @stop
 @section('style')

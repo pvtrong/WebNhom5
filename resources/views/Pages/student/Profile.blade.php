@@ -13,14 +13,14 @@
                     <div class="card-header py-3 dark-mode">
                         <h6 style="color: #026b97" class=" dark-mode m-0 font-weight-bold text-primary text-center">Thông tin cá nhân</h6>
                     </div>
-                    <div class="card-body row dark-mode bg-light">
-                        <div class="col-md-6 mb-3 avatar-info dark-mode">
+                    <div class="card-body row dark-mode bg-black">
+                        <div class="col-xl-6 mb-3 avatar-info dark-mode">
                             <br>
                              <p></p>
                             <div class="avatar-info-area" style="background-image: url('upload/student/{{$student->Hinh}}');" ></div>
                             <input name="Hinh" type="file" class="form-control-file border">
                         </div>
-                        <div class="col-md-6 mb-3 info-individual dark-mode">
+                        <div class="col-xl-6 mb-3 info-individual dark-mode">
 
                             <input type="hidden" name="id" value="{{Auth::user()->id}}">
                             <label for="studentCode">Mã sinh viên</label>
@@ -55,7 +55,7 @@
                     <div class="card-header py-3 dark-mode">
                         <h6 style="color: #026b97" class="  dark-mode m-0 font-weight-bold text-primary text-center">Thông tin cơ bản</h6>
 
-                    <div class="card-body dark-mode bg-light">
+                    <div class="card-body dark-mode bg-black">
 
                         <div class="form-group">
                             <label for="department">Khoa</label>
@@ -121,7 +121,7 @@
                 <div class="card-header py-3 dark-mode">
                     <h6 style="color: #026b97" class="  dark-mode m-0 font-weight-bold text-primary text-center">Địa chỉ</h6>
                 </div>
-                <div class="card-body dark-mode bg-light">
+                <div class="card-body dark-mode bg-black">
 
                     <label for="nation">Quốc gia</label>
                     <input value="{{$student->nation}}" name="nation" type="text" class="form-control dark-mode" placeholder="" id="txtNation">
@@ -143,7 +143,7 @@
                 <div class="card-header py-3 dark-mode">
                     <h6 style="color: #026b97" class=" dark-mode m-0 font-weight-bold text-primary text-center">Quá trình học tập</h6>
                 </div>
-                <div class="card-body dark-mode bg-light">
+                <div class="card-body dark-mode bg-black">
 
                     <label for="GPA">GPA tích luỹ</label>
                     <input value="{{$student->gpa}}" name="gpa" type="text" class="form-control dark-mode" placeholder="" id="txtGPA">

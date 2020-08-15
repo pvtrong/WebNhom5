@@ -6,7 +6,7 @@
 
 
 <div class="container">
-    <a href="./Pages/Company/Share/{{$user->id}}"><button type="submit" class="btn btn-primary" >Blog cá nhân</button></a>
+    <a href="./Pages/Company/Share/{{$user->id}}"><button type="submit" class="btn btn-primary dark-mode" >Blog cá nhân</button></a>
     <div class="row dark-mode">
         <div class="col-md-6 dark-mode">
             <div class="card shadow mb-4 dark-mode">

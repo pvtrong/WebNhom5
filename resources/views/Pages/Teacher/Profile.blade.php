@@ -14,14 +14,14 @@
                     <div class="card-header py-3 dark-mode">
                         <h6 style="color: #026b97" class="  dark-mode m-0 font-weight-bold text-primary text-center">Thông tin thầy/cô</h6>
                     </div>
-                    <div class="card-body row dark-mode bg-light">
-                        <div class="col-md-6 mb-3 avatar-info">
+                    <div class="card-body row dark-mode bg-black">
+                        <div class="col-xl-6 mb-3 avatar-info">
                             <br>
                             <p></p>
                             <div class="avatar-info-area" style="background-image: url('upload/teacher/{{$teacher->Hinh}}');" ></div>
                             <input type="file" name="Hinh" class="form-control-file border">
                         </div>
-                        <div class="col-md-6 mb-3 info-individual dark-mode">
+                        <div class="col-xl-6 mb-3 info-individual dark-mode">
                             <input type="hidden" value="{{Auth::user()->id}}" name="id" class="form-control">
                             <label for="teachertName">Tên thầy/cô</label>
                             <input name="name" type="text" value="{{Auth::user()->name}}" readonly class="form-control dark-mode" placeholder="" id="txtTeacherName">
@@ -44,7 +44,7 @@
                     <div class="card-header py-3 dark-mode">
                         <h6 style="color: #026b97 " class="  dark-mode m-0 font-weight-bold text-primary text-center">Thông tin cơ bản</h6>
                     </div>
-                    <div class="card-body dark-mode bg-light">
+                    <div class="card-body dark-mode bg-black">
                         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                         <div class="form-group">
                             <label for="department">Khoa</label>
@@ -72,7 +72,7 @@
                     <div class="card-header py-3 dark-mode">
                         <h6 style="color: #026b97 " class=" dark-mode m-0 font-weight-bold text-primary text-center">Chi tiết thông tin tuyển</h6>
                     </div>
-                    <div class="card-body dark-mode bg-light">
+                    <div class="card-body dark-mode bg-black">
                         <label for="offer">Yêu cầu/Tiêu chí</label>
                         <textarea name="offer" class="form-control dark-mode" rows="5" id="txtOffer"><?php echo $teacher->offer?></textarea>
                         <label for="topic">Đề tài nghiên cứu</label>

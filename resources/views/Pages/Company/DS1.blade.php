@@ -28,7 +28,7 @@
                                 <input type="hidden" name ="_token" value="{{ csrf_token()}}";>
                                 <div class = "d-flex">
                                     <input type="search" name="search" class="form-control  dark-mode " placeholder= "search" aria-controls="dataTable">
-                                    <button type="submit" class="btn btn-primary mx-2 ">Search</button>
+                                    <button type="submit" class="btn btn-primary mx-2 dark-mode">Search</button>
                                 </div>
                             </form>
                         </div>
