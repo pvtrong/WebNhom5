@@ -449,7 +449,7 @@ class TeacherController extends Controller
         $user = User::find($id);
         $user_blog = blog::where('id', $id);
         
-        if(empty($user_blog->get())){
+        if(!empty($user_blog->get())){
             $blog = $user_blog->first();
             $BL_temp = $user_blog->simplePaginate(2);
             return view('Pages.Teacher.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
@@ -465,7 +465,7 @@ class TeacherController extends Controller
         if($blog != null){
             $user = User::find($blog -> id);
             $user_blog = blog::where('id', $blog ->id);
-            $BL_temp = $user_blog;
+            $BL_temp = $user_blog->simplePaginate(2);
             return view('Pages.Teacher.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
         } 
         

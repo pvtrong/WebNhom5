@@ -473,7 +473,7 @@ class StudentController extends Controller
         $user = User::find($id);
         $user_blog = blog::where('id', $id);
         
-        if(empty($user_blog->get())){
+        if(!empty($user_blog->get())){
             $blog = $user_blog->first();
             $BL_temp = $user_blog->simplePaginate(2);
             return view('Pages.Student.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
