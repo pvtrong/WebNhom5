@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use App\student;
 use App\teacher;
 use App\company;
+use App\Model\Skill;
 use App\User;
 use App\blog;
 use App\Model\Messenger;
@@ -239,15 +240,17 @@ class StudentController extends Controller
     public function getProfile($id){
         $student = student::find($id);
         $category = category::all()[1];
+        $skill = skill::all();
         if($student != null)
 
-        return view('Pages.Student.Profile',['student'=>$student, 'category'=>$category]);
+        return view('Pages.Student.Profile',['student'=>$student, 'category'=>$category,'skill'=>$skill]);
         return view('Pages.Student.Profile2', ['category'=>$category]);
 
 
     }
     
     public function postUpdate(Request $request, $id){
+        $skill_id = $request->skill_id;
         $category = category::all()[1];
         $student = student::find($id);
 
@@ -293,7 +296,13 @@ class StudentController extends Controller
                 $file->move('upload/student', $Hinh);
                 $student2->Hinh = $Hinh;
             }
-            $student2->save();
+            if($student2->save()){
+                if($skill_id){
+                    foreach($skill_id as $sk){
+                        FK_Skill::create(['skill_id'=>$k,'student_id'=>$request->id]);
+                    }
+                }
+            }
             return view('Pages.Student.Profile',['student'=>$student2, 'category'=>$category])->with('success','Bạn cập nhật thành công!');
         }
 
@@ -338,7 +347,13 @@ class StudentController extends Controller
                 $file->move('upload/student', $Hinh);
                 $student->Hinh = $Hinh;
             }
-            $student->save();
+            if($student->save()){
+                if($skill_id){
+                    foreach($skill_id as $sk){
+                        FK_Skill::create(['skill_id'=>$k,'student_id'=>$request->id]);
+                    }
+                }
+            }
             return view('Pages.Student.Profile',['student'=>$student, 'category'=>$category])->with('success','Bạn cập nhật thành công!');
         }
 

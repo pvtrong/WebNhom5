@@ -85,3 +85,77 @@ function delelteCategory(ellemt){
 		}
 	});
 }
+//skill
+
+var id_skill;
+
+ function EditSkill(ellemt){
+	 var elmt_id = $(ellemt).parent().parent()['0'].children[0];
+	 var id = $(elmt_id).text();
+	 id_skill = id;
+	 $.ajaxSetup({
+		headers: {
+		  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	  });
+	$.ajax({
+		url:'edit_skill/' + id,
+		type:'get',
+		dataType:'json',
+		success:function(res){
+			$('#name').val(res['skill']['name']);
+			$('#modal-skill').modal('show');
+		}
+	});
+}
+function SaveSkill(){
+	$.ajaxSetup({
+		headers: {
+		  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	  });
+	$.ajax({
+		url:'ajax_add_skill',
+		type:'post',
+		dataType:'json',
+		data:{
+			name: $('#skill_name').val()
+		},
+		success:function(res){
+			$('.table-hover').load(location.href + ' .table-hover>*');
+		}
+	});
+}
+
+function SaveSkillEdit(){
+	$.ajaxSetup({
+		headers: {
+		  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	  });
+	$.ajax({
+		url:'ajax_edit_skill/' + id_skill,
+		type:'post',
+		dataType:'json',
+		data:{
+			name: $('#name').val()
+		},
+		success:function(res){
+			$('.table-hover').load(location.href + ' .table-hover>*');
+			$('#modal-skill').modal('hide');
+		}
+	});
+}
+
+function delelteSkill(ellemt){
+	var elmt_id = $(ellemt).parent().parent()['0'].children[0];
+	 var id = $(elmt_id).text();
+	  $.ajax({
+		url:'delete_skill/' + id,
+		type:'get',
+		dataType:'json',
+		success:function(res){
+			$('.table-hover').load(location.href + ' .table-hover>*');
+		}
+	});
+}

@@ -1,6 +1,12 @@
 @extends('Pages.layout.menu')
 @section('content')
-
+<style>
+/* .chose-skill {
+    width: 50%;
+    height: 50px;
+    border: 1px solid;
+} */
+</style>
 <div class="container">
     <a class="position-absolute" id="btnCV" href="./Pages/Student/CV/{{Auth::user()->id}}"><button type="reset2" class="btn btn-primary" >CV Cá Nhân</button></a>
     <form class="" method="POST" action="./Pages/Student/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
@@ -150,9 +156,18 @@
                     <label for="Prize">Khen thưởng/giải thưởng</label>
                     <textarea name="prize" value="{{$student->prize}}" id="txtPrize" rows="5" class="ckeditor form-control"><?php echo $student->prize?></textarea>
                     <label for="forte">Sở trường</label>
-                    <textarea  name="forte" value="{{$student->forte}}" class="form-control" rows="5" id="txtForte"><?php echo $student->forte?></textarea>
+                    <table>
+                        @foreach($skill as $ski)
+                        <tr onclick="chon(this)">
+                            <th><input type="checkbox" name="skill_id[]" value="{{$ski->id}}"></th>
+                            <th>{{$ski->name}}</th>
+                        </tr>
+                        @endforeach
+                    </table>
+                    <!-- <textarea  name="forte" value="{{$student->forte}}" class="form-control" rows="5" id="txtForte"><?php echo $student->forte?></textarea> -->
                     <label for="skill">Năng khiếu</label>
                     <textarea name="skill"  value="{{$student->skill}}" class="form-control" rows="5" id="txtSkill"><?php echo $student->skill?></textarea>
+                    
                     <label for="favorite">Sở thích</label>
                     <textarea name="favorite" class="form-control" value="{{$student->favorite}}" rows="5" id="txtFavorite"><?php echo $student->favorite?></textarea>
 
@@ -161,4 +176,40 @@
         </div>
     </form>
 </div>
+<script type="text/javascript">
+
+        function chon(element){
+            console.log(element);
+        }
+        // function genderChanged(obj)
+        // {
+        //   console.log(obj.children);
+        //   var skill = document.getElementById('select-skill');
+
+
+
+        //   var tag = document.getElementById('select-tag');
+        //   var tagvalue = document.getElementById('select-value');
+          
+        //   var options = obj.children;
+
+        //         // Biến lưu trữ các chuyên mục đa chọn
+        //         var html = '';
+        //         var dt = '';
+
+        //         // lặp qua từng option và kiểm tra thuộc tính selected
+        //         for (var i = 0; i < options.length; i++){
+        //           if (options[i].selected){
+        //               console.log(options[i]);
+        //             html += $(options[i]).text()+' ';
+        //             dt += options[i].value;
+        //           }
+        //         }
+                
+        //         // Gán kết quả vào div#result
+        //         tag.value += html;
+        //         tagvalue.value += dt;
+        //       }
+
+    </script>
 @endsection
