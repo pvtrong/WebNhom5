@@ -72,13 +72,13 @@
                             @endforeach
                     @endif
                     </table>
-                        <!-- <textarea  name="offer" value="{{$company->offer}}"class="form-control dark-mode" rows="5" id="txtOffer"> <?php echo $company->offer?></textarea> -->
+                        <!-- <textarea  name="offer" value=""class="form-control dark-mode" rows="5" id="txtOffer"> </textarea> -->
                         <label for="numbers">Số lượng</label>
                         <input  name="numbers" value="{{$company->numbers}}"type="number" class="form-control dark-mode" name="numbers" value="" id="txtNumbers" />
                         <label for="salary">Lương</label>
                         <input  name="salary" value="{{$company->salary}}"type="text" class="form-control dark-mode" placeholder="" id="txtSalary">
                         <label for="bonus">Đãi ngộ</label>
-                        <textarea  name="bonus" value="{{$company->bonus}}"class="form-control dark-mode" rows="5" id="txtBonus"></textarea>
+                        <textarea  name="bonus" value=""class="form-control dark-mode" rows="5" id="txtBonus"><?php echo $company->bonus?></textarea>
                         <label for="startDayOffer">Ngày bắt đầu đợt tuyển</label>
                         <input  name="startDayOffer" value="{{$company->startDayOffer}}"type="date" class="form-control dark-mode"  id="txtStartDayOffer">
                         <label for="endDayOffer">Ngày kết thúc đợt tuyển</label>
