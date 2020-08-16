@@ -143,7 +143,14 @@
                     <label for="Prize">Khen thưởng/giải thưởng</label>
                     <textarea rows="5" type="text" class="form-control dark-mode" placeholder="" id="txtPrize"></textarea>
                     <label for="forte">Sở trường</label>
-                    <textarea  name="forte" class="form-control dark-mode" rows="5" id="txtForte"></textarea>
+                    <table>
+                        @foreach($skill as $ski)
+                        <tr onclick="chon(this)">
+                            <th><input type="checkbox" name="skill_id[]" value="{{$ski->id}}"></th>
+                            <th>{{$ski->name}}</th>
+                            @endforeach
+                    </table>
+                    <!-- <textarea  name="forte" class="form-control dark-mode" rows="5" id="txtForte"></textarea> -->
                     <label for="skill">Năng khiếu</label>
                     <textarea name="skill" class="form-control dark-mode" rows="5" id="txtSkill"></textarea>
                     <label for="favorite">Sở thích</label>

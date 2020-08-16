@@ -367,7 +367,7 @@ class StudentController extends Controller
         if($student != null)
 
         return view('Pages.Student.Profile',['student'=>$student, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck]);
-        return view('Pages.Student.Profile2', ['category'=>$category]);
+        return view('Pages.Student.Profile2', ['category'=>$category,'skill'=>$skill]);
 
 
     }

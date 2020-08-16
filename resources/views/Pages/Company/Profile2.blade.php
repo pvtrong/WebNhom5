@@ -49,7 +49,14 @@
                 </div>
                 <div class="card-body dark-mode bg-black">
                         <label for="offer">Yêu cầu/Tiêu chí</label>
-                        <textarea  name="offer"  class="form-control dark-mode" rows="5" id="txtOffer"></textarea>
+                        <table>
+                    @foreach($skill as $ski)
+                    <tr onclick="chon(this)">
+                            <th><input type="checkbox" name="skill_id[]" value="{{$ski->id}}"></th>
+                            <th>{{$ski->name}}</th>
+                    @endforeach
+                    </table>
+                        <!-- <textarea  name="offer"  class="form-control dark-mode" rows="5" id="txtOffer"></textarea> -->
                         <label for="numbers">Số lượng</label>
                         <input  name="numbers"  type="number" class="form-control dark-mode" name="numbers" value="" id="txtNumbers" />
                         <label for="salary">Lương</label>
