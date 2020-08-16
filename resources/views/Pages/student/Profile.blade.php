@@ -1,12 +1,6 @@
 @extends('Pages.layout.menu')
 @section('content')
-<style>
-/* .chose-skill {
-    width: 50%;
-    height: 50px;
-    border: 1px solid;
-} */
-</style>
+
 <div class="container">
     <a class="position-absolute" id="btnCV" href="./Pages/Student/CV/{{Auth::user()->id}}"><button type="reset2" class="btn btn-primary dark-mode" >CV Cá Nhân</button></a>
     <form class="" method="POST" action="./Pages/Student/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
@@ -67,9 +61,15 @@
                             <label for="department">Khoa</label>
                             <select value="{{$student->department}}" name="department" class="form-control dark-mode" id="sel1">
                                 <option <?php if($student->department=="Công nghệ thông tin"){echo "selected";}?> value="Công nghệ thông tin"  name="department">Công nghệ thông tin</option>
+                                <option <?php if($student->department=="Máy tính và Robot"){echo "selected";}?> value="Máy tính và Robot"  name="department">Máy tính và Robot</option>
+                                <option <?php if($student->department=="Cơ kỹ thuật"){echo "selected";}?> value="Cơ kỹ thuật"  name="department">Cơ kỹ thuật</option>
+                                <option <?php if($student->department=="Công nghệ kỹ thuật xây dựng"){echo "selected";}?> value="Công nghệ kỹ thuật xây dựng"  name="department">Công nghệ kỹ thuật xây dựng</option>
+                                <option <?php if($student->department=="Công nghệ Hàng không vũ trụ"){echo "selected";}?> value="Công nghệ Hàng không vũ trụ"  name="department">Công nghệ Hàng không vũ trụ</option>
+                                <option <?php if($student->department=="Kỹ thuật điều khiển và tự động hóa"){echo "selected";}?> value="Kỹ thuật điều khiển và tự động hóa"  name="department">Kỹ thuật điều khiển và tự động hóa</option>
+                                <option <?php if($student->department=="Công nghệ nông nghiệp"){echo "selected";}?> value="Công nghệ nông nghiệp"  name="department">Công nghệ nông nghiệp</option>
                                 <option  <?php if($student->department=="Điện tử viễn thông"){echo "selected";}?> value="Điện tử viễn thông" name="department">Điện tử viễn thông</option>
                                 <option  <?php if($student->department=="Vật lý kỹ thuật"){echo "selected";}?> value="Vật lý kỹ thuật" name="department">Vật lý kỹ thuật</option>
-                                <option  <?php if($student->department=="Hàng không vũ trụ"){echo "selected";}?> value="Hàng không vũ trụ" name="department">Hàng không vũ trụ</option>
+                                
                             </select>
                         </div>
                         <label for="major">Ngành</label>
@@ -156,33 +156,9 @@
                     <label for="Prize">Khen thưởng/giải thưởng</label>
                     <textarea name="prize" value="{{$student->prize}}" id="txtPrize" rows="5" class="ckeditor form-control"><?php echo $student->prize?></textarea>
                     <label for="forte">Sở trường</label>
-                    <table>
-                    @if($skillcheck)
-                        @foreach($skill as $ski)
-                            @if(in_array($ski->name,$skillcheck))
-                        <tr onclick="chon(this)">
-                            <th><input type="checkbox" checked name="skill_id[]" value="{{$ski->id}}"></th>
-                            <th>{{$ski->name}}</th>
-                        </tr>
-                            @else
-                            <tr onclick="chon(this)">
-                            <th><input type="checkbox" name="skill_id[]" value="{{$ski->id}}"></th>
-                            <th>{{$ski->name}}</th>
-                        </tr>
-                            @endif
-                        @endforeach
-                    @else
-                        @foreach($skill as $ski)
-                        <tr onclick="chon(this)">
-                            <th><input type="checkbox" name="skill_id[]" value="{{$ski->id}}"></th>
-                            <th>{{$ski->name}}</th>
-                            @endforeach
-                    @endif
-                    </table>
-                    <!-- <textarea  name="forte" value="{{$student->forte}}" class="form-control" rows="5" id="txtForte"><?php echo $student->forte?></textarea> -->
+                    <textarea  name="forte" value="{{$student->forte}}" class="ckeditor form-control dark-mode" rows="5" id="txtForte"><?php echo $student->forte?></textarea>
                     <label for="skill">Năng khiếu</label>
-                    <textarea name="skill"  value="{{$student->skill}}" class="form-control" rows="5" id="txtSkill"><?php echo $student->skill?></textarea>
-                    
+                    <textarea name="skill"  value="{{$student->skill}}" class="ckeditor form-control dark-mode" rows="5" id="txtSkill"><?php echo $student->skill?></textarea>
                     <label for="favorite">Sở thích</label>
                     <textarea name="favorite" class="ckeditor form-control" value="{{$student->favorite}}" rows="5" id="txtFavorite"><?php echo $student->favorite?></textarea>
 
