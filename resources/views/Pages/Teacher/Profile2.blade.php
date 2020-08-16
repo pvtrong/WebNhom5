@@ -76,8 +76,8 @@
                         @foreach($skill as $ski)
                         <tr onclick="chon(this)">
                             <th><input type="checkbox" name="skill_id[]" value="{{$ski->id}}"></th>
-                            <th>{{$ski->name}}</th>
-                        @endforeach
+                            <th>{{$ski->name}} </th>
+                        @endforeach 
                     </table>
                         <!-- <textarea name="offer" class="form-control dark-mode" rows="5" id="txtOffer"></textarea> -->
                         <label for="topicResearch">Đề tài nghiên cứu</label>
