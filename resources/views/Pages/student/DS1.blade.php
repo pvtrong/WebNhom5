@@ -173,7 +173,7 @@
                                         <td>{!!$d->offer1!!}</td>
                                         <td>{!!$d->address1!!}</td>
                                         <td class="text-center">{{$d->salary1}}</td>
-                                        <td class="text-center"><i class="dark-mode fas fa-info-circle"></i><a class="dark-mode " href="./Pages/Student/CV/{{$d->id1}}">Xem thêm</a></td>
+                                        <td class="text-center"><i class="dark-mode fas fa-info-circle"></i><a class="dark-mode " href="./Pages/Company/CV/{{$d->id1}}">Xem thêm</a></td>
                                         <td class="text-center"><i class="dark-mode fas fa-comments"></i><a class="dark-mode " href="{{route('messenger-student',['id'=>$d->id1])}}">Liên hệ</a></td>
                                     </tr>
                                     

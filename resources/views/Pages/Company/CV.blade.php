@@ -13,7 +13,7 @@
                 <div class="card-header py-3">
                     <h6 style="color: #026b97" class=" dark-mode m-0 font-weight-bold text-primary text-center">Thông tin công ty/doanh nghiệp</h6>
                 </div>
-                <div class="card-body row dark-mode bg-light">
+                <div class="card-body row dark-mode bg-black">
                     <div class="col-md-6 mb-3 avatar-info dark-mode">
                         <br>
                         <div class="avatar-info-area" style="background-image: url('upload/company/{{$company->Hinh}}');" ></div>
@@ -36,7 +36,7 @@
                 <div class="card-header py-3 dark-mode">
                     <h6 style="color: #026b97" class=" dark-mode m-0 font-weight-bold text-primary text-center">Chi tiết thông tin tuyển</h6>
                 </div>
-                <div class="card-body dark-mode bg-light">
+                <div class="card-body dark-mode bg-black">
                     <?php if($company ->offer != "")echo "<h5><i class='fa fa-bolt'></i>     "."    ".$company ->offer."<br></h5>"?>
                     <?php if($company ->numbers != "")echo "<h5><i class='fa fa-graduation-cap'></i>   Tuyển: "."    ".$company ->numbers."<br></h5>"?>
                     <?php if($company ->salary != "")echo "<h5><i class='fa fa-university'></i>     Mức lương: "."    ".$company ->salary."<br></h5>"?>
