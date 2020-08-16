@@ -13,6 +13,8 @@ use App\Model\Category;
 use App\Model\Messenger;
 use App\Model\ThreadMessenger;
 use Illuminate\Support\Facades\DB;
+use App\Model\Skill;
+use App\Model\Fk_Skill;
 use Auth;
 class CompanyController extends Controller
 {
@@ -355,11 +357,21 @@ class CompanyController extends Controller
         return view('Pages.Company.DS2',['user' => $user, 'user1'=>$user1,'user2'=>$user2, 'teacher' => $teacher, 'data' => $data, 'category'=>$category]);
     }
     public function getProfile($id){
+        $kcheck = [];
+        $skill_all = Fk_Skill::select('skill.name')
+                ->join('skill','skill.id','=','fk_skill.skill_id')
+                ->join('company','company.id','=','fk_skill.company_id')
+                ->where(['fk_skill.company_id'=>$id])
+                ->get()->toArray();
+        foreach($skill_all as $k){
+            array_push($kcheck,$k['name']);
+        }
+        $skill = skill::all();
         $company = company::find($id);
         $category = category::all()[1];
         if($company != null)
 
-        return view('Pages.Company.Profile',['company'=>$company, 'category'=>$category]);
+        return view('Pages.Company.Profile',['company'=>$company, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck]);
         else return view('Pages.Company.Profile2',[ 'category'=>$category]);
 
 
@@ -369,6 +381,9 @@ class CompanyController extends Controller
         return view('Pages.Company.Setting', ['category'=>$category]);
     }
     public function postUpdate(Request $request, $id){
+        $kcheck = [];
+        $skill = skill::all();
+        $skill_id = $request->skill_id;
         $company = company::find($id);
         $category = category::all()[1];
         if($company == null){
@@ -398,8 +413,25 @@ class CompanyController extends Controller
                 $file->move('upload/company', $Hinh);
                 $company2->Hinh = $Hinh;
             }
-            $company2->save();
-            return view('Pages.Company.Profile',['company'=>$company2, 'category'=>$category])->with('success', "Cập nhật thông tin thành công!");
+            if($company2->save()){
+                if($skill_id){
+                    $adc = FK_Skill::where('company_id',$id)->delete();
+                    foreach($skill_id as $sk){
+                        FK_Skill::create(['skill_id'=>$sk,'company_id'=>$request->id]);
+                    }
+                }else{
+                    $adc = FK_Skill::where('company_id',$id)->delete();
+                }
+            }
+            $skill_all = Fk_Skill::select('skill.name')
+                ->join('skill','skill.id','=','fk_skill.skill_id')
+                ->join('company','company.id','=','fk_skill.company_id')
+                ->where(['fk_skill.company_id'=>$id])
+                ->get()->toArray();
+            foreach($skill_all as $k){
+                array_push($kcheck,$k['name']);
+            }
+            return view('Pages.Company.Profile',['company'=>$company2, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck])->with('success', "Cập nhật thông tin thành công!");
         }
 
 
@@ -428,8 +460,25 @@ class CompanyController extends Controller
                 $file->move('upload/company', $Hinh);
                 $company->Hinh = $Hinh;
             }
-            $company->save();
-            return view('Pages.Company.Profile',['company'=>$company, 'category'=>$category])->with('success', "Cập nhật thông tin thành công!");
+            if($company->save()){
+                if($skill_id){
+                    FK_Skill::where('company_id',$id)->delete();
+                    foreach($skill_id as $sk){
+                        FK_Skill::create(['skill_id'=>$sk,'company_id'=>$request->id]);
+                    }
+                }else{
+                    FK_Skill::where('company_id',$id)->delete();
+                }
+            }
+            $skill_all = Fk_Skill::select('skill.name')
+                ->join('skill','skill.id','=','fk_skill.skill_id')
+                ->join('company','company.id','=','fk_skill.company_id')
+                ->where(['fk_skill.company_id'=>$id])
+                ->get()->toArray();
+            foreach($skill_all as $k){
+                array_push($kcheck,$k['name']);
+            }
+            return view('Pages.Company.Profile',['company'=>$company, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck])->with('success', "Cập nhật thông tin thành công!");
         }
     }
     public function getCV($id){

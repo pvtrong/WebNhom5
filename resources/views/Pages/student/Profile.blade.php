@@ -1,6 +1,12 @@
 @extends('Pages.layout.menu')
 @section('content')
-
+<style>
+/* .chose-skill {
+    width: 50%;
+    height: 50px;
+    border: 1px solid;
+} */
+</style>
 <div class="container">
     <a class="position-absolute" id="btnCV" href="./Pages/Student/CV/{{Auth::user()->id}}"><button type="reset2" class="btn btn-primary dark-mode" >CV Cá Nhân</button></a>
     <form class="" method="POST" action="./Pages/Student/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
@@ -157,9 +163,33 @@
                     <label for="Prize">Khen thưởng/giải thưởng</label>
                     <textarea name="prize" value="{{$student->prize}}" id="txtPrize" rows="5" class="ckeditor form-control"><?php echo $student->prize?></textarea>
                     <label for="forte">Sở trường</label>
-                    <textarea  name="forte" value="{{$student->forte}}" class="ckeditor form-control dark-mode" rows="5" id="txtForte"><?php echo $student->forte?></textarea>
+                    <table>
+                    @if($skillcheck)
+                        @foreach($skill as $ski)
+                            @if(in_array($ski->name,$skillcheck))
+                        <tr onclick="chon(this)">
+                            <th><input type="checkbox" checked name="skill_id[]" value="{{$ski->id}}"></th>
+                            <th>{{$ski->name}}</th>
+                        </tr>
+                            @else
+                            <tr onclick="chon(this)">
+                            <th><input type="checkbox" name="skill_id[]" value="{{$ski->id}}"></th>
+                            <th>{{$ski->name}}</th>
+                        </tr>
+                            @endif
+                        @endforeach
+                    @else
+                        @foreach($skill as $ski)
+                        <tr onclick="chon(this)">
+                            <th><input type="checkbox" name="skill_id[]" value="{{$ski->id}}"></th>
+                            <th>{{$ski->name}}</th>
+                            @endforeach
+                    @endif
+                    </table>
+                    <!-- <textarea  name="forte" value="{{$student->forte}}" class="form-control" rows="5" id="txtForte"><?php echo $student->forte?></textarea> -->
                     <label for="skill">Năng khiếu</label>
-                    <textarea name="skill"  value="{{$student->skill}}" class="ckeditor form-control dark-mode" rows="5" id="txtSkill"><?php echo $student->skill?></textarea>
+                    <textarea name="skill"  value="{{$student->skill}}" class="form-control" rows="5" id="txtSkill"><?php echo $student->skill?></textarea>
+                    
                     <label for="favorite">Sở thích</label>
                     <textarea name="favorite" class="ckeditor form-control" value="{{$student->favorite}}" rows="5" id="txtFavorite"><?php echo $student->favorite?></textarea>
 

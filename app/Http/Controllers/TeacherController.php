@@ -12,6 +12,8 @@ use App\blog;
 use App\Model\Category;
 use App\Model\Messenger;
 use App\Model\ThreadMessenger;
+use App\Model\Skill;
+use App\Model\Fk_Skill;
 use Illuminate\Support\Facades\DB;
 use Auth;
 
@@ -349,11 +351,21 @@ class TeacherController extends Controller
     return view('Pages.Teacher.DS2',['user' => $user,'user1'=> $user1,'user2'=>$user2 ,'students' => $students, 'data' => $data, 'category'=>$category]);
 }
     public function getProfile($id){
+        $kcheck = [];
+        $skill_all = Fk_Skill::select('skill.name')
+                ->join('skill','skill.id','=','fk_skill.skill_id')
+                ->join('teacher','teacher.id','=','fk_skill.teacher_id')
+                ->where(['fk_skill.teacher_id'=>$id])
+                ->get()->toArray();
+        foreach($skill_all as $k){
+            array_push($kcheck,$k['name']);
+        }
+        $skill = skill::all();
         $teacher = teacher::find($id);
         $category = category::all()[1];
         if($teacher != null)
 
-        return view('Pages.Teacher.Profile',['teacher'=>$teacher, 'category'=>$category]);
+        return view('Pages.Teacher.Profile',['teacher'=>$teacher, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck]);
         return view('Pages.Teacher.Profile2',[ 'category'=>$category]);
 
 
@@ -363,6 +375,9 @@ class TeacherController extends Controller
         return view('Pages.Teacher.Setting', ['category'=>$category]);
     }
     public function postUpdate(Request $request, $id){
+        $kcheck = [];
+        $skill = skill::all();
+        $skill_id = $request->skill_id;
         $teacher = teacher::find($id);
         $category = category::all()[1];
         if($teacher == null){
@@ -396,8 +411,25 @@ class TeacherController extends Controller
                 $file->move('upload/teacher', $Hinh);
                 $teacher2->Hinh = $Hinh;
             }
-            $teacher2->save();
-            return view('Pages.Teacher.Profile',['teacher'=>$teacher2, 'category'=>$category])->with('success', "Cập nhật thông tin thành công!");
+            if($teacher->save()){
+                if($skill_id){
+                    $adc = FK_Skill::where('teacher_id',$id)->delete();
+                    foreach($skill_id as $sk){
+                        FK_Skill::create(['skill_id'=>$sk,'teacher_id'=>$request->id]);
+                    }
+                }else{
+                    $adc = FK_Skill::where('teacher_id',$id)->delete();
+                }
+            }
+            $skill_all = Fk_Skill::select('skill.name')
+                ->join('skill','skill.id','=','fk_skill.skill_id')
+                ->join('teacher','teacher.id','=','fk_skill.teacher_id')
+                ->where(['fk_skill.teacher_id'=>$id])
+                ->get()->toArray();
+            foreach($skill_all as $k){
+                array_push($kcheck,$k['name']);
+            }
+            return view('Pages.Teacher.Profile',['teacher'=>$teacher2, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck])->with('success', "Cập nhật thông tin thành công!");
         }
 
 
@@ -430,8 +462,25 @@ class TeacherController extends Controller
                 $file->move('upload/teacher', $Hinh);
                 $teacher->Hinh = $Hinh;
             }
-            $teacher->save();
-            return view('Pages.Teacher.Profile',['teacher'=>$teacher, 'category'=>$category])->with('success', "Cập nhật thông tin thành công!");
+            if($teacher->save()){
+                if($skill_id){
+                    FK_Skill::where('teacher_id',$id)->delete();
+                    foreach($skill_id as $sk){
+                        FK_Skill::create(['skill_id'=>$sk,'teacher_id'=>$request->id]);
+                    }
+                }else{
+                    FK_Skill::where('teacher_id',$id)->delete();
+                }
+            }
+            $skill_all = Fk_Skill::select('skill.name')
+                ->join('skill','skill.id','=','fk_skill.skill_id')
+                ->join('teacher','teacher.id','=','fk_skill.teacher_id')
+                ->where(['fk_skill.teacher_id'=>$id])
+                ->get()->toArray();
+            foreach($skill_all as $k){
+                array_push($kcheck,$k['name']);
+            }
+            return view('Pages.Teacher.Profile',['teacher'=>$teacher, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck])->with('success', "Cập nhật thông tin thành công!");
         }
     }
     public function getCV($id){
