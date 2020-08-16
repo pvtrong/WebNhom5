@@ -10,7 +10,7 @@
                     <div class="card-header py-3 dark-mode">
                         <h6 style="color: #026b97" class=" dark-mode m-0 font-weight-bold text-primary text-center">Thông tin cá nhân</h6>
                     </div>
-                    <div class="card-body row dark-mode">
+                    <div class="card-body row dark-mode bg-black">
                         <div class="col-md-6 mb-3 avatar-info dark-mode">
                             <br>
                             <div class="avatar-info-area" style="background-image: url('upload/student/{{$student->Hinh}}');" ></div>

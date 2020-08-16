@@ -1,6 +1,6 @@
 @extends('Pages.layout.menu')
 @section('content')
-<div class="container bg-dark text-white dark-mode">
+<div class="container bg-dark text-white">
     @if(count($errors) > 0)
         <div class="alert alert-danger">
             @foreach($errors->all() as $err)
