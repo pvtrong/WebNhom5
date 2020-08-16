@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 use App\student;
 use App\teacher;
 use App\company;
+use App\Model\Skill;
+use App\Model\Fk_Skill;
 use App\User;
 use App\blog;
 use App\Model\Messenger;
@@ -350,17 +352,30 @@ class StudentController extends Controller
         return view('Pages.Student.DS2',['user' => $user,'user1' => $user1,'user2' => $user2, 'teacher' => $teacher,'data' => $data, 'category'=>$category]);
     }
     public function getProfile($id){
+        $kcheck = [];
+        $skill_all = Fk_Skill::select('skill.name')
+                ->join('skill','skill.id','=','fk_skill.skill_id')
+                ->join('students','students.id','=','fk_skill.student_id')
+                ->where(['fk_skill.student_id'=>$id])
+                ->get()->toArray();
+        foreach($skill_all as $k){
+            array_push($kcheck,$k['name']);
+        }
         $student = student::find($id);
         $category = category::all()[1];
+        $skill = skill::all();
         if($student != null)
 
-        return view('Pages.Student.Profile',['student'=>$student, 'category'=>$category]);
+        return view('Pages.Student.Profile',['student'=>$student, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck]);
         return view('Pages.Student.Profile2', ['category'=>$category]);
 
 
     }
     
     public function postUpdate(Request $request, $id){
+        $kcheck = [];
+        $skill = skill::all();
+        $skill_id = $request->skill_id;
         $category = category::all()[1];
         $student = student::find($id);
 
@@ -406,8 +421,25 @@ class StudentController extends Controller
                 $file->move('upload/student', $Hinh);
                 $student2->Hinh = $Hinh;
             }
-            $student2->save();
-            return view('Pages.Student.Profile',['student'=>$student2, 'category'=>$category])->with('success','Bạn cập nhật thành công!');
+            if($student2->save()){
+                if($skill_id){
+                    FK_Skill::where('student_id',$id)->delete();
+                    foreach($skill_id as $sk){
+                        FK_Skill::create(['skill_id'=>$sk,'student_id'=>$request->id]);
+                    }
+                }else{
+                    FK_Skill::where('student_id',$id)->delete();
+                }
+            }
+            $skill_all = Fk_Skill::select('skill.name')
+                ->join('skill','skill.id','=','fk_skill.skill_id')
+                ->join('students','students.id','=','fk_skill.student_id')
+                ->where(['fk_skill.student_id'=>$id])
+                ->get()->toArray();
+        foreach($skill_all as $k){
+            array_push($kcheck,$k['name']);
+        }
+            return view('Pages.Student.Profile',['student'=>$student2, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck])->with('success','Bạn cập nhật thành công!');
         }
 
 
@@ -451,8 +483,25 @@ class StudentController extends Controller
                 $file->move('upload/student', $Hinh);
                 $student->Hinh = $Hinh;
             }
-            $student->save();
-            return view('Pages.Student.Profile',['student'=>$student, 'category'=>$category])->with('success','Bạn cập nhật thành công!');
+            if($student->save()){
+                if($skill_id){
+                    FK_Skill::where('student_id',$id)->delete();
+                    foreach($skill_id as $sk){
+                        FK_Skill::create(['skill_id'=>$sk,'student_id'=>$request->id]);
+                    }
+                }else{
+                    FK_Skill::where('student_id',$id)->delete();
+                }
+            }
+            $skill_all = Fk_Skill::select('skill.name')
+                ->join('skill','skill.id','=','fk_skill.skill_id')
+                ->join('students','students.id','=','fk_skill.student_id')
+                ->where(['fk_skill.student_id'=>$id])
+                ->get()->toArray();
+        foreach($skill_all as $k){
+            array_push($kcheck,$k['name']);
+        }
+            return view('Pages.Student.Profile',['student'=>$student, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck])->with('success','Bạn cập nhật thành công!');
         }
 
 

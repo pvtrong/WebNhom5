@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use App\Model\Admin;
 use App\User;
 use App\Model\Category;
+use App\Model\Skill;
 use Auth;
 use Illuminate\Support\Facades\DB;
 use App\Model\Messenger;
@@ -149,5 +150,45 @@ class AdminController extends Controller
     function feedback(){
         $feedbacks = feedback::all();
         return view('Admin.feedback',[ 'feedbacks'=>$feedbacks]);
+    }
+    //skill
+    public function skill(){
+        $skill = Skill::all();
+        return view('Admin.skill',['skill'=>$skill]);
+    }
+
+    public function post_skill(Request $req){
+        $this->validate($req,[
+            'name' =>'required|unique:Skill',
+        ],[
+            'name.required'=>' Không được trống',
+        ]);
+        $skill = Skill::create($req->all());
+        return response()->json(['success'=>'them thanh cong san pham']);
+    }
+
+    public function edit_skill($id){
+        $skill = Skill::find($id);
+        return json_encode([
+            'skill'=>$skill,
+        ]);
+    }
+
+    public function post_edit_skill(Request $req, $id){
+        $this->validate($req,[
+            'name'=>'required|unique:Skill,name,'.$id,
+        ],[
+            'name.required'=>'Tên danh mục không được trống',
+            'name.unique'=>'Tên danh đã tồn tại ',
+        ]);
+        Skill::find($id)->update($req->all());
+        return response()->json(['success'=>'update thành cong']);
+        
+    }
+
+    public function delete_skill($id){
+        $skill = Skill::find($id)->delete();
+        return response()->json(['success'=>'xóa thành cong']);
+
     }
 }

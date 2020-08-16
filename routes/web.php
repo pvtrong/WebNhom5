@@ -120,11 +120,18 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
         Route::get('deleteBlog', 'AdminController@get_blog')->name('delete_blog');
         Route::post('deleteBlog', 'AdminController@delete_blog');
         Route::get('home', 'AdminController@adminHome')->name('admin-home');
+        //category
         Route::get('category', 'AdminController@category')->name('category');
         Route::post('ajax_add_category', 'AdminController@post_category');
         Route::get('edit_category/{id}', 'AdminController@edit_category')->name('edit_category');
         Route::post('ajax_edit_category/{id}', 'AdminController@post_edit_category');
         Route::get('delete_category/{id}', 'AdminController@delete_category')->name('delete_category');
+        //skill
+        Route::get('skill', 'AdminController@skill')->name('skill');
+        Route::post('ajax_add_skill', 'AdminController@post_skill');
+        Route::get('edit_skill/{id}', 'AdminController@edit_skill')->name('edit_skill');
+        Route::post('ajax_edit_skill/{id}', 'AdminController@post_edit_skill');
+        Route::get('delete_skill/{id}', 'AdminController@delete_skill')->name('delete_skill');
 });
 Route::get('admin-login', 'AdminController@Login_admin')->name('login-admin');
 Route::post('admin-login', 'AdminController@post_Login_admin');

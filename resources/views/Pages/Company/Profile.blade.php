@@ -49,7 +49,30 @@
                 </div>
                 <div class="card-body dark-mode bg-black">
                         <label for="offer">Yêu cầu/Tiêu chí</label>
-                        <textarea  name="offer" value="{{$company->offer}}"class="form-control dark-mode" rows="5" id="txtOffer"> <?php echo $company->offer?></textarea>
+                        <table>
+                    @if($skillcheck)
+                        @foreach($skill as $ski)
+                            @if(in_array($ski->name,$skillcheck))
+                        <tr onclick="chon(this)">
+                            <th><input type="checkbox" checked name="skill_id[]" value="{{$ski->id}}"></th>
+                            <th>{{$ski->name}}</th>
+                        </tr>
+                            @else
+                            <tr onclick="chon(this)">
+                            <th><input type="checkbox" name="skill_id[]" value="{{$ski->id}}"></th>
+                            <th>{{$ski->name}}</th>
+                        </tr>
+                            @endif
+                        @endforeach
+                    @else
+                    @foreach($skill as $ski)
+                    <tr onclick="chon(this)">
+                            <th><input type="checkbox" name="skill_id[]" value="{{$ski->id}}"></th>
+                            <th>{{$ski->name}}</th>
+                            @endforeach
+                    @endif
+                    </table>
+                        <!-- <textarea  name="offer" value="{{$company->offer}}"class="form-control dark-mode" rows="5" id="txtOffer"> <?php echo $company->offer?></textarea> -->
                         <label for="numbers">Số lượng</label>
                         <input  name="numbers" value="{{$company->numbers}}"type="number" class="form-control dark-mode" name="numbers" value="" id="txtNumbers" />
                         <label for="salary">Lương</label>
