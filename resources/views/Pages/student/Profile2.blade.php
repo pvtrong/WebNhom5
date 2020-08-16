@@ -57,12 +57,6 @@
                         <label for="department">Khoa</label>
                         <select name="department" class="form-control dark-mode" id="sel1">
                             <option>Công nghệ thông tin</option>
-                            <option>Máy tính và Robot</option>
-                            <option>Cơ kỹ thuật</option>
-                            <option>Công nghệ kỹ thuật xây dựng</option>
-                            <option>Công nghệ Hàng không vũ trụ</option>
-                            <option>Kỹ thuật điều khiển và tự động hóa</option>
-                            <option>Công nghệ nông nghiệp</option>
                             <option>Điện tử viễn thông</option>
                             <option>Vật lý kỹ thuật</option>
                             <option>Hàng không vũ trụ</option>
