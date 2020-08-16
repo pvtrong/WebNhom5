@@ -510,11 +510,22 @@ class StudentController extends Controller
         $category = category::all()[8];
         $student = student::find($id);
         $user = User::find($id);
-        
-        if($student != null){
-          
-            return view('Pages.Student.CV',['student'=>$student, 'user'=>$user, 'category'=>$category]);
+
+        $kcheck = [];
+        $skill_all = Fk_Skill::select('skill.name')
+                ->join('skill','skill.id','=','fk_skill.skill_id')
+                ->join('students','students.id','=','fk_skill.student_id')
+                ->where(['fk_skill.student_id'=>$id])
+                ->get()->toArray();
+        foreach($skill_all as $k){
+            array_push($kcheck,$k['name']);
         }
+        $skill = skill::all();
+        if($student != null){
+
+          
+            return view('Pages.Student.CV',['student'=>$student, 'user'=>$user, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck]);
+        }  return redirect()-> back() ->with('success', 'Tài khoản này không tồn tại');
 
     }
     public function getShare($id){
