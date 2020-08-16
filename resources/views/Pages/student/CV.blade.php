@@ -60,6 +60,18 @@
                 </div>
                 <div class="card-body dark-mode">
                     <br>
+                    <table>
+                        @if($skillcheck)
+                            
+                            <?php echo " <h5><i class='fas fa-star dark-mode'></i>    Kỹ năng: "?>
+                                @foreach ($skillcheck as $item)
+                                <?php echo $item ." "?>
+                                
+                                @endforeach
+                            
+                                
+                        @endif
+                        </table>
                     <?php if($student ->gpa != "")echo " <h5><i class='fas fa-star dark-mode'></i>    GPA: "."    ".$student ->gpa."<br></h5>"?>
                     <?php if($student ->prize != "")echo "<h5><i class='fas fa-crown dark-mode'></i>  Khen thưởng: "."    ".$student ->prize."<br></h5>"?>
                     <?php if($student ->forte != "")echo "<h5><i class='fas fa-battery-full dark-mode'></i>   Kỹ năng: "."    ".$student ->forte."<br></h5>"?>

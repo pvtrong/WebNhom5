@@ -249,8 +249,10 @@ class CompanyController extends Controller
         $students = DB::table('students')
         ->select("*")
         ->get();
-            
-        return view('Pages.Company.DS1',['user' => $user,'user1'=> $user1,'user2'=>$user2 ,'students' => $students, 'data' => $data, 'category'=>$category]);
+        $skill = skill::all();   
+        
+        
+        return view('Pages.Company.DS1',['user' => $user, 'skill'=>$skill,'user1'=> $user1,'user2'=>$user2 ,'students' => $students, 'data' => $data, 'category'=>$category]);
     }
     public function getDS2(Request $request){
         $category = category::all()[3];
@@ -353,8 +355,8 @@ class CompanyController extends Controller
         $teacher = DB::table('teacher')
         ->select("*")
         ->get();
-            
-        return view('Pages.Company.DS2',['user' => $user, 'user1'=>$user1,'user2'=>$user2, 'teacher' => $teacher, 'data' => $data, 'category'=>$category]);
+        $skill = skill::all();   
+        return view('Pages.Company.DS2',['user' => $user, 'skill'=>$skill, 'user1'=>$user1,'user2'=>$user2, 'teacher' => $teacher, 'data' => $data, 'category'=>$category]);
     }
     public function getProfile($id){
         $kcheck = [];
@@ -485,9 +487,18 @@ class CompanyController extends Controller
         $company = company::find($id);
         $user = User::find($id);
         $category = category::all()[8];
+        $kcheck = [];
+        $skill_all = Fk_Skill::select('skill.name')
+            ->join('skill','skill.id','=','fk_skill.skill_id')
+            ->join('company','company.id','=','fk_skill.company_id')
+            ->where(['fk_skill.company_id'=>$id])
+            ->get()->toArray();
+        foreach($skill_all as $k){
+            array_push($kcheck,$k['name']);
+        }
         if($company != null){
 
-            return view('Pages.Company.CV',['company'=>$company, 'user'=>$user, 'category'=>$category]);
+            return view('Pages.Company.CV',['company'=>$company, 'user'=>$user, 'category'=>$category,'skillcheck'=>$kcheck]);
         }
 
     }

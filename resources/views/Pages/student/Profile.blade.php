@@ -162,7 +162,7 @@
                     <input value="{{$student->gpa}}" name="gpa" type="text" class="form-control dark-mode" placeholder="" id="txtGPA">
                     <label for="Prize">Khen thưởng/giải thưởng</label>
                     <textarea name="prize" value="{{$student->prize}}" id="txtPrize" rows="5" class="ckeditor form-control"><?php echo $student->prize?></textarea>
-                    <label for="forte">Sở trường</label>
+                    <label for="forte">Kỹ năng</label>
                     <table>
                     @if($skillcheck)
                         @foreach($skill as $ski)

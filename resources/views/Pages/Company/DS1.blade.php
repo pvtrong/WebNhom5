@@ -141,18 +141,15 @@
                                         <form action="Pages/Company/DS1" method = "get">
                                                 <select name="skill"  class="form-control" id="skill" onchange="this.form.submit()">
                                                 <option name ="skill" value="">Kĩ năng</option>
-                                                    
+                                                
+                                                
                                                     <?php
-                                                        $student = []; 
-                                                        foreach( $students as $st){
-                                                            $st->skill = ucwords($st->skill);
-                                                            array_push($student, $st->skill);
+                                                        foreach($skill as $ski){
+                                                            echo "<option class='dark-mode' name ='skill' value='" .$ski->name ."'>" .$ski->name ."</option>";
+                                                            
                                                         }
                                                         
-                                                        $student = array_unique($student);
-                                                        sort($student);
-                                                        foreach($student as $skill)
-                                                        echo "<option class='dark-mode' name ='skill' value='" .$skill ."'>" .$skill ."</option>";
+                                                        
                                                     ?>  
                                                     
                                                 </select> 

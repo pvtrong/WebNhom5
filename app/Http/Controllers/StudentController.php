@@ -244,7 +244,8 @@ class StudentController extends Controller
             ->select("*")
             ->get();
 
-        return view('Pages.Student.DS1', ['user' => $user,'user1'=>$user1,'user2'=>$user2,'company' => $company,  'data' => $data, 'category'=>$category]);
+    $skill = skill::all();   
+        return view('Pages.Student.DS1', ['user' => $user, 'skill' => $skill, 'user1'=>$user1,'user2'=>$user2,'company' => $company,  'data' => $data, 'category'=>$category]);
     }
     public function getDS2(Request $request){
         $category = category::all()[3];
@@ -348,8 +349,8 @@ class StudentController extends Controller
         ->select("*")
         ->get();
         
-       
-        return view('Pages.Student.DS2',['user' => $user,'user1' => $user1,'user2' => $user2, 'teacher' => $teacher,'data' => $data, 'category'=>$category]);
+     $skill = skill::all();
+        return view('Pages.Student.DS2',['user' => $user, 'skill' => $skill,'user1' => $user1,'user2' => $user2, 'teacher' => $teacher,'data' => $data, 'category'=>$category]);
     }
     public function getProfile($id){
         $kcheck = [];
@@ -520,11 +521,10 @@ class StudentController extends Controller
         foreach($skill_all as $k){
             array_push($kcheck,$k['name']);
         }
-        $skill = skill::all();
         if($student != null){
 
           
-            return view('Pages.Student.CV',['student'=>$student, 'user'=>$user, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck]);
+            return view('Pages.Student.CV',['student'=>$student, 'user'=>$user, 'category'=>$category,'skillcheck'=>$kcheck]);
         }  return redirect()-> back() ->with('success', 'Tài khoản này không tồn tại');
 
     }

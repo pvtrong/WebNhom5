@@ -48,7 +48,18 @@
                         <h6 style="color: #026b97 " class=" dark-mode m-0 font-weight-bold text-primary text-center">Chi tiết thông tin tuyển</h6>
                     </div>
                     <div class="card-body dark-mode bg-light">
-                        <?php if($teacher ->offer != "")echo "<h5><i class='fa fa-bolt dark-mode'></i>     Yêu cầu: ".$teacher ->offer."<br></h5>"?>
+                        @if($skillcheck)
+                            
+                            <?php echo " <h5><i class='fa fa-bolt dark-mode'></i>    Yêu cầu: "?>
+                                @foreach ($skillcheck as $item)
+                                <?php echo $item ." "?>
+                                
+                                @endforeach
+
+                             <?php echo "<br></h5>"?>
+                                
+                        @endif
+                        
                         <?php if($teacher ->topicResearch != "")echo "<h5><i class='fas fa-search dark-mode'></i>     Đề tài nghiên cứu: ".$teacher ->topicResearch."<br></h5>"?>
                         <?php if($teacher ->numbers != "")echo "<h5><i class='fa fa-graduation-cap dark-mode'></i>     Số lượng: ".$teacher ->numbers."<br></h5>"?>
                         <?php if($teacher ->bonus != "")echo "<h5><i class='fa fa-plus-square dark-mode'></i>    Đãi ngộ: "."    ".$teacher ->bonus."<br></h5>"?>

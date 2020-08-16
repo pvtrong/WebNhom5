@@ -106,17 +106,13 @@
                                                 <select name="offer"  class="form-control" id="offer" onchange="this.form.submit()">
                                                     <option name ="offer" value="">Yêu cầu</option>
                                                     <?php
-                                                        $companys = []; 
-                                                        foreach( $company as $cpn){
-                                                            $cpn->offer = ucwords($cpn->offer);
-                                                            array_push($companys, $cpn->offer);
+                                                        foreach($skill as $ski){
+                                                            echo "<option class='dark-mode' name ='offer' value='" .$ski->name ."'>" .$ski->name ."</option>";
+                                                            
                                                         }
                                                         
-                                                        $companys = array_unique($companys);
-                                                        sort($companys);
-                                                        foreach($companys as $offer)
-                                                        echo "<option class='dark-mode' name ='offer' value='" .$offer ."'>" .$offer ."</option>";
-                                                    ?>
+                                                        
+                                                    ?>  
                                                 </select> 
                                         </form>
                                     </th>

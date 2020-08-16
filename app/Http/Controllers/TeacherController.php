@@ -242,8 +242,8 @@ class TeacherController extends Controller
         $company = DB::table('company')
         ->select("*")
         ->get();
-
-        return view('Pages.Teacher.DS1', ['user' => $user,'user1'=>$user1,'user2'=>$user2,'company' => $company,  'data' => $data, 'category'=>$category]);
+        $skill = skill::all();
+        return view('Pages.Teacher.DS1', ['user' => $user, 'skill' => $skill,'user1'=>$user1,'user2'=>$user2,'company' => $company,  'data' => $data, 'category'=>$category]);
     }
     public function getDS2(Request $request){
         $category = category::all()[4];
@@ -347,8 +347,8 @@ class TeacherController extends Controller
     $students = DB::table('students')
     ->select("*")
     ->get();
-        
-    return view('Pages.Teacher.DS2',['user' => $user,'user1'=> $user1,'user2'=>$user2 ,'students' => $students, 'data' => $data, 'category'=>$category]);
+        $skill = skill::all();
+    return view('Pages.Teacher.DS2',['user' => $user, 'skill' => $skill,'user1'=> $user1,'user2'=>$user2 ,'students' => $students, 'data' => $data, 'category'=>$category]);
 }
     public function getProfile($id){
         $kcheck = [];
@@ -487,10 +487,19 @@ class TeacherController extends Controller
         $teacher = teacher::find($id);
         $user = User::find($id);
         $category = category::all()[8];
-        if($teacher != null){
-          
-            return view('Pages.Teacher.CV',['teacher'=>$teacher, 'user'=>$user, 'category'=>$category]);
+        $kcheck = [];
+        $skill_all = Fk_Skill::select('skill.name')
+                ->join('skill','skill.id','=','fk_skill.skill_id')
+                ->join('teacher','teacher.id','=','fk_skill.teacher_id')
+                ->where(['fk_skill.teacher_id'=>$id])
+                ->get()->toArray();
+        foreach($skill_all as $k){
+            array_push($kcheck,$k['name']);
         }
+        if($teacher != null){
+        
+            return view('Pages.Teacher.CV',['teacher'=>$teacher, 'user'=>$user, 'category'=>$category,'skillcheck'=>$kcheck]);
+        }return redirect()-> back() ->with('success', 'Tài khoản này không tồn tại');
 
     }
     public function getShare($id){

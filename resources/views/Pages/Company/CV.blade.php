@@ -37,7 +37,19 @@
                     <h6 style="color: #026b97" class=" dark-mode m-0 font-weight-bold text-primary text-center">Chi tiết thông tin tuyển</h6>
                 </div>
                 <div class="card-body dark-mode bg-black">
-                    <?php if($company ->offer != "")echo "<h5><i class='fa fa-bolt'></i>     "."    ".$company ->offer."<br></h5>"?>
+                    <table>
+                        @if($skillcheck)
+                            
+                            <?php echo "<h5><i class='fa fa-bolt'></i>    Yêu cầu: "?>
+                                @foreach ($skillcheck as $item)
+                                <?php echo $item ." "?>
+                                
+                                @endforeach
+                                <?php echo "<br></h5>"?>
+                                
+                        @endif
+                        </table>
+                    
                     <?php if($company ->numbers != "")echo "<h5><i class='fa fa-graduation-cap'></i>   Tuyển: "."    ".$company ->numbers."<br></h5>"?>
                     <?php if($company ->salary != "")echo "<h5><i class='fa fa-university'></i>     Mức lương: "."    ".$company ->salary."<br></h5>"?>
                     <?php if($company ->bonus != "")echo "<h5><i class='fa fa-plus-square'></i>    Đãi ngộ: "."    ".$company ->bonus."<br></h5>"?>
