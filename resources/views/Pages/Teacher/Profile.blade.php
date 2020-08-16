@@ -108,7 +108,7 @@
                         <label for="numbers">Số lượng</label>
                         <input name="numbers" value="{{$teacher->numbers}}"  type="number" class="form-control dark-mode" name="numbers" value="" id="txtNumbers" />
                         <label for="numbers">Đãi ngộ</label>
-                        <textarea  name="bonus" value="{{$teacher->bonus}}"class="form-control dark-mode" rows="5" id="txtBonus"></textarea>
+                        <textarea  name="bonus" value=""class="form-control dark-mode" rows="5" id="txtBonus"><?php echo $teacher->bonus?></textarea>
                         <label for="startDayOffer">Ngày bắt đầu đợt tuyển</label>
                         <label for="startDayOffer">Ngày bắt đầu đợt tuyển</label>
                         <input name="startDayOffer" value="{{$teacher->startDayOffer}}"  type="date" class="form-control dark-mode"  id="txtStartDayOffer">
