@@ -474,10 +474,15 @@ class StudentController extends Controller
         $user_blog = blog::where('id', $id);
         
         if(!empty($user_blog->get())){
+            
             $blog = $user_blog->first();
-            $BL_temp = $user_blog->simplePaginate(2);
-            return view('Pages.Student.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
-        }  return redirect()->back()->with('danger', "Tài khoản này chưa có bài đăng nào");
+            if($blog != null){
+                $BL_temp = $user_blog->simplePaginate(2);
+                return view('Pages.Student.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
+            }
+            
+            
+        }return redirect()->back()->with('danger', "Tài khoản này chưa có bài đăng nào");
         
 
     }
@@ -489,9 +494,12 @@ class StudentController extends Controller
         if($blog != null){
             $user = User::find($blog -> id);
             $user_blog = blog::where('id', $blog ->id);
-            $BL_temp = $user_blog->simplePaginate(1);
+            
+            $BL_temp = $user_blog->simplePaginate(2);
             return view('Pages.Student.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
-        }  
+        }return redirect()->back()->with('danger', "Không có bài đăng nào như bạn chọn");
+        
+
     }
     public function messenger($id){
         $student_id = Auth::user()->id;

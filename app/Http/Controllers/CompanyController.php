@@ -448,12 +448,15 @@ class CompanyController extends Controller
         $user_blog = blog::where('id', $id);
         
         if(!empty($user_blog->get())){
+            
             $blog = $user_blog->first();
-            $BL_temp = $user_blog->simplePaginate(2);
-            return view('Pages.Company.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
-        }  else return redirect()->back()->with('danger', "Tài khoản này chưa có bài đăng nào");
-        
-
+            if($blog != null){
+                $BL_temp = $user_blog->simplePaginate(2);
+                return view('Pages.Company.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
+            }
+            
+            
+        }return redirect()->back()->with('danger', "Tài khoản này chưa có bài đăng nào");
     }
     public function getShare2( $id_blog){
         $category = category::all()[9];
@@ -463,9 +466,10 @@ class CompanyController extends Controller
         if($blog != null){
             $user = User::find($blog -> id);
             $user_blog = blog::where('id', $blog ->id);
-            $BL_temp = $user_blog;
+            
+            $BL_temp = $user_blog->simplePaginate(2);
             return view('Pages.Company.Share',['blog'=>$blog, 'user_blog'=>$user_blog, 'user'=>$user, 'category'=>$category, 'BL_temp' => $BL_temp]);
-        }
+        }return redirect()->back()->with('danger', "Không có bài đăng nào như bạn chọn");
         
 
     }
