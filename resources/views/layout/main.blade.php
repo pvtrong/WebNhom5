@@ -73,9 +73,9 @@
                  <li>
                  <a href="{{route('feedback')}}"><i class="fa fa-user" aria-hidden="true"></i> <span class="nav-label">Quản lý phản hồi</span></a>
                 </li>
-                <!--<li>
-                    <a href=""><i class="fa fa-user" aria-hidden="true"></i> <span class="nav-label">Quản tin tức</span></a>
-                </li> -->
+                <li>
+                    <a href="{{route('skill')}}"><i class="fa fa-user" aria-hidden="true"></i> <span class="nav-label">Quản tin kỹ năng</span></a>
+                </li> 
             </ul>
 
         </div>
