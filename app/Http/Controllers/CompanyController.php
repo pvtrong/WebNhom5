@@ -374,7 +374,7 @@ class CompanyController extends Controller
         if($company != null)
 
         return view('Pages.Company.Profile',['company'=>$company, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck]);
-        else return view('Pages.Company.Profile2',[ 'category'=>$category]);
+        else return view('Pages.Company.Profile2',[ 'category'=>$category,'skill'=>$skill]);
 
 
     }

@@ -366,7 +366,7 @@ class TeacherController extends Controller
         if($teacher != null)
 
         return view('Pages.Teacher.Profile',['teacher'=>$teacher, 'category'=>$category,'skill'=>$skill,'skillcheck'=>$kcheck]);
-        return view('Pages.Teacher.Profile2',[ 'category'=>$category]);
+        return view('Pages.Teacher.Profile2',[ 'category'=>$category,'skill'=>$skill]);
 
 
     }
