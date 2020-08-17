@@ -145,7 +145,7 @@
                                                 
                                                     <?php
                                                         foreach($skill as $ski){
-                                                            echo "<option class='dark-mode' name ='skill' value='" .$ski->name ."'>" .$ski->name ."</option>";
+                                                            echo "<option class='dark-mode' name ='skill' value='" .$ski->id ."'>" .$ski->name ."</option>";
                                                             
                                                         }
                                                         
@@ -163,13 +163,22 @@
                     
                             <tbody>
                                 @foreach($data as $d)
+                                    
                                     <tr role="row" class="even">
                                         <td class="text-center">{{$d->name1}}</td>
                                         <td class="text-center">{{$d->email1}}</td>
                                         <td>{{$d->mobile1}}</td>
                                         <td class="text-center">{{$d->department1}}</td>
                                         <td class="text-center">{{$d->gpa1}}</td>
-                                        <td>{{$d->skill1}}</td>
+                                        <td class="text-center">
+                                        <?php
+                                            
+                                             foreach($skill1 as $sk)
+                                                 if( $sk->student_id1 == $d->id1)
+                                             echo "$sk->name1<br>";
+                                        
+                                        ?>
+                                        </td>
                                         <td class="dark-mode text-center"><i class="dark-mode fas fa-info-circle"></i><a class="dark-mode" href="./Pages/Student/CV/{{$d->id1}}">Xem thêm</a></td>
                                         <td class="dark-mode text-center"><i class="dark-mode fas fa-comments"></i><a class="dark-mode " href="{{route('messenger-company',['id'=>$d->id1])}}">liên hệ</a></td>
                                     </tr>
