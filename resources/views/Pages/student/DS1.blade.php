@@ -107,7 +107,7 @@
                                                     <option name ="offer" value="">Yêu cầu</option>
                                                     <?php
                                                         foreach($skill as $ski){
-                                                            echo "<option class='dark-mode' name ='offer' value='" .$ski->name ."'>" .$ski->name ."</option>";
+                                                            echo "<option class='dark-mode' name ='offer' value='" .$ski->id ."'>" .$ski->name ."</option>";
                                                             
                                                         }
                                                         
@@ -166,7 +166,14 @@
                                         <td class="sorting_1">{{$d->name1}}</td>
                                         <td>{{$d->email1}}</td>
                                         <td class="text-center">{{$d->mobile1}}</td>
-                                        <td>{!!$d->offer1!!}</td>
+                                        <td>
+                                        <?php
+                                            foreach($skill1 as $sk)
+                                                if( $sk->company_id1 == $d->id1)
+                                            echo "$sk->name1<br>";
+                                       
+                                       ?>
+                                        </td>
                                         <td>{!!$d->address1!!}</td>
                                         <td class="text-center">{{$d->salary1}}</td>
                                         <td class="text-center"><i class="dark-mode fas fa-info-circle"></i><a class="dark-mode " href="./Pages/Company/CV/{{$d->id1}}">Xem thêm</a></td>

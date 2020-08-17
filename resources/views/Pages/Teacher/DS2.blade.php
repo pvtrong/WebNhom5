@@ -144,7 +144,7 @@
                                                     
                                                 <?php
                                                 foreach($skill as $ski){
-                                                    echo "<option class='dark-mode' name ='skill' value='" .$ski->name ."'>" .$ski->name ."</option>";
+                                                    echo "<option class='dark-mode' name ='skill' value='" .$ski->id ."'>" .$ski->name ."</option>";
                                                     
                                                 }
                                                 
@@ -168,7 +168,14 @@
                                         <td>{{$d->mobile1}}</td>
                                         <td class="text-center">{{$d->department1}}</td>
                                         <td class="text-center">{{$d->gpa1}}</td>
-                                        <td>{{$d->skill1}}</td>
+                                        <td>
+                                        <?php
+                                            foreach($skill1 as $sk)
+                                                if( $sk->student_id1 == $d->id1)
+                                            echo "$sk->name1<br>";
+                                       
+                                        ?>
+                                        </td>
                                         <td class="text-center"><i class="dark-mode as fa-info-circle"></i><a class='dark-mode'  href="./Pages/Teacher/CV/{{$d->id1}}">Xem thêm</a></td>
                                         <td class="text-center"><i class="dark-mode fas fa-comments"></i></i><a class='dark-mode'  href="{{route('messenger-teacher',['id'=>$d->id1])}}">liên hệ</a></td>
                                     </tr>

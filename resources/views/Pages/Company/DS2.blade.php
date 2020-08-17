@@ -127,7 +127,7 @@
                                                     <option name ="offer" value="">Yêu cầu</option>
                                                      <?php
                                                         foreach($skill as $ski){
-                                                            echo "<option class='dark-mode' name ='offer' value='" .$ski->name ."'>" .$ski->name ."</option>";
+                                                            echo "<option class='dark-mode' name ='offer' value='" .$ski->id ."'>" .$ski->name ."</option>";
                                                             
                                                         }
                                                         
@@ -171,7 +171,14 @@
                                             <td>{{$d->email1}}</td>
                                             <td >{!!$d->department1!!}</td>
                                             <td >{!!$d->topicResearch1!!}</td>
-                                            <td>{!!$d->offer1!!}</td>
+                                            <td>
+                                            <?php
+                                                foreach($skill1 as $sk)
+                                                    if( $sk->teacher_id1 == $d->id1)
+                                                        echo "$sk->name1<br>";
+                                            
+                                                ?>
+                                            </td>
                                             <td class=" dark-mode text-center">{{$d->numbers1}}</td>
                                             <td class="dark-mode text-center"><i class="dark-mode fas fa-info-circle"></i><a class="dark-mode" href="./Pages/Teacher/CV/{{$d->id1}}">Xem thêm</a></td>
                                             <td class="dark-mode text-center"><i class="dark-mode fas fa-comments"></i></i><a class="dark-mode" href="{{route('messenger-company',['id'=>$d->id1])}}">liên hệ</a></td>
