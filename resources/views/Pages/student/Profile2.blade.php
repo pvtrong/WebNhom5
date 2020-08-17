@@ -5,7 +5,7 @@
 <form class="" method="POST" action="./Pages/Student/updateProfile/{{Auth::user()->id}}" enctype="multipart/form-data">
     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
     <button type="submit" class="btn btn-primary dark-mode" >Ghi nhận</button>
-    
+
     <div class="row dark-mode">
         <div class="col-md-6 dark-mode">
             <div class="card shadow mb-4 dark-mode">
@@ -52,7 +52,7 @@
                     <h6 style="color: #026b97" class=" dark-mode m-0 font-weight-bold text-primary text-center">Thông tin cơ bản</h6>
 
                 <div class="card-body dark-mode bg-black">
-                    
+
                     <div class="form-group">
                         <label for="department">Khoa</label>
                         <select name="department" class="form-control dark-mode" id="sel1">
@@ -108,7 +108,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
     <div class="col-md-6 dark-mode">
             <div class="card shadow mb-4 dark-mode">
@@ -116,7 +116,7 @@
                     <h6 style="color: #026b97" class="  dark-modem-0 font-weight-bold text-primary text-center">Địa chỉ</h6>
                 </div>
                 <div class="card-body dark-mode bg-black">
-                    
+
                     <label for="nation">Quốc gia</label>
                     <input name="nation" type="text" class="form-control dark-mode" placeholder="" id="txtNation">
 
@@ -137,7 +137,7 @@
                     <h6 style="color: #026b97" class="  dark-modem-0 font-weight-bold text-primary text-center">Quá trình học tập</h6>
                 </div>
                 <div class="card-body dark-mode  bg-black">
-                   
+
                     <label for="GPA">GPA tích luỹ</label>
                     <input type="text" class="form-control dark-mode" placeholder="" id="txtGPA">
                     <label for="Prize">Khen thưởng/giải thưởng</label>

@@ -72,11 +72,11 @@
                                 <option <?php if($student->department=="Công nghệ kỹ thuật xây dựng"){echo "selected";}?> value="Công nghệ kỹ thuật xây dựng"  name="department">Công nghệ kỹ thuật xây dựng</option>
                                 <option <?php if($student->department=="Công nghệ Hàng không vũ trụ"){echo "selected";}?> value="Công nghệ Hàng không vũ trụ"  name="department">Công nghệ Hàng không vũ trụ</option>
                                 <option <?php if($student->department=="Kỹ thuật điều khiển và tự động hóa"){echo "selected";}?> value="Kỹ thuật điều khiển và tự động hóa"  name="department">Kỹ thuật điều khiển và tự động hóa</option>
-                                <option <?php if($student->department=="	
+                                <option <?php if($student->department=="
                                     Công nghệ nông nghiệp"){echo "selected";}?> value="Công nghệ nông nghiệp"  name="department">Công nghệ nông nghiệp</option>
                                 <option  <?php if($student->department=="Điện tử viễn thông"){echo "selected";}?> value="Điện tử viễn thông" name="department">Điện tử viễn thông</option>
                                 <option  <?php if($student->department=="Vật lý kỹ thuật"){echo "selected";}?> value="Vật lý kỹ thuật" name="department">Vật lý kỹ thuật</option>
-                                
+
                             </select>
                         </div>
                         <label for="major">Ngành</label>
