@@ -51,7 +51,7 @@
 <h1>Số lượng blog: {{$blogs}}</h1>
     
 <h1>Số lượng tin nhắn: {{$messages}}</h1>
-<h1>Số lượng sinh theo viên kỹ năng: </h1>
+<h1>Số lượng sinh viên theo kỹ năng: </h1>
 <table class="table table-hover">
     <thead>
         <tr>
