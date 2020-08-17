@@ -26,7 +26,25 @@ class TeacherController extends Controller
         $students = user::where('category', 3)->count();
         $blogs= blog::all()->count();
         $category = category::all()[0];
-        return view('Pages.Teacher.home', ['category'=>$category, 'companys'=>$companys, 'teachers'=>$teachers, 'students' => $students, 'blogs' => $blogs]);
+        $skill_all = Fk_Skill::select('skill.name', DB::raw('count(*) as total'))
+            ->join('skill','skill.id','=','fk_skill.skill_id')
+            ->groupBy('skill.name')
+            ->join('students','students.id','=','fk_skill.student_id')
+            ->get()
+            ->toArray();
+        $skill_all2 = Fk_Skill::select('skill.name', DB::raw('count(*) as total'))
+            ->join('skill','skill.id','=','fk_skill.skill_id')
+            ->groupBy('skill.name')
+            ->join('teacher','teacher.id','=','fk_skill.teacher_id')
+            ->get()
+            ->toArray();
+        $skill_all3 = Fk_Skill::select('skill.name', DB::raw('count(*) as total'))
+            ->join('skill','skill.id','=','fk_skill.skill_id')
+            ->groupBy('skill.name')
+            ->join('company','company.id','=','fk_skill.company_id')
+            ->get()
+            ->toArray();
+        return view('Pages.Teacher.home', ['skill_all3'=> $skill_all3, 'skill_all2'=> $skill_all2, 'skill_all'=> $skill_all,'category'=>$category, 'companys'=>$companys, 'teachers'=>$teachers, 'students' => $students, 'blogs' => $blogs]);
 
     }
     public function getBlog(){

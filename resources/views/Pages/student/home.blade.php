@@ -103,6 +103,72 @@
 
                     </div>
                 </div>
+                <h4>Số lượng sinh viên theo kỹ năng: </h4>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Kỹ năng</th>
+            <th>Số lượng</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($skill_all as $item)
+        <tr>
+            <td>{{$item['name']}}</td>
+            <td>{{$item['total']}}</td>
+            
+        </tr>
+        @endforeach
+        
+        
+    
+    </tbody>
+</table>
+    <h4>Số lượng thầy cô tuyển theo kỹ năng: </h4>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Kỹ năng</th>
+            <th>Số lượng</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($skill_all2 as $item)
+        <tr>
+            <td>{{$item['name']}}</td>
+            <td>{{$item['total']}}</td>
+            
+        </tr>
+        @endforeach
+        
+        
+    
+    </tbody>
+</table>
+<h4>Số lượng thầy công ty tuyển theo kỹ năng: </h4>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Kỹ năng</th>
+            <th>Số lượng</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($skill_all3 as $item)
+        <tr>
+            <td>{{$item['name']}}</td>
+            <td>{{$item['total']}}</td>
+            
+        </tr>
+        @endforeach
+        
+        
+    
+    </tbody>
+</table>
 
                 
             </div>
