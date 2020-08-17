@@ -190,8 +190,8 @@
                     <label for="skill">Năng khiếu</label>
                     <textarea name="skill"  value="{{$student->skill}}" class="form-control" rows="5" id="txtSkill"><?php echo $student->skill?></textarea>
                     
-                    <label for="favorite">Sở thích</label>
-                    <textarea name="favorite" class="ckeditor form-control" value="{{$student->favorite}}" rows="5" id="txtFavorite"><?php echo $student->favorite?></textarea>
+                    <label for="favourite">Sở thích</label>
+                    <textarea name="favourite" class="ckeditor form-control" value="{{$student->favuorite}}" rows="5" id="txtFavorite"><?php echo $student->favourite?></textarea>
 
                 </div>
             </div>

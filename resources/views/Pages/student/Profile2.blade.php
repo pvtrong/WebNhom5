@@ -153,8 +153,8 @@
                     <!-- <textarea  name="forte" class="form-control dark-mode" rows="5" id="txtForte"></textarea> -->
                     <label for="skill">Năng khiếu</label>
                     <textarea name="skill" class="form-control dark-mode" rows="5" id="txtSkill"></textarea>
-                    <label for="favorite">Sở thích</label>
-                    <textarea name="favorite" class="form-control dark-mode" rows="5" id="txtFavorite"></textarea>          
+                    <label for="favourite">Sở thích</label>
+                    <textarea name="favourite" class="form-control dark-mode" rows="5" id="txtFavorite"></textarea>          
                 </div>
             </div>
         </div>
