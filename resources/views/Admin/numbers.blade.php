@@ -13,7 +13,7 @@
 </style>
     <!-- <button class="btn btn-xs btn-info" onclick="addCategory(this)">thêm danh mục</button> -->
     
-    <h1>Số lượng tài khoản</h1>
+    <h1>1. Số lượng tài khoản</h1>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -48,10 +48,10 @@
         
         </tbody>
     </table>
-<h1>Số lượng blog: {{$blogs}}</h1>
+<h1>2. Số lượng blog: {{$blogs}}</h1>
     
-<h1>Số lượng tin nhắn: {{$messages}}</h1>
-<h1>Số lượng sinh viên theo kỹ năng: </h1>
+<h1>3. Số lượng tin nhắn: {{$messages}}</h1>
+<h1>4. Số lượng sinh viên theo kỹ năng: </h1>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -73,7 +73,7 @@
     
     </tbody>
 </table>
-<h1>Số lượng thầy cô tuyển theo kỹ năng: </h1>
+<h1>5. Số lượng thầy cô tuyển theo kỹ năng: </h1>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -95,7 +95,7 @@
     
     </tbody>
 </table>
-<h1>Số lượng thầy công ty tuyển theo kỹ năng: </h1>
+<h1>6. Số lượng thầy công ty tuyển theo kỹ năng: </h1>
 <table class="table table-hover">
     <thead>
         <tr>
