@@ -176,7 +176,7 @@
                                        
                                         ?>
                                         </td>
-                                        <td class="text-center"><i class="dark-mode as fa-info-circle"></i><a class='dark-mode'  href="./Pages/Teacher/CV/{{$d->id1}}">Xem thêm</a></td>
+                                        <td class="text-center"><i class="dark-mode as fa-info-circle"></i><a class='dark-mode'  href="./Pages/Student/CV/{{$d->id1}}">Xem thêm</a></td>
                                         <td class="text-center"><i class="dark-mode fas fa-comments"></i></i><a class='dark-mode'  href="{{route('messenger-teacher',['id'=>$d->id1])}}">liên hệ</a></td>
                                     </tr>
                                     
