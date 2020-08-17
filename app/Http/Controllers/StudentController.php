@@ -171,13 +171,17 @@ class StudentController extends Controller
             $search = $request->search;
             $data = DB::table('company')
             ->join('user', 'company.id','=','user.id')
-            ->select('user.id as id1','name as name1','email as email1', 'address as address1', 'mobile as mobile1', 'salary as salary1')
-            ->where('name', 'like', "%$search%")
+            ->join('fk_skill','fk_skill.company_id','=','user.id')
+            ->join('skill','skill.id','=','fk_skill.skill_id')
+            ->select('user.id as id1','user.name as name1','email as email1', 'address as address1', 'mobile as mobile1', 'salary as salary1')
+            ->where('user.name', 'like', "%$search%")
             ->orwhere('address', 'like', "%$search%")
             ->orwhere('mobile', 'like', "%$search%")
             ->orwhere('salary', 'like', "%$search%")
             ->orwhere('email', 'like', "%$search%")
+            ->orwhere('skill.name', 'like', "%$search%")
             ->orderBy('id1')
+            ->distinct()
             ->paginate(2);
         }
         elseif($request->name) {
@@ -280,12 +284,17 @@ class StudentController extends Controller
             $search = $request->search;
             $data = DB::table('teacher')
             ->join('user','user.id','=','teacher.id')
+            ->join('fk_skill','fk_skill.teacher_id','=','user.id')
+            ->join('skill','skill.id','=','fk_skill.skill_id')
             ->select('user.id as id1','user.name as name1','user.email as email1', 'teacher.department as department1', 'teacher.topicResearch as topicResearch1','teacher.numbers as numbers1')
             ->where('user.name', 'like', "%$search%")
             ->orwhere('department', 'like', "%$search%")
             ->orwhere('email', 'like', "%$search%")
             ->orwhere('topicResearch', 'like', "%$search%")
             ->orwhere('numbers', 'like', "%$search%")
+            ->orwhere('skill.name', 'like', "%$search%")
+            ->orderBy('id1')
+            ->distinct()
             ->paginate(2);
             }
             elseif($request->name)

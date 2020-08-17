@@ -172,15 +172,19 @@ class CompanyController extends Controller
         $search = $request->search;
         $data = DB::table('students')
         ->join('user','user.id','=','students.id')
+        ->join('fk_skill','fk_skill.student_id','=','students.id')
+        ->join('skill','skill.id','=','fk_skill.skill_id')
         ->select('user.id as id1','user.name as name1','user.email as email1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1')
         ->where('user.name', 'like', "%$search%")
         ->orwhere('email', 'like', "%$search%")
         ->orwhere('mobile', 'like', "%$search%")
         ->orwhere('department', 'like', "%$search%")
         ->orwhere('gpa', 'like', "%$search%")
-        ->orderBy('id1') 
+        ->orwhere('skill.name', 'like', "%$search%")
+        ->orderBy('id1')
+        ->distinct() 
         ->paginate(2);
-        
+        //dd($data);
         } 
         elseif($request->name)
         {
@@ -288,12 +292,17 @@ class CompanyController extends Controller
             $search = $request->search;
             $data = DB::table('teacher')
             ->join('user','user.id','=','teacher.id')
+            ->join('fk_skill','fk_skill.teacher_id','=','user.id')
+            ->join('skill','skill.id','=','fk_skill.skill_id')
             ->select('user.id as id1','user.name as name1','user.email as email1', 'teacher.department as department1', 'teacher.topicResearch as topicResearch1','teacher.numbers as numbers1')
             ->where('user.name', 'like', "%$search%")
             ->orwhere('department', 'like', "%$search%")
+            ->orwhere('skill.name', 'like', "%$search%")
             ->orwhere('email', 'like', "%$search%")
             ->orwhere('topicResearch', 'like', "%$search%")
             ->orwhere('numbers', 'like', "%$search%")
+            ->orderBy('id1')
+            ->distinct()
             ->paginate(2);
             }
             elseif($request->name)

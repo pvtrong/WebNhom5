@@ -170,20 +170,24 @@ class TeacherController extends Controller
             $search = $request->search;
             $data = DB::table('company')
             ->join('user', 'company.id','=','user.id')
-            ->select('user.id as id1','name as name1','email as email1', 'address as address1', 'mobile as mobile1', 'salary as salary1')
-            ->where('name', 'like', "%$search%")
+            ->join('fk_skill','fk_skill.company_id','=','user.id')
+            ->join('skill','skill.id','=','fk_skill.skill_id')
+            ->select('user.id as id1','user.name as name1','email as email1', 'address as address1', 'mobile as mobile1', 'salary as salary1')
+            ->where('user.name', 'like', "%$search%")
             ->orwhere('address', 'like', "%$search%")
             ->orwhere('mobile', 'like', "%$search%")
             ->orwhere('salary', 'like', "%$search%")
             ->orwhere('email', 'like', "%$search%")
+            ->orwhere('skill.name', 'like', "%$search%")
             ->orderBy('id1')
+            ->distinct()
             ->paginate(2);
         }
         elseif($request->name) {
             $filter = $request->name;
             $data = DB::table('company')
             ->join('user', 'company.id','=','user.id')
-            ->select('user.id as id1','name as name1','email as email1',  'address as address1', 'mobile as mobile1', 'salary as salary1')
+            ->select('user.id as id1','user.name as name1','email as email1',  'address as address1', 'mobile as mobile1', 'salary as salary1')
             ->where('user.id', $filter)
             ->orderBy('id1')
             ->paginate(2);
@@ -279,13 +283,17 @@ class TeacherController extends Controller
         $search = $request->search;
         $data = DB::table('students')
         ->join('user','user.id','=','students.id')
+        ->join('fk_skill','fk_skill.student_id','=','user.id')
+        ->join('skill','skill.id','=','fk_skill.skill_id')
         ->select('user.id as id1','user.name as name1','user.email as email1','students.mobile as mobile1','students.department as department1', 'students.gpa as gpa1')
         ->where('user.name', 'like', "%$search%")
         ->orwhere('email', 'like', "%$search%")
         ->orwhere('mobile', 'like', "%$search%")
         ->orwhere('department', 'like', "%$search%")
         ->orwhere('gpa', 'like', "%$search%")
-        ->orderBy('id1') 
+        ->orwhere('skill.name', 'like', "%$search%")
+        ->orderBy('id1')
+        ->distinct()
         ->paginate(2);
         
         } 

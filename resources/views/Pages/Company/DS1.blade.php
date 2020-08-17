@@ -163,7 +163,6 @@
                     
                             <tbody>
                                 @foreach($data as $d)
-                                    
                                     <tr role="row" class="even">
                                         <td class="text-center">{{$d->name1}}</td>
                                         <td class="text-center">{{$d->email1}}</td>
