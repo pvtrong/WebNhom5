@@ -51,7 +51,72 @@
 <h1>Số lượng blog: {{$blogs}}</h1>
     
 <h1>Số lượng tin nhắn: {{$messages}}</h1>
+<h1>Số lượng sinh theo viên kỹ năng: </h1>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Kỹ năng</th>
+            <th>Số lượng</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($skill_all as $item)
+        <tr>
+            <td>{{$item['name']}}</td>
+            <td>{{$item['total']}}</td>
+            
+        </tr>
+        @endforeach
+        
+        
     
+    </tbody>
+</table>
+<h1>Số lượng thầy cô tuyển theo kỹ năng: </h1>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Kỹ năng</th>
+            <th>Số lượng</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($skill_all2 as $item)
+        <tr>
+            <td>{{$item['name']}}</td>
+            <td>{{$item['total']}}</td>
+            
+        </tr>
+        @endforeach
+        
+        
+    
+    </tbody>
+</table>
+<h1>Số lượng thầy công ty tuyển theo kỹ năng: </h1>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Kỹ năng</th>
+            <th>Số lượng</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($skill_all3 as $item)
+        <tr>
+            <td>{{$item['name']}}</td>
+            <td>{{$item['total']}}</td>
+            
+        </tr>
+        @endforeach
+        
+        
+    
+    </tbody>
+</table>
     
     
     <div class="modal fade" id="modal-category">
@@ -74,6 +139,9 @@
             </div>
         </div>
     </div>
+    <?php 
+        
+    ?>
     
     
 @stop()

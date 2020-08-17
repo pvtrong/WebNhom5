@@ -142,7 +142,7 @@
                     <input type="text" class="form-control dark-mode" placeholder="" id="txtGPA">
                     <label for="Prize">Khen thưởng/giải thưởng</label>
                     <textarea rows="5" type="text" class="form-control dark-mode" placeholder="" id="txtPrize"></textarea>
-                    <label for="forte">Sở trường</label>
+                    <label for="forte">Kỹ năng</label>
                     <table>
                         @foreach($skill as $ski)
                         <tr onclick="chon(this)">

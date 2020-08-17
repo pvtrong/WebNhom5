@@ -7,6 +7,7 @@ use App\Model\Admin;
 use App\User;
 use App\Model\Category;
 use App\Model\Skill;
+use App\Model\FK_Skill;
 use Auth;
 use Illuminate\Support\Facades\DB;
 use App\Model\Messenger;
@@ -98,12 +99,30 @@ class AdminController extends Controller
     }
     public function numbers(){
         $users = user::all()->count();
+        $skill_all = Fk_Skill::select('skill.name', DB::raw('count(*) as total'))
+            ->join('skill','skill.id','=','fk_skill.skill_id')
+            ->groupBy('skill.name')
+            ->join('students','students.id','=','fk_skill.student_id')
+            ->get()
+            ->toArray();
+        $skill_all2 = Fk_Skill::select('skill.name', DB::raw('count(*) as total'))
+            ->join('skill','skill.id','=','fk_skill.skill_id')
+            ->groupBy('skill.name')
+            ->join('teacher','teacher.id','=','fk_skill.teacher_id')
+            ->get()
+            ->toArray();
+        $skill_all3 = Fk_Skill::select('skill.name', DB::raw('count(*) as total'))
+            ->join('skill','skill.id','=','fk_skill.skill_id')
+            ->groupBy('skill.name')
+            ->join('company','company.id','=','fk_skill.company_id')
+            ->get()
+            ->toArray();
         $companys = user::where('category', 1)->count();
         $teachers = user::where('category', 2)->count();
         $students = user::where('category', 3)->count();
         $blogs= blog::all()->count();
         $messages = messenger::all() ->count();
-        return view('Admin.numbers',['messages'=>$messages, 'companys'=>$companys, 'teachers'=>$teachers, 'students' => $students, 'blogs' => $blogs, 'users'=>$users]);
+        return view('Admin.numbers',['messages'=>$messages,'skill_all2'=> $skill_all2,'skill_all3'=> $skill_all3, 'companys'=>$companys, 'teachers'=>$teachers, 'students' => $students, 'blogs' => $blogs, 'users'=>$users, 'skill_all'=> $skill_all]);
     }
 
     public function delete_blog(Request $request){

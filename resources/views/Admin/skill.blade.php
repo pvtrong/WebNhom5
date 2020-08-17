@@ -30,6 +30,7 @@
             </tr>
         </thead>
         <tbody>
+            
         @foreach($skill as  $ca)
             <tr>
                 <td >{{$ca->id}}</td>

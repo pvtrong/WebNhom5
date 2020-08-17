@@ -77,7 +77,7 @@
                         <h6 style="color: #026b97" class=" dark-mode m-0 font-weight-bold text-primary text-center">Chi tiết thông tin tuyển</h6>
                     </div>
                     <div class="card-body dark-mode bg-black">
-                        <label for="offer">Yêu cầu/Tiêu chí</label>
+                        <label for="offer">Yêu cầu kỹ năng</label>
                     <table>
                         @foreach($skill as $ski)
                         <tr onclick="chon(this)">
