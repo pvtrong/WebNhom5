@@ -24,8 +24,8 @@
                             <?php if($student ->mobile != "")echo "<h5><i class='fa fa-phone-square dark-mode' ></i>"."    ".$student ->mobile."<br></h5>"?>
                             <?php if($student ->birth != "")echo "<h5><i class='fas fa-birthday-cake dark-mode'></i>"."    ".$student ->birth."<br></h5>"?>
                             <?php if($student ->gender != "")echo "<h5><i class='fas fa-venus-mars dark-mode'></i>"."    ".$student ->gender."<br></h5>"?>
-                            
-                            
+
+
 
                         </div>
 
@@ -45,8 +45,8 @@
                             <?php if($student ->trainingSystem != "")echo "<h5><i class='fa fa-address-card dark-mode'></i>    Hệ đào tạo: "."    ".$student ->trainingSystem."<br></h5>"?>
                             <?php if($student ->trainingProgram != "")echo "<h5><i class='fas fa-balance-scale dark-mode'></i>    Chương trình đào tạo: "."    ".$student ->trainingProgram."<br></h5>"?>
                             <?php if($student ->yearOfCourse != "")echo " <h5><i class='fas fa-graduation-cap dark-mode'></i>   Khoá: "."    ".$student ->yearOfCourse."<br></h5>"?>
-                            
-                            
+
+
                         </div>
                     </div>
                 </div>
@@ -62,14 +62,14 @@
                     <br>
                     <table>
                         @if($skillcheck)
-                            
+
                             <?php echo " <h5><i class='fas fa-star dark-mode'></i>    Kỹ năng: "?>
                                 @foreach ($skillcheck as $item)
                                 <?php echo $item ." "?>
-                                
+
                                 @endforeach
-                            
-                                
+
+
                         @endif
                         </table>
                     <?php if($student ->gpa != "")echo " <h5><i class='fas fa-star dark-mode'></i>    GPA: "."    ".$student ->gpa."<br></h5>"?>
@@ -77,8 +77,8 @@
                     <?php if($student ->forte != "")echo "<h5><i class='fas fa-battery-full dark-mode'></i>   Kỹ năng: "."    ".$student ->forte."<br></h5>"?>
                     <?php if($student ->skill != "")echo "<h5><i class='fas fa-basketball-ball dark-mode'></i>    Sở trường: "."    ".$student ->skill."<br></h5>"?>
                     <?php if($student ->favorite != "")echo "<h5><i class='fas fa-heart dark-mode'></i>    Sở thích: "."    ".$student ->favorite."<br></h5>"?>
-                    
-                   
+
+
                 </div>
             </div>
         </div>
