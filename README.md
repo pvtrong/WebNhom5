@@ -1,79 +1,301 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<h1 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:21px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;text-align:center;'><strong><span style='font-family:"Times New Roman",serif;'>Lời n&oacute;i đầu</span></strong></h1>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-indent:36.0pt;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;color:black;'>Ng&agrave;y nay, ứng dụng c&ocirc;ng nghệ th&ocirc;ng tin v&agrave; việc tin học h&oacute;a được xem l&agrave; một trong những yếu tố mang t&iacute;nh quyết định trong hoạt động của c&aacute;c ch&iacute;nh phủ, tổ chức, cũng như của c&aacute;c c&ocirc;ng ty, nh&agrave; trường n&oacute; đ&oacute;ng vai tr&ograve; hết sức quan trọng, c&oacute; thể&nbsp;</span><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>mang lại cho ch&uacute;ng ta rất nhiều lợi &iacute;ch v&agrave; thuận tiện trong c&ocirc;ng việc. <span style="color:black;">Mạng Internet l&agrave; một trong những sản phẩm c&oacute; gi&aacute; trị hết sức lớn lao v&agrave; ng&agrave;y c&agrave;ng trở n&ecirc;n một c&ocirc;ng cụ kh&ocirc;ng thể thiếu, l&agrave; nền tảng ch&iacute;nh cho sự truyền tải, trao đổi th&ocirc;ng tin tr&ecirc;n to&agrave;n cầu.</span></span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-indent:36.0pt;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;color:black;'>V&igrave; vậy trong phạm vi m&ocirc;n học n&agrave;y, nh&oacute;m ch&uacute;ng em sẽ tr&igrave;nh b&agrave;y về project website quản l&yacute; profile.</span><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>&nbsp;<span style="color:black;">Người tuyển dụng đưa c&aacute;c th&ocirc;ng tin tuyển dụng, người ứng tuyển th&igrave; lu&ocirc;n lu&ocirc;n cập nhật CV của m&igrave;nh l&ecirc;n website một c&aacute;ch nhanh ch&oacute;ng v&agrave; ai cũng c&oacute; thể tiếp cận, t&igrave;m kiệm, lọc những thứ m&igrave;nh cần t&igrave;m mọi l&uacute;c mọi nơi.&nbsp;</span></span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-indent:36.0pt;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;color:black;'>Trong qu&aacute; tr&igrave;nh l&agrave;m nh&oacute;m em c&ograve;n nhiều sai s&oacute;t, ch&uacute;ng em mong nhận được những &yacute; kiến đ&aacute;nh gi&aacute; của thầy v&agrave; c&aacute;c bạn. Em xin ch&acirc;n th&agrave;nh cảm ơn!</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;color:black;'>&nbsp;</span></p>
+<h1 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:21px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;text-align:center;'><strong><span style='font-family:"Times New Roman",serif;'>I: Ph&acirc;n T&iacute;ch Y&ecirc;u Cầu</span></strong></h1>
+<h2 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;'><span style='font-family:"Times New Roman",serif;'>1. C&aacute;c đối tượng sử dụng</span></h2>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;border:none;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;color:black;'>Người sử dụng website chia l&agrave;m 2 nh&oacute;m đối tượng:</span></p>
+<ul style="list-style-type: undefined;margin-left:11.25px;">
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Admin</span></li>
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>User: C&ocirc;ng ty, Nh&agrave; trường, Sinh vi&ecirc;n</span></li>
+</ul>
+<h2 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;'><span style='font-family:"Times New Roman",serif;'>2. Ph&acirc;n t&iacute;ch c&aacute;c chức năng ch&iacute;nh của hệ thống</span></h2>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.1. Người d&ugrave;ng th&ocirc;ng thường:</span></h3>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.1.1. Chức năng đăng k&yacute;, đăng nhập (1):</span></h4>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Người d&ugrave;ng c&oacute; thể tạo t&agrave;i khoản bằng c&aacute;ch ấn v&agrave;o n&uacute;t đăng k&yacute; tr&ecirc;n trang chủ. Từ trang chủ sẽ chuyển sang trang mới (Registration)&nbsp;</span></p>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+    <ul style="margin-bottom:0cm;list-style-type: undefined;margin-left:11.25px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='line-height:130%;font-family:"Times New Roman",serif;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Đăng k&yacute; t&agrave;i khoản:</span></strong></li>
+    </ul>
+</div>
+<p style='margin-top:0cm;margin-right:-7.0pt;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;border:none;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;color:black;'>&middot; &nbsp; &nbsp;Người d&ugrave;ng điền đầy đủ c&aacute;c th&ocirc;ng tin li&ecirc;n quan đến c&aacute; nh&acirc;n để tạo một tạo khoản trong danh mục v&eacute; như: Họ v&agrave; t&ecirc;n, email, mật khẩu, &hellip; chọn loại t&agrave;i khoản: sinh vi&ecirc;n, nh&agrave; trường hoặc c&ocirc;ng ty</span></p>
+<ul style="list-style-type: undefined;margin-left:11.25px;">
+    <li><strong><span style='line-height:130%;font-family:"Times New Roman",serif;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Đăng nhập:</span></strong></li>
+</ul>
+<ul class="decimal_type" style="list-style-type: undefined;margin-left:18.3px;">
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Người d&ugrave;ng nhập Username v&agrave; Password để đăng nhập v&agrave;o trang chủ. Nếu chưa c&oacute; t&agrave;i khoản, người d&ugrave;ng quay lại trang đăng k&yacute;</span></li>
+</ul>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:20.85pt;text-indent:-20.85pt;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.1.2. Đổi mật khẩu (2):</span></h4>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+    <ul style="margin-bottom:0cm;list-style-type: undefined;margin-left:18.3px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Người d&ugrave;ng c&oacute; thể thay đổi Password ở trang c&agrave;i đặt sau khi đ&atilde; đăng nhập</span></li>
+    </ul>
+</div>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.1.3. Chức năng cập nhật th&ocirc;ng tin v&agrave; hiện CV (3):</span></h4>
+<ul class="decimal_type" style="list-style-type: undefined;margin-left:18.3px;">
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Người d&ugrave;ng (sau khi đ&atilde; c&oacute; t&agrave;i khoản) phải v&agrave;o mục hồ sơ c&aacute; nh&acirc;n thực hiện th&ecirc;m, sửa, x&oacute;a th&ocirc;ng tin c&aacute; nh&acirc;n như ng&agrave;y sinh, th&agrave;nh t&iacute;ch, cập nhật ảnh hồ sơ.</span></li>
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:17px;'>Người d&ugrave;ng khi đ&atilde; cập nhật sẽ c&oacute; thể xem th&ocirc;ng tin hiện CV.</span></li>
+</ul>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.1.4. Chức năng xem danh s&aacute;ch th&ocirc;ng tin (4):</span></h4>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+    <ul style="margin-bottom:0cm;list-style-type: undefined;margin-left:18.3px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Người d&ugrave;ng c&oacute; thể xem được to&agrave;n bộ th&ocirc;ng tin th&ocirc;ng qua một danh s&aacute;ch c&aacute;c đối tượng. Ở đ&acirc;y gồm những th&ocirc;ng tin cơ bản nhất như t&ecirc;n, email, số điện thoại, ... Như ph&iacute;a sinh vi&ecirc;n c&oacute;&nbsp;</span><span style='line-height:130%;font-family:"Times New Roman",serif;'>thể <span style="color:black;">xem th&ocirc;ng tin tuyển dụng của c&ocirc;ng ty, th&ocirc;ng tin tuyển nghi&ecirc;n cứu sinh của thầy c&ocirc;. Ngược lại thầy c&ocirc;, c&ocirc;ng ty c&oacute; thể xem th&ocirc;ng tin của c&aacute;c sinh vi&ecirc;n &nbsp; Ngo&agrave;i ra c&ograve;n c&oacute; thể xem chi tiết th&ocirc;ng tin của từng đối tượng bằng c&aacute;ch click v&agrave;o n&uacute;t <em>xem th&ecirc;m.</em></span></span></li>
+    </ul>
+</div>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.1.5. Chức năng t&igrave;m kiếm (5):</span></h4>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+    <ul style="margin-bottom:0cm;list-style-type: undefined;margin-left:26px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Một khung t&igrave;m kiếm sẽ được tạo ra tr&ecirc;n c&aacute;c page để gi&uacute;p người d&ugrave;ng t&igrave;m kiếm th&ocirc;ng tin một c&aacute;ch nhanh ch&oacute;ng v&agrave; hiệu quả</span></li>
+    </ul>
+</div>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.1.6. Chức năng lọc (6):</span></h4>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+    <ul style="margin-bottom:0cm;list-style-type: undefined;margin-left:18.3px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Chức năng lọc gi&uacute;p ph&acirc;n loại theo c&aacute;c c&aacute;ch kh&aacute;c nhau để người d&ugrave;ng t&igrave;m kiếm th&ocirc;ng tin một c&aacute;ch nhanh nhất theo mục đ&iacute;ch của m&igrave;nh. Sau khi lọc, c&aacute;c đối tượng thỏa m&atilde;n điều kiện lọc sẽ hiện ra. V&iacute; dụ người d&ugrave;ng sinh vi&ecirc;n c&oacute; thể lọc c&ocirc;ng ty theo t&ecirc;n, địa chỉ, ti&ecirc;u ch&iacute;, mức lương, &hellip;</span></li>
+    </ul>
+</div>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.1.7. Chức năng tạo, cập nhật (th&ecirc;m, sửa, x&oacute;a) blog c&aacute; nh&acirc;n (7):</span></h4>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+    <ul style="margin-bottom:0cm;list-style-type: undefined;margin-left:18.3px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Mỗi người đều c&oacute; thể đăng blog nhằm hỏi đ&aacute;p hoặc chia sẻ kinh nghiệm của m&igrave;nh l&ecirc;n trang blog c&aacute; nh&acirc;n. Tr&ecirc;n trang Blog c&aacute; nh&acirc;n người d&ugrave;ng c&oacute; thể thao t&aacute;c với blog như th&ecirc;m, sửa, x&oacute;a một c&aacute;ch dễ d&agrave;ng bởi giao diện v&ocirc; c&ugrave;ng trực quan, th&acirc;n thiện với người d&ugrave;ng. Một blog gồm c&aacute;c phần ch&iacute;nh: ti&ecirc;u đề, t&oacute;m tắt, nội dung, c&oacute; thể c&oacute; h&igrave;nh ảnh đi k&egrave;m giống như những d&ograve;ng text với c&aacute;c font cho sẵn tr&ecirc;n Word.</span></li>
+    </ul>
+</div>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.1.8. Chức năng li&ecirc;n hệ, nhắn tin (8):</span></h4>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+    <ul style="margin-bottom:0cm;list-style-type: undefined;margin-left:18.3px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Người d&ugrave;ng c&oacute; thể nhắn tin trao đổi với c&aacute;c đối tượng kh&aacute;c bằng việc click v&agrave;o &ocirc; li&ecirc;n hệ ở cột cuối danh s&aacute;ch. Một giao diện mới sẽ hiện l&ecirc;n gi&uacute;p người d&ugrave;ng dễ d&agrave;ng trao đổi th&ocirc;ng tin.</span></li>
+    </ul>
+</div>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.1.9. Chức năng điều chỉnh giao diện s&aacute;ng/tối (Dark Mode) (9):</span></h4>
+<ul class="decimal_type" style="list-style-type: undefined;margin-left:18.3px;">
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Người d&ugrave;ng c&oacute; thể đổi m&agrave;u giao diện s&aacute;ng tối bằng c&aacute;ch ấn n&uacute;t&nbsp;</span><span style='line-height:130%;font-family:"Times New Roman",serif;font-family:"Times New Roman",serif;font-size:13.0pt;'>&ldquo;Nền Tối&rdquo; <span style="color:black;">ở g&oacute;c m&agrave;n h&igrave;nh.</span></span></li>
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Người d&ugrave;ng c&oacute; thể trải nghiệm giao diện một c&aacute;ch chuy&ecirc;n nghiệp, mang lại những c&aacute;i nh&igrave;n kh&aacute;c biệt</span></li>
+</ul>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.1.10. Chức năng phản hồi g&oacute;p &yacute; nh&agrave; ph&aacute;t triển (10):</span></h4>
+<ul class="decimal_type" style="list-style-type: undefined;margin-left:18.3px;">
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Người d&ugrave;ng c&oacute; thể đ&oacute;ng g&oacute;p &yacute; kiến qua phản hồi bằng chat hoặc li&ecirc;n hệ qua số điện thoại của nh&agrave; ph&aacute;t triển.</span></li>
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Mọi đ&oacute;ng g&oacute;p của người d&ugrave;ng sẽ được nh&agrave; ph&aacute;t triển xem x&eacute;t v&agrave; xử l&yacute;.&nbsp;</span></li>
+</ul>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.2. Về ph&iacute;a quản trị vi&ecirc;n&nbsp;</span></h3>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.2.1 Ph&acirc;n quyền t&agrave;i khoản (11):</span></h4>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+    <ul style="margin-bottom:0cm;list-style-type: undefined;margin-left:18.3px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:17px;'>Người quản trị c&oacute; thể phần quyền từng t&agrave;i khoản nhưng c&ograve;n nhiều thiếu s&oacute;t.</span></li>
+    </ul>
+</div>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.2.1 Chức năng quản l&yacute; người d&ugrave;ng (12):</span></h4>
+<ul style="list-style-type: undefined;margin-left:18.3px;">
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Admin x&oacute;a người d&ugrave;ng th&ocirc;ng qua id</span></li>
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Ph&acirc;n quyền t&agrave;i khoản, chia User th&agrave;nh 3 loại t&agrave;i khoản: Student, Teacher, Company</span></li>
+</ul>
+<p style='margin-top:0cm;margin-right:-7.0pt;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;border:none;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;color:black;'>X&oacute;a blog</span></p>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.2.2. Quản l&yacute; phản hồi (13):</span></h4>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+    <ul style="margin-bottom:0cm;list-style-type: undefined;margin-left:18.3px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:17px;'>Người quản trị xem danh s&aacute;ch phản hồi của người d&ugrave;ng để r&uacute;t ra kinh nghiệm hay l&agrave; lỗi hệ thống cần sửa chữa,....</span></li>
+    </ul>
+</div>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.2.3 Chức năng thống k&ecirc; (14):&nbsp;</span></h4>
+<ul class="decimal_type" style="list-style-type: undefined;margin-left:18.3px;">
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Thống k&ecirc; số lượng t&agrave;i khoản theo từng loại</span></li>
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Thống k&ecirc; số lượng blog c&aacute; nh&acirc;n, tin nhắn &nbsp; &nbsp;&nbsp;</span></li>
+</ul>
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;text-indent:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;font-style:italic;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>2.2.3 Chức năng&nbsp;</span><span style='font-family:"Times New Roman",serif;font-style:normal;'>quản l&yacute; kỹ năng</span><span style='font-family:"Times New Roman",serif;font-style:normal;'>&nbsp;(1</span><span style='font-family:"Times New Roman",serif;font-style:normal;'>5</span><span style='font-family:"Times New Roman",serif;font-style:normal;'>):&nbsp;</span></h4>
+<h2 style='margin-top:2.0pt;margin-right:-7.0pt;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;text-align:justify;'>3. Tiến độ sơ từng tuần</h2>
+<ul style="list-style-type: undefined;margin-left:18.3px;">
+    <li><span style='font-family:"Arial",sans-serif;'>Tuần 1: Cả nh&oacute;m ph&acirc;n t&iacute;ch y&ecirc;u cầu, thiết kế chức năng, đối tượng <strong>&nbsp;<span style="color:red;">(13/7 &ndash; 19/7)</span></strong></span></li>
+    <li><span style='font-family:"Arial",sans-serif;'>Tuần 2: Tập trung l&agrave;m giao diện, h&igrave;nh th&agrave;nh cơ bản cơ sở dữ liệu <strong><span style="color:red;">(20/7 &ndash; 26/7)</span></strong></span></li>
+    <li><span style='font-family:"Arial",sans-serif;'>Tuần 3: Tạo cơ sở dữ liệu v&agrave; chức năng (1), (11), (3), (4), (5) <strong><span style="color:red;">(27/7 &ndash; 2/8)</span></strong></span></li>
+    <li><span style='font-family:"Arial",sans-serif;'>Tuần 4: L&agrave;m c&aacute;c chức năng (6), (7), (12), (13), (14), &nbsp;<strong><span style="color:red;">(3/8 &ndash; 9/8)</span></strong></span></li>
+    <li><span style='font-family:"Arial",sans-serif;'>Tuần 5: L&agrave;m c&aacute;c chức năng (2), (8), (9), (10), (15) v&agrave; ho&agrave;n thiện chỉnh sửa <strong><span style="color:red;">(10/8 &ndash; 16/8)</span></strong></span></li>
+</ul>
+<p style='margin-top:0cm;margin-right:-7.0pt;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;border:none;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>&nbsp;</span></p>
+<h1 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:21px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;text-align:center;'><strong><span style='font-family:"Times New Roman",serif;'>II: Ph&acirc;n t&iacute;ch, thiết kế, giải th&iacute;ch chức năng</span></strong></h1>
+<h2 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;'><span style='font-family:"Times New Roman",serif;'>1. Biểu đồ &nbsp;Use case tổng qu&aacute;t</span></h2>
+<h2 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;'><span style='font-family:"Times New Roman",serif;font-style:normal;'>&nbsp;<img src="https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/117968482_939881329822143_679738534111807504_n.png?_nc_cat=110&_nc_sid=b96e70&_nc_ohc=h3TgcWt_omkAX-b4iIs&_nc_ht=scontent.fhan5-2.fna&oh=b9611e6ed4d715e012e6f2e4a5057f9a&oe=5F662EBD"></span></h2>
+<h2 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;'><span style='font-family:"Times New Roman",serif;'>2. Biểu đồ tuần tự:</span></h2>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:2.85pt;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Đ&acirc;y l&agrave; biểu đồ tuần tự của c&aacute;c ca sử dụng ch&iacute;nh của hệ thống.</span></p>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;text-indent:1.0cm;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.1. Đăng k&yacute; t&agrave;i khoản:</span></h3>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>&nbsp;<img src="https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/118217338_3041725949259904_7522145071232376271_n.png?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=iRWje4w0dx0AX9hCmbp&_nc_ht=scontent.fhan5-7.fna&oh=f1c8cac9523de4f8563e83bb7ece2c2d&oe=5F65BBEC" alt="image"></span></p>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;text-indent:1.0cm;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.2. Đăng nhập</span></h3>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'><img src="https://scontent.fhan5-6.fna.fbcdn.net/v/t1.15752-9/118207851_598525950836077_1426159989779325191_n.png?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=TiCMijQAttYAX-1xMNZ&_nc_ht=scontent.fhan5-6.fna&oh=86ff946dc401da9b3022a56b1a508af6&oe=5F64A06C" style="width: 404.4pt; height: 334.8pt;" alt="image"></span></p>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;text-indent:1.0cm;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.3 Đăng xuất</span></h3>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'><img src="https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/118225423_438285133728620_1412064131596247701_n.png?_nc_cat=101&_nc_sid=b96e70&_nc_ohc=9-TL8B5t40wAX8vSiAc&_nc_ht=scontent.fhan5-5.fna&oh=cb7126570156ae5cb8aab7f48c282305&oe=5F664EE0" style="width: 376.8pt; height: 212.4pt;" alt="image"></span></p>
+<p style='margin-top:0cm;margin-right:-7.0pt;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;border:none;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;color:black;'>&nbsp;</span></p>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;text-indent:1.0cm;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.4. Cập nhật th&ocirc;ng tin</span></h3>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'><img src="https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/118272958_594432631235231_5407901242506300792_n.png?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=c7BIjRvBLT8AX8-vjLo&_nc_ht=scontent.fhan5-2.fna&oh=37bf67358960c6a1fda0a9eb752071df&oe=5F65DAC9" style="width: 378pt; height: 194.4pt;" alt="image"></span></p>
+<p style='margin-top:0cm;margin-right:-7.0pt;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;border:none;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;color:black;'>&nbsp;</span></p>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;text-indent:1.0cm;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.5. Lọc, t&igrave;m kiếm</span></h3>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'><img src="https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/118290383_771202796988995_7625554794695178418_n.png?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=nrXTeBfiojEAX_nXUiC&_nc_ht=scontent.fhan5-5.fna&oh=690d9b4eb7677d1da638ec30188d0349&oe=5F64570A" style="width: 383.4pt; height: 206.4pt;" alt="image"></span></p>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;text-indent:1.0cm;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.6. Nhắn tin, li&ecirc;n hệ:</span></h3>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'><img src="https://scontent.fhan5-3.fna.fbcdn.net/v/t1.15752-9/118396582_309809233625054_6335221128416026176_n.png?_nc_cat=111&_nc_sid=b96e70&_nc_ohc=RJ6CssfLAcYAX8c1Cyu&_nc_ht=scontent.fhan5-3.fna&oh=64e618a51f016d5b3fdc082c13809109&oe=5F647602" style="width: 404.4pt; height: 184.8pt;" alt="image"></span></p>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;text-indent:1.0cm;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.7. Tạo Blog c&aacute; nh&acirc;n:</span></h3>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'><img src="https://scontent.fhan5-6.fna.fbcdn.net/v/t1.15752-9/118275082_954962634970490_155029127551264296_n.png?_nc_cat=105&_nc_sid=b96e70&_nc_ohc=lmJD07xWLxwAX_cTvUF&_nc_ht=scontent.fhan5-6.fna&oh=031e79ec51a38fadd54047670d7cfa6c&oe=5F65E3CA" style="width: 399.6pt; height: 212.4pt;" alt="image"></span></p>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;text-indent:1.0cm;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.8. Sửa Blog:</span></h3>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'><img src="https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/118288753_2758529727763981_7649030476197627496_n.png?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=jsbXiYDCFj0AX8rV3CQ&_nc_ht=scontent.fhan5-2.fna&oh=1c2851f43b3e55195230151421c63aa2&oe=5F63EAC8" style="width: 404.4pt; height: 219pt;" alt="image"></span></p>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;text-indent:1.0cm;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.9. X&oacute;a Blog c&aacute; nh&acirc;n:</span></h3>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'><img src="https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/118217899_1013523975772633_2738066713306566376_n.png?_nc_cat=101&_nc_sid=b96e70&_nc_ohc=QIKgX7jxxnQAX8CYbPN&_nc_ht=scontent.fhan5-5.fna&oh=1288ec20a059c0e805d4be66a98018a8&oe=5F62EBEF" style="width: 403.2pt; height: 196.2pt;" alt="image"></span></p>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;text-indent:1.0cm;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.10. Đổi mật khẩu</span></h3>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'><img src="https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/117968482_998815687245922_2543466549300078071_n.png?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=XehNQiuA2QIAX-46oMl&_nc_ht=scontent.fhan5-7.fna&oh=30e077d5d38ebf750d0c95795f41eaff&oe=5F62FAB1" style="width: 414.6pt; height: 265.8pt;" alt="image"></span></p>
+<h3 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:16px;font-family:"Calibri Light",sans-serif;color:#1F4D78;font-weight:normal;text-indent:1.0cm;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2.11. Li&ecirc;n hệ nh&agrave; ph&aacute;t triển:</span></h3>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'><img src="https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/118198199_311983320247974_1816154272567653353_n.png?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=-fMwnQ91MDMAX9yQojN&_nc_ht=scontent.fhan5-5.fna&oh=d3ddb75cdd846ee058f17ea8afc220f3&oe=5F62EB59" style="width: 439.8pt; height: 192pt;" alt="image"></span></p>
+<h2 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;'><span style='font-family:"Times New Roman",serif;'>3. Biểu đồ lớp:</span></h2>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>&nbsp;</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>&nbsp;</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'><img src="https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/118342267_1004774953292256_4556983431510206604_n.png?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=3KXK4yv7T4kAX_r5UhN&_nc_ht=scontent.fhan5-7.fna&oh=e996e808c41f6eab9091ea23ef4cc67c&oe=5F659BEE" style="width: 448.8pt; height: 582.6pt;" alt="image"></span></p>
+<h1 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:21px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;text-align:center;'><strong><span style='font-family:"Times New Roman",serif;'>III: Tổng kết</span></strong></h1>
+<h2 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;'><span style='font-family:"Times New Roman",serif;'>1. Đề t&agrave;i:&nbsp;</span></h2>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-indent:36.0pt;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>X&acirc;y dựng website quản l&yacute; profile c&aacute; nh&acirc;n v&agrave; chia sẻ kinh nghiệm giữa c&aacute;c k&ecirc;nh li&ecirc;n kết quảng b&aacute; <strong>Nh&agrave; trường</strong>, <strong>C&ocirc;ng ty</strong> v&agrave; <strong>Sinh vi&ecirc;n</strong>. Website tạo ra nơi để sinh vi&ecirc;n dễ d&agrave;ng tiếp cận được c&ocirc;ng việc mong muốn v&agrave; được nh&agrave; trường quản l&yacute;</span></p>
+<h2 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;'><span style='font-family:"Times New Roman",serif;'>2. C&ocirc;ng nghệ sử dụng:&nbsp;</span></h2>
+<ol style="list-style-type: decimal;margin-left:44px;">
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Server ảo sử dụng: Xampp</span></li>
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Framework sử dụng: Laravel framework php</span></li>
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Ng&ocirc;n ngữ backend sử dụng: PHP</span></li>
+    <li><span style='line-height:130%;font-family:"Times New Roman",serif;font-family:"Times New Roman",serif;font-size:13.0pt;color:black;'>Hỗ trợ database: MySQL</span></li>
+</ol>
+<h2 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;'><span style='font-family:"Times New Roman",serif;'>3. Kết quả ứng dụng web:&nbsp;</span><a href="https://github.com/phamtrong2000/WebNhom5"><span style='font-family:"Times New Roman",serif;color:#0563C1;'>https://github.com/phamtrong2000/WebNhom5</span></a></h2>
+<h2 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;'><span style='font-family:"Times New Roman",serif;'>4. Kinh nghiệm, b&agrave;i học:</span></h2>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:36.0pt;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;border:none;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;color:black;'>Sau khi t&igrave;m hiểu, học tập v&agrave; nghi&ecirc;n cứu, nh&oacute;m em đ&atilde; ho&agrave;n th&agrave;nh ứng dụng web về quản l&yacute; việc l&agrave;m tuy nhi&ecirc;n do thời gian c&ograve;n hạn chế n&ecirc;n nh&oacute;m em đ&atilde; ho&agrave;n th&agrave;nh trang web vẫn c&ograve;n đơn giản, sau khi l&agrave;m xong ứng dụng web, nh&oacute;m em đ&atilde; t&igrave;m hiểu s&acirc;u về ng&ocirc;n ngữ PHP để thao t&aacute;c với trang web, hiểu th&ecirc;m nhiều về framework để dễ d&agrave;ng l&agrave;m việc, học được c&aacute;ch l&agrave;m việc nh&oacute;m hiệu quả, biết c&aacute;c giải quyết một b&agrave;i to&aacute;n kh&oacute;. Để c&oacute; thể ho&agrave;n th&agrave;nh trang web, ch&uacute;ng em xin cảm ơn thầy <strong>Nguyễn Việt Anh</strong> đ&atilde; lu&ocirc;n quan t&acirc;m dạy dỗ ch&uacute;ng em trong suốt qu&aacute; tr&igrave;nh học. Ch&uacute;ng em xin ch&acirc;n th&agrave;nh cảm ơn!</span></p>
+<h2 style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:17px;font-family:"Calibri Light",sans-serif;color:#2E74B5;font-weight:normal;'><span style='font-family:"Times New Roman",serif;'>5. Đ&aacute;nh gi&aacute; kết quả l&agrave;m việc nh&oacute;m:</span></h2>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>&nbsp;</span></p>
+<table style="width: 4.5e+2pt;border-collapse:collapse;border:none;">
+    <tbody>
+        <tr>
+            <td style="width: 42.3pt;border: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>TT</span></p>
+            </td>
+            <td style="width: 155.9pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Họ v&agrave; t&ecirc;n</span></p>
+            </td>
+            <td style="width: 78pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Tự đ&aacute;nh gi&aacute;</span></p>
+            </td>
+            <td style="width: 92.1pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Nh&oacute;m đ&aacute;nh gi&aacute;</span></p>
+            </td>
+            <td style="width: 84.75pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>K&yacute; t&ecirc;n</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 42.3pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 33.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>1</span></p>
+            </td>
+            <td style="width: 155.9pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 33.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Phạm Văn Trọng(Captain)</span></p>
+            </td>
+            <td style="width: 78pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 33.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>B</span></p>
+            </td>
+            <td style="width: 92.1pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 33.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>A</span></p>
+            </td>
+            <td style="width: 84.75pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 33.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Trọng</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 42.3pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>2</span></p>
+            </td>
+            <td style="width: 155.9pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Trần Đức Toản</span></p>
+            </td>
+            <td style="width: 78pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>B</span></p>
+            </td>
+            <td style="width: 92.1pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>A</span></p>
+            </td>
+            <td style="width: 84.75pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Toản</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 42.3pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>3</span></p>
+            </td>
+            <td style="width: 155.9pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Nguyễn Thị Ho&agrave;i Thu</span></p>
+            </td>
+            <td style="width: 78pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>C</span></p>
+            </td>
+            <td style="width: 92.1pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>B</span></p>
+            </td>
+            <td style="width: 84.75pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Thu</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 42.3pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>4</span></p>
+            </td>
+            <td style="width: 155.9pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Vũ Quỳnh Trang</span></p>
+            </td>
+            <td style="width: 78pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>C</span></p>
+            </td>
+            <td style="width: 92.1pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>B</span></p>
+            </td>
+            <td style="width: 84.75pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Trang</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 42.3pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>5</span></p>
+            </td>
+            <td style="width: 155.9pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>V&otilde; Thị V&acirc;n</span></p>
+            </td>
+            <td style="width: 78pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>C</span></p>
+            </td>
+            <td style="width: 92.1pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>B</span></p>
+            </td>
+            <td style="width: 84.75pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>V&acirc;n</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 42.3pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>6</span></p>
+            </td>
+            <td style="width: 155.9pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Nguyễn Thị Ngọc Linh</span></p>
+            </td>
+            <td style="width: 78pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>C</span></p>
+            </td>
+            <td style="width: 92.1pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>B</span></p>
+            </td>
+            <td style="width: 84.75pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Linh</span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>&nbsp;</span></p>
+<table style="width: 4.5e+2pt;border-collapse:collapse;border:none;">
+    <tbody>
+        <tr>
+            <td style="width: 226.75pt;border: none;padding: 5pt;vertical-align: top;">
+                <p style='margin-top:12.0pt;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>&nbsp;</span></p>
+            </td>
+            <td style="width: 226.75pt;border: none;padding: 5pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:3.0pt;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><strong><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Nh&oacute;m trưởng</span></strong></p>
+                <p style='margin-top:0cm;margin-right:3.0pt;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><em><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>(K&yacute; t&ecirc;n)</span></em></p>
+                <p style='margin-top:0cm;margin-right:3.0pt;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><em><u><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Trọng</span></u></em></p>
+                <p style='margin-top:0cm;margin-right:3.0pt;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>Phạm Văn Trọng</span></p>
+                <p style='margin-top:12.0pt;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:130%;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:17px;line-height:130%;font-family:"Times New Roman",serif;'>&nbsp;</span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
